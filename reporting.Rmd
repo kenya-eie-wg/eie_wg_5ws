@@ -1,0 +1,242 @@
+---
+title: "Kenya Education in Emergencies Working Group -- Drought 5Ws Report"
+date:  "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_download: yes
+    theme: readable
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    number_sections: no
+    collapsed: no
+always_allow_html: yes
+---
+
+```{css, echo=FALSE}
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 70px;
+  margin: 2em 20px 40px 20px;
+  background-image: url("https://github.com/northwest-syria-cash-working-group/multisector_4Ws_review/raw/main/NWS-CWG%20logo.PNG");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+```
+
+```{=html}
+<style>
+    body .main-container {
+        max-width: 1280px;
+    }
+</style>
+```
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width=9, message = FALSE, warning=FALSE)
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(stringi)
+library(janitor)
+library(scales)
+library(viridis)
+library(patchwork)
+library(DT)
+library(here)
+library(sf)
+library(plotly)
+library(flextable)
+library(ggrepel)
+library(anytime)
+library(tidytext)
+
+theme_set(theme_light())
+
+# Installation of mdepriv package
+# install package devtools if not yet installed
+#   install.packages("devtools")
+
+# install fast from GitHub without vignettes 
+#   devtools::install_github("a-benini/mdepriv", build_vignettes = FALSE
+
+# Alternatively, follow the instructions here: https://a-benini.github.io/mdepriv/
+
+# disabling scientific notation
+options(scipen = 100)
+
+`%out%` <- Negate(`%in%`)
+
+# function for transposing df
+transpose_df <- function(df) {
+  t_df <- data.table::transpose(df)
+  colnames(t_df) <- rownames(df)
+  rownames(t_df) <- colnames(df)
+  t_df <- t_df %>%
+    tibble::rownames_to_column(.data = .) %>%
+    tibble::as_tibble(.)
+  return(t_df)
+}
+
+# scaling functions 
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+# mode function 
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Fixing dates
+name_to_date <- function(x) {
+  lubridate::mdy(ifelse(x %in% c(month.name, month.abb), paste0(x, "/01/2023"), x))
+}
+```
+
+
+```{r}
+eie %>% 
+  filter(month %in% c("January", 
+                      "February", 
+                      "March")) %>% 
+  group_by(indicator_short) %>% 
+  summarise(girls = sum(girls, na.rm = TRUE), 
+            boys = sum(boys, na.rm = TRUE), 
+            total_reached = sum(total_reached)) 
+  
+```
+
+
+```{r}
+locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
+                      sheet = "ADM2") %>% 
+  clean_names()
+
+eie <- read_csv("./data/eie_5ws.csv")
+
+report_date <- "25 June 2023"
+
+report_month <- "June"
+
+sitrep_table <- read_xlsx("./data/sitrep_results_table.xlsx") %>% 
+  clean_names()
+```
+
+
+    
+
+
+
+#1. Summary
+
+```{r}
+eie %>% 
+  filter(activity_status == "Completed") %>% 
+  mutate(latest_reached = ifelse(month == "May", total_reached, NA_integer_)) %>% 
+  group_by(indicator) %>% 
+  summarise(partners = n_distinct(implementing_partner), 
+            counties = n_distinct(adm1_pcode), 
+            schools = sum(schools, na.rm = TRUE),  
+            latest_reached = sum(latest_reached, na.rm = TRUE), 
+            total_reached = sum(total_reached, na.rm = TRUE)) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_table_properties(layout = "autofit", width = .99) %>% 
+  fontsize(i = 1:6, j = 1, size = 9) %>% 
+  fontsize(size = 9, part = "header")
+
+eie %>% 
+  glimpse()
+  filter(!str_detect(sub_county, "\\,"))
+```
+
+```{r}
+eie %>% 
+  mutate(indicator_short = fct_rev(indicator_short)) %>%
+  mutate_at(vars(boys, girls, men, women), ~ replace_na(., 0)) %>% 
+  group_by(indicator_short) %>% 
+  summarise_at(vars(boys, girls, men, women), ~ sum(., na.rm = TRUE)) %>% 
+  mutate(total_reached = boys + girls + men + women, 
+         female = (women + girls) / total_reached, 
+         male = (boys + men) / total_reached) %>%
+  pivot_longer(cols = c(female, male), 
+               names_to = "sex", 
+               values_to = "pc") %>% 
+  ggplot(aes(x = pc, y = indicator_short, fill = sex)) + 
+  geom_col() + 
+  geom_text(aes(x = pc, 
+                y = indicator_short, 
+                label = percent(pc, accuracy = 1)),
+            position = position_stack(vjust = .5), 
+            colour = "white") +
+  scale_fill_manual(values = c("#443983", "#35b779")) +
+  scale_x_continuous(labels = percent) + 
+  labs(x = "", 
+       y = "", 
+       title = "Sex breakdown by indicator")  
+
+```
+
+```{r fig.length = 10}
+
+eie %>% 
+  filter(!is.na(education_level)) %>% 
+  group_by(education_level, indicator_short) %>% 
+  summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>%
+  group_by(indicator_short) %>% 
+  mutate(total = sum(beneficiaries)) %>%  
+  ungroup() %>% 
+  mutate(pc = beneficiaries / total, 
+         indicator_short = fct_rev(indicator_short)) %>% 
+  ggplot(aes(x = pc, y = indicator_short, fill = education_level)) + 
+  geom_col() + 
+  geom_text(aes(x = pc, 
+                y = indicator_short, 
+                label = percent(pc, accuracy = 1)),
+            position = position_stack(vjust = .5), 
+            colour = "white") +
+  scale_fill_viridis_d(option = "mako") +
+  scale_x_continuous(labels = percent) + 
+  labs(x = "", 
+       y = "", 
+       title = "Education-level breakdown by indicator", 
+       fill = "") 
+  
+```
+
+
+```{r}
+
+eie %>% 
+  mutate(date = name_to_date(month)) %>% 
+  group_by(date, indicator_short) %>% 
+  summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>% 
+  group_by(indicator_short) %>% 
+  arrange(date) %>% 
+  mutate(cum_ben = cumsum(beneficiaries)) %>% 
+  arrange(indicator_short) %>%  
+  ggplot(aes(x = date, y = cum_ben, colour = indicator)) + 
+  geom_step(size = 1) +
+  scale_x_date(date_breaks = "1 month", date_labels = "%b") + 
+  scale_y_continuous(labels = comma) + 
+  facet_wrap(~indicator, scales = "free_y") + 
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 5, angle = 60, hjust = 1, vjust = 1), 
+        axis.text.y = element_text(size = 5), 
+        strip.text = element_text(size = 6, face = "bold"),
+        strip.background = element_rect(fill = "#212121")) + 
+  labs(x = "", 
+       y = "Cumulative beneficiary frequencies", 
+       title = paste0("Monthly progress by activity, ", report_date),
+       subtitle = "Figures are in cumulative beneficiary frequencies reached") + 
+  theme(plot.title = element_text(size = 12))
+
+```
+
+

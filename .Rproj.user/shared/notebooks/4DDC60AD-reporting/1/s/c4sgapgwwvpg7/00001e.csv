@@ -1,0 +1,24 @@
+"0","eie %>% 
+  filter(!is.na(education_level)) %>% 
+  group_by(education_level, indicator_short) %>% 
+  summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>%
+  group_by(indicator_short) %>% 
+  mutate(total = sum(beneficiaries)) %>%  
+  ungroup() %>% 
+  mutate(pc = beneficiaries / total, 
+         indicator_short = fct_rev(indicator_short)) %>% 
+  ggplot(aes(x = pc, y = indicator_short, fill = education_level)) + 
+  geom_col() + 
+  geom_text(aes(x = pc, 
+                y = indicator_short, 
+                label = percent(pc, accuracy = 1)),
+            position = position_stack(vjust = .5), 
+            colour = ""white"") +
+  scale_fill_viridis_d(option = ""mako"") +
+  scale_x_continuous(labels = percent) + 
+  labs(x = """", 
+       y = """", 
+       title = ""Sex breakdown by indicator"", 
+       fill = """") 
+"
+"2","`summarise()` has grouped output by 'education_level'. You can override using the `.groups` argument."

@@ -1,0 +1,156 @@
+---
+title: "Kenya Education in Emergencies Working Group -- Drought 5Ws Report"
+date:  "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_download: yes
+    theme: readable
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    number_sections: no
+    collapsed: no
+always_allow_html: yes
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width=9, message = FALSE, warning=FALSE)
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(stringi)
+library(janitor)
+library(scales)
+library(viridis)
+library(patchwork)
+library(DT)
+library(here)
+library(sf)
+library(plotly)
+library(flextable)
+library(ggrepel)
+library(anytime)
+library(tidytext)
+
+theme_set(theme_light())
+
+# Installation of mdepriv package
+# install package devtools if not yet installed
+#   install.packages("devtools")
+
+# install fast from GitHub without vignettes 
+#   devtools::install_github("a-benini/mdepriv", build_vignettes = FALSE
+
+# Alternatively, follow the instructions here: https://a-benini.github.io/mdepriv/
+
+# disabling scientific notation
+options(scipen = 100)
+
+`%out%` <- Negate(`%in%`)
+
+# function for transposing df
+transpose_df <- function(df) {
+  t_df <- data.table::transpose(df)
+  colnames(t_df) <- rownames(df)
+  rownames(t_df) <- colnames(df)
+  t_df <- t_df %>%
+    tibble::rownames_to_column(.data = .) %>%
+    tibble::as_tibble(.)
+  return(t_df)
+}
+
+# scaling functions 
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+# mode function 
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Fixing dates
+name_to_date <- function(x) {
+  lubridate::mdy(ifelse(x %in% c(month.name, month.abb), paste0(x, "/01/2023"), x))
+}
+
+
+```
+
+
+
+
+```{r}
+locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
+                      sheet = "ADM2") %>% 
+  clean_names()
+
+eie <- read_csv("./data/eie_5ws.csv")
+
+report_date <- "25 May 2023"
+
+report_month <- "May"
+
+sitrep_table <- read_xlsx("./data/sitrep_results_table.xlsx") %>% 
+  clean_names()
+```
+
+```{r}
+sitrep_table %>%
+  pivot_longer(cols = c(unicef_and_i_ps_response_total_needs: 
+                          cluster_sector_response_progress), 
+               names_to = "sub_indicator", 
+               values_to = "value") %>% 
+  rename(sex_modifier = sector_disaggregation) %>% 
+  glimpse()
+  count(sector_indicator, )
+
+```
+
+
+A total of 8,457 children (3,980 girls and 4,477 boys), have accessed basic education with UNICEF support during April 2023 in the counties of Baringo, Samburu, Turkana and West Pokot. Furthermore, 735 students (368 girls and 367 boys) in Turkana County benefited from distribution of school bags and education kits to support continuation of their learning. Cumulatively, 33,972 children (16,139 girls and 17,833 boys) have been reached in 2023, which is 4 per cent of the target). 
+
+
+# Sitrep 
+
+A total of 8,457 children (3,980 girls and 4,477 boys), have accessed basic education with UNICEF support during April 2023 in the counties of Baringo, Samburu, Turkana and West Pokot. 
+
+```{r}
+eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
+                 lead_organisation == "UNICEF") %>% 
+  summarise(girls = sum(girls, na.rm = TRUE), 
+            boys = sum(boys, na.rm = TRUE), 
+            counties = n_distinct(adm1_pcode)) %>% 
+  mutate(total = girls + boys)
+
+eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
+                 lead_organisation == "UNICEF") %>% 
+```
+
+
+ 
+Furthermore, 735 students (368 girls and 367 boys) in Turkana County benefited from distribution of school bags and education kits to support continuation of their learning. 
+ 
+```{r}
+eie %>% 
+  filter(month == "May" & str_detect(indicator, "3") & 
+           lead_organisation == "UNICEF") %>% 
+  summarise(girls = sum(girls, na.rm = TRUE), 
+            boys = sum(boys, na.rm = TRUE), 
+            counties = n_distinct(adm1_pcode)) %>% 
+  mutate(total = girls + boys) 
+
+```
+ 
+
+To enhance quality of learning and support newly enrolled learners in drought affected counties, 639 teachers (254 men and 385 women) were trained on remedial and catchup pedagogical approaches, Mental Health and Psychosocial Support (MHSSP), Gender-Based Violence (GBV) and Guidance and Counselling (G&C). 
+
+ 
+
+UNICEF also supported the training of 94 (67 men and 27 women) members of the Enrolment Drive Committees (EDCs) and school Board of Management (BoM) in Baringo and Turkana counties on life skills, child safeguarding and their roles/responsibilities, child protection and referral mechanisms. 
+
+ 
+
+Furthermore, 2,453 children (1,337 girls and 1,116 boys) were supported to access mentorship and life skills sessions in Samburu, and Turkana counties, strengthening their resilience and their coping mechanisms to the impact of drought.

@@ -1,0 +1,43 @@
+"0","targets <- read_excel(file_list[3], 
+           sheet = ""Reach by Indicator"", 
+           skip = 1) %>% 
+  clean_names() %>% 
+  select(x1, x2, 
+         contains(""target"")) %>% 
+  setNames(c(""county"", 
+           ""county_overall_target"", 
+           ""indicator1_target_children"", 
+           ""indicator2_target"", 
+           ""indicator3_target_people"", 
+           ""indicator4_target"", 
+           ""indicator5_target_educators"", 
+           ""indicator6_target_children"")) %>% 
+  slice(0:23) %>% 
+  separate(indicator2_target, into = c(""indicator2_target_schools"", ""indicator2_target_children""), sep = ""\\("") %>%
+  separate(indicator4_target, into = c(""indicator4_target_schools"", ""indicator4_target_children""), sep = ""\\("") %>%
+  mutate_at(vars(indicator2_target_schools, 
+                 indicator2_target_children, 
+                 indicator4_target_schools, 
+                 indicator4_target_children), 
+            ~ parse_number(.)) %>% 
+  pivot_longer(cols = indicator1_target_children:indicator6_target_children, 
+               names_to = ""type"", 
+               values_to = ""county_target"") %>% 
+  mutate(number = parse_number(type), 
+         indicator = case_when(
+           str_detect(type, ""1"") ~ ""number of children and youth accessing ECD spaces/schools in drought-affected areas"", 
+           str_detect(type, ""2"") ~ ""number of schools/ECD spaces with feeding programmes"", 
+           str_detect(type, ""3"") ~ ""number of learners and teachers with learning and teaching materials"", 
+           str_detect(type, ""4"") ~ ""number of schools with adequate quantities of safe water for drinking and personal hygiene"", 
+           str_detect(type, ""5"") ~ ""number of teachers/educaotrs trained on resilience-enhancing programmes"", 
+           str_detect(type, ""6"") ~ ""number of children and youth benefiting from resiliece-enhancing programmes"")) %>% 
+  mutate(target_quantity = str_sub(type, start = 19L)) %>% 
+  select(county, number, indicator, county_target, target_unit, county_overall_target)
+"
+"1","[1m[33mError[39m in `select()`:[22m
+[33m![39m Can't subset columns that don't exist.
+[31mx[39m Column `target_unit` doesn't exist.
+Backtrace:
+[90m 1. [39m... %>% ...
+[90m 3. [39m[1m[94mdplyr:::select.data.frame([39m[22m., county, number, indicator, county_target, target_unit, county_overall_target[1m[94m)[39m[22m
+"

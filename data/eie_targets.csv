@@ -1,0 +1,185 @@
+county,number,indicator,county_target,target_unit,county_overall_target
+Turkana,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,202912,children,237959
+Turkana,2,number of schools/ECD spaces with feeding programmes,165,schools,237959
+Turkana,2,number of schools/ECD spaces with feeding programmes,56075,children,237959
+Turkana,3,number of learners and teachers with learning and teaching materials,101456,people,237959
+Turkana,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,165,schools,237959
+Turkana,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,56075,children,237959
+Turkana,5,number of teachers/educaotrs trained on resilience-enhancing programmes,330,educators,237959
+Turkana,6,number of children and youth benefiting from resiliece-enhancing programmes,22691,children,237959
+Mandera,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,236376,children,339483
+Mandera,2,number of schools/ECD spaces with feeding programmes,215,schools,339483
+Mandera,2,number of schools/ECD spaces with feeding programmes,74125,children,339483
+Mandera,3,number of learners and teachers with learning and teaching materials,118188,people,339483
+Mandera,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,215,schools,339483
+Mandera,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,74125,children,339483
+Mandera,5,number of teachers/educaotrs trained on resilience-enhancing programmes,430,educators,339483
+Mandera,6,number of children and youth benefiting from resiliece-enhancing programmes,26638,children,339483
+Marsabit,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,53800,children,127609
+Marsabit,2,number of schools/ECD spaces with feeding programmes,105,schools,127609
+Marsabit,2,number of schools/ECD spaces with feeding programmes,30635,children,127609
+Marsabit,3,number of learners and teachers with learning and teaching materials,26900,people,127609
+Marsabit,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,105,schools,127609
+Marsabit,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,30635,children,127609
+Marsabit,5,number of teachers/educaotrs trained on resilience-enhancing programmes,210,educators,127609
+Marsabit,6,number of children and youth benefiting from resiliece-enhancing programmes,7380,children,127609
+Garissa,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,231528,children,268844
+Garissa,2,number of schools/ECD spaces with feeding programmes,101,schools,268844
+Garissa,2,number of schools/ECD spaces with feeding programmes,22982,children,268844
+Garissa,3,number of learners and teachers with learning and teaching materials,115764,people,268844
+Garissa,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,101,schools,268844
+Garissa,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,22982,children,268844
+Garissa,5,number of teachers/educaotrs trained on resilience-enhancing programmes,202,educators,268844
+Garissa,6,number of children and youth benefiting from resiliece-enhancing programmes,25153,children,268844
+Wajir,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,213232,children,258474
+Wajir,2,number of schools/ECD spaces with feeding programmes,152,schools,258474
+Wajir,2,number of schools/ECD spaces with feeding programmes,37082,children,258474
+Wajir,3,number of learners and teachers with learning and teaching materials,106616,people,258474
+Wajir,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,152,schools,258474
+Wajir,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,37082,children,258474
+Wajir,5,number of teachers/educaotrs trained on resilience-enhancing programmes,304,educators,258474
+Wajir,6,number of children and youth benefiting from resiliece-enhancing programmes,22823,children,258474
+Samburu,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,51848,children,72788
+Samburu,2,number of schools/ECD spaces with feeding programmes,108,schools,72788
+Samburu,2,number of schools/ECD spaces with feeding programmes,23562,children,72788
+Samburu,3,number of learners and teachers with learning and teaching materials,25924,people,72788
+Samburu,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,108,schools,72788
+Samburu,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,23562,children,72788
+Samburu,5,number of teachers/educaotrs trained on resilience-enhancing programmes,216,educators,72788
+Samburu,6,number of children and youth benefiting from resiliece-enhancing programmes,4585,children,72788
+Isiolo,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,20930,children,30518
+Isiolo,2,number of schools/ECD spaces with feeding programmes,31,schools,30518
+Isiolo,2,number of schools/ECD spaces with feeding programmes,6983,children,30518
+Isiolo,3,number of learners and teachers with learning and teaching materials,10465,people,30518
+Isiolo,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,31,schools,30518
+Isiolo,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,6983,children,30518
+Isiolo,5,number of teachers/educaotrs trained on resilience-enhancing programmes,62,educators,30518
+Isiolo,6,number of children and youth benefiting from resiliece-enhancing programmes,6600,children,30518
+Baringo,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,32205,children,86322
+Baringo,2,number of schools/ECD spaces with feeding programmes,251,schools,86322
+Baringo,2,number of schools/ECD spaces with feeding programmes,46748,children,86322
+Baringo,3,number of learners and teachers with learning and teaching materials,16103,people,86322
+Baringo,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,251,schools,86322
+Baringo,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,46748,children,86322
+Baringo,5,number of teachers/educaotrs trained on resilience-enhancing programmes,502,educators,86322
+Baringo,6,number of children and youth benefiting from resiliece-enhancing programmes,7621,children,86322
+Tana River,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,24970,children,45347
+Tana River,2,number of schools/ECD spaces with feeding programmes,61,schools,45347
+Tana River,2,number of schools/ECD spaces with feeding programmes,16506,children,45347
+Tana River,3,number of learners and teachers with learning and teaching materials,12485,people,45347
+Tana River,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,61,schools,45347
+Tana River,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,16506,children,45347
+Tana River,5,number of teachers/educaotrs trained on resilience-enhancing programmes,122,educators,45347
+Tana River,6,number of children and youth benefiting from resiliece-enhancing programmes,4583,children,45347
+Kitui,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,16365,children,252150
+Kitui,2,number of schools/ECD spaces with feeding programmes,696,schools,252150
+Kitui,2,number of schools/ECD spaces with feeding programmes,133912,children,252150
+Kitui,3,number of learners and teachers with learning and teaching materials,8183,people,252150
+Kitui,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,696,schools,252150
+Kitui,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,133912,children,252150
+Kitui,5,number of teachers/educaotrs trained on resilience-enhancing programmes,1392,educators,252150
+Kitui,6,number of children and youth benefiting from resiliece-enhancing programmes,4000,children,252150
+Makueni,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,8555,children,201321
+Makueni,2,number of schools/ECD spaces with feeding programmes,463,schools,201321
+Makueni,2,number of schools/ECD spaces with feeding programmes,115084,children,201321
+Makueni,3,number of learners and teachers with learning and teaching materials,4278,people,201321
+Makueni,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,463,schools,201321
+Makueni,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,115084,children,201321
+Makueni,5,number of teachers/educaotrs trained on resilience-enhancing programmes,926,educators,201321
+Makueni,6,number of children and youth benefiting from resiliece-enhancing programmes,6000,children,201321
+Laikipia,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Laikipia,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Laikipia,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Laikipia,3,number of learners and teachers with learning and teaching materials,0,people,0
+Laikipia,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Laikipia,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Laikipia,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Laikipia,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Meru,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Meru,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Meru,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Meru,3,number of learners and teachers with learning and teaching materials,0,people,0
+Meru,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Meru,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Meru,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Meru,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Tharaka Nithi,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Tharaka Nithi,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Tharaka Nithi,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Tharaka Nithi,3,number of learners and teachers with learning and teaching materials,0,people,0
+Tharaka Nithi,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Tharaka Nithi,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Tharaka Nithi,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Tharaka Nithi,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+West Pokot,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,40035,children,81626
+West Pokot,2,number of schools/ECD spaces with feeding programmes,201,schools,81626
+West Pokot,2,number of schools/ECD spaces with feeding programmes,51693,children,81626
+West Pokot,3,number of learners and teachers with learning and teaching materials,20018,people,81626
+West Pokot,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,201,schools,81626
+West Pokot,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,51693,children,81626
+West Pokot,5,number of teachers/educaotrs trained on resilience-enhancing programmes,402,educators,81626
+West Pokot,6,number of children and youth benefiting from resiliece-enhancing programmes,6004,children,81626
+Kwale,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,26885,children,60767
+Kwale,2,number of schools/ECD spaces with feeding programmes,132,schools,60767
+Kwale,2,number of schools/ECD spaces with feeding programmes,55580,children,60767
+Kwale,3,number of learners and teachers with learning and teaching materials,13443,people,60767
+Kwale,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,132,schools,60767
+Kwale,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,55580,children,60767
+Kwale,5,number of teachers/educaotrs trained on resilience-enhancing programmes,264,educators,60767
+Kwale,6,number of children and youth benefiting from resiliece-enhancing programmes,5000,children,60767
+Narok,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,41510,children,83337
+Narok,2,number of schools/ECD spaces with feeding programmes,328,schools,83337
+Narok,2,number of schools/ECD spaces with feeding programmes,113680,children,83337
+Narok,3,number of learners and teachers with learning and teaching materials,20755,people,83337
+Narok,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,328,schools,83337
+Narok,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,113680,children,83337
+Narok,5,number of teachers/educaotrs trained on resilience-enhancing programmes,656,educators,83337
+Narok,6,number of children and youth benefiting from resiliece-enhancing programmes,5651,children,83337
+Kilifi,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Kilifi,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Kilifi,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Kilifi,3,number of learners and teachers with learning and teaching materials,0,people,0
+Kilifi,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Kilifi,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Kilifi,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Kilifi,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Lamu,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Lamu,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Lamu,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Lamu,3,number of learners and teachers with learning and teaching materials,0,people,0
+Lamu,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Lamu,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Lamu,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Lamu,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Nyeri,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Nyeri,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Nyeri,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Nyeri,3,number of learners and teachers with learning and teaching materials,0,people,0
+Nyeri,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Nyeri,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Nyeri,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Nyeri,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Kajiado,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Kajiado,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Kajiado,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Kajiado,3,number of learners and teachers with learning and teaching materials,0,people,0
+Kajiado,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Kajiado,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Kajiado,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Kajiado,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Embu,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Embu,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Embu,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Embu,3,number of learners and teachers with learning and teaching materials,0,people,0
+Embu,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Embu,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Embu,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Embu,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
+Taita Taveta,1,number of children and youth accessing ECD spaces/schools in drought-affected areas,0,children,0
+Taita Taveta,2,number of schools/ECD spaces with feeding programmes,0,schools,0
+Taita Taveta,2,number of schools/ECD spaces with feeding programmes,NA,children,0
+Taita Taveta,3,number of learners and teachers with learning and teaching materials,0,people,0
+Taita Taveta,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,0,schools,0
+Taita Taveta,4,number of schools with adequate quantities of safe water for drinking and personal hygiene,NA,children,0
+Taita Taveta,5,number of teachers/educaotrs trained on resilience-enhancing programmes,0,educators,0
+Taita Taveta,6,number of children and youth benefiting from resiliece-enhancing programmes,0,children,0
