@@ -1,15 +1,9 @@
 ---
 title: "Kenya Education in Emergencies Working Group -- Drought 5Ws Report"
 date:  "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  html_document:
-    code_download: yes
-    theme: readable
-    toc: yes
-    toc_depth: 4
-    toc_float: yes
-    number_sections: no
-    collapsed: no
+output: 
+  word_document:
+    toc: no
 always_allow_html: yes
 ---
 
@@ -110,47 +104,94 @@ sitrep_table %>%
 ```
 
 
-A total of 8,457 children (3,980 girls and 4,477 boys), have accessed basic education with UNICEF support during April 2023 in the counties of Baringo, Samburu, Turkana and West Pokot. Furthermore, 735 students (368 girls and 367 boys) in Turkana County benefited from distribution of school bags and education kits to support continuation of their learning. Cumulatively, 33,972 children (16,139 girls and 17,833 boys) have been reached in 2023, which is 4 per cent of the target). 
-
 
 # Sitrep 
 
-A total of 8,457 children (3,980 girls and 4,477 boys), have accessed basic education with UNICEF support during April 2023 in the counties of Baringo, Samburu, Turkana and West Pokot. 
-
 ```{r}
-eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
-                 lead_organisation == "UNICEF") %>% 
-  summarise(girls = sum(girls, na.rm = TRUE), 
+summarise_indicator <- function(tbl) {
+  tbl %>% 
+    summarise(girls = sum(girls, na.rm = TRUE), 
             boys = sum(boys, na.rm = TRUE), 
-            counties = n_distinct(adm1_pcode)) %>% 
-  mutate(total = girls + boys)
+            men = sum(men, na.rm = TRUE), 
+            women = sum(women, na.rm = TRUE), 
+            counties = n_distinct(adm1_pcode)) %>%
+    mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+    mutate(total = girls + boys + men + women)
+}
 
-eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
-                 lead_organisation == "UNICEF") %>% 
+list_counties <- function(tbl) {
+  tbl %>% 
+    distinct(county) %>% summarise(
+    counties = paste(county, collapse = ", ")) %>%
+    pull(counties)
+}
+
 ```
 
 
+```{r}
+indicator1 <- eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
+                 lead_organisation == "UNICEF") %>% 
+  summarise_indicator()
+
+indicator1_counties <- eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
+                 lead_organisation == "UNICEF") %>% 
+  list_counties()
+
+
+```
+
+A total of `r indicator1 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator1 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator1 %>% pull(boys) %>% format(big.mark = ",")` boys) have accessed basic education with UNICEF support during `r report_month`2023 in the counties of `r indicator1_counties`. 
+
+
+```{r}
+indicator3 <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "3") & 
+           lead_organisation == "UNICEF") %>% 
+  summarise_indicator()
+
+
+indicator3_counties <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "3") & 
+           lead_organisation == "UNICEF") %>%
+  list_counties()
+
+
+```
+
+
+
+Furthermore, `r indicator3 %>% pull(total) %>% format(big.mark = ",")` students (`r indicator3 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator3 %>% pull(boys) %>% format(big.mark = ",")` boys) in `r indicator3_counties` County benefited from distribution of school bags and education kits to support continuation of their learning. 
  
-Furthermore, 735 students (368 girls and 367 boys) in Turkana County benefited from distribution of school bags and education kits to support continuation of their learning. 
- 
+
 ```{r}
 eie %>% 
-  filter(month == "May" & str_detect(indicator, "3") & 
+  filter(month %in% report_month & str_detect(indicator, "5") & 
            lead_organisation == "UNICEF") %>% 
-  summarise(girls = sum(girls, na.rm = TRUE), 
-            boys = sum(boys, na.rm = TRUE), 
-            counties = n_distinct(adm1_pcode)) %>% 
-  mutate(total = girls + boys) 
+  summarise_indicator()
+
 
 ```
  
 
-To enhance quality of learning and support newly enrolled learners in drought affected counties, 639 teachers (254 men and 385 women) were trained on remedial and catchup pedagogical approaches, Mental Health and Psychosocial Support (MHSSP), Gender-Based Violence (GBV) and Guidance and Counselling (G&C). 
+To enhance quality of learning and support newly enrolled learners in drought affected counties, `r indicator5 %>% pull(total) %>% format(big.mark = ",")` teachers (`r indicator3 %>% pull(men) %>% format(big.mark = ",")` men and `r indicator3 %>% pull(women) %>% format(big.mark = ",")` women) were trained on remedial and catchup pedagogical approaches, Mental Health and Psychosocial Support (MHSSP), Gender-Based Violence (GBV) and Guidance and Counselling (G&C). 
 
- 
 
 UNICEF also supported the training of 94 (67 men and 27 women) members of the Enrolment Drive Committees (EDCs) and school Board of Management (BoM) in Baringo and Turkana counties on life skills, child safeguarding and their roles/responsibilities, child protection and referral mechanisms. 
 
  
+```{r}
+indicator6 <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "6") & 
+           lead_organisation == "UNICEF") %>% 
+  summarise_indicator()
 
-Furthermore, 2,453 children (1,337 girls and 1,116 boys) were supported to access mentorship and life skills sessions in Samburu, and Turkana counties, strengthening their resilience and their coping mechanisms to the impact of drought.
+indicator6_counties <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "6") & 
+           lead_organisation == "UNICEF") %>%
+  list_counties()
+```
+ 
+
+Furthermore, `r indicator3 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator3 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator3 %>% pull(boys) %>% format(big.mark = ",")` boys) in `r indicator3_counties` were supported to access mentorship and life skills sessions in `r indicator6_counties` counties, strengthening their resilience and their coping mechanisms to the impact of drought.
+
