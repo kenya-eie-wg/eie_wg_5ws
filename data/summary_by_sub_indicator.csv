@@ -1,0 +1,62 @@
+unicef_indicator,sub_indicator,value
+1. OOSC accessing formal education,indicator1_all_boys,22596
+1. OOSC accessing formal education,indicator1_all_girls,20888
+1. OOSC accessing formal education,indicator1_all_total,43484
+1. OOSC accessing formal education,indicator1_cwd_boys,521
+1. OOSC accessing formal education,indicator1_cwd_girls,600
+1. OOSC accessing formal education,indicator1_cwd_total,1121
+1. OOSC accessing formal education,indicator1_host_community_boys,21800
+1. OOSC accessing formal education,indicator1_host_community_girls,20249
+1. OOSC accessing formal education,indicator1_host_community_total,33349
+1. OOSC accessing formal education,indicator1_refugees_boys,796
+1. OOSC accessing formal education,indicator1_refugees_girls,639
+1. OOSC accessing formal education,indicator1_refugees_total,1435
+2. Children benefiting from child-friendly environment,indicator2_all_boys,8614
+2. Children benefiting from child-friendly environment,indicator2_all_girls,8224
+2. Children benefiting from child-friendly environment,indicator2_all_total,16838
+2. Children benefiting from child-friendly environment,indicator2_host_community_boys,8614
+2. Children benefiting from child-friendly environment,indicator2_host_community_girls,8224
+2. Children benefiting from child-friendly environment,indicator2_host_community_total,16838
+2. Children benefiting from child-friendly environment,indicator2_rehabiltated_latrines,10
+3. Children who receive assistance to continue learning,indicator3_all_boys,50747
+3. Children who receive assistance to continue learning,indicator3_all_girls,39350
+3. Children who receive assistance to continue learning,indicator3_all_total,90097
+3. Children who receive assistance to continue learning,indicator3_cwd_boys,457
+3. Children who receive assistance to continue learning,indicator3_cwd_girls,313
+3. Children who receive assistance to continue learning,indicator3_cwd_total,770
+3. Children who receive assistance to continue learning,indicator3_host_community_boys,11983
+3. Children who receive assistance to continue learning,indicator3_host_community_girls,12325
+3. Children who receive assistance to continue learning,indicator3_host_community_total,24308
+3. Children who receive assistance to continue learning,indicator3_refugees_boys,38764
+3. Children who receive assistance to continue learning,indicator3_refugees_girls,27025
+3. Children who receive assistance to continue learning,indicator3_refugees_total,65789
+4. Teachers trained resilience programmes,indicator4_all_female,710
+4. Teachers trained resilience programmes,indicator4_all_male,878
+4. Teachers trained resilience programmes,indicator4_all_total,1588
+4. Teachers trained resilience programmes,indicator4_host_community_female,509
+4. Teachers trained resilience programmes,indicator4_host_community_male,686
+4. Teachers trained resilience programmes,indicator4_host_community_total,677
+4. Teachers trained resilience programmes,indicator4_refugees_female,201
+4. Teachers trained resilience programmes,indicator4_refugees_male,192
+4. Teachers trained resilience programmes,indicator4_refugees_total,393
+5. BoM trained resilience programmes,indicator5_all_female,1949
+5. BoM trained resilience programmes,indicator5_all_male,2115
+5. BoM trained resilience programmes,indicator5_all_total,4064
+5. BoM trained resilience programmes,indicator5_host_community_female,1883
+5. BoM trained resilience programmes,indicator5_host_community_male,1886
+5. BoM trained resilience programmes,indicator5_host_community_total,3676
+5. BoM trained resilience programmes,indicator5_refugees_female,66
+5. BoM trained resilience programmes,indicator5_refugees_male,229
+5. BoM trained resilience programmes,indicator5_refugees_total,295
+6. Govt. officials trained,indicator6_all_female,106
+6. Govt. officials trained,indicator6_all_male,126
+6. Govt. officials trained,indicator6_all_total,232
+7. Children life skills mentorship,indicator7_all_boys,24488
+7. Children life skills mentorship,indicator7_all_girls,19723
+7. Children life skills mentorship,indicator7_beneficiary_type_total,44211
+7. Children life skills mentorship,indicator7_host_community_boys,8258
+7. Children life skills mentorship,indicator7_host_community_girls,11022
+7. Children life skills mentorship,indicator7_host_community_total,19280
+7. Children life skills mentorship,indicator7_refugees_boys,16230
+7. Children life skills mentorship,indicator7_refugees_girls,8701
+7. Children life skills mentorship,indicator7_refugees_total,24931

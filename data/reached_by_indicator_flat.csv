@@ -1,0 +1,116 @@
+county,indicator_short,April,February,January,March,May,June,county_target
+Baringo,1. Access ECD spaces/schools,254,371,166,317,169,NA,32205
+Baringo,2. Feeding programmes,1556,NA,NA,2729,NA,NA,251
+Baringo,2. Feeding programmes,1556,NA,NA,2729,NA,NA,46748
+Baringo,"4. Safe water, personal hygiene",769,NA,NA,NA,NA,NA,251
+Baringo,"4. Safe water, personal hygiene",769,NA,NA,NA,NA,NA,46748
+Garissa,1. Access ECD spaces/schools,NA,1595,NA,NA,1914,1541,231528
+Isiolo,1. Access ECD spaces/schools,977,158,1530,NA,833,561,20930
+Kajiado,2. Feeding programmes,NA,NA,202,135,NA,NA,0
+Kajiado,2. Feeding programmes,NA,NA,202,135,NA,NA,NA
+Kajiado,1. Access ECD spaces/schools,NA,NA,NA,1094,1926,NA,0
+Kilifi,1. Access ECD spaces/schools,NA,NA,NA,757,89,NA,0
+Kilifi,2. Feeding programmes,NA,NA,NA,6246,NA,NA,0
+Kilifi,2. Feeding programmes,NA,NA,NA,6246,NA,NA,NA
+Kwale,1. Access ECD spaces/schools,NA,NA,NA,442,359,NA,26885
+Lamu,"4. Safe water, personal hygiene",NA,2160,NA,NA,NA,NA,0
+Lamu,"4. Safe water, personal hygiene",NA,2160,NA,NA,NA,NA,NA
+Marsabit,1. Access ECD spaces/schools,NA,1000,2141,1600,NA,441,53800
+Marsabit,2. Feeding programmes,NA,NA,NA,NA,7763,1456,105
+Marsabit,2. Feeding programmes,NA,NA,NA,NA,7763,1456,30635
+Marsabit,"4. Safe water, personal hygiene",NA,NA,NA,NA,15095,NA,105
+Marsabit,"4. Safe water, personal hygiene",NA,NA,NA,NA,15095,NA,30635
+Meru,"4. Safe water, personal hygiene",NA,NA,NA,8469,650,NA,0
+Meru,"4. Safe water, personal hygiene",NA,NA,NA,8469,650,NA,NA
+Meru,2. Feeding programmes,NA,NA,NA,NA,6621,NA,0
+Meru,2. Feeding programmes,NA,NA,NA,NA,6621,NA,NA
+Narok,1. Access ECD spaces/schools,NA,NA,NA,813,200,NA,41510
+Narok,"4. Safe water, personal hygiene",NA,NA,NA,85,NA,NA,328
+Narok,"4. Safe water, personal hygiene",NA,NA,NA,85,NA,NA,113680
+Samburu,1. Access ECD spaces/schools,921,NA,87,1059,1580,130,51848
+Taita Taveta,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,169,0
+Tana River,1. Access ECD spaces/schools,NA,4175,NA,NA,557,390,24970
+Turkana,1. Access ECD spaces/schools,25316,6052,2342,22186,28919,2236,202912
+Turkana,2. Feeding programmes,18538,315,NA,2197,491,NA,165
+Turkana,2. Feeding programmes,18538,315,NA,2197,491,NA,56075
+Wajir,1. Access ECD spaces/schools,NA,6561,NA,361,403,322,213232
+West Pokot,1. Access ECD spaces/schools,2875,NA,280,1769,NA,1617,40035
+Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,165
+Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,56075
+Mandera,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,236376
+Mandera,2. Feeding programmes,NA,NA,NA,NA,NA,NA,215
+Mandera,2. Feeding programmes,NA,NA,NA,NA,NA,NA,74125
+Mandera,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,215
+Mandera,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,74125
+Garissa,2. Feeding programmes,NA,NA,NA,NA,NA,NA,101
+Garissa,2. Feeding programmes,NA,NA,NA,NA,NA,NA,22982
+Garissa,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,101
+Garissa,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,22982
+Wajir,2. Feeding programmes,NA,NA,NA,NA,NA,NA,152
+Wajir,2. Feeding programmes,NA,NA,NA,NA,NA,NA,37082
+Wajir,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,152
+Wajir,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,37082
+Samburu,2. Feeding programmes,NA,NA,NA,NA,NA,NA,108
+Samburu,2. Feeding programmes,NA,NA,NA,NA,NA,NA,23562
+Samburu,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,108
+Samburu,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,23562
+Isiolo,2. Feeding programmes,NA,NA,NA,NA,NA,NA,31
+Isiolo,2. Feeding programmes,NA,NA,NA,NA,NA,NA,6983
+Isiolo,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,31
+Isiolo,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,6983
+Tana River,2. Feeding programmes,NA,NA,NA,NA,NA,NA,61
+Tana River,2. Feeding programmes,NA,NA,NA,NA,NA,NA,16506
+Tana River,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,61
+Tana River,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,16506
+Kitui,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,16365
+Kitui,2. Feeding programmes,NA,NA,NA,NA,NA,NA,696
+Kitui,2. Feeding programmes,NA,NA,NA,NA,NA,NA,133912
+Kitui,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,696
+Kitui,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,133912
+Makueni,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,8555
+Makueni,2. Feeding programmes,NA,NA,NA,NA,NA,NA,463
+Makueni,2. Feeding programmes,NA,NA,NA,NA,NA,NA,115084
+Makueni,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,463
+Makueni,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,115084
+Laikipia,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,0
+Laikipia,2. Feeding programmes,NA,NA,NA,NA,NA,NA,0
+Laikipia,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA
+Laikipia,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Laikipia,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA
+Meru,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,0
+Tharaka Nithi,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,0
+Tharaka Nithi,2. Feeding programmes,NA,NA,NA,NA,NA,NA,0
+Tharaka Nithi,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA
+Tharaka Nithi,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Tharaka Nithi,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA
+West Pokot,2. Feeding programmes,NA,NA,NA,NA,NA,NA,201
+West Pokot,2. Feeding programmes,NA,NA,NA,NA,NA,NA,51693
+West Pokot,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,201
+West Pokot,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,51693
+Kwale,2. Feeding programmes,NA,NA,NA,NA,NA,NA,132
+Kwale,2. Feeding programmes,NA,NA,NA,NA,NA,NA,55580
+Kwale,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,132
+Kwale,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,55580
+Narok,2. Feeding programmes,NA,NA,NA,NA,NA,NA,328
+Narok,2. Feeding programmes,NA,NA,NA,NA,NA,NA,113680
+Kilifi,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Kilifi,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA
+Lamu,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,0
+Lamu,2. Feeding programmes,NA,NA,NA,NA,NA,NA,0
+Lamu,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA
+Nyeri,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,0
+Nyeri,2. Feeding programmes,NA,NA,NA,NA,NA,NA,0
+Nyeri,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA
+Nyeri,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Nyeri,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA
+Kajiado,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Kajiado,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA
+Embu,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,0
+Embu,2. Feeding programmes,NA,NA,NA,NA,NA,NA,0
+Embu,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA
+Embu,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Embu,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA
+Taita Taveta,2. Feeding programmes,NA,NA,NA,NA,NA,NA,0
+Taita Taveta,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA
+Taita Taveta,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,0
+Taita Taveta,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA

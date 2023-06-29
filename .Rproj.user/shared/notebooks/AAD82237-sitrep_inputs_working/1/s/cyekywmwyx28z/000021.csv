@@ -1,0 +1,66 @@
+"0","combined <- read_excel(""./data/unicef_internal/Monthly Education SitRep_Jun23_mohamed.xlsx"") %>% 
+  clean_messy_table() %>% 
+  rename(mohamed_value = value) %>% 
+  left_join(read_excel(""./data/unicef_internal/June  Monthly Education SitRep_Jun23 Kwale Kilifi Kajiado and Narok.xlsx"") %>% 
+              clean_messy_table() %>% 
+              rename(beth_value = value), 
+            by = c(""month"", ""county"", ""indicator"")) %>% 
+  left_join(read_excel(""./data/unicef_internal/Monthly Education SitRep_Jun2326062023_osman.xlsx"") %>% 
+              clean_messy_table() %>% 
+              rename(osman_value = value), 
+            by = c(""month"", ""county"", ""indicator"")) %>% 
+  mutate(value = case_when(!is.na(mohamed_value) & !is.na(beth_value) & !is.na(osman_value) ~ 
+                             pmax(mohamed_value, beth_value, osman_value),
+                           !is.na(mohamed_value) & !is.na(beth_value) ~ 
+                             pmax(mohamed_value, beth_value), 
+                           !is.na(mohamed_value) & !is.na(osman_value) ~ 
+                             pmax(mohamed_value, osman_value),
+                           !is.na(beth_value) & !is.na(osman_value) ~ 
+                             pmax(beth_value, osman_value),
+                           is.na(mohamed_value) & is.na(beth_value) ~ osman_value, 
+                           is.na(osman_value) & is.na(beth_value) ~ mohamed_value, 
+                           is.na(osman_value) & is.na(mohamed_value) ~ beth_value, 
+                           TRUE ~ NA_integer_)) %>% 
+  mutate(sex_modifier = case_when(str_detect(indicator, ""girls|women|Women|Girls|Female|female"") ~ ""female"", 
+                                  str_detect(indicator, ""boys|Boys|men|Men|Male|male"") ~ ""male"", 
+                                  str_detect(indicator, ""total"") ~ ""total""), 
+         beneficiary_group = case_when(str_detect(indicator, ""host_community"") ~ ""host_community"", 
+                                       str_detect(indicator, ""idps"") ~ ""idps"", 
+                                       str_detect(indicator, ""refugees"") ~ ""refugees"",
+                                       str_detect(indicator, ""all"") ~ ""all""), 
+         age_modifier = case_when(str_detect(indicator, ""boys|girls"") ~ ""children"", 
+                                  str_detect(indicator, ""Male|male|Female|female"") ~ ""adults"", 
+                                  str_detect(indicator, ""all"") ~ ""total"")) %>% 
+  mutate(unicef_indicator_number = as.factor(parse_number(indicator)), 
+         unicef_indicator = case_when(str_detect(indicator, ""1"") ~ 
+                                       ""1. OOSC accessing formal education"", 
+                                     str_detect(indicator, ""2"") ~ 
+                                       ""2. Children benefiting from child-friendly environment"", 
+                                     str_detect(indicator, ""3"") ~ 
+                                       ""3. Children who receive assistance to continue learning"", 
+                                     str_detect(indicator, ""4"") ~ 
+                                       ""4. Teachers trained resilience programmes"", 
+                                     str_detect(indicator, ""5"") ~ 
+                                       ""5. BoM trained resilience programmes"", 
+                                     str_detect(indicator, ""6"") ~ 
+                                       ""6. Govt. officials trained"", 
+                                     str_detect(indicator, ""7"") ~ 
+                                       ""7. Children life skills mentorship"")) %>% 
+  rename(sub_indicator = indicator) %>% 
+  select(-mohamed_value, -beth_value, -osman_value)
+"
+"2","New names:"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `value = as.numeric(value)`.[39m
+Caused by warning:
+[33m![39m NAs introduced by coercion"
+"2","New names:"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `value = as.numeric(value)`.[39m
+Caused by warning:
+[33m![39m NAs introduced by coercion"
+"2","New names:"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `value = as.numeric(value)`.[39m
+Caused by warning:
+[33m![39m NAs introduced by coercion"

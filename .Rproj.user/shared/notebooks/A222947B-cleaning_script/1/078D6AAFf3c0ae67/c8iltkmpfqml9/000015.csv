@@ -1,0 +1,53 @@
+"0","targets <- read_excel(""./data/5Ws_2023/Consolidated 5W_ Education_Mar 2023 Report.xlsx"", 
+           sheet = ""Reach by Indicator"", 
+           skip = 1) %>% 
+  clean_names() %>% 
+  select(x1, x2, 
+         contains(""target"")) %>% 
+  setNames(c(""county"", 
+           ""county_overall_target"", 
+           ""indicator1_target_children"", 
+           ""indicator2_target"", 
+           ""indicator3_target_people"", 
+           ""indicator4_target"", 
+           ""indicator5_target_educators"", 
+           ""indicator6_target_children"")) %>% 
+  slice(0:23) %>% 
+  separate(indicator2_target, into = c(""indicator2_target_schools"", ""indicator2_target_children""), sep = ""\\("") %>%
+  separate(indicator4_target, into = c(""indicator4_target_schools"", ""indicator4_target_children""), sep = ""\\("") %>%
+  mutate_at(vars(indicator2_target_schools, 
+                 indicator2_target_children, 
+                 indicator4_target_schools, 
+                 indicator4_target_children), 
+            ~ parse_number(.)) %>% 
+  pivot_longer(cols = indicator1_target_children:indicator6_target_children, 
+               names_to = ""type"", 
+               values_to = ""county_target"") %>% 
+  mutate(indicator_number = parse_number(type), 
+         indicator = case_when(
+           str_detect(type, ""1"") ~ ""number of children and youth accessing ECD spaces/schools in drought-affected areas"", 
+           str_detect(type, ""2"") ~ ""number of schools/ECD spaces with feeding programmes"", 
+           str_detect(type, ""3"") ~ ""number of learners and teachers with learning and teaching materials"", 
+           str_detect(type, ""4"") ~ ""number of schools with adequate quantities of safe water for drinking and personal hygiene"", 
+           str_detect(type, ""5"") ~ ""number of teachers/educaotrs trained on resilience-enhancing programmes"", 
+           str_detect(type, ""6"") ~ ""number of children and youth benefiting from resiliece-enhancing programmes"")) %>% 
+  mutate(target_unit = str_sub(type, start = 19L)) %>% 
+  select(county, indicator_number, indicator, county_target, target_unit, county_overall_target) %>% 
+  mutate(indicator_short = case_when(
+    str_detect(indicator, ""children and youth accessing ECD spaces"") ~ 
+      ""1. Access ECD spaces/schools"", 
+    str_detect(indicator, ""feeding programmes"") ~ 
+      ""2. Feeding programmes"", 
+    # Not sure what's wrong with the text of this indicator
+    str_detect(indicator, ""3"") ~ ""3. Teaching materials"", 
+    str_detect(indicator, ""personal hygiene"") ~ 
+      ""4. Safe water, personal hygiene"", 
+    str_detect(indicator, ""educators trained on resilience"") ~ 
+      ""5. Educators resilience enhancing"", 
+    str_detect(indicator, ""children and youth benfiting from resilience"") ~ 
+      ""6. Children resilience enhancing""
+  ))
+"
+"2","New names:"
+"2","Warning: Expected 2 pieces. Missing pieces filled with `NA` in 9 rows [12, 13, 14, 18, 19, 20, 21, 22, 23]."
+"2","Warning: Expected 2 pieces. Missing pieces filled with `NA` in 9 rows [12, 13, 14, 18, 19, 20, 21, 22, 23]."

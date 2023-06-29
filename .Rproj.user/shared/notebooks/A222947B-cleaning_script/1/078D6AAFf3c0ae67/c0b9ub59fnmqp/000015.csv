@@ -1,0 +1,12 @@
+"0","eie %>% 
+  filter(activity_status == ""Completed"") %>% 
+  group_by(county, month, indicator_short) %>% 
+  summarise(reach = sum(total_reached)) %>% 
+  pivot_wider(names_from = month, values_from = reach) %>% 
+  right_join(targets %>% 
+               filter(!is.na(indicator_short)) %>%
+               select(county, county_target, indicator_short), 
+             by = c(""county"", ""indicator_short"")) %>% 
+  write_csv(""reached_by_indicator_flat.csv"")
+"
+"2","`summarise()` has grouped output by 'county', 'month'. You can override using the `.groups` argument."

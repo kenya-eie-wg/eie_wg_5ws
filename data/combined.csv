@@ -1,0 +1,536 @@
+month,county,sub_indicator,value,sex_modifier,beneficiary_group,age_modifier,unicef_indicator_number,unicef_indicator
+January, Baringo,indicator1_all_total,163,total,all,total,1,1. OOSC accessing formal education
+January, Baringo,indicator1_all_boys,97,male,all,children,1,1. OOSC accessing formal education
+January, Baringo,indicator1_all_girls,66,female,all,children,1,1. OOSC accessing formal education
+January, Baringo,indicator1_host_community_total,163,total,host_community,NA,1,1. OOSC accessing formal education
+January, Baringo,indicator1_host_community_boys,97,male,host_community,children,1,1. OOSC accessing formal education
+January, Baringo,indicator1_host_community_girls,66,female,host_community,children,1,1. OOSC accessing formal education
+January, Baringo,indicator5_all_total,133,total,all,total,5,5. BoM trained resilience programmes
+January, Baringo,indicator5_all_male,105,male,all,adults,5,5. BoM trained resilience programmes
+January, Baringo,indicator5_all_female,28,female,all,adults,5,5. BoM trained resilience programmes
+January, Baringo,indicator5_host_community_total,133,total,host_community,NA,5,5. BoM trained resilience programmes
+January, Baringo,indicator5_host_community_male,105,male,host_community,adults,5,5. BoM trained resilience programmes
+January, Baringo,indicator5_host_community_female,28,female,host_community,adults,5,5. BoM trained resilience programmes
+March, Baringo,indicator1_all_total,317,total,all,total,1,1. OOSC accessing formal education
+March, Baringo,indicator1_all_boys,136,male,all,children,1,1. OOSC accessing formal education
+March, Baringo,indicator1_all_girls,181,female,all,children,1,1. OOSC accessing formal education
+March, Baringo,indicator1_host_community_total,317,total,host_community,NA,1,1. OOSC accessing formal education
+March, Baringo,indicator1_host_community_boys,136,male,host_community,children,1,1. OOSC accessing formal education
+March, Baringo,indicator1_host_community_girls,181,female,host_community,children,1,1. OOSC accessing formal education
+March, Baringo,indicator4_all_total,20,total,all,total,4,4. Teachers trained resilience programmes
+March, Baringo,indicator4_all_male,11,male,all,adults,4,4. Teachers trained resilience programmes
+March, Baringo,indicator4_all_female,9,female,all,adults,4,4. Teachers trained resilience programmes
+March, Baringo,indicator4_host_community_total,20,total,host_community,NA,4,4. Teachers trained resilience programmes
+March, Baringo,indicator4_host_community_male,11,male,host_community,adults,4,4. Teachers trained resilience programmes
+March, Baringo,indicator4_host_community_female,9,female,host_community,adults,4,4. Teachers trained resilience programmes
+March, Baringo,indicator5_all_total,1379,total,all,total,5,5. BoM trained resilience programmes
+March, Baringo,indicator5_all_male,714,male,all,adults,5,5. BoM trained resilience programmes
+March, Baringo,indicator5_all_female,665,female,all,adults,5,5. BoM trained resilience programmes
+March, Baringo,indicator5_host_community_total,1379,total,host_community,NA,5,5. BoM trained resilience programmes
+March, Baringo,indicator5_host_community_male,714,male,host_community,adults,5,5. BoM trained resilience programmes
+March, Baringo,indicator5_host_community_female,665,female,host_community,adults,5,5. BoM trained resilience programmes
+April, Baringo,indicator1_all_total,254,total,all,total,1,1. OOSC accessing formal education
+April, Baringo,indicator1_all_boys,157,male,all,children,1,1. OOSC accessing formal education
+April, Baringo,indicator1_all_girls,97,female,all,children,1,1. OOSC accessing formal education
+April, Baringo,indicator1_host_community_boys,157,male,host_community,children,1,1. OOSC accessing formal education
+April, Baringo,indicator1_host_community_girls,97,female,host_community,children,1,1. OOSC accessing formal education
+April, Baringo,indicator4_all_total,304,total,all,total,4,4. Teachers trained resilience programmes
+April, Baringo,indicator4_all_male,161,male,all,adults,4,4. Teachers trained resilience programmes
+April, Baringo,indicator4_all_female,143,female,all,adults,4,4. Teachers trained resilience programmes
+April, Baringo,indicator4_host_community_total,304,total,host_community,NA,4,4. Teachers trained resilience programmes
+April, Baringo,indicator4_host_community_male,161,male,host_community,adults,4,4. Teachers trained resilience programmes
+April, Baringo,indicator4_host_community_female,143,female,host_community,adults,4,4. Teachers trained resilience programmes
+April, Baringo,indicator5_all_total,47,total,all,total,5,5. BoM trained resilience programmes
+April, Baringo,indicator5_all_male,23,male,all,adults,5,5. BoM trained resilience programmes
+April, Baringo,indicator5_all_female,24,female,all,adults,5,5. BoM trained resilience programmes
+April, Baringo,indicator5_host_community_total,47,total,host_community,NA,5,5. BoM trained resilience programmes
+April, Baringo,indicator5_host_community_male,23,male,host_community,adults,5,5. BoM trained resilience programmes
+April, Baringo,indicator5_host_community_female,24,female,host_community,adults,5,5. BoM trained resilience programmes
+June, Baringo,indicator1_all_total,83,total,all,total,1,1. OOSC accessing formal education
+June, Baringo,indicator1_all_boys,36,male,all,children,1,1. OOSC accessing formal education
+June, Baringo,indicator1_all_girls,47,female,all,children,1,1. OOSC accessing formal education
+June, Baringo,indicator1_host_community_boys,36,male,host_community,children,1,1. OOSC accessing formal education
+June, Baringo,indicator1_host_community_girls,47,female,host_community,children,1,1. OOSC accessing formal education
+January,Garissa,indicator5_all_total,188,total,all,total,5,5. BoM trained resilience programmes
+January,Garissa,indicator5_all_male,106,male,all,adults,5,5. BoM trained resilience programmes
+January,Garissa,indicator5_all_female,82,female,all,adults,5,5. BoM trained resilience programmes
+January,Garissa,indicator5_host_community_total,188,total,host_community,NA,5,5. BoM trained resilience programmes
+January,Garissa,indicator5_host_community_male,106,male,host_community,adults,5,5. BoM trained resilience programmes
+January,Garissa,indicator5_host_community_female,82,female,host_community,adults,5,5. BoM trained resilience programmes
+February,Garissa,indicator1_all_total,1242,total,all,total,1,1. OOSC accessing formal education
+February,Garissa,indicator1_all_boys,575,male,all,children,1,1. OOSC accessing formal education
+February,Garissa,indicator1_all_girls,667,female,all,children,1,1. OOSC accessing formal education
+February,Garissa,indicator1_host_community_total,1242,total,host_community,NA,1,1. OOSC accessing formal education
+February,Garissa,indicator1_host_community_boys,575,male,host_community,children,1,1. OOSC accessing formal education
+February,Garissa,indicator1_host_community_girls,667,female,host_community,children,1,1. OOSC accessing formal education
+January, Isiolo,indicator1_all_total,1530,total,all,total,1,1. OOSC accessing formal education
+January, Isiolo,indicator1_all_boys,784,male,all,children,1,1. OOSC accessing formal education
+January, Isiolo,indicator1_all_girls,746,female,all,children,1,1. OOSC accessing formal education
+January, Isiolo,indicator1_host_community_total,1530,total,host_community,NA,1,1. OOSC accessing formal education
+January, Isiolo,indicator1_host_community_boys,784,male,host_community,children,1,1. OOSC accessing formal education
+January, Isiolo,indicator1_host_community_girls,746,female,host_community,children,1,1. OOSC accessing formal education
+January, Isiolo,indicator5_all_total,175,total,all,total,5,5. BoM trained resilience programmes
+January, Isiolo,indicator5_all_male,94,male,all,adults,5,5. BoM trained resilience programmes
+January, Isiolo,indicator5_all_female,81,female,all,adults,5,5. BoM trained resilience programmes
+January, Isiolo,indicator5_host_community_total,175,total,host_community,NA,5,5. BoM trained resilience programmes
+January, Isiolo,indicator5_host_community_male,94,male,host_community,adults,5,5. BoM trained resilience programmes
+January, Isiolo,indicator5_host_community_female,81,female,host_community,adults,5,5. BoM trained resilience programmes
+January, Isiolo,indicator7_beneficiary_type_total,682,total,NA,NA,7,7. Children life skills mentorship
+January, Isiolo,indicator7_all_boys,313,male,all,children,7,7. Children life skills mentorship
+January, Isiolo,indicator7_all_girls,369,female,all,children,7,7. Children life skills mentorship
+January, Isiolo,indicator7_host_community_total,682,total,host_community,NA,7,7. Children life skills mentorship
+January, Isiolo,indicator7_host_community_boys,313,male,host_community,children,7,7. Children life skills mentorship
+January, Isiolo,indicator7_host_community_girls,369,female,host_community,children,7,7. Children life skills mentorship
+February, Isiolo,indicator1_all_total,158,total,all,total,1,1. OOSC accessing formal education
+February, Isiolo,indicator1_all_boys,101,male,all,children,1,1. OOSC accessing formal education
+February, Isiolo,indicator1_all_girls,57,female,all,children,1,1. OOSC accessing formal education
+February, Isiolo,indicator1_host_community_total,158,total,host_community,NA,1,1. OOSC accessing formal education
+February, Isiolo,indicator1_host_community_boys,101,male,host_community,children,1,1. OOSC accessing formal education
+February, Isiolo,indicator1_host_community_girls,57,female,host_community,children,1,1. OOSC accessing formal education
+May, Isiolo,indicator1_all_total,833,total,all,total,1,1. OOSC accessing formal education
+May, Isiolo,indicator1_all_boys,414,male,all,children,1,1. OOSC accessing formal education
+May, Isiolo,indicator1_all_girls,419,female,all,children,1,1. OOSC accessing formal education
+May, Isiolo,indicator1_host_community_boys,414,male,host_community,children,1,1. OOSC accessing formal education
+May, Isiolo,indicator1_host_community_girls,419,female,host_community,children,1,1. OOSC accessing formal education
+May, Isiolo,indicator4_all_total,71,total,all,total,4,4. Teachers trained resilience programmes
+May, Isiolo,indicator4_all_male,28,male,all,adults,4,4. Teachers trained resilience programmes
+May, Isiolo,indicator4_all_female,43,female,all,adults,4,4. Teachers trained resilience programmes
+May, Isiolo,indicator4_host_community_total,71,total,host_community,NA,4,4. Teachers trained resilience programmes
+May, Isiolo,indicator4_host_community_male,28,male,host_community,adults,4,4. Teachers trained resilience programmes
+May, Isiolo,indicator4_host_community_female,43,female,host_community,adults,4,4. Teachers trained resilience programmes
+March, Kajiado,indicator1_all_total,1094,total,all,total,1,1. OOSC accessing formal education
+March, Kajiado,indicator1_all_boys,560,male,all,children,1,1. OOSC accessing formal education
+March, Kajiado,indicator1_all_girls,534,female,all,children,1,1. OOSC accessing formal education
+March, Kajiado,indicator1_host_community_total,1094,total,host_community,NA,1,1. OOSC accessing formal education
+March, Kajiado,indicator1_host_community_boys,560,male,host_community,children,1,1. OOSC accessing formal education
+March, Kajiado,indicator1_host_community_girls,534,female,host_community,children,1,1. OOSC accessing formal education
+March, Kajiado,indicator5_all_total,83,total,all,total,5,5. BoM trained resilience programmes
+March, Kajiado,indicator5_all_male,27,male,all,adults,5,5. BoM trained resilience programmes
+March, Kajiado,indicator5_all_female,56,female,all,adults,5,5. BoM trained resilience programmes
+March, Kajiado,indicator5_host_community_total,83,total,host_community,NA,5,5. BoM trained resilience programmes
+March, Kajiado,indicator5_host_community_male,27,male,host_community,adults,5,5. BoM trained resilience programmes
+March, Kajiado,indicator5_host_community_female,56,female,host_community,adults,5,5. BoM trained resilience programmes
+March, Kajiado,indicator7_beneficiary_type_total,2097,total,NA,NA,7,7. Children life skills mentorship
+March, Kajiado,indicator7_all_boys,1112,male,all,children,7,7. Children life skills mentorship
+March, Kajiado,indicator7_all_girls,985,female,all,children,7,7. Children life skills mentorship
+March, Kajiado,indicator7_host_community_total,2097,total,host_community,NA,7,7. Children life skills mentorship
+March, Kajiado,indicator7_host_community_boys,1112,male,host_community,children,7,7. Children life skills mentorship
+March, Kajiado,indicator7_host_community_girls,985,female,host_community,children,7,7. Children life skills mentorship
+May, Kajiado,indicator1_all_total,1926,total,all,total,1,1. OOSC accessing formal education
+May, Kajiado,indicator1_all_boys,987,male,all,children,1,1. OOSC accessing formal education
+May, Kajiado,indicator1_all_girls,939,female,all,children,1,1. OOSC accessing formal education
+May, Kajiado,indicator1_host_community_total,1926,total,host_community,NA,1,1. OOSC accessing formal education
+May, Kajiado,indicator1_host_community_boys,987,male,host_community,children,1,1. OOSC accessing formal education
+May, Kajiado,indicator1_host_community_girls,939,female,host_community,children,1,1. OOSC accessing formal education
+May, Kajiado,indicator7_beneficiary_type_total,3288,total,NA,NA,7,7. Children life skills mentorship
+May, Kajiado,indicator7_all_boys,910,male,all,children,7,7. Children life skills mentorship
+May, Kajiado,indicator7_all_girls,2378,female,all,children,7,7. Children life skills mentorship
+May, Kajiado,indicator7_host_community_total,3288,total,host_community,NA,7,7. Children life skills mentorship
+May, Kajiado,indicator7_host_community_boys,910,male,host_community,children,7,7. Children life skills mentorship
+May, Kajiado,indicator7_host_community_girls,2378,female,host_community,children,7,7. Children life skills mentorship
+March, Kilifi,indicator1_all_total,757,total,all,total,1,1. OOSC accessing formal education
+March, Kilifi,indicator1_all_boys,400,male,all,children,1,1. OOSC accessing formal education
+March, Kilifi,indicator1_all_girls,357,female,all,children,1,1. OOSC accessing formal education
+March, Kilifi,indicator1_host_community_total,757,total,host_community,NA,1,1. OOSC accessing formal education
+March, Kilifi,indicator1_host_community_boys,400,male,host_community,children,1,1. OOSC accessing formal education
+March, Kilifi,indicator1_host_community_girls,357,female,host_community,children,1,1. OOSC accessing formal education
+March, Kilifi,indicator5_all_total,64,total,all,total,5,5. BoM trained resilience programmes
+March, Kilifi,indicator5_all_male,32,male,all,adults,5,5. BoM trained resilience programmes
+March, Kilifi,indicator5_all_female,32,female,all,adults,5,5. BoM trained resilience programmes
+March, Kilifi,indicator5_host_community_total,64,total,host_community,NA,5,5. BoM trained resilience programmes
+March, Kilifi,indicator5_host_community_male,32,male,host_community,adults,5,5. BoM trained resilience programmes
+March, Kilifi,indicator5_host_community_female,32,female,host_community,adults,5,5. BoM trained resilience programmes
+March, Kilifi,indicator7_beneficiary_type_total,788,total,NA,NA,7,7. Children life skills mentorship
+March, Kilifi,indicator7_all_boys,160,male,all,children,7,7. Children life skills mentorship
+March, Kilifi,indicator7_all_girls,628,female,all,children,7,7. Children life skills mentorship
+March, Kilifi,indicator7_host_community_total,788,total,host_community,NA,7,7. Children life skills mentorship
+March, Kilifi,indicator7_host_community_boys,160,male,host_community,children,7,7. Children life skills mentorship
+March, Kilifi,indicator7_host_community_girls,628,female,host_community,children,7,7. Children life skills mentorship
+May, Kilifi,indicator1_all_total,89,total,all,total,1,1. OOSC accessing formal education
+May, Kilifi,indicator1_all_boys,52,male,all,children,1,1. OOSC accessing formal education
+May, Kilifi,indicator1_all_girls,37,female,all,children,1,1. OOSC accessing formal education
+May, Kilifi,indicator1_host_community_total,89,total,host_community,NA,1,1. OOSC accessing formal education
+May, Kilifi,indicator1_host_community_boys,52,male,host_community,children,1,1. OOSC accessing formal education
+May, Kilifi,indicator1_host_community_girls,37,female,host_community,children,1,1. OOSC accessing formal education
+May, Kilifi,indicator7_beneficiary_type_total,89,total,NA,NA,7,7. Children life skills mentorship
+May, Kilifi,indicator7_all_boys,52,male,all,children,7,7. Children life skills mentorship
+May, Kilifi,indicator7_all_girls,37,female,all,children,7,7. Children life skills mentorship
+May, Kilifi,indicator7_host_community_total,89,total,host_community,NA,7,7. Children life skills mentorship
+May, Kilifi,indicator7_host_community_boys,52,male,host_community,children,7,7. Children life skills mentorship
+May, Kilifi,indicator7_host_community_girls,37,female,host_community,children,7,7. Children life skills mentorship
+March, Kwale,indicator1_all_total,442,total,all,total,1,1. OOSC accessing formal education
+March, Kwale,indicator1_all_boys,200,male,all,children,1,1. OOSC accessing formal education
+March, Kwale,indicator1_all_girls,242,female,all,children,1,1. OOSC accessing formal education
+March, Kwale,indicator1_host_community_total,442,total,host_community,NA,1,1. OOSC accessing formal education
+March, Kwale,indicator1_host_community_boys,200,male,host_community,children,1,1. OOSC accessing formal education
+March, Kwale,indicator1_host_community_girls,242,female,host_community,children,1,1. OOSC accessing formal education
+March, Kwale,indicator7_beneficiary_type_total,2000,total,NA,NA,7,7. Children life skills mentorship
+March, Kwale,indicator7_all_boys,1200,male,all,children,7,7. Children life skills mentorship
+March, Kwale,indicator7_all_girls,800,female,all,children,7,7. Children life skills mentorship
+March, Kwale,indicator7_host_community_total,2000,total,host_community,NA,7,7. Children life skills mentorship
+March, Kwale,indicator7_host_community_boys,1200,male,host_community,children,7,7. Children life skills mentorship
+March, Kwale,indicator7_host_community_girls,800,female,host_community,children,7,7. Children life skills mentorship
+May, Kwale,indicator1_all_total,359,total,all,total,1,1. OOSC accessing formal education
+May, Kwale,indicator1_all_boys,200,male,all,children,1,1. OOSC accessing formal education
+May, Kwale,indicator1_all_girls,159,female,all,children,1,1. OOSC accessing formal education
+May, Kwale,indicator1_host_community_total,359,total,host_community,NA,1,1. OOSC accessing formal education
+May, Kwale,indicator1_host_community_boys,200,male,host_community,children,1,1. OOSC accessing formal education
+May, Kwale,indicator1_host_community_girls,159,female,host_community,children,1,1. OOSC accessing formal education
+March, Mandera,indicator3_all_total,600,total,all,total,3,3. Children who receive assistance to continue learning
+March, Mandera,indicator3_all_boys,360,male,all,children,3,3. Children who receive assistance to continue learning
+March, Mandera,indicator3_all_girls,240,female,all,children,3,3. Children who receive assistance to continue learning
+March, Mandera,indicator3_host_community_total,600,total,host_community,NA,3,3. Children who receive assistance to continue learning
+March, Mandera,indicator3_host_community_boys,360,male,host_community,children,3,3. Children who receive assistance to continue learning
+March, Mandera,indicator3_host_community_girls,240,female,host_community,children,3,3. Children who receive assistance to continue learning
+March, Mandera,indicator4_all_total,150,total,all,total,4,4. Teachers trained resilience programmes
+March, Mandera,indicator4_all_male,139,male,all,adults,4,4. Teachers trained resilience programmes
+March, Mandera,indicator4_all_female,11,female,all,adults,4,4. Teachers trained resilience programmes
+March, Mandera,indicator4_host_community_total,150,total,host_community,NA,4,4. Teachers trained resilience programmes
+March, Mandera,indicator4_host_community_male,139,male,host_community,adults,4,4. Teachers trained resilience programmes
+March, Mandera,indicator4_host_community_female,11,female,host_community,adults,4,4. Teachers trained resilience programmes
+January, Marsabit,indicator1_all_total,500,total,all,total,1,1. OOSC accessing formal education
+January, Marsabit,indicator1_all_boys,271,male,all,children,1,1. OOSC accessing formal education
+January, Marsabit,indicator1_all_girls,229,female,all,children,1,1. OOSC accessing formal education
+January, Marsabit,indicator1_host_community_total,500,total,host_community,NA,1,1. OOSC accessing formal education
+January, Marsabit,indicator1_host_community_boys,271,male,host_community,children,1,1. OOSC accessing formal education
+January, Marsabit,indicator1_host_community_girls,229,female,host_community,children,1,1. OOSC accessing formal education
+January, Marsabit,indicator2_all_total,2548,total,all,total,2,2. Children benefiting from child-friendly environment
+January, Marsabit,indicator2_all_boys,1303,male,all,children,2,2. Children benefiting from child-friendly environment
+January, Marsabit,indicator2_all_girls,1245,female,all,children,2,2. Children benefiting from child-friendly environment
+January, Marsabit,indicator2_host_community_total,2548,total,host_community,NA,2,2. Children benefiting from child-friendly environment
+January, Marsabit,indicator2_host_community_boys,1303,male,host_community,children,2,2. Children benefiting from child-friendly environment
+January, Marsabit,indicator2_host_community_girls,1245,female,host_community,children,2,2. Children benefiting from child-friendly environment
+January, Marsabit,indicator2_rehabiltated_latrines,10,NA,NA,NA,2,2. Children benefiting from child-friendly environment
+February, Marsabit,indicator1_all_total,1000,total,all,total,1,1. OOSC accessing formal education
+February, Marsabit,indicator1_all_boys,646,male,all,children,1,1. OOSC accessing formal education
+February, Marsabit,indicator1_all_girls,354,female,all,children,1,1. OOSC accessing formal education
+February, Marsabit,indicator1_host_community_total,1000,total,host_community,NA,1,1. OOSC accessing formal education
+February, Marsabit,indicator1_host_community_boys,646,male,host_community,children,1,1. OOSC accessing formal education
+February, Marsabit,indicator1_host_community_girls,354,female,host_community,children,1,1. OOSC accessing formal education
+February, Marsabit,indicator5_all_total,93,total,all,total,5,5. BoM trained resilience programmes
+February, Marsabit,indicator5_all_male,83,male,all,adults,5,5. BoM trained resilience programmes
+February, Marsabit,indicator5_all_female,10,female,all,adults,5,5. BoM trained resilience programmes
+February, Marsabit,indicator5_host_community_male,83,male,host_community,adults,5,5. BoM trained resilience programmes
+February, Marsabit,indicator5_host_community_female,10,female,host_community,adults,5,5. BoM trained resilience programmes
+March, Marsabit,indicator1_all_total,1600,total,all,total,1,1. OOSC accessing formal education
+March, Marsabit,indicator1_all_boys,1003,male,all,children,1,1. OOSC accessing formal education
+March, Marsabit,indicator1_all_girls,597,female,all,children,1,1. OOSC accessing formal education
+March, Marsabit,indicator1_host_community_total,1600,total,host_community,NA,1,1. OOSC accessing formal education
+March, Marsabit,indicator1_host_community_boys,1003,male,host_community,children,1,1. OOSC accessing formal education
+March, Marsabit,indicator1_host_community_girls,597,female,host_community,children,1,1. OOSC accessing formal education
+March, Marsabit,indicator5_all_total,55,total,all,total,5,5. BoM trained resilience programmes
+March, Marsabit,indicator5_all_male,40,male,all,adults,5,5. BoM trained resilience programmes
+March, Marsabit,indicator5_all_female,15,female,all,adults,5,5. BoM trained resilience programmes
+March, Marsabit,indicator5_host_community_total,55,total,host_community,NA,5,5. BoM trained resilience programmes
+March, Marsabit,indicator5_host_community_male,40,male,host_community,adults,5,5. BoM trained resilience programmes
+March, Marsabit,indicator5_host_community_female,15,female,host_community,adults,5,5. BoM trained resilience programmes
+May, Marsabit,indicator2_all_total,14290,total,all,total,2,2. Children benefiting from child-friendly environment
+May, Marsabit,indicator2_all_boys,7311,male,all,children,2,2. Children benefiting from child-friendly environment
+May, Marsabit,indicator2_all_girls,6979,female,all,children,2,2. Children benefiting from child-friendly environment
+May, Marsabit,indicator2_host_community_total,14290,total,host_community,NA,2,2. Children benefiting from child-friendly environment
+May, Marsabit,indicator2_host_community_boys,7311,male,host_community,children,2,2. Children benefiting from child-friendly environment
+May, Marsabit,indicator2_host_community_girls,6979,female,host_community,children,2,2. Children benefiting from child-friendly environment
+May, Marsabit,indicator3_all_total,19720,total,all,total,3,3. Children who receive assistance to continue learning
+May, Marsabit,indicator3_all_boys,9431,male,all,children,3,3. Children who receive assistance to continue learning
+May, Marsabit,indicator3_all_girls,10289,female,all,children,3,3. Children who receive assistance to continue learning
+May, Marsabit,indicator3_host_community_total,19720,total,host_community,NA,3,3. Children who receive assistance to continue learning
+May, Marsabit,indicator3_host_community_boys,9431,male,host_community,children,3,3. Children who receive assistance to continue learning
+May, Marsabit,indicator3_host_community_girls,10289,female,host_community,children,3,3. Children who receive assistance to continue learning
+March, Narok,indicator1_all_total,813,total,all,total,1,1. OOSC accessing formal education
+March, Narok,indicator1_all_boys,487,male,all,children,1,1. OOSC accessing formal education
+March, Narok,indicator1_all_girls,326,female,all,children,1,1. OOSC accessing formal education
+March, Narok,indicator1_host_community_total,813,total,host_community,NA,1,1. OOSC accessing formal education
+March, Narok,indicator1_host_community_boys,487,male,host_community,children,1,1. OOSC accessing formal education
+March, Narok,indicator1_host_community_girls,326,female,host_community,children,1,1. OOSC accessing formal education
+March, Narok,indicator5_all_total,115,total,all,total,5,5. BoM trained resilience programmes
+March, Narok,indicator5_all_male,83,male,all,adults,5,5. BoM trained resilience programmes
+March, Narok,indicator5_all_female,32,female,all,adults,5,5. BoM trained resilience programmes
+March, Narok,indicator5_host_community_total,115,total,host_community,NA,5,5. BoM trained resilience programmes
+March, Narok,indicator5_host_community_male,83,male,host_community,adults,5,5. BoM trained resilience programmes
+March, Narok,indicator5_host_community_female,32,female,host_community,adults,5,5. BoM trained resilience programmes
+March, Narok,indicator7_beneficiary_type_total,378,total,NA,NA,7,7. Children life skills mentorship
+March, Narok,indicator7_all_boys,100,male,all,children,7,7. Children life skills mentorship
+March, Narok,indicator7_all_girls,278,female,all,children,7,7. Children life skills mentorship
+March, Narok,indicator7_host_community_total,378,total,host_community,NA,7,7. Children life skills mentorship
+March, Narok,indicator7_host_community_boys,100,male,host_community,children,7,7. Children life skills mentorship
+March, Narok,indicator7_host_community_girls,278,female,host_community,children,7,7. Children life skills mentorship
+May, Narok,indicator1_all_total,200,total,all,total,1,1. OOSC accessing formal education
+May, Narok,indicator1_all_boys,102,male,all,children,1,1. OOSC accessing formal education
+May, Narok,indicator1_all_girls,98,female,all,children,1,1. OOSC accessing formal education
+May, Narok,indicator1_host_community_total,200,total,host_community,NA,1,1. OOSC accessing formal education
+May, Narok,indicator1_host_community_boys,102,male,host_community,children,1,1. OOSC accessing formal education
+May, Narok,indicator1_host_community_girls,98,female,host_community,children,1,1. OOSC accessing formal education
+January, Samburu,indicator1_all_total,87,total,all,total,1,1. OOSC accessing formal education
+January, Samburu,indicator1_all_boys,51,male,all,children,1,1. OOSC accessing formal education
+January, Samburu,indicator1_all_girls,36,female,all,children,1,1. OOSC accessing formal education
+January, Samburu,indicator1_host_community_total,87,total,host_community,NA,1,1. OOSC accessing formal education
+January, Samburu,indicator1_host_community_boys,51,male,host_community,children,1,1. OOSC accessing formal education
+January, Samburu,indicator1_host_community_girls,36,female,host_community,children,1,1. OOSC accessing formal education
+March, Samburu,indicator1_all_total,1059,total,all,total,1,1. OOSC accessing formal education
+March, Samburu,indicator1_all_boys,582,male,all,children,1,1. OOSC accessing formal education
+March, Samburu,indicator1_all_girls,477,female,all,children,1,1. OOSC accessing formal education
+March, Samburu,indicator1_host_community_total,1059,total,host_community,NA,1,1. OOSC accessing formal education
+March, Samburu,indicator1_host_community_boys,582,male,host_community,children,1,1. OOSC accessing formal education
+March, Samburu,indicator1_host_community_girls,477,female,host_community,children,1,1. OOSC accessing formal education
+March, Samburu,indicator1_cwd_total,24,total,NA,NA,1,1. OOSC accessing formal education
+March, Samburu,indicator1_cwd_boys,14,male,NA,children,1,1. OOSC accessing formal education
+March, Samburu,indicator1_cwd_girls,10,female,NA,children,1,1. OOSC accessing formal education
+March, Samburu,indicator7_beneficiary_type_total,229,total,NA,NA,7,7. Children life skills mentorship
+March, Samburu,indicator7_all_girls,229,female,all,children,7,7. Children life skills mentorship
+March, Samburu,indicator7_host_community_total,229,total,host_community,NA,7,7. Children life skills mentorship
+March, Samburu,indicator7_host_community_girls,229,female,host_community,children,7,7. Children life skills mentorship
+April, Samburu,indicator1_all_total,921,total,all,total,1,1. OOSC accessing formal education
+April, Samburu,indicator1_all_boys,520,male,all,children,1,1. OOSC accessing formal education
+April, Samburu,indicator1_all_girls,401,female,all,children,1,1. OOSC accessing formal education
+April, Samburu,indicator1_host_community_total,921,total,host_community,NA,1,1. OOSC accessing formal education
+April, Samburu,indicator1_host_community_boys,520,male,host_community,children,1,1. OOSC accessing formal education
+April, Samburu,indicator1_host_community_girls,401,female,host_community,children,1,1. OOSC accessing formal education
+April, Samburu,indicator1_cwd_total,251,total,NA,NA,1,1. OOSC accessing formal education
+April, Samburu,indicator1_cwd_boys,141,male,NA,children,1,1. OOSC accessing formal education
+April, Samburu,indicator1_cwd_girls,110,female,NA,children,1,1. OOSC accessing formal education
+April, Samburu,indicator5_all_total,19,total,all,total,5,5. BoM trained resilience programmes
+April, Samburu,indicator5_all_male,12,male,all,adults,5,5. BoM trained resilience programmes
+April, Samburu,indicator5_all_female,7,female,all,adults,5,5. BoM trained resilience programmes
+April, Samburu,indicator5_host_community_total,19,total,host_community,NA,5,5. BoM trained resilience programmes
+April, Samburu,indicator5_host_community_male,12,male,host_community,adults,5,5. BoM trained resilience programmes
+April, Samburu,indicator5_host_community_female,7,female,host_community,adults,5,5. BoM trained resilience programmes
+April, Samburu,indicator6_all_total,84,total,all,total,6,6. Govt. officials trained
+April, Samburu,indicator6_all_male,60,male,all,adults,6,6. Govt. officials trained
+April, Samburu,indicator6_all_female,24,female,all,adults,6,6. Govt. officials trained
+April, Samburu,indicator7_beneficiary_type_total,753,total,NA,NA,7,7. Children life skills mentorship
+April, Samburu,indicator7_all_boys,351,male,all,children,7,7. Children life skills mentorship
+April, Samburu,indicator7_all_girls,402,female,all,children,7,7. Children life skills mentorship
+April, Samburu,indicator7_host_community_total,753,total,host_community,NA,7,7. Children life skills mentorship
+April, Samburu,indicator7_host_community_boys,351,male,host_community,children,7,7. Children life skills mentorship
+April, Samburu,indicator7_host_community_girls,402,female,host_community,children,7,7. Children life skills mentorship
+May, Samburu,indicator1_all_total,294,total,all,total,1,1. OOSC accessing formal education
+May, Samburu,indicator1_all_boys,167,male,all,children,1,1. OOSC accessing formal education
+May, Samburu,indicator1_all_girls,127,female,all,children,1,1. OOSC accessing formal education
+May, Samburu,indicator1_host_community_boys,167,male,host_community,children,1,1. OOSC accessing formal education
+May, Samburu,indicator1_host_community_girls,127,female,host_community,children,1,1. OOSC accessing formal education
+June, Samburu,indicator1_all_total,1354,total,all,total,1,1. OOSC accessing formal education
+June, Samburu,indicator1_all_boys,708,male,all,children,1,1. OOSC accessing formal education
+June, Samburu,indicator1_all_girls,646,female,all,children,1,1. OOSC accessing formal education
+June, Samburu,indicator1_host_community_boys,708,male,host_community,children,1,1. OOSC accessing formal education
+June, Samburu,indicator1_host_community_girls,646,female,host_community,children,1,1. OOSC accessing formal education
+June, Samburu,indicator6_all_total,148,total,all,total,6,6. Govt. officials trained
+June, Samburu,indicator6_all_male,66,male,all,adults,6,6. Govt. officials trained
+June, Samburu,indicator6_all_female,82,female,all,adults,6,6. Govt. officials trained
+February, Tana River,indicator1_all_total,4175,total,all,total,1,1. OOSC accessing formal education
+February, Tana River,indicator1_all_boys,1620,male,all,children,1,1. OOSC accessing formal education
+February, Tana River,indicator1_all_girls,2555,female,all,children,1,1. OOSC accessing formal education
+February, Tana River,indicator1_host_community_total,4175,total,host_community,NA,1,1. OOSC accessing formal education
+February, Tana River,indicator1_host_community_boys,1620,male,host_community,children,1,1. OOSC accessing formal education
+February, Tana River,indicator1_host_community_girls,2555,female,host_community,children,1,1. OOSC accessing formal education
+May, Tana River,indicator1_all_total,557,total,all,total,1,1. OOSC accessing formal education
+May, Tana River,indicator1_all_boys,225,male,all,children,1,1. OOSC accessing formal education
+May, Tana River,indicator1_all_girls,332,female,all,children,1,1. OOSC accessing formal education
+May, Tana River,indicator1_host_community_boys,225,male,host_community,children,1,1. OOSC accessing formal education
+May, Tana River,indicator1_host_community_girls,332,female,host_community,children,1,1. OOSC accessing formal education
+May, Tana River,indicator5_all_total,1318,total,all,total,5,5. BoM trained resilience programmes
+May, Tana River,indicator5_all_male,483,male,all,adults,5,5. BoM trained resilience programmes
+May, Tana River,indicator5_all_female,835,female,all,adults,5,5. BoM trained resilience programmes
+May, Tana River,indicator5_host_community_total,1318,total,host_community,NA,5,5. BoM trained resilience programmes
+May, Tana River,indicator5_host_community_male,483,male,host_community,adults,5,5. BoM trained resilience programmes
+May, Tana River,indicator5_host_community_female,835,female,host_community,adults,5,5. BoM trained resilience programmes
+May, Tana River,indicator7_beneficiary_type_total,3769,total,NA,NA,7,7. Children life skills mentorship
+May, Tana River,indicator7_all_boys,1320,male,all,children,7,7. Children life skills mentorship
+May, Tana River,indicator7_all_girls,2449,female,all,children,7,7. Children life skills mentorship
+May, Tana River,indicator7_host_community_total,3769,total,host_community,NA,7,7. Children life skills mentorship
+May, Tana River,indicator7_host_community_boys,1320,male,host_community,children,7,7. Children life skills mentorship
+May, Tana River,indicator7_host_community_girls,2449,female,host_community,children,7,7. Children life skills mentorship
+January,Turkana,indicator1_all_total,2342,total,all,total,1,1. OOSC accessing formal education
+January,Turkana,indicator1_all_boys,1364,male,all,children,1,1. OOSC accessing formal education
+January,Turkana,indicator1_all_girls,978,female,all,children,1,1. OOSC accessing formal education
+January,Turkana,indicator1_host_community_total,2342,total,host_community,NA,1,1. OOSC accessing formal education
+January,Turkana,indicator1_host_community_boys,1364,male,host_community,children,1,1. OOSC accessing formal education
+January,Turkana,indicator1_host_community_girls,978,female,host_community,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_all_total,1590,total,all,total,1,1. OOSC accessing formal education
+February,Turkana,indicator1_all_boys,884,male,all,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_all_girls,706,female,all,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_host_community_total,179,total,host_community,NA,1,1. OOSC accessing formal education
+February,Turkana,indicator1_host_community_boys,103,male,host_community,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_host_community_girls,76,female,host_community,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_refugees_total,1411,total,refugees,NA,1,1. OOSC accessing formal education
+February,Turkana,indicator1_refugees_boys,781,male,refugees,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_refugees_girls,630,female,refugees,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_cwd_total,95,total,NA,NA,1,1. OOSC accessing formal education
+February,Turkana,indicator1_cwd_boys,35,male,NA,children,1,1. OOSC accessing formal education
+February,Turkana,indicator1_cwd_girls,60,female,NA,children,1,1. OOSC accessing formal education
+February,Turkana,indicator3_all_total,20496,total,all,total,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_all_boys,11287,male,all,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_all_girls,9209,female,all,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_host_community_total,390,total,host_community,NA,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_host_community_boys,209,male,host_community,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_host_community_girls,181,female,host_community,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_refugees_total,20106,total,refugees,NA,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_refugees_boys,11078,male,refugees,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_refugees_girls,9028,female,refugees,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_cwd_total,770,total,NA,NA,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_cwd_boys,457,male,NA,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator3_cwd_girls,313,female,NA,children,3,3. Children who receive assistance to continue learning
+February,Turkana,indicator4_all_total,150,total,all,total,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_all_male,119,male,all,adults,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_all_female,31,female,all,adults,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_host_community_total,28,total,host_community,NA,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_host_community_male,18,male,host_community,adults,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_host_community_female,10,female,host_community,adults,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_refugees_total,122,total,refugees,NA,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_refugees_male,101,male,refugees,adults,4,4. Teachers trained resilience programmes
+February,Turkana,indicator4_refugees_female,21,female,refugees,adults,4,4. Teachers trained resilience programmes
+February,Turkana,indicator5_all_total,303,total,all,total,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_all_male,232,male,all,adults,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_all_female,71,female,all,adults,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_host_community_total,8,total,host_community,NA,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_host_community_male,3,male,host_community,adults,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_host_community_female,5,female,host_community,adults,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_refugees_total,295,total,refugees,NA,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_refugees_male,229,male,refugees,adults,5,5. BoM trained resilience programmes
+February,Turkana,indicator5_refugees_female,66,female,refugees,adults,5,5. BoM trained resilience programmes
+February,Turkana,indicator7_beneficiary_type_total,105,total,NA,NA,7,7. Children life skills mentorship
+February,Turkana,indicator7_all_girls,105,female,all,children,7,7. Children life skills mentorship
+February,Turkana,indicator7_refugees_total,105,total,refugees,NA,7,7. Children life skills mentorship
+February,Turkana,indicator7_refugees_girls,105,female,refugees,children,7,7. Children life skills mentorship
+March,Turkana,indicator1_all_total,4236,total,all,total,1,1. OOSC accessing formal education
+March,Turkana,indicator1_all_boys,2337,male,all,children,1,1. OOSC accessing formal education
+March,Turkana,indicator1_all_girls,1899,female,all,children,1,1. OOSC accessing formal education
+March,Turkana,indicator1_host_community_total,4236,total,host_community,NA,1,1. OOSC accessing formal education
+March,Turkana,indicator1_host_community_boys,2337,male,host_community,children,1,1. OOSC accessing formal education
+March,Turkana,indicator1_host_community_girls,1899,female,host_community,children,1,1. OOSC accessing formal education
+March,Turkana,indicator1_cwd_total,1,total,NA,NA,1,1. OOSC accessing formal education
+March,Turkana,indicator1_cwd_boys,1,male,NA,children,1,1. OOSC accessing formal education
+March,Turkana,indicator3_all_total,49281,total,all,total,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_all_boys,29669,male,all,children,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_all_girls,19612,female,all,children,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_host_community_total,3598,total,host_community,NA,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_host_community_boys,1983,male,host_community,children,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_host_community_girls,1615,female,host_community,children,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_refugees_total,45683,total,refugees,NA,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_refugees_boys,27686,male,refugees,children,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator3_refugees_girls,17997,female,refugees,children,3,3. Children who receive assistance to continue learning
+March,Turkana,indicator4_all_total,570,total,all,total,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_all_male,345,male,all,adults,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_all_female,225,female,all,adults,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_host_community_male,299,male,host_community,adults,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_host_community_female,219,female,host_community,adults,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_refugees_total,52,total,refugees,NA,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_refugees_male,46,male,refugees,adults,4,4. Teachers trained resilience programmes
+March,Turkana,indicator4_refugees_female,6,female,refugees,adults,4,4. Teachers trained resilience programmes
+March,Turkana,indicator7_beneficiary_type_total,27653,total,NA,NA,7,7. Children life skills mentorship
+March,Turkana,indicator7_all_boys,17722,male,all,children,7,7. Children life skills mentorship
+March,Turkana,indicator7_all_girls,9931,female,all,children,7,7. Children life skills mentorship
+March,Turkana,indicator7_host_community_total,2827,total,host_community,NA,7,7. Children life skills mentorship
+March,Turkana,indicator7_host_community_boys,1492,male,host_community,children,7,7. Children life skills mentorship
+March,Turkana,indicator7_host_community_girls,1335,female,host_community,children,7,7. Children life skills mentorship
+March,Turkana,indicator7_refugees_total,24826,total,refugees,NA,7,7. Children life skills mentorship
+March,Turkana,indicator7_refugees_boys,16230,male,refugees,children,7,7. Children life skills mentorship
+March,Turkana,indicator7_refugees_girls,8596,female,refugees,children,7,7. Children life skills mentorship
+April,Turkana,indicator1_all_total,5774,total,all,total,1,1. OOSC accessing formal education
+April,Turkana,indicator1_all_boys,2955,male,all,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_all_girls,2819,female,all,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_host_community_total,5750,total,host_community,NA,1,1. OOSC accessing formal education
+April,Turkana,indicator1_host_community_boys,2940,male,host_community,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_host_community_girls,2810,female,host_community,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_refugees_total,24,total,refugees,NA,1,1. OOSC accessing formal education
+April,Turkana,indicator1_refugees_boys,15,male,refugees,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_refugees_girls,9,female,refugees,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_cwd_total,500,total,NA,NA,1,1. OOSC accessing formal education
+April,Turkana,indicator1_cwd_boys,220,male,NA,children,1,1. OOSC accessing formal education
+April,Turkana,indicator1_cwd_girls,280,female,NA,children,1,1. OOSC accessing formal education
+April,Turkana,indicator4_all_total,265,total,all,total,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_all_male,55,male,all,adults,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_all_female,210,female,all,adults,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_host_community_total,46,total,host_community,NA,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_host_community_male,10,male,host_community,adults,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_host_community_female,36,female,host_community,adults,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_refugees_total,219,total,refugees,NA,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_refugees_male,45,male,refugees,adults,4,4. Teachers trained resilience programmes
+April,Turkana,indicator4_refugees_female,174,female,refugees,adults,4,4. Teachers trained resilience programmes
+April,Turkana,indicator5_all_total,47,total,all,total,5,5. BoM trained resilience programmes
+April,Turkana,indicator5_all_male,44,male,all,adults,5,5. BoM trained resilience programmes
+April,Turkana,indicator5_all_female,3,female,all,adults,5,5. BoM trained resilience programmes
+April,Turkana,indicator5_host_community_total,47,total,host_community,NA,5,5. BoM trained resilience programmes
+April,Turkana,indicator5_host_community_male,44,male,host_community,adults,5,5. BoM trained resilience programmes
+April,Turkana,indicator5_host_community_female,3,female,host_community,adults,5,5. BoM trained resilience programmes
+April,Turkana,indicator7_beneficiary_type_total,1470,total,NA,NA,7,7. Children life skills mentorship
+April,Turkana,indicator7_all_boys,734,male,all,children,7,7. Children life skills mentorship
+April,Turkana,indicator7_all_girls,736,female,all,children,7,7. Children life skills mentorship
+April,Turkana,indicator7_host_community_total,1470,total,host_community,NA,7,7. Children life skills mentorship
+April,Turkana,indicator7_host_community_boys,734,male,host_community,children,7,7. Children life skills mentorship
+April,Turkana,indicator7_host_community_girls,736,female,host_community,children,7,7. Children life skills mentorship
+May,Turkana,indicator1_all_total,857,total,all,total,1,1. OOSC accessing formal education
+May,Turkana,indicator1_all_boys,450,male,all,children,1,1. OOSC accessing formal education
+May,Turkana,indicator1_all_girls,407,female,all,children,1,1. OOSC accessing formal education
+May,Turkana,indicator1_host_community_boys,450,male,host_community,children,1,1. OOSC accessing formal education
+May,Turkana,indicator1_host_community_girls,407,female,host_community,children,1,1. OOSC accessing formal education
+June,Turkana,indicator7_beneficiary_type_total,720,total,NA,NA,7,7. Children life skills mentorship
+June,Turkana,indicator7_all_boys,400,male,all,children,7,7. Children life skills mentorship
+June,Turkana,indicator7_all_girls,320,female,all,children,7,7. Children life skills mentorship
+June,Turkana,indicator7_host_community_total,720,total,host_community,NA,7,7. Children life skills mentorship
+June,Turkana,indicator7_host_community_boys,400,male,host_community,children,7,7. Children life skills mentorship
+June,Turkana,indicator7_host_community_girls,320,female,host_community,children,7,7. Children life skills mentorship
+March, Wajir,indicator1_all_total,361,total,all,total,1,1. OOSC accessing formal education
+March, Wajir,indicator1_all_boys,208,male,all,children,1,1. OOSC accessing formal education
+March, Wajir,indicator1_all_girls,153,female,all,children,1,1. OOSC accessing formal education
+March, Wajir,indicator1_host_community_total,361,total,host_community,NA,1,1. OOSC accessing formal education
+March, Wajir,indicator1_host_community_boys,208,male,host_community,children,1,1. OOSC accessing formal education
+March, Wajir,indicator1_host_community_girls,153,female,host_community,children,1,1. OOSC accessing formal education
+May, Wajir,indicator1_all_total,326,total,all,total,1,1. OOSC accessing formal education
+May, Wajir,indicator1_all_boys,210,male,all,children,1,1. OOSC accessing formal education
+May, Wajir,indicator1_all_girls,116,female,all,children,1,1. OOSC accessing formal education
+May, Wajir,indicator1_host_community_boys,210,male,host_community,children,1,1. OOSC accessing formal education
+May, Wajir,indicator1_host_community_girls,116,female,host_community,children,1,1. OOSC accessing formal education
+May, Wajir,indicator7_beneficiary_type_total,190,total,NA,NA,7,7. Children life skills mentorship
+May, Wajir,indicator7_all_boys,114,male,all,children,7,7. Children life skills mentorship
+May, Wajir,indicator7_all_girls,76,female,all,children,7,7. Children life skills mentorship
+May, Wajir,indicator7_host_community_total,190,total,host_community,NA,7,7. Children life skills mentorship
+May, Wajir,indicator7_host_community_boys,114,male,host_community,children,7,7. Children life skills mentorship
+May, Wajir,indicator7_host_community_girls,76,female,host_community,children,7,7. Children life skills mentorship
+January, West Pokot,indicator1_all_total,280,total,all,total,1,1. OOSC accessing formal education
+January, West Pokot,indicator1_all_boys,149,male,all,children,1,1. OOSC accessing formal education
+January, West Pokot,indicator1_all_girls,131,female,all,children,1,1. OOSC accessing formal education
+January, West Pokot,indicator1_host_community_total,280,total,host_community,NA,1,1. OOSC accessing formal education
+January, West Pokot,indicator1_host_community_boys,149,male,host_community,children,1,1. OOSC accessing formal education
+January, West Pokot,indicator1_host_community_girls,131,female,host_community,children,1,1. OOSC accessing formal education
+January, West Pokot,indicator4_all_total,29,total,all,total,4,4. Teachers trained resilience programmes
+January, West Pokot,indicator4_all_male,10,male,all,adults,4,4. Teachers trained resilience programmes
+January, West Pokot,indicator4_all_female,19,female,all,adults,4,4. Teachers trained resilience programmes
+January, West Pokot,indicator4_host_community_total,29,total,host_community,NA,4,4. Teachers trained resilience programmes
+January, West Pokot,indicator4_host_community_male,10,male,host_community,adults,4,4. Teachers trained resilience programmes
+January, West Pokot,indicator4_host_community_female,19,female,host_community,adults,4,4. Teachers trained resilience programmes
+March, West Pokot,indicator1_all_total,1769,total,all,total,1,1. OOSC accessing formal education
+March, West Pokot,indicator1_all_boys,901,male,all,children,1,1. OOSC accessing formal education
+March, West Pokot,indicator1_all_girls,868,female,all,children,1,1. OOSC accessing formal education
+March, West Pokot,indicator1_host_community_total,1769,total,host_community,NA,1,1. OOSC accessing formal education
+March, West Pokot,indicator1_host_community_boys,901,male,host_community,children,1,1. OOSC accessing formal education
+March, West Pokot,indicator1_host_community_girls,868,female,host_community,children,1,1. OOSC accessing formal education
+March, West Pokot,indicator5_all_total,45,total,all,total,5,5. BoM trained resilience programmes
+March, West Pokot,indicator5_all_male,37,male,all,adults,5,5. BoM trained resilience programmes
+March, West Pokot,indicator5_all_female,8,female,all,adults,5,5. BoM trained resilience programmes
+March, West Pokot,indicator5_host_community_total,45,total,host_community,NA,5,5. BoM trained resilience programmes
+March, West Pokot,indicator5_host_community_male,37,male,host_community,adults,5,5. BoM trained resilience programmes
+March, West Pokot,indicator5_host_community_female,8,female,host_community,adults,5,5. BoM trained resilience programmes
+April, West Pokot,indicator1_all_total,2875,total,all,total,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_all_boys,1470,male,all,children,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_all_girls,1405,female,all,children,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_host_community_boys,1470,male,host_community,children,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_host_community_girls,1405,female,host_community,children,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_cwd_total,250,total,NA,NA,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_cwd_boys,110,male,NA,children,1,1. OOSC accessing formal education
+April, West Pokot,indicator1_cwd_girls,140,female,NA,children,1,1. OOSC accessing formal education
+April, West Pokot,indicator4_all_total,29,total,all,total,4,4. Teachers trained resilience programmes
+April, West Pokot,indicator4_all_male,10,male,all,adults,4,4. Teachers trained resilience programmes
+April, West Pokot,indicator4_all_female,19,female,all,adults,4,4. Teachers trained resilience programmes
+April, West Pokot,indicator4_host_community_total,29,total,host_community,NA,4,4. Teachers trained resilience programmes
+April, West Pokot,indicator4_host_community_male,10,male,host_community,adults,4,4. Teachers trained resilience programmes
+April, West Pokot,indicator4_host_community_female,19,female,host_community,adults,4,4. Teachers trained resilience programmes
+May, West Pokot,indicator1_all_total,44,total,all,total,1,1. OOSC accessing formal education
+May, West Pokot,indicator1_all_boys,28,male,all,children,1,1. OOSC accessing formal education
+May, West Pokot,indicator1_all_girls,16,female,all,children,1,1. OOSC accessing formal education
+May, West Pokot,indicator1_host_community_boys,28,male,host_community,children,1,1. OOSC accessing formal education
+May, West Pokot,indicator1_host_community_girls,16,female,host_community,children,1,1. OOSC accessing formal education
+June, West Pokot,indicator1_all_total,1223,total,all,total,1,1. OOSC accessing formal education
+June, West Pokot,indicator1_all_boys,559,male,all,children,1,1. OOSC accessing formal education
+June, West Pokot,indicator1_all_girls,664,female,all,children,1,1. OOSC accessing formal education
+June, West Pokot,indicator1_host_community_boys,559,male,host_community,children,1,1. OOSC accessing formal education
+June, West Pokot,indicator1_host_community_girls,664,female,host_community,children,1,1. OOSC accessing formal education

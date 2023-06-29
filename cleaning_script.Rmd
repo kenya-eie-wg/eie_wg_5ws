@@ -199,7 +199,8 @@ read_5ws <- function(file) {
       "5. Educators resilience enhancing", 
     indicator == "indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)" ~ 
       "6. Children resilience enhancing"
-  ))
+  )) %>% 
+    filter(!is.na(county))
     
   } 
 

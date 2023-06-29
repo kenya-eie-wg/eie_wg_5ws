@@ -1,0 +1,8 @@
+"0","combined %>% 
+  filter(beneficiary_group == ""all"", 
+         sex_modifier == ""total"", 
+         age_modifier == ""total"") %>% 
+  group_by(county, month) %>% 
+  summarise(value = sum(value, na.rm = TRUE))
+"
+"2","`summarise()` has grouped output by 'county'. You can override using the `.groups` argument."

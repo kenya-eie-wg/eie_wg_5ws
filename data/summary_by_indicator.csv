@@ -1,0 +1,28 @@
+unicef_indicator,sub_indicator,value
+1. OOSC accessing formal education,indicator1_cwd_boys,521
+1. OOSC accessing formal education,indicator1_cwd_girls,600
+1. OOSC accessing formal education,indicator1_host_community_boys,21800
+1. OOSC accessing formal education,indicator1_host_community_girls,20249
+1. OOSC accessing formal education,indicator1_refugees_boys,796
+1. OOSC accessing formal education,indicator1_refugees_girls,639
+2. Children benefiting from child-friendly environment,indicator2_host_community_boys,8614
+2. Children benefiting from child-friendly environment,indicator2_host_community_girls,8224
+2. Children benefiting from child-friendly environment,indicator2_rehabiltated_latrines,10
+3. Children who receive assistance to continue learning,indicator3_cwd_boys,457
+3. Children who receive assistance to continue learning,indicator3_cwd_girls,313
+3. Children who receive assistance to continue learning,indicator3_host_community_boys,11983
+3. Children who receive assistance to continue learning,indicator3_host_community_girls,12325
+3. Children who receive assistance to continue learning,indicator3_refugees_boys,38764
+3. Children who receive assistance to continue learning,indicator3_refugees_girls,27025
+4. Teachers trained resilience programmes,indicator4_host_community_female,509
+4. Teachers trained resilience programmes,indicator4_host_community_male,686
+4. Teachers trained resilience programmes,indicator4_refugees_female,201
+4. Teachers trained resilience programmes,indicator4_refugees_male,192
+5. BoM trained resilience programmes,indicator5_host_community_female,1883
+5. BoM trained resilience programmes,indicator5_host_community_male,1886
+5. BoM trained resilience programmes,indicator5_refugees_female,66
+5. BoM trained resilience programmes,indicator5_refugees_male,229
+7. Children life skills mentorship,indicator7_host_community_boys,8258
+7. Children life skills mentorship,indicator7_host_community_girls,11022
+7. Children life skills mentorship,indicator7_refugees_boys,16230
+7. Children life skills mentorship,indicator7_refugees_girls,8701
