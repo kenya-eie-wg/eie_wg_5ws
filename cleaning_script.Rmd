@@ -183,7 +183,7 @@ read_5ws <- function(file) {
     implementing_partner == "Missionary Sistrs of the catechism" ~ "Missionary Sisters of the Catechism", 
     str_detect(implementing_partner, "NRC|NORWEGIAN") ~ "Norwegian Refugee Council", 
     str_detect(implementing_partner, "SC|SCI|Save the Children") ~ "Save the Children", 
-    str_detect(implementing_partner, "World Vision") ~ "World Vision", 
+    str_detect(implementing_partner, "World Vision") ~ "World Vision Kenya", 
     TRUE ~ implementing_partner
   ))%>% 
   mutate(indicator_short = case_when(
@@ -249,46 +249,14 @@ eie %>%
   mutate(total_reached_check = rowSums(.[16:19], na.rm = TRUE)) %>% 
   filter(total_reached_check != total_reached)
 
-```
-
-```{r}
 eie %>% 
-  filter(str_detect(indicator, "2")) %>% 
-  select(county, names_numbers_schools, activity, schools, comments)
+  filter(is.na(adm1_pcode)) %>% 
+  distinct(county)
 
-eie_5ws %>% 
-  filter(str_detect(names_numbers_schools, "Kalobeyei Settlement"))
-
-eie_5ws %>% 
-  filter(str_detect(names_numbers_schools, "Kalobeyei Settlement"))
-
-eie %>% 
-  filter(!is.na(names_numbers_schools) & is.na(schools)) %>% 
-  select(names_numbers_schools, schools)
-
-eie %>% filter(str_detect(names_numbers_schools, "econdary")) %>% 
-  select(names_numbers_schools, activity, comments)
 ```
 
 
-```{r}
-eie_5ws %>% 
-  group_by(indicator, county, month) %>% 
-  summarise(beneficiaries = sum(total_reached, na.rm = TRUE), 
-            schools = sum(schools, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  mutate(month = fct_relevel(month, c("January", "February", "March", "April", 
-                                        "May", "June", "July", "August", 
-                                        "September", "October", "November", "December"))) %>% 
-  arrange(indicator, month)
 
-eie %>% 
-  filter(month == "May" & str_detect(indicator, "1")) %>% 
-  filter(implementing_partner == "Save the Children" | lead_organisation == "Save the Children")
-
-eie %>% 
-
-```
 
 
 # Targets
@@ -336,60 +304,6 @@ targets %>%
 ```
 
 
-```{r}
-eie_5ws %>% 
-  count(sub_county, 
-        sort = TRUE)
 
-library(flextable)
-eie %>% 
-  mutate(sub_counties = ifelse(str_detect(sub_county, "\\,|All|all") | is.na(sub_county), 
-                        "mixed", "correct")) %>% 
-  group_by(sub_counties) %>% 
-  summarise(rows = n(), 
-            beneficiaries = sum(total_reached, na.rm = TRUE)) %>% 
-  mutate(percent = round(beneficiaries / sum(beneficiaries, na.rm = TRUE) * 100, digits = 2)) %>% 
-  flextable() %>% 
-  theme_zebra() %>% 
-  set_table_properties(layout = "autofit", width = .8)
 
-eie %>% 
-  mutate(sub_counties = ifelse(str_detect(sub_county, "\\,|All|all"), 
-                        "mixed", "correct")) %>% 
-  filter(sub_counties == "mixed") %>% 
-  group_by(lead_organisation, sub_county, month) %>% 
-  filter(lead_organisation == "Save the Children") %>% 
-  summarise(beneficiaries = sum(total_reached)) %>% 
-  flextable() %>% 
-  theme_zebra() %>% 
-  set_table_properties(layout = "autofit", width = .99)
-  
-```
-
-```{r}
-eie_5ws %>% 
-  mutate(sub_counties = ifelse(str_detect(sub_county, "\\,|All|all"), 
-                        "mixed", "correct")) %>% 
-  filter(sub_counties == "mixed") %>% 
-  count(implementing_partners)
-
-eie_5ws %>% 
-  filter(implementing_partners == "Save the Children") %>% 
-  mutate(sub_counties = ifelse(str_detect(sub_county, "\\,|All|all"), 
-                        "mixed", "correct")) %>% 
-  count(sub_counties, wt = total_reached)
-
-eie_5ws %>% count(implementing_partners, sort = TRUE)
-
-eie_5ws %>% filter(county == "Wajir") %>% count(implementing_partners, sub_county, sort = TRUE)
-
-eie_5ws %>% 
-  filter(implementing_partners == "Save the Children" & county == "Wajir" & 
-           str_detect(indicator, "1")) %>% 
-  group_by(month, lead_organisation, sub_county) %>% 
-  summarise(reached = total_reached) %>% 
-  flextable() %>% 
-  theme_zebra() %>% 
-  set_caption("Extract from 5Ws -- Save the Children, Indicator 1")
-```
 

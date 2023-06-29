@@ -6,6 +6,20 @@
 "0","library(janitor)"
 "0","library(scales)"
 "0","library(magrittr)"
+"2","
+Attaching package: ‘magrittr’
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    set_names
+
+"
+"2","The following object is masked from ‘package:tidyr’:
+
+    extract
+
+"
 "0","library(viridis)"
 "0","library(here)"
 "0","library(sf)"

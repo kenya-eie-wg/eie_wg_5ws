@@ -1,0 +1,270 @@
+---
+title: "Kenya Education in Emergencies Working Group -- UNICEF June sitrep inputs"
+date:  "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  word_document:
+    toc: no
+always_allow_html: yes
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width=9, message = FALSE, warning=FALSE)
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(stringi)
+library(janitor)
+library(scales)
+library(viridis)
+library(patchwork)
+library(DT)
+library(here)
+library(sf)
+library(plotly)
+library(flextable)
+library(ggrepel)
+library(anytime)
+library(tidytext)
+
+theme_set(theme_light())
+
+# Installation of mdepriv package
+# install package devtools if not yet installed
+#   install.packages("devtools")
+
+# install fast from GitHub without vignettes 
+#   devtools::install_github("a-benini/mdepriv", build_vignettes = FALSE
+
+# Alternatively, follow the instructions here: https://a-benini.github.io/mdepriv/
+
+# disabling scientific notation
+options(scipen = 100)
+
+`%out%` <- Negate(`%in%`)
+
+# function for transposing df
+transpose_df <- function(df) {
+  t_df <- data.table::transpose(df)
+  colnames(t_df) <- rownames(df)
+  rownames(t_df) <- colnames(df)
+  t_df <- t_df %>%
+    tibble::rownames_to_column(.data = .) %>%
+    tibble::as_tibble(.)
+  return(t_df)
+}
+
+# scaling functions 
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+# mode function 
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Fixing dates
+name_to_date <- function(x) {
+  lubridate::mdy(ifelse(x %in% c(month.name, month.abb), paste0(x, "/01/2023"), x))
+}
+
+
+```
+
+
+
+
+```{r}
+locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
+                      sheet = "ADM2") %>% 
+  clean_names()
+
+eie <- read_csv("./data/eie_5ws.csv")
+
+report_date <- "25 June 2023"
+
+previous_months <- c("January", "February", "March", "April", "May")
+report_month <- "June"
+
+sitrep_table <- read_xlsx("./data/sitrep_results_table.xlsx") %>% 
+  setNames(c(
+    "indicator", 
+    "indicator_match", 
+    "sex_modifier", 
+    "needs", 
+    "unicef_target", 
+    "unicef_total_results", 
+    "unicef_previous_results", 
+    "unicef_progress_rate", 
+    "sector_target", 
+    "sector_total_results", 
+    "sector_previous_results", 
+    "sector_progress_rate"
+  ))
+```
+
+
+
+
+# Sitrep 
+
+```{r}
+summarise_indicator <- function(tbl) {
+  tbl %>% 
+    summarise(girls = sum(girls, na.rm = TRUE), 
+            boys = sum(boys, na.rm = TRUE), 
+            men = sum(men, na.rm = TRUE), 
+            women = sum(women, na.rm = TRUE), 
+            counties = n_distinct(adm1_pcode)) %>%
+    mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+    mutate(total = girls + boys + men + women)
+}
+
+list_counties <- function(tbl) {
+  tbl %>% 
+    distinct(county) %>% summarise(
+    counties = paste(county, collapse = ", ")) %>%
+    pull(counties)
+}
+
+```
+
+
+```{r}
+indicator1 <- eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
+                 lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
+  summarise_indicator()
+
+indicator1_counties <- eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
+                 lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
+  list_counties()
+
+
+```
+
+A total of `r indicator1 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator1 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator1 %>% pull(boys) %>% format(big.mark = ",")` boys) have accessed basic education with UNICEF support during `r report_month` 2023 in the counties of `r indicator1_counties`. 
+
+
+```{r}
+indicator3 <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "3") & 
+           lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
+  summarise_indicator()
+
+
+indicator3_counties <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "3") & 
+           lead_organisation == "UNICEF" & activity_status == "Completed") %>%
+  list_counties()
+
+
+```
+
+
+
+Furthermore, `r indicator3 %>% pull(total) %>% format(big.mark = ",")` students (`r indicator3 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator3 %>% pull(boys) %>% format(big.mark = ",")` boys) in `r indicator3_counties` County benefited from distribution of school bags and education kits to support continuation of their learning. 
+ 
+
+```{r}
+indicator5 <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "5") & 
+           lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
+  summarise_indicator()
+
+```
+ 
+
+To enhance quality of learning and support newly enrolled learners in drought affected counties, `r indicator5 %>% pull(total) %>% format(big.mark = ",")` teachers (`r indicator5 %>% pull(men) %>% format(big.mark = ",")` men and `r indicator5 %>% pull(women) %>% format(big.mark = ",")` women) were trained on remedial and catchup pedagogical approaches, Mental Health and Psychosocial Support (MHPSS), Gender-Based Violence (GBV) and Guidance and Counselling (G&C). 
+
+
+```{r}
+indicator6 <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "6") & 
+           lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
+  summarise_indicator()
+
+indicator6_counties <- eie %>% 
+  filter(month %in% report_month & str_detect(indicator, "6") & 
+           lead_organisation == "UNICEF" & activity_status == "Completed") %>%
+  list_counties()
+```
+ 
+
+Furthermore, `r indicator3 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator3 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator3 %>% pull(boys) %>% format(big.mark = ",")` boys) in `r indicator3_counties` were supported to access mentorship and life skills sessions in `r indicator6_counties` counties, strengthening their resilience and their coping mechanisms to the impact of drought.
+
+\newpage 
+
+# Sitrep table 
+
+
+```{r}
+sitrep_table_new <- eie %>%
+      filter(activity_status == "Completed") %>% 
+      mutate(group = ifelse(str_detect(lead_organisation, "UNICEF"), 
+                             "unicef", "non_unicef")) %>%
+      filter(str_detect(indicator, "1|3")) %>%
+      mutate(total = boys + girls) %>% 
+      pivot_longer(cols = c(boys, girls, total), 
+                   names_to = "sex_modifier", 
+                   values_to = "beneficiaries") %>% 
+      mutate(sex_modifier = str_to_title(sex_modifier), 
+             sex_modifier = fct_relevel(sex_modifier, 
+                                        c("Total", "Girls", "Boys"))) %>% 
+      group_by(indicator_short, sex_modifier) %>%
+      summarise(unicef_previous_results = sum(beneficiaries[month %in% previous_months & group == "unicef"], 
+                                      na.rm = TRUE),
+                unicef_total_results = sum(beneficiaries[group == "unicef"], 
+                                      na.rm = TRUE),
+                sector_previous_results = sum(beneficiaries[month %in% previous_months], na.rm = TRUE),
+                sector_total_results = sum(beneficiaries, na.rm = TRUE), 
+                .groups = "drop") %>% 
+      mutate(indicator_match = ifelse(indicator_short == "1. Access ECD spaces/schools", 
+                                      "Access to education", 
+                                      "Learning materials"), 
+             match = paste0(indicator_match, sex_modifier)) %>%
+  left_join(sitrep_table %>%
+              mutate(indicator_match = ifelse(str_detect(indicator_match, "education"), 
+                                                         "Access to education",
+                                                         "Learning materials"),
+                                              sex_modifier = case_when(
+                                                str_detect(sex_modifier, "Total") ~ "Total",
+                                                str_detect(sex_modifier, "Girls") ~ "Girls",
+                                                str_detect(sex_modifier, "Boys") ~ "Boys")) %>%
+              # You can remove this later, since you've figured out the error
+                       mutate(match = paste0(indicator_match, sex_modifier)) %>%
+                       mutate_at(vars(needs, unicef_target, sector_target),
+                                                      ~ parse_number(.)) %>%
+                       select(match, needs, unicef_target, sector_target), 
+            by = c("match")) %>% 
+  mutate(unicef_progress_rate = round(unicef_total_results / unicef_target * 100, digits = 2), 
+         sector_progress_rate = round(sector_total_results / sector_target * 100, digits = 2)) %>% 
+  select(indicator = indicator_match, sex_modifier, needs, 
+         unicef_target, unicef_total_results, unicef_previous_results, unicef_progress_rate, 
+         sector_target, sector_total_results, sector_previous_results, sector_progress_rate) 
+
+sitrep_table_new%>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  fontsize(part = "header", size = 6) %>% 
+  fontsize(i = 1:6, j = 1:11, size = 7)
+
+sitrep_table_new %>% 
+  write_csv(paste0("./data/sitrep_table_new_", report_month, ".csv"))
+
+```
+
+## Downloads
+
+[5ws dataset](https://github.com/kenya-eie-wg/eie_wg_5ws/blob/main/data/eie_5ws.csv)
+
+[sitrep table](https://github.com/kenya-eie-wg/eie_wg_5ws/blob/main/data/sitrep_table_new_June.csv)
+
+
+
+
+
+
+
+

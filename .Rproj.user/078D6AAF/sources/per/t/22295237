@@ -1,0 +1,28 @@
+{
+    "id": "22295237",
+    "path": "~/R/eie_wg_5ws/reporting.Rmd",
+    "project_path": "reporting.Rmd",
+    "type": "r_markdown",
+    "hash": "3156479921",
+    "contents": "",
+    "dirty": false,
+    "created": 1687776131286.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "26,1",
+        "scrollLine": "15",
+        "last_setup_crc32": "643e027047ce2c69"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1687861809,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1687861809970,
+    "read_only": false,
+    "read_only_alternatives": []
+}
