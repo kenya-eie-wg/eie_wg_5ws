@@ -144,6 +144,7 @@ read_5ws <- function(file) {
       schools = case_when(
       activity == "Provision of school meals to learners in the 8 primary schools and 7 pre-primary schools in Kalobeyei Settlement." ~ 15,
       names_numbers_schools == "22 refugee schools and 11 host community schools" ~ 33,
+      comments == "37 schools supported with 115 handwashing kits" ~ 37,
       str_detect(names_numbers_schools, "\n") ~ str_count(names_numbers_schools, "\n") + 1,
       str_detect(names_numbers_schools, "\\,") ~ str_count(names_numbers_schools, "\\,|and|&") + 1, 
       str_detect(names_numbers_schools, "and") ~ str_count(names_numbers_schools, "and") + 1,
@@ -217,7 +218,8 @@ read_5ws <- function(file) {
                                  total_reached, 
                                  0)) %>% 
     mutate(source = str_remove(source, 
-                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023/")) 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023/")) %>% 
+    filter(!is.na(indicator))
     
   } 
 
@@ -269,6 +271,9 @@ eie %>%
 eie %>% 
   filter(is.na(adm1_pcode)) %>% 
   distinct(county)
+
+eie %>% 
+  filter(is.na(indicator))
 
 ```
 

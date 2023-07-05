@@ -227,3 +227,42 @@ eie %>%
   summarise(beneficiaries = sum(beneficiaries), 
             target = sum(county_target)) %>% 
   mutate(pc = ifelse(target > 0, beneficiaries / target, 0)) 
+
+eie %>% 
+  filter(activity_status == "Completed") %>% 
+  group_by(adm1_pcode) %>% 
+  summarise(reached = sum(sector_reached, na.rm = TRUE)) %>% 
+  full_join(targets %>% 
+              filter(target_unit == "people") %>%
+              distinct(adm1_pcode, target = county_overall_target)) %>% 
+  replace_na(list(reached = 0, target = 0)) %>% 
+  mutate(pc = ifelse(target == 0, 0, reached / target))
+
+eie %>% 
+  filter(activity_status == "Completed" & !is.na(indicator_short)) %>% 
+  mutate(has_schools = ifelse(!is.na(schools), "yes", "no")) %>% 
+  group_by(indicator_short, has_schools) %>% 
+  summarise(schools = sum(schools, na.rm = TRUE), 
+            reached = sum(total_reached, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(indicator_short = fct_relevel(indicator_short, 
+                                       c("1. Access ECD spaces/schools",
+                                         "2. Feeding programmes", 
+                                         "3. Teaching materials", 
+                                         "4. Safe water, personal hygiene", 
+                                         "5. Educators resilience enhancing", 
+                                         "6. Children resilience enhancing")), 
+         indicator_short = fct_rev(indicator_short)) %>%
+  ggplot(aes(y = indicator_short, x = reached)) +
+  geom_col(aes(fill = has_schools), 
+           position = position_dodge(width = .9)) +
+  geom_text(aes(label = comma(reached), group = has_schools), 
+            position = position_dodge(width = .9), 
+            hjust = "inward") +
+  scale_fill_viridis_d(option = "cividis", end = .9, begin = .3) + 
+  scale_x_continuous(labels = comma) + 
+  labs(x = "Reached", 
+       y = "", 
+       fill = "Schools\nreported", 
+       title = "Not all persons reached are associated with schools", 
+       subtitle = "Only indicators")

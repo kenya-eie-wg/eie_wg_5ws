@@ -925,45 +925,7 @@ eie %>%
 
 However, reporting the overall number of schools reached by all EiE interventions is much more challenging.
 
-Only when partners report against the school feeding indicator do they always enter in the names or the numbers of schools. This is not the case for the indicator 4, the only other indicator to explicitly call for the reporting of the number of schools. 
-
-<br>
-
-
-
-```{r}
-eie %>% 
-  filter(activity_status == "Completed" & !is.na(indicator_short)) %>% 
-  mutate(has_schools = ifelse(!is.na(schools), "yes", "no")) %>% 
-  group_by(indicator_short, has_schools) %>% 
-  summarise(schools = sum(schools, na.rm = TRUE), 
-            reached = sum(total_reached, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  mutate(indicator_short = fct_relevel(indicator_short, 
-                                       c("1. Access ECD spaces/schools",
-                                         "2. Feeding programmes", 
-                                         "3. Teaching materials", 
-                                         "4. Safe water, personal hygiene", 
-                                         "5. Educators resilience enhancing", 
-                                         "6. Children resilience enhancing")), 
-         indicator_short = fct_rev(indicator_short)) %>%
-  ggplot(aes(y = indicator_short, x = reached)) +
-  geom_col(aes(fill = has_schools), 
-           position = position_dodge(width = .9)) +
-  geom_text(aes(label = comma(reached), group = has_schools), 
-            position = position_dodge(width = .9), 
-            hjust = "inward") +
-  scale_fill_viridis_d(option = "cividis", end = .9, begin = .3) + 
-  labs(x = "Reached", 
-       y = "", 
-       fill = "Schools\nreported", 
-       title = "Not all persons reached are associated with schools")
-  
-
-
-
-
-```
+Whilst all partners working on indicators 2 and 4 submitted the number of schools they were working in, the same is not true for the other indicators. Only indicators 2 and 4 require the reporting of the number of schools. 
 
 
 
