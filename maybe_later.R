@@ -176,3 +176,54 @@ eie %>%
   {sum(.$total_reached)}
 
 eie %>% count(indicator)
+
+
+partner_means <- eie %>% 
+  filter(activity_status == "Completed") %>% 
+  mutate(implementing_partner = str_sub(implementing_partner, end = 50L)) %>% 
+  group_by(implementing_partner) %>% 
+  summarise(reached = sum(total_reached, na.rm = TRUE), 
+            counties = n_distinct(adm1_pcode), 
+            activities = n_distinct(indicator_short)) %>% 
+  filter(reached > 0) %>%
+  mutate(group = case_when(reached < 1000 ~ "small", 
+                           reached >= 1000 & reached < 10000 ~ "medium", 
+                           reached >= 10000 ~ "large")) %>%
+  group_by(group) %>% 
+  summarise(reached = mean(reached, na.rm = TRUE))
+
+eie %>% 
+  filter(activity_status == "Completed") %>% 
+  mutate(implementing_partner = str_sub(implementing_partner, end = 50L)) %>% 
+  group_by(implementing_partner) %>% 
+  summarise(reached = sum(total_reached, na.rm = TRUE), 
+            counties = n_distinct(adm1_pcode), 
+            activities = n_distinct(indicator_short)) %>% 
+  filter(reached > 0) %>%
+  mutate(group = case_when(reached < 1000 ~ "small", 
+                           reached >= 1000 & reached < 10000 ~ "medium", 
+                           reached >= 10000 ~ "large")) %>% 
+  ggplot(aes(x = reached, y = group, fill = group)) +
+  geom_boxplot(alpha = .5, 
+               outlier.alpha = 0) + 
+  geom_jitter() + 
+  geom_vline(data = partner_means, 
+             aes(xintercept = reached), 
+             colour = "#31688e", lty = 2) + 
+  scale_fill_manual(values = c("#90d743", "#35b779", "#31688e")) +
+  scale_x_log10()
+
+eie %>% 
+  group_by(indicator_short, county) %>% 
+  summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>% 
+  full_join(targets %>% 
+              filter(target_unit %in% c("people")) %>% 
+              select(county, indicator_short, county_target), 
+            by = c("county", "indicator_short")) %>% 
+  replace_na(list(county_target = 0, 
+                  beneficiaries = 0)) %>% 
+  filter(beneficiaries > 0) %>% 
+  group_by(indicator_short) %>% 
+  summarise(beneficiaries = sum(beneficiaries), 
+            target = sum(county_target)) %>% 
+  mutate(pc = ifelse(target > 0, beneficiaries / target, 0)) 
