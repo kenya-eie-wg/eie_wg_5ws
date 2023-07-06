@@ -140,10 +140,14 @@ sum_stats <- eie %>%
   summarise(partners = n_distinct(implementing_partner), 
             counties = n_distinct(county), 
             reached = sum(sector_reached, na.rm = TRUE), 
-            men = sum(men[activity_status == "Completed"], na.rm = TRUE), 
-            women = sum(women[activity_status == "Completed"], na.rm = TRUE), 
-            boys = sum(boys[activity_status == "Completed"], na.rm = TRUE), 
-            girls = sum(girls[activity_status == "Completed"], na.rm = TRUE), 
+            men = sum(men[str_detect(indicator_short, "1|2|5|6") & 
+                            activity_status == "Completed"], na.rm = TRUE), 
+            women = sum(women[str_detect(indicator_short, "1|2|5|6") &
+                                activity_status == "Completed"], na.rm = TRUE), 
+            boys = sum(boys[str_detect(indicator_short, "1|2|5|6") &
+                              activity_status == "Completed"], na.rm = TRUE), 
+            girls = sum(girls[str_detect(indicator_short, "1|2|5|6") & 
+                                activity_status == "Completed"], na.rm = TRUE), 
             reached_1256 = sum(total_reached[str_detect(indicator_short, "1|2|5|6") & 
                                                activity_status == "Completed"], na.rm = TRUE), 
             latest_reached = sum(total_reached[str_detect(indicator_short, "1|2|5|6") & 
@@ -151,6 +155,15 @@ sum_stats <- eie %>%
                                                  month %in% report_month], 
                                  na.rm = TRUE))
 
+```
+
+A total of `r sum_stats %>% pull(reached_1256) %>% format(big.mark = ",")` persons have been reached by EiE activities in 2023, of which `r sum_stats %>% pull(boys) %>% format(big.mark = ",")` were boys, `r sum_stats %>% pull(girls) %>% format(big.mark = ",")` were girls, `r sum_stats %>% pull(men) %>% format(big.mark = ",")` were men and `r sum_stats %>% pull(women) %>% format(big.mark = ",")`. 
+
+This is a summary by indicator. 
+
+<br>
+
+```{r}
 
 
 summary_table <- eie %>% 
@@ -387,7 +400,7 @@ eie %>%
   labs(x = "", 
        y = "Cumulative interventions", 
        title = paste0("Monthly progress by activity, ", report_date),
-       subtitle = "Subtotals in the top-left corner of each facet") 
+       subtitle = "Indicator subtotal in the top-left corner of each facet") 
   
 
 

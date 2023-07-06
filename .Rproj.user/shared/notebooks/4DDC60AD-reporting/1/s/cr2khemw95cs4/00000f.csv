@@ -1,0 +1,22 @@
+"0","sum_stats <- eie %>%  
+  summarise(partners = n_distinct(implementing_partner), 
+            counties = n_distinct(county), 
+            reached = sum(sector_reached, na.rm = TRUE), 
+            men = sum(men[str_detect(indicator_short, ""1|2|5|6"") & 
+                            activity_status == ""Completed""], na.rm = TRUE), 
+            women = sum(women[str_detect(indicator_short, ""1|2|5|6"") &
+                                activity_status == ""Completed""], na.rm = TRUE), 
+            boys = sum(boys[str_detect(indicator_short, ""1|2|5|6"") &
+                              activity_status == ""Completed""], na.rm = TRUE), 
+            girls = sum(girls[str_detect(indicator_short, ""1|2|5|6"") & 
+                                activity_status == ""Completed""], na.rm = TRUE), 
+            reached_1256 = sum(total_reached[str_detect(indicator_short, ""1|2|5|6"") & 
+                                               activity_status == ""Completed""], na.rm = TRUE), 
+            latest_reached = sum(total_reached[str_detect(indicator_short, ""1|2|5|6"") & 
+                                               activity_status == ""Completed""& 
+                                                 month %in% report_month], 
+                                 na.rm = TRUE))
+"
+"2","Error in summarise(., partners = n_distinct(implementing_partner), counties = n_distinct(county),  : 
+  object 'eie' not found
+"
