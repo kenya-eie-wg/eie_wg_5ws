@@ -103,7 +103,6 @@ name_to_date <- function(x) {
 
 
 
-
 ```{r}
 locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
                       sheet = "ADM2") %>% 
@@ -128,6 +127,9 @@ pcode1_shape <-
 
 ipc <- read_csv("./data/ipc.csv")
 ```
+
+
+
 
 <br><br><br>
 
@@ -157,9 +159,9 @@ sum_stats <- eie %>%
 
 ```
 
-A total of `r sum_stats %>% pull(reached_1256) %>% format(big.mark = ",")` persons have been reached by EiE activities in 2023, of which `r sum_stats %>% pull(boys) %>% format(big.mark = ",")` were boys, `r sum_stats %>% pull(girls) %>% format(big.mark = ",")` were girls, `r sum_stats %>% pull(men) %>% format(big.mark = ",")` were men and `r sum_stats %>% pull(women) %>% format(big.mark = ",")`. 
+A total of `r sum_stats %>% pull(reached_1256) %>% format(big.mark = ",")` persons have been reached by EiE activities in 2023, of which `r sum_stats %>% pull(boys) %>% format(big.mark = ",")` were boys, `r sum_stats %>% pull(girls) %>% format(big.mark = ",")` were girls, `r sum_stats %>% pull(men) %>% format(big.mark = ",")` were men and `r sum_stats %>% pull(women) %>% format(big.mark = ",")` were women. Below is a summary by indicator. 
 
-This is a summary by indicator. 
+
 
 <br>
 
@@ -247,7 +249,7 @@ eie %>%
 
 <br>
 
-Only Indicator 6, Children benefiting from resilience-enhancing programming sees a higher proportion of females reached over men. 
+Only Indicator 6, Children benefiting from resilience-enhancing programming, sees a higher proportion of females reached over men. 
 
 <br>
 
@@ -281,10 +283,9 @@ eie %>%
   scale_x_continuous(labels = number_format(scale = 1 / 1000, suffix = "K")) +
   scale_fill_viridis_d(begin = .2, end = .9) + 
   facet_wrap(~ indicator_short, scales = "free_x") + 
-  labs(x = "Reached", 
+  labs(x = "Persons reached", 
        y = "", 
-       title = "Reach disaggregated by sex and age", 
-       subtitle = "Excludes some incorrect reporting under indicators 5 and 6")
+       title = "Reach disaggregated by sex, age and indicator")
 
 
 ```
@@ -516,7 +517,9 @@ indicator_map <- function(tbl, indicator_number, plot_option) {
 
 ```
 
-### 1. Access to ECD spaces/schools
+### 2.2.1 Access to ECD spaces/schools
+
+<br>
 
 ```{r}
 summary_table %>% 
@@ -525,7 +528,6 @@ summary_table %>%
   theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 1, as of ", report_date)) %>% 
   set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(i = 1, j = 1, size = 9) %>% 
   fontsize(size = 9, part = "header") 
 
 ```
@@ -546,6 +548,8 @@ indicator_map(eie, "1", beneficiaries) +
                   subtitle = paste0("As of ", report_date)) 
 
 ```
+
+
 
 <br>
 
@@ -570,7 +574,9 @@ plot_annotation(title = "1. Children accessing ECD spaces/schools, target and re
 
 <br><br><br>
 
-### 2. School feeding programmes
+### 2.2.2 School feeding programmes
+
+<br>
 
 ```{r}
 summary_table %>% 
@@ -579,7 +585,6 @@ summary_table %>%
   theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 2, as of ", report_date)) %>% 
   set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(i = 1, j = 1, size = 9) %>% 
   fontsize(size = 9, part = "header") 
 ```
 
@@ -625,7 +630,9 @@ plot_annotation(title = "2. Feeding programmes",
 
 <br><br><br>
 
-### 3. Teaching and learning materials
+### 2.2.3 Teaching and learning materials
+
+<br>
 
 ```{r}
 summary_table %>% 
@@ -634,7 +641,6 @@ summary_table %>%
   theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 3, as of ", report_date)) %>% 
   set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(i = 1, j = 1, size = 9) %>% 
   fontsize(size = 9, part = "header") 
 ```
 
@@ -679,7 +685,9 @@ plot_annotation(title = "3. Teaching materials",
 
 <br><br><br>
 
-### 4. Safe water, personal hygiene
+### 2.2.4 Safe water, personal hygiene
+
+<br>
 
 ```{r}
 summary_table %>% 
@@ -688,7 +696,6 @@ summary_table %>%
   theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 4, as of ", report_date)) %>% 
   set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(i = 1, j = 1, size = 9) %>% 
   fontsize(size = 9, part = "header") 
 ```
 
@@ -732,7 +739,9 @@ plot_annotation(title = "4. Safe water, personal hygiene",
 
 <br><br><br>
 
-### 5. Educators trained in resilience enhancing programmes
+### 2.2.5 Educators trained in resilience enhancing programmes
+
+<br>
 
 ```{r}
 summary_table %>% 
@@ -741,7 +750,6 @@ summary_table %>%
   theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 5, as of ", report_date)) %>% 
   set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(i = 1, j = 1, size = 9) %>% 
   fontsize(size = 9, part = "header") 
 ```
 
@@ -784,7 +792,9 @@ plot_annotation(title = "5. Educators trained in resilience enhancing programmes
 
 <br><br><br>
 
-### 6. Children benefited from resilience enhancing programmes
+### 2.2.6 Children benefited from resilience enhancing programmes
+
+<br>
 
 ```{r}
 summary_table %>% 
@@ -793,7 +803,6 @@ summary_table %>%
   theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 6, as of ", report_date)) %>% 
   set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(i = 1, j = 1, size = 9) %>% 
   fontsize(size = 9, part = "header") 
 ```
 
@@ -841,7 +850,7 @@ plot_annotation(title = "6. Children benefited from resilience enhancing program
 
 # 3. Partners
 
-## 3.1 Partners' operational presence
+## 3.1 Operational presence of implementing partners
 
 
 ```{r warning=FALSE, fig.height=7}
@@ -906,7 +915,7 @@ ggplotly(partner_map, tooltip = c("text")) %>%
 
 Below is an interactive table which adds detail to the map above, serving additional information for coordination -- allowing interested parties to search by county or partner. 
 
- The column `activities` refers to the number of Education activities implemented by said partner in each county. Each column can be sorted with the arrows next to each column name. Each column can also be filtered by typing into the search bar below each column name. Only completed activities have been included.
+ The column `#Activities` refers to the number of Education activities implemented by said partner in each county. Each column can be sorted with the arrows next to each column name. Each column can also be filtered by typing into the search bar below each column name. Only completed activities have been included.
  
 ```{r}
 eie %>%
@@ -931,7 +940,7 @@ eie %>%
   group_by(county, adm1_pcode, implementing_partner, lead_organisation) %>% 
   summarise(reached = sum(sector_reached[activity_status == "Completed"], na.rm = TRUE), 
             activities = n_distinct(indicator_short)) %>% 
-  select(county, implementing_partner, lead_organisation, reached, `#activities` = activities, adm1_pcode) %>% 
+  select(county, lead_organisation, implementing_partner, reached, `#activities` = activities, adm1_pcode) %>% 
   select_all(., ~ str_to_title(.)) %>% 
   datatable(options = list(pageLength = 10, scrollX = TRUE), 
             filter = list(position = "top", clear = FALSE),
@@ -950,7 +959,10 @@ eie %>%
 
 ## 3.2 Summary by implementing partner
 
+
 The table below breaks down persons reached by partner. 
+
+<br>
 
 
 ```{r}

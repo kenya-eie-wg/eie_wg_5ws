@@ -1,6 +1,0 @@
-"0","eie %>% filter(month %in% report_month & str_detect(indicator_short, ""1"") & activity_status == ""Completed"") %>% {sum(.$total_reached, na.rm = TRUE)}
-"
-"1","[1]"
-"1"," 7238"
-"1","
-"
