@@ -525,10 +525,8 @@ indicator_map <- function(tbl, indicator_number, plot_option) {
 summary_table %>% 
   filter(str_detect(Indicator, "1")) %>% 
   flextable() %>% 
-  theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 1, as of ", report_date)) %>% 
-  set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(size = 9, part = "header") 
+  set_table_properties(layout = "autofit", width = .99)
 
 ```
 
@@ -582,10 +580,8 @@ plot_annotation(title = "1. Children accessing ECD spaces/schools, target and re
 summary_table %>% 
   filter(str_detect(Indicator, "2")) %>% 
   flextable() %>% 
-  theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 2, as of ", report_date)) %>% 
-  set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(size = 9, part = "header") 
+  set_table_properties(layout = "autofit", width = .99) 
 ```
 
 <br>
@@ -638,10 +634,8 @@ plot_annotation(title = "2. Feeding programmes",
 summary_table %>% 
   filter(str_detect(Indicator, "3")) %>% 
   flextable() %>% 
-  theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 3, as of ", report_date)) %>% 
-  set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(size = 9, part = "header") 
+  set_table_properties(layout = "autofit", width = .99) 
 ```
 
 <br>
@@ -693,10 +687,8 @@ plot_annotation(title = "3. Teaching materials",
 summary_table %>% 
   filter(str_detect(Indicator, "4")) %>% 
   flextable() %>% 
-  theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 4, as of ", report_date)) %>% 
-  set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(size = 9, part = "header") 
+  set_table_properties(layout = "autofit", width = .99) 
 ```
 
 <br>
@@ -747,10 +739,8 @@ plot_annotation(title = "4. Safe water, personal hygiene",
 summary_table %>% 
   filter(str_detect(Indicator, "5")) %>% 
   flextable() %>% 
-  theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 5, as of ", report_date)) %>% 
-  set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(size = 9, part = "header") 
+  set_table_properties(layout = "autofit", width = .99) 
 ```
 
 <br>
@@ -800,10 +790,8 @@ plot_annotation(title = "5. Educators trained in resilience enhancing programmes
 summary_table %>% 
   filter(str_detect(Indicator, "6")) %>% 
   flextable() %>% 
-  theme_zebra() %>% 
   set_caption(paste0("EiE Indicator 6, as of ", report_date)) %>% 
-  set_table_properties(layout = "autofit", width = .99) %>% 
-  fontsize(size = 9, part = "header") 
+  set_table_properties(layout = "autofit", width = .99) 
 ```
 
 <br>
@@ -1222,7 +1210,6 @@ eie %>%
   arrange(indicator) %>% 
   flextable() %>% 
   theme_zebra() %>% 
-  set_caption("Text of EiE indicators") %>% 
   set_table_properties(width = .8, layout = "autofit")
 
 ```
