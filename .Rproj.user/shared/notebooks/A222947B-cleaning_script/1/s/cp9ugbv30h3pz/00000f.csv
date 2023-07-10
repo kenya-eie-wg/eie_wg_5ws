@@ -1,0 +1,3 @@
+"0","locations <- read_xlsx(""./data/ken_adminboundaries_tabulardata.xlsx"", "
+"0","                      sheet = ""ADM2"") %>% "
+"0","  clean_names()"

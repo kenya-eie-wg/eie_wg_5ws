@@ -126,8 +126,10 @@ pcode1_shape <-
   clean_names()
 
 ipc <- read_csv("./data/ipc.csv")
-```
 
+partner_list_counties <- read_csv("./data/partner_list_counties.csv") %>% 
+  filter(partner_type == "implementing_partner")
+```
 
 
 
@@ -840,6 +842,9 @@ plot_annotation(title = "6. Children benefited from resilience enhancing program
 
 ## 3.1 Operational presence of implementing partners
 
+<br>
+
+
 
 ```{r warning=FALSE, fig.height=7}
 
@@ -858,9 +863,16 @@ partner_map <- eie %>%
   mutate(reached = men + women + boys + girls, 
          male = men + boys, 
          female = women + girls, 
-         male_pc = round(male / reached * 100, digits = 2), 
-         female_pc = round(female / reached * 100, digits = 2)) %>% 
-  mutate(partners_colour = partners + runif(1, min = -.1, max = .1)) %>% 
+         male_pc = round(male / reached * 100), 
+         female_pc = round(female / reached * 100)) %>%  
+  left_join(partner_list_counties %>%
+              distinct(adm1_pcode, acronym) %>%
+              group_by(adm1_pcode) %>%
+              arrange(acronym) %>% 
+              summarise(acronym = paste0(acronym, collapse = ", ")) %>%
+              mutate(acronym = str_replace_all(acronym, "ChildFund", "CF"), 
+                     n_partners = str_count(acronym, ",") + 1), 
+            by = "adm1_pcode") %>% 
   left_join(pcode1_shape, 
              by = "adm1_pcode") %>% 
   st_as_sf() %>% 
@@ -874,10 +886,12 @@ partner_map <- eie %>%
     county, "\n", partners), 
                    text = paste0(
                 "County: ", county, "\n", 
-                "Partners: ", partners, "\n", 
+                "Partners: ", n_partners, "\n", 
                 "Reached: ", comma(sector_reached), "\n", 
                 "Female_reached%: ", female_pc, "%", "\n", 
-                "Male_reached%: ", male_pc, "%")), 
+                "Male_reached%: ", male_pc, "%", 
+                "\n", "\n", 
+                acronym)), 
                 size = 3, colour = "gray40") + 
   scale_fill_viridis_c(option = "mako", 
                      direction = -1,
@@ -928,7 +942,10 @@ eie %>%
   group_by(county, adm1_pcode, implementing_partner, lead_organisation) %>% 
   summarise(reached = sum(sector_reached[activity_status == "Completed"], na.rm = TRUE), 
             activities = n_distinct(indicator_short)) %>% 
-  select(county, lead_organisation, implementing_partner, reached, `#activities` = activities, adm1_pcode) %>% 
+  left_join(partner_list_counties %>% 
+              distinct(partner, acronym), 
+            by = c("implementing_partner" = "partner")) %>% 
+  select(county, lead_organisation, implementing_partner, acronym, reached, `#activities` = activities, adm1_pcode) %>% 
   select_all(., ~ str_to_title(.)) %>% 
   datatable(options = list(pageLength = 10, scrollX = TRUE), 
             filter = list(position = "top", clear = FALSE),
@@ -1204,13 +1221,16 @@ Download the EiE 5Ws data [here](https://github.com/kenya-eie-wg/eie_wg_5ws/blob
 
 As a refresher for the reference table below, the indicators are: 
 
+<br>
+
 ```{r}
 eie %>% 
   distinct(indicator) %>% 
   arrange(indicator) %>% 
   flextable() %>% 
   theme_zebra() %>% 
-  set_table_properties(width = .8, layout = "autofit")
+  set_table_properties(width = .85, layout = "autofit") %>% 
+  fontsize(i = 1:6, j = 1, size = 9) 
 
 ```
 

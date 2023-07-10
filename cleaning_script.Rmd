@@ -15,8 +15,6 @@ library(scales)
 library(magrittr)
 library(viridis)
 library(here)
-library(sf)
-library(googlesheets4)
 library(flextable)
 library(writexl)
 library(naniar)
@@ -176,14 +174,16 @@ read_5ws <- function(file) {
     mutate(month = fct_relevel(month, c("January", "February", "March", "April", 
                                         "May", "June", "July", "August", 
                                         "September", "October", "November", "December"))) %>%
+    mutate_at(vars(implementing_partner, lead_organisation), ~ str_trim(str_squish(.))) %>% 
     mutate_at(vars(implementing_partner, lead_organisation), ~
                 case_when(
                   str_detect(., "AVSI") ~ "AVSI Foundation",
-                  . == "Action for sustainable change" ~ "Action for Sustainable Change",
+                  str_detect(., "Action for sustainable change|Action for Sustainable change") ~ 
+                    "Action for Sustainable Change",
                   str_detect(., "FCA|FINN|Finn") ~ "Finn Church Aid",
                   str_detect(
                     ., "LIFESKILL|Life skills|Lifeskills|LifeSkills|LISP|LISFESKILLS PROMOTERS|LIFESKIILS PROMOTERS") ~
-                    "Lifeskill Promoters",
+                    "Lifeskills Promoters",
                   str_detect(., "ChildFund|Childfund") ~ "ChildFund Kenya", 
                   . == "Missionary Sistrs of the catechism" ~ "Missionary Sisters of the Catechism",
                   str_detect(., "NRC|NORWEGIAN") ~ "Norwegian Refugee Council",
@@ -193,6 +193,12 @@ read_5ws <- function(file) {
                   str_detect(., "ERIKs development Partner") ~ "ERIKs Development Partner",
                   str_detect(., "Servants of the poor") ~ "Servants of the Poor",
                   str_detect(., "Evangelizing sisters of mary") ~ "Evangelizing Sisters of Mary",
+                  str_detect(., "Voluntary Service Overseas|VSO") ~ "Voluntary Service Overseas", 
+                  str_detect(., "Homa Bay Counties") ~ "Homa Bay County", 
+                  str_detect(., "WERK") ~ "Women Educational Researchers of Kenya",
+                  str_detect(., "Women Educational Researchers of Kenya,") ~ "Women Educational Researchers of Kenya",
+                  str_detect(., "The Girl Child Network \\(GCN\\)") ~ "The Girl Child Network", 
+                  str_detect(., "FHK") ~ "Food for the Hungry",
                   TRUE ~ .
                 ))%>% 
     # Think about how you want to resolve the disaggregation issues 
@@ -272,8 +278,7 @@ eie %>%
   filter(is.na(adm1_pcode)) %>% 
   distinct(county)
 
-eie %>% 
-  filter(is.na(indicator))
+
 
 ```
 
@@ -284,6 +289,125 @@ eie %>%
 # Write 
 eie %>% 
   write_csv("./data/eie_5ws.csv")
+```
+
+
+# Partners
+
+```{r}
+partners_raw  <- read_csv("./data/partner_names_raw.csv") %>% 
+  clean_names() %>% 
+  distinct(partner_type, agency_name, acronym) %>% 
+  mutate_at(vars(agency_name, acronym), ~ str_trim(str_squish(.))) %>% 
+  filter(agency_name %out% c("National Council for Nomadic Education Kenya", 
+                             "National Council of Nomadic Education in Kenya", 
+                             "MINISTRY OF EDUCATION", 
+                             "ChildFund",
+                             "Childfund", 
+                             "CISP Kenya", 
+                             "Comitato Internazionale per lo Sviluppo dei Popoli (International Committee for the Development of Peoples) - CISP Kenya.", 
+                             "Jesuits Refugee Service", 
+                             "Save the Children International", 
+                             "AVSI FAOUNDATION", 
+                             "ChildFund kenya", 
+                             "Kenya RedCross Society", 
+                             "FINN CHURCH AID", 
+                             "Concern worldwide", 
+                             "Dignitas Limited", 
+                             "AVSI FOUDNATION")) %>% 
+  mutate(agency_name = recode(agency_name, 
+                              "Action for sustainable change" = "Action for Sustainable Change", 
+                              "AVSI FOUNDATION" = "AVSI Foundation", 
+                              "QATAR CHARITY" = "Qatar Charity", 
+                              "Life Skills Promoters" = "Lifeskills Promoters",
+                              "Girl Child Network" = "The Girl Child Network",
+                              "WE WORLD" = "We World")) %>% 
+  mutate(acronym = case_when(agency_name == "Christian Blind Mission"~ "CBM",
+                             agency_name == "Concern Worldwide" ~ "CW", 
+                             agency_name == "Finn Church Aid" ~ "FCA", 
+                             agency_name == "Mondo" ~ "Mondo", 
+                             agency_name == "Plan International Kenya" ~ "PLAN", 
+                             agency_name == "Rotary International" ~ "RI", 
+                             agency_name == "World Vision Kenya" ~ "WVK", 
+                             agency_name == "FilmAid Kenya" ~ "FA", 
+                             agency_name == "ResQ247" ~ "ResQ", 
+                             agency_name == "LEGO Foundation" ~ "LEGO", 
+                             agency_name == "St Paul's university" ~ "SPU", 
+                             agency_name == "Dignitas" ~ "DIGN",
+                             agency_name == "EducAid" ~ "EducAid", 
+                             agency_name == "Humanity & Inclusion" ~ "H&I", 
+                             agency_name == "Build Africa Kenya" ~ "BAK", 
+                             agency_name == "Edukans Kenya" ~ "Edukans", 
+                             agency_name == "Action for Sustainable Change" ~ "AFOSC", 
+                             agency_name == "Elimu Yetu Coalition" ~ "EYC", 
+                             agency_name == "CRESNET CBO" ~ "CRES", 
+                             agency_name == "MOE Wajir" ~ "MOE Wajir", 
+                             agency_name == "Qatar Charity" ~ "QATAR", 
+                             agency_name == "Education Management & Leadership" ~ "EML", 
+                             agency_name == "International Aid Services Kenya" ~ "IASK", 
+                             agency_name == "Worldreader" ~ "WR",
+                             agency_name == "ChildFund Kenya" ~ "CF", 
+                             agency_name == "The Girl Child Network" ~ "GCN", 
+                             TRUE ~ acronym)) %>% 
+  distinct(partner_type, partner = agency_name, acronym) %>% 
+  arrange(partner) 
+
+
+```
+
+
+```{r}
+# eie <- read_csv("./data/eie_5ws.csv") 
+
+
+partner_list_counties <- eie %>% 
+  mutate_at(vars(lead_organisation, implementing_partner), ~ str_trim(str_squish(.))) %>% 
+  mutate(lead_organisation = ifelse(lead_organisation == implementing_partner, 
+                                    NA_character_, 
+                                    lead_organisation)) %>%
+  select(county, adm1_pcode, lead_organisation, implementing_partner) %>% 
+  pivot_longer(cols = c(lead_organisation, implementing_partner), 
+               names_to = "partner_type", 
+               values_to = "partner") %>% 
+  filter(!is.na(partner)) %>% 
+  left_join(partners_raw %>% 
+              select(partner, acronym), 
+            by = "partner") %>% 
+  mutate(acronym = case_when(partner == "Food for the Hungry" ~ "FHK", 
+                             partner == "Nawiri Children Development Program" ~ "NCDP",
+                             partner == "Frontiers Community Development Program" ~ "FCDP",
+                             partner == "Homa Bay County" ~ "HBC",
+                             partner == "Special Olympics Kenya" ~ "SOK",
+                             partner == "Servants of the Poor" ~ "SP",
+                             partner == "Evangelizing Sisters of Mary" ~ "ESM",
+                             partner == "IWS" ~ "IWS",
+                             partner == "CDE Wajir" ~ "CDE Wajir",
+                             partner == "Missionary Sisters of the Catechism" ~ "MCS",
+                             partner == "ERIKs Development Partner" ~ "ERIKs",
+                             partner == "SMB" ~ "SMB",
+                             partner == "Mondi" ~ "MON",
+                             partner == "Bartabwa" ~ "BART",
+                             partner == "CDE Mandera" ~ "CDE Mandera",
+                             partner == "Windle International Kenya" ~ "WIK",
+                             partner == "The Girl Child Network" ~ "GCN",
+                             partner == "Futebol da Forcaa, Moving the Goalposts -Kilifi" ~ "FUTE",
+                             partner == "MOE" ~ "MOE", 
+                             partner == "UNICEF" ~ "UNICEF", 
+                             partner == "ChildFund Kenya" ~ "CF", 
+                             TRUE ~ acronym)) %>% 
+  mutate(partner = str_replace_all(partner, "CDE", "County Director of Education"),
+         partner = str_replace_all(partner, "Girl Child Network|The Girl Child Network", 
+                          "The Girl Child Network"),
+         partner = recode(partner,
+                          "MOE" = "Ministry of Education",
+                          "Futebol da Forcaa, Moving the Goalposts -Kilifi" = 
+                            "Futebol da Forcaa, Moving the Goalposts"), 
+         acronym = ifelse(partner == "The Girl Child Network", "GCN", acronym)) 
+
+partner_list_counties %>% 
+  write_csv("./data/partner_list_counties.csv")
+  
+
 ```
 
 
@@ -415,7 +539,6 @@ eie %>%
              by = c("county", "indicator_short")) %>% 
   write_csv("reached_by_indicator_flat.csv")
 ```
-
 
 
 

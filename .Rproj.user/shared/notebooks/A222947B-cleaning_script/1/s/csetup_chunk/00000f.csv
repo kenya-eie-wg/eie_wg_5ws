@@ -8,8 +8,6 @@
 "0","library(magrittr)"
 "0","library(viridis)"
 "0","library(here)"
-"0","library(sf)"
-"0","library(googlesheets4)"
 "0","library(flextable)"
 "0","library(writexl)"
 "0","library(naniar)"
