@@ -3,9 +3,9 @@
     "path": "~/R/eie_wg_5ws/cleaning_script.Rmd",
     "project_path": "cleaning_script.Rmd",
     "type": "r_markdown",
-    "hash": "2737350064",
+    "hash": "0",
     "contents": "",
-    "dirty": false,
+    "dirty": true,
     "created": 1687500584929.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -13,8 +13,8 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "559,0",
-        "scrollLine": "518",
+        "cursorPosition": "413,0",
+        "scrollLine": "397",
         "last_setup_crc32": "149139233a9f1bc5",
         "docOutlineSize": "73",
         "docOutlineVisible": "1"
@@ -24,7 +24,7 @@
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1688989493461,
+    "last_content_update": 1688993634508,
     "read_only": false,
     "read_only_alternatives": []
 }

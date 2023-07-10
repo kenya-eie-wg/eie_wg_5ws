@@ -199,6 +199,11 @@ read_5ws <- function(file) {
                   str_detect(., "Women Educational Researchers of Kenya,") ~ "Women Educational Researchers of Kenya",
                   str_detect(., "The Girl Child Network \\(GCN\\)") ~ "The Girl Child Network", 
                   str_detect(., "FHK") ~ "Food for the Hungry",
+                  str_detect(., "Futebol da Forcaa") ~ "Futebol da Forcaa", 
+                  . == "MOE" ~ "Ministry of Education", 
+                  . == "CDE Wajir" ~ "County Director of Education Wajir",
+                  . == "CDE Mandera" ~ "County Director of Education Mandera", 
+                  . == "Girl Child Network" ~ "The Girl Child Network", 
                   TRUE ~ .
                 ))%>% 
     # Think about how you want to resolve the disaggregation issues 
@@ -390,18 +395,16 @@ partner_list_counties <- eie %>%
                              partner == "CDE Mandera" ~ "CDE Mandera",
                              partner == "Windle International Kenya" ~ "WIK",
                              partner == "The Girl Child Network" ~ "GCN",
-                             partner == "Futebol da Forcaa, Moving the Goalposts -Kilifi" ~ "FUTE",
-                             partner == "MOE" ~ "MOE", 
+                             partner == "Futebol da Forcaa" ~ "FUTE",
+                             partner == "Ministry of Education" ~ "MOE", 
                              partner == "UNICEF" ~ "UNICEF", 
                              partner == "ChildFund Kenya" ~ "CF", 
+                             partner == "County Director of Education Wajir" ~ "CDE Wajir", 
+                             partner == "County Director of Education Mandera" ~ "CDE Mandera", 
                              TRUE ~ acronym)) %>% 
   mutate(partner = str_replace_all(partner, "CDE", "County Director of Education"),
          partner = str_replace_all(partner, "Girl Child Network|The Girl Child Network", 
                           "The Girl Child Network"),
-         partner = recode(partner,
-                          "MOE" = "Ministry of Education",
-                          "Futebol da Forcaa, Moving the Goalposts -Kilifi" = 
-                            "Futebol da Forcaa, Moving the Goalposts"), 
          acronym = ifelse(partner == "The Girl Child Network", "GCN", acronym)) 
 
 partner_list_counties %>% 
