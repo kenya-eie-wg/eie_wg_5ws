@@ -542,4 +542,20 @@ eie %>%
 
 
 
+# Export for OCHA
+
+```{r}
+eie %>% 
+  rename(monitoring_indicator = indicator, 
+         main_activity = activity) %>% 
+  select(month:comments) %>% 
+  filter(month == "June") %>% 
+  write_csv("./data/eie_5ws_june.csv")
+
+eie %>% 
+  group_by(month, indicator, county, adm1_pcode) %>% 
+  summarise(reached = sum(total_reached, na.rm = TRUE)) %>% 
+  write_csv("./data/reached_by_indicator_all_months.csv")
+
+```
 
