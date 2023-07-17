@@ -1,0 +1,34 @@
+"0","top <- crossing(combined %>% distinct(county),
+                   combined %>% distinct(month),
+                   messy) %>% 
+  rename(sub_indicator = messy) %>% 
+  mutate(key = paste0(county, month, sub_indicator)) %>% 
+  left_join(combined %>% 
+              mutate(key = paste0(county, month, sub_indicator)) %>% 
+              select(key, value, char_value),
+            by = ""key"") %>% 
+  filter(!str_detect(sub_indicator, ""x|month"")) %>% 
+  mutate(char_value = ifelse(str_detect(sub_indicator, ""narrative""), 
+                char_value, NA_character_)) %>%
+  replace_na(list(value = 0)) %>% 
+  mutate(value = ifelse(str_detect(sub_indicator, ""narrative""), 
+                char_value, value)) %>% 
+  select(-key, -char_value) %>% 
+  pivot_wider(names_from = sub_indicator, 
+              values_from = value) %>% 
+  mutate_at(vars(!matches(""narrative|county|month"")), 
+            ~ as.numeric(.)) %>% 
+  group_by(month) %>% 
+  summarise_at(vars(!matches(""narrative|county|month"")), ~ sum(., na.rm = TRUE)) %>% 
+  mutate(indicator1_narrative = """", 
+         indicator2_narrative = """", 
+         indicator3_narrative = """", 
+         indicator4_narrative = """", 
+         indicator5_narrative = """", 
+         indicator6_narrative = """", 
+         indicator7_narrative = """", 
+         county = ""Total"") %>% 
+  column_selector() 
+"
+"2","Error in column_selector(.) : could not find function ""column_selector""
+"
