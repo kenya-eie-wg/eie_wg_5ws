@@ -204,7 +204,7 @@ read_5ws <- function(file) {
                   . == "CDE Wajir" ~ "County Director of Education Wajir",
                   . == "CDE Mandera" ~ "County Director of Education Mandera", 
                   . == "Girl Child Network" ~ "The Girl Child Network", 
-                  . == "SC" ~ "Save the Children"
+                  . == "SC" ~ "Save the Children",
                   TRUE ~ .
                 ))%>% 
     # Think about how you want to resolve the disaggregation issues 
