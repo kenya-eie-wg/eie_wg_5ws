@@ -147,37 +147,6 @@ combined <- read_csv("./data/combined.csv")
 
 # Sitrep 
 
-```{r}
-eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
-                 lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
-  summarise_indicator()
-
-eie %>% 
-  filter(month == "June" & str_detect(indicator, "1") & implementing_partner %out% c("Lifeskills Promoters")) %>% 
-  summarise(reached = sum(total_reached, na.rm = TRUE))
-
-combined %>% 
-  filter(str_detect(sub_indicator, "1") & str_detect(sub_indicator, "total_children") & 
-           beneficiary_group == "all") %>% 
-  filter(month == "June") %>% 
-  summarise(value = sum(value))
-
-2404 + 
-3777 + 
-4557 + 
-2366 + 
-83 + 
-1354 + 
-1223 + 
-1541 + 
-441 + 
-390 + 
-322 + 
-561 + 
-2366
-
-
-```
 
 
 ```{r}
@@ -234,13 +203,20 @@ combined %>%
 
 ```{r}
 bom_indicator <- combined %>% 
-  filter(month %in% report_month & str_detect(unicef_indicator, "6")) %>% 
-  filter(sub_indicator == "indicator1_all_total_children")
+  filter(month %in% report_month & str_detect(unicef_indicator, "6") & 
+           str_detect(sub_indicator, "all")) %>% 
+  replace_na(list(value = 0)) %>% 
+  group_by(sex_modifier) %>% 
+  summarise(value = sum(value))
+
+combined %>% 
+  
+  group_by()
 ```
 
 
 
-UNICEF also supported the training of `r bom_indicator %>% filter(sub_indicator == "indicator1_all_total_children") %>% pull(value)` (`r bom_indicator %>% filter(sex_modifier == "male") %>% pull(value)` men and `r bom_indicator %>% filter(sex_modifier == "total") %>% pull(value)` women) members of the Enrolment Drive Committees (EDCs) and school Board of Management (BoM) in Baringo and Turkana counties on life skills, child safeguarding and their roles/responsibilities, child protection and referral mechanisms. 
+UNICEF also supported the training of `r bom_indicator %>% filter(sex_modifier == "total") %>% pull(value)` (`r bom_indicator %>% filter(sex_modifier == "male") %>% pull(value)` men and `r bom_indicator %>% filter(sex_modifier == "female") %>% pull(value)` women) members of the Enrolment Drive Committees (EDCs) and school Board of Management (BoM) in Baringo and Turkana counties on life skills, child safeguarding and their roles/responsibilities, child protection and referral mechanisms. 
 
 ```{r}
 indicator6 <- eie %>% 
