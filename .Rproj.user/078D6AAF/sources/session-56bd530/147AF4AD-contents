@@ -193,12 +193,6 @@ indicator5 <- eie %>%
 
 To enhance quality of learning and support newly enrolled learners in drought affected counties, `r indicator5 %>% pull(total) %>% format(big.mark = ",")` teachers (`r indicator5 %>% pull(men) %>% format(big.mark = ",")` men and `r indicator5 %>% pull(women) %>% format(big.mark = ",")` women) were trained on remedial and catchup pedagogical approaches, Mental Health and Psychosocial Support (MHPSS), Gender-Based Violence (GBV) and Guidance and Counselling (G&C). 
 
-```{r}
-combined %>% 
-  filter(month %in% report_month & str_detect(unicef_indicator, "6")) %>% 
-  filter(sub_indicator == "indicator1_all_total_children")
-```
-
 
 
 ```{r}
@@ -208,10 +202,6 @@ bom_indicator <- combined %>%
   replace_na(list(value = 0)) %>% 
   group_by(sex_modifier) %>% 
   summarise(value = sum(value))
-
-combined %>% 
-  
-  group_by()
 ```
 
 
