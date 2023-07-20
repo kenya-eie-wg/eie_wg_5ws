@@ -66,16 +66,6 @@ locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx",
   clean_names()
 ```
 
-## Path to 4Ws
-
-```{r}
-
-# This is the folder where the 4Ws from the current round are stored
-
-path_5ws <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023"
-
-
-```
 
 # 5Ws
 
@@ -244,7 +234,13 @@ What you can do next is to use tidytext to separate out a list of schools
 ## Output
 
 ```{r warning = FALSE}
-  
+
+## Path to 4Ws
+# This is the folder where the 4Ws from the current round are stored
+
+path_5ws <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023"
+
+
 # Change the folder to the correct one
 # The files will be read from here 
 file_list <- list.files(path = path_5ws, 
@@ -298,6 +294,15 @@ eie %>%
 # Write 
 eie %>% 
   write_csv("./data/eie_5ws.csv")
+```
+
+
+```{r}
+eie %>% filter(str_detect(indicator, "3")) %>% 
+  
+  summarise(total_reached = sum(total_reached, na.rm = TRUE))
+  summarise(total_reached = sum(total_reached, na.rm = TRUE), 
+            partners = n_distinct(implementing_partner))
 ```
 
 

@@ -266,3 +266,54 @@ eie %>%
        fill = "Schools\nreported", 
        title = "Not all persons reached are associated with schools", 
        subtitle = "Only indicators")
+
+data_entry_long <- crossing(combined %>% distinct(county),
+                            full_months,
+                            messy) %>% 
+  rename(sub_indicator = messy,
+         month = full_months) %>% 
+  mutate(key = paste0(county, month, sub_indicator)) %>% 
+  left_join(combined %>% 
+              mutate(key = paste0(county, month, sub_indicator)) %>% 
+              select(key, value, comments = char_value),
+            by = "key") %>% 
+  filter(!str_detect(sub_indicator, "x|month")) %>% 
+  replace_na(list(value = 0)) %>% 
+  mutate(comments = ifelse(str_detect(sub_indicator, "narrative"), comments, "")) %>% 
+  select(-key) %>% 
+  mutate(sex_modifier = case_when(str_detect(sub_indicator, "narrative") ~ NA_character_,
+                                  str_detect(sub_indicator, "girls|women|Women|Girls|Female|female") ~ "female", 
+                                  str_detect(sub_indicator, "boys|Boys|men|Men|Male|male") ~ "male", 
+                                  str_detect(sub_indicator, "total") ~ "total", 
+                                  TRUE ~ NA_character_), 
+         beneficiary_group = case_when(str_detect(sub_indicator, "narrative") ~ NA_character_,
+                                       str_detect(sub_indicator, "host_community") ~ "host_community", 
+                                       str_detect(sub_indicator, "idps") ~ "idps", 
+                                       str_detect(sub_indicator, "refugees") ~ "refugees",
+                                       str_detect(sub_indicator, "all") ~ "all",
+                                       str_detect(sub_indicator, "cwd") ~ "cwd",
+                                       TRUE ~ NA_character_), 
+         age_modifier = case_when(str_detect(sub_indicator, "narrative") ~ NA_character_,
+                                  str_detect(sub_indicator, "boys|girls|children") ~ "children", 
+                                  str_detect(sub_indicator, "Male|male|Female|female|adults") ~ "adults", 
+                                  str_detect(sub_indicator, "all") & str_detect(sub_indicator, "1|3|7|2") ~ "children", 
+                                  str_detect(sub_indicator, "all") & str_detect(sub_indicator, "5|6|4") ~ "adults",
+                                  TRUE ~ NA_character_)) %>% 
+  mutate(age_modifier = case_when(str_detect(sub_indicator, "1|3|7") & is.na(age_modifier) & 
+                                    !str_detect(sub_indicator, "narrative") ~ "children", 
+                                  str_detect(sub_indicator, "4|5|6") & is.na(age_modifier) & 
+                                    !str_detect(sub_indicator, "narrative") ~ "adults",
+                                  str_detect(sub_indicator, "2") & !is.na(sex_modifier) ~ "children", 
+                                  TRUE ~ age_modifier)) %>% 
+  mutate(month = fct_relevel(month, full_months)) %>% 
+  arrange(month, county) %>% 
+  select(county, sub_indicator, month, sex_modifier, age_modifier, beneficiary_group, value, comments)
+
+data_entry_long %>%
+  write_csv("./data/data_entry_long.csv")
+
+data_entry_long %>% 
+  left_join(combined %>% 
+              distinct(sub_indicator, unicef_indicator), 
+            by = "sub_indicator") %>% 
+  distinct(unicef_indicator, sub_indicator, sex_modifier, age_modifier, beneficiary_group) %>% view()

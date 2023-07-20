@@ -69,7 +69,7 @@ name_to_date <- function(x) {
 ```
 
 
-# Data 
+# Data and names
 
 ```{r}
 locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
@@ -77,6 +77,7 @@ locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx",
   clean_names()
 ```
 
+## Messy names
 
 ```{r}
 
@@ -322,7 +323,14 @@ combined %>% write_csv("./data/combined.csv")
 ```
 
 
+
+
 # Output 
+
+```{r}
+combined <- read_csv("./data/combined.csv")
+```
+
 
 ```{r}
 combined %>% 
@@ -471,7 +479,7 @@ column_selector <- function(tbl){
 ```
 
 
-## Output to messy table
+## To messy table
 
 ```{r}
 bottom <- crossing(combined %>% distinct(county),
@@ -619,6 +627,7 @@ crossing(combined %>% distinct(county),
   arrange(county, month)
 ```
 
+## Wide
 
 ```{r}
 
@@ -664,59 +673,70 @@ data_entry_wide %>%
 
 ```
 
+## Long
 
 ```{r}
+full_months <- c("January", "February", "March",
+                     "April", "May", "June", 
+                     "July", "August", "September", 
+                     "October", "November", "December")
+
 data_entry_long <- crossing(combined %>% distinct(county),
          full_months,
          messy) %>% 
   rename(sub_indicator = messy,
-         month = full_months) %>% 
-  mutate(key = paste0(county, month, sub_indicator)) %>% 
-  left_join(combined %>% 
-              mutate(key = paste0(county, month, sub_indicator)) %>% 
-              select(key, value, comments = char_value),
-            by = "key") %>% 
-  filter(!str_detect(sub_indicator, "x|month")) %>% 
-  replace_na(list(value = 0)) %>% 
-  mutate(comments = ifelse(str_detect(sub_indicator, "narrative"), comments, "")) %>% 
-  select(-key) %>% 
-  mutate(sex_modifier = case_when(str_detect(sub_indicator, "narrative") ~ NA_character_,
-                                  str_detect(sub_indicator, "girls|women|Women|Girls|Female|female") ~ "female", 
-                                  str_detect(sub_indicator, "boys|Boys|men|Men|Male|male") ~ "male", 
-                                  str_detect(sub_indicator, "total") ~ "total", 
-                                  TRUE ~ NA_character_), 
-         beneficiary_group = case_when(str_detect(sub_indicator, "narrative") ~ NA_character_,
-                                       str_detect(sub_indicator, "host_community") ~ "host_community", 
-                                       str_detect(sub_indicator, "idps") ~ "idps", 
-                                       str_detect(sub_indicator, "refugees") ~ "refugees",
-                                       str_detect(sub_indicator, "all") ~ "all",
-                                       str_detect(sub_indicator, "cwd") ~ "cwd",
-                                       TRUE ~ NA_character_), 
-         age_modifier = case_when(str_detect(sub_indicator, "narrative") ~ NA_character_,
-                                  str_detect(sub_indicator, "boys|girls|children") ~ "children", 
-                                  str_detect(sub_indicator, "Male|male|Female|female|adults") ~ "adults", 
-                                  str_detect(sub_indicator, "all") & str_detect(sub_indicator, "1|3|7|2") ~ "children", 
-                                  str_detect(sub_indicator, "all") & str_detect(sub_indicator, "5|6|4") ~ "adults",
-                                  TRUE ~ NA_character_)) %>% 
-  mutate(age_modifier = case_when(str_detect(sub_indicator, "1|3|7") & is.na(age_modifier) & 
-                                    !str_detect(sub_indicator, "narrative") ~ "children", 
-                                str_detect(sub_indicator, "4|5|6") & is.na(age_modifier) & 
-                                  !str_detect(sub_indicator, "narrative") ~ "adults",
-                                str_detect(sub_indicator, "2") & !is.na(sex_modifier) ~ "children", 
-                                TRUE ~ age_modifier)) %>% 
-  mutate(month = fct_relevel(month, full_months)) %>% 
-  arrange(month, county) %>% 
-  select(county, sub_indicator, month, sex_modifier, age_modifier, beneficiary_group, value, comments)
+         month = full_months) %>%
+  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
+  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
+         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
+                                                         "indicator2_new_latrines", 
+                                                         "indicator2_rehabilitated_classrooms", 
+                                                         "indicator2_rehabiltated_latrines"), 
+                                    sub_indicator, sub_indicator_alt)) %>% 
+  select(-sub_indicator) %>% 
+  filter(!str_detect(sub_indicator_alt, "x|month")) %>% 
+  distinct(county, month, sub_indicator_alt) %>%  
+  left_join(
+    combined %>%
+      select(month, county, sub_indicator, value, sex_modifier) %>% 
+      filter(!is.na(value)) %>% 
+      pivot_wider(names_from = sex_modifier, 
+                  values_from = value) %>% 
+      mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
+      rename(facility = `NA`) %>% 
+      mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
+         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
+                                                         "indicator2_new_latrines", 
+                                                         "indicator2_rehabilitated_classrooms", 
+                                                         "indicator2_rehabiltated_latrines"), 
+                                    sub_indicator, sub_indicator_alt)) %>%
+      group_by(month, county, sub_indicator_alt) %>% 
+      summarise(male = sum(male, na.rm = TRUE), 
+                female = sum(female, na.rm = TRUE), 
+                total = sum(total, na.rm = TRUE), 
+                facility = sum(facility, na.rm = TRUE)) %>% 
+      mutate(total = ifelse(total == 0 & male > 0 | female > 0, male + female, total)),
+    by = c("county" = "county", "month" = "month", "sub_indicator_alt" = "sub_indicator_alt")
+  ) %>% 
+  mutate(month = fct_relevel(month, full_months)) %>%
+  arrange(county, month) %>% 
+  replace_na(list(male = 0, 
+                  female = 0, 
+                  total = 0,
+                  facility = 0)) %>% 
+  filter(!str_detect(sub_indicator_alt, "narrative")) %>% 
+  mutate(comments = "")
 
-data_entry_long %>%
-  write_csv("./data/data_entry_long.csv")
-
-data_entry_long %>% 
-  left_join(combined %>% 
-              distinct(sub_indicator, unicef_indicator), 
-            by = "sub_indicator") %>% 
-  distinct(unicef_indicator, sub_indicator, sex_modifier, age_modifier, beneficiary_group) %>% view()
 ```
+
 
 
 

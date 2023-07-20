@@ -169,6 +169,32 @@ A total of `r sum_stats %>% pull(reached_1256) %>% format(big.mark = ",")` perso
 
 ```{r}
 
+eie %>% 
+  filter(activity_status == "Completed") %>% 
+  mutate(latest_reached = ifelse(month %in% report_month, total_reached, NA_integer_)) %>% 
+  group_by(indicator_short) %>% 
+  summarise(partners = n_distinct(implementing_partner), 
+            counties = n_distinct(adm1_pcode),   
+            latest_reached = sum(latest_reached, na.rm = TRUE), 
+            total_reached = sum(total_reached, na.rm = TRUE))
+
+eie %>% filter(indicator_short == "3. Teaching materials" & 
+                 activity_status == "Completed") %>% 
+  group_by(month) %>% 
+  summarise(total_reached = sum(total_reached)) %>% 
+  adorn_totals("row")
+
+eie %>% filter(indicator_short == "3. Teaching materials" & 
+                 activity_status == "Completed") %>% 
+  group_by(month) %>% 
+  summarise(total_reached = sum(total_reached, na.rm = TRUE))
+  write_xlsx("./data/indicator3.xlsx")
+
+```
+
+
+```{r}
+
 
 summary_table <- eie %>% 
   filter(activity_status == "Completed") %>% 
