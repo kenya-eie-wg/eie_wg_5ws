@@ -735,6 +735,8 @@ data_entry_long <- crossing(combined %>% distinct(county),
   filter(!str_detect(sub_indicator_alt, "narrative")) %>% 
   mutate(comments = "")
 
+data_entry_long %>% 
+  write_xlsx("./data/data_entry_long.xlsx")
 ```
 
 
@@ -770,6 +772,8 @@ combined %>%
 
 ```
 
+# Plots 
+
 ```{r}
 combined %>% 
   filter(str_detect(unicef_indicator, "1") & 
@@ -801,6 +805,39 @@ ggsave("./img/oosc_example_plot.png",
   
 
 
+```
+
+```{r}
+combined %>% 
+  filter(str_detect(sub_indicator, "all_total|cwd") & !str_detect(sub_indicator, "boys|girls")) %>% 
+  replace_na(list(value = 0)) %>% 
+  mutate(indicator = str_sub(sub_indicator, 1L, 10L)) %>% 
+  group_by(indicator, beneficiary_group) %>% 
+  summarise(value = sum(value)) %>% 
+  pivot_wider(names_from = beneficiary_group, 
+              values_from = value, 
+              values_fill = 0) %>% 
+  mutate(pc = cwd / all * 100)
+  ggplot(aes(x = value, y = indicator)) + 
+  geom_col(aes(fill = beneficiary_group),
+           position = position_dodge(width = .9))
+  group_by() %>% 
+  summarise()
+```
+
+```{r}
+combined %>% 
+  filter(!str_detect(unicef_indicator, "6")) %>% 
+  group_by(unicef_indicator_number, beneficiary_group) %>% 
+  summarise(value = sum(value, na.rm = TRUE)) %>% 
+  filter(beneficiary_group %out% c("all", "cwd") & !is.na(beneficiary_group)) %>% 
+  mutate(unicef_indicator_number = as.factor(unicef_indicator_number), 
+         unicef_indicator_number = fct_rev(unicef_indicator_number)) %>% 
+  ggplot(aes(x = value, y = unicef_indicator_number)) + 
+  geom_col(aes(fill = beneficiary_group), 
+           position = position_stack()) + 
+  scale_fill_viridis_d(begin = .2)
+  glimpse()
 ```
 
 

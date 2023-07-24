@@ -1,0 +1,20 @@
+"0","read_csv(""./data/eie_5ws_20230724.csv"") %>% 
+  filter(activity_status == ""Completed"") %>% 
+  filter(!is.na(sub_county)) %>%
+  slice(15:20) %>% 
+  select(county, sub_county, total_reached) %>% 
+  select_all(~ str_to_title(.)) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_caption(""There is more than one sub-county per row"") %>% 
+  set_table_properties(layout = ""autofit"", width = .7)
+"
+"2","[1mRows: [22m[34m292[39m [1mColumns: [22m[34m27[39m"
+"2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (18): month, lead_organisation, organisation_type, donor, sector, education_level, indicator, activity, im...
+[32mdbl[39m   (7): boys, girls, men, women, total_reached, schools, sector_reached
+[34mdttm[39m  (2): start_date, end_date"
+"2","
+[36mi[39m Use `spec()` to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

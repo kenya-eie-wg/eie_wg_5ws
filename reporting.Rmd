@@ -103,7 +103,7 @@ name_to_date <- function(x) {
 
 
 
-```{r}
+```{r data}
 locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
                       sheet = "ADM2") %>% 
   clean_names()
@@ -166,31 +166,6 @@ A total of `r sum_stats %>% pull(reached_1256) %>% format(big.mark = ",")` perso
 
 
 <br>
-
-```{r}
-
-eie %>% 
-  filter(activity_status == "Completed") %>% 
-  mutate(latest_reached = ifelse(month %in% report_month, total_reached, NA_integer_)) %>% 
-  group_by(indicator_short) %>% 
-  summarise(partners = n_distinct(implementing_partner), 
-            counties = n_distinct(adm1_pcode),   
-            latest_reached = sum(latest_reached, na.rm = TRUE), 
-            total_reached = sum(total_reached, na.rm = TRUE))
-
-eie %>% filter(indicator_short == "3. Teaching materials" & 
-                 activity_status == "Completed") %>% 
-  group_by(month) %>% 
-  summarise(total_reached = sum(total_reached)) %>% 
-  adorn_totals("row")
-
-eie %>% filter(indicator_short == "3. Teaching materials" & 
-                 activity_status == "Completed") %>% 
-  group_by(month) %>% 
-  summarise(total_reached = sum(total_reached, na.rm = TRUE))
-  write_xlsx("./data/indicator3.xlsx")
-
-```
 
 
 ```{r}
@@ -1281,9 +1256,84 @@ eie %>%
   formatRound(c("reached"), digits = 0)
 ```
 
+<br><br><br>
+
+## 5.3 Reporting quality 
+
+### 5.3.1 Sub-counties 
+
+```{r}
+read_csv("./data/eie_5ws_20230724.csv") %>% 
+  filter(activity_status == "Completed") %>% 
+  filter(!is.na(sub_county)) %>%
+  slice(15:20) %>% 
+  select(county, sub_county, total_reached) %>% 
+  select_all(~ str_to_title(.)) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_caption("There is more than one sub-county per row") %>% 
+  set_table_properties(layout = "autofit", width = .7)
+
+```
+
+<br>
+
+Analysis and reporting is possible on the 86% of beneficiaries reached who were reported with a sub-county. However, it will remain that any sub-county-level maps or products will not be able to include a sizeable portion of the beneficiaries. 
+
+
+<br> 
 
 
 
+```{r}
+read_csv("./data/eie_5ws_20230724.csv") %>% 
+  filter(activity_status == "Completed") %>% 
+  mutate(one_sub_county = ifelse(str_detect(sub_county, ","), 
+                                        FALSE, TRUE)) %>%
+  group_by(one_sub_county) %>% 
+  summarise(total_reached = sum(total_reached, na.rm = TRUE)) %>% 
+  mutate(`%_total` = round(total_reached / sum(total_reached) * 100, digits = 2), 
+         one_sub_county = ifelse(is.na(one_sub_county), "NA", one_sub_county), 
+         one_sub_county = fct_relevel(one_sub_county, c("TRUE", "FALSE", "NA"))) %>%
+  arrange(one_sub_county) %>% 
+  select_all(~ str_to_title(.)) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_caption("86% of beneficiaries reported with one sub-county per row") %>% 
+  set_table_properties(layout = "autofit", width = .7)
+```
+
+<br>
+
+In the proposed revision to the 5W template, the sub-county column has been revised to be a dropdown list dependent on the input in the `county` column. Going forward, only one sub-county should be reported per row. 
+
+<br><br>
+
+### 5.3.2 Schools
+
+The next step is to move from entering the names of schools to just entering the number of schools per intervention. The `schools_text` column below is data entered into 5Ws template. The column is currently a mix of names of schools and number of schools. It is best to collect only the number of schools and have the names be included in the comments. 
+
+<br> 
+
+```{r}
+
+read_csv("./data/eie_5ws_20230724.csv") %>% 
+  filter(!is.na(names_numbers_schools)) %>% 
+  filter(activity_status == "Completed") %>% 
+  slice(11, 12, 13) %>% 
+  select(Schools_text = names_numbers_schools, Schools_number = schools) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_table_properties(layout = "autofit", width = .9) %>% 
+  set_caption("Schools column is a mix of text and numbers")
+  
+
+```
+
+
+<br> 
+
+It is still valuable to collect school names and match them to the list of school codes and geocoordinates, especially for site-level monitoring, but that is a step to be taken once the format of school names being collected has been standardised. 
 
 
 

@@ -268,7 +268,7 @@ Wajir,KE008,implementing_partner,Action for Sustainable Change,AFOSC
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Kilifi,KE003,implementing_partner,World Vision Kenya,WVK
-Kajiado,KE034,lead_organisation,Save the Children,SCI
+Kajiado,KE034,lead_organisation,UNESCO,NA
 Kajiado,KE034,implementing_partner,The Girl Child Network,GCN
 Isiolo,KE011,lead_organisation,Voluntary Service Overseas,VSO
 Isiolo,KE011,implementing_partner,ERIKs Development Partner,ERIKs
@@ -343,11 +343,11 @@ Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Kwale,KE002,lead_organisation,Save the Children,SCI
+Kwale,KE002,lead_organisation,UNESCO,NA
 Kwale,KE002,implementing_partner,The Girl Child Network,GCN
-Kajiado,KE034,lead_organisation,Save the Children,SCI
+Kajiado,KE034,lead_organisation,UNESCO,NA
 Kajiado,KE034,implementing_partner,The Girl Child Network,GCN
-Kilifi,KE003,lead_organisation,Save the Children,SCI
+Kilifi,KE003,lead_organisation,UNESCO,NA
 Kilifi,KE003,implementing_partner,Futebol da Forcaa,FUTE
 Baringo,KE030,implementing_partner,World Vision Kenya,WVK
 Baringo,KE030,implementing_partner,World Vision Kenya,WVK
@@ -405,7 +405,7 @@ Narok,KE033,implementing_partner,Ministry of Education,MOE
 Narok,KE033,lead_organisation,World Vision Kenya,WVK
 Narok,KE033,implementing_partner,Ministry of Education,MOE
 Narok,KE033,lead_organisation,World Vision Kenya,WVK
-Narok,KE033,implementing_partner,Save the Children,SCI
+Narok,KE033,implementing_partner,MOE/TSC,NA
 Baringo,KE030,implementing_partner,Save the Children,SCI
 Baringo,KE030,implementing_partner,Save the Children,SCI
 Turkana,KE023,implementing_partner,Save the Children,SCI
