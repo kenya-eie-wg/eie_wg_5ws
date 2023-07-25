@@ -317,3 +317,19 @@ data_entry_long %>%
               distinct(sub_indicator, unicef_indicator), 
             by = "sub_indicator") %>% 
   distinct(unicef_indicator, sub_indicator, sex_modifier, age_modifier, beneficiary_group) %>% view()
+
+eie %>% 
+  replace_na(list(boys = 0, girls = 0, men = 0, women = 0)) %>% 
+  mutate(total_reached = ifelse(str_detect(indicator, "1"), 
+                                boys + girls, 
+                                total_reached)) %>%
+  filter(str_detect(indicator, "1") & activity_status == "Completed") %>% 
+  group_by(month) %>% 
+  summarise(total_reached = sum(total_reached, na.rm = TRUE)) %>% 
+  mutate(month = fct_relevel(month, c("January", "February", "March",
+                                      "April", "May", "June", 
+                                      "July", "August", "September", 
+                                      "October", "November", "December"))) %>% 
+  arrange(month) %>% 
+  adorn_totals("row") %>% 
+  write_csv("./data/indicator1_check_only_children.csv")

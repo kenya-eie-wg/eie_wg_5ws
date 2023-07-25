@@ -108,8 +108,6 @@ locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx",
                       sheet = "ADM2") %>% 
   clean_names()
 
-eie <- read_csv("./data/eie_5ws.csv") %>% 
-  filter(!is.na(indicator_short))
 
 report_date <- "25 June 2023"
 
@@ -129,6 +127,14 @@ ipc <- read_csv("./data/ipc.csv")
 
 partner_list_counties <- read_csv("./data/partner_list_counties.csv") %>% 
   filter(partner_type == "implementing_partner")
+
+eie <- read_csv("./data/eie_5ws.csv") %>% 
+  filter(!is.na(indicator_short)) %>% 
+  replace_na(list(boys = 0, girls = 0, men = 0, women = 0)) %>% 
+  # Total reached of indicator 1 is only boys and girls 
+  mutate(total_reached = ifelse(str_detect(indicator, "1"), 
+                                boys + girls, 
+                                total_reached))
 ```
 
 
@@ -163,7 +169,7 @@ sum_stats <- eie %>%
 
 A total of `r sum_stats %>% pull(reached_1256) %>% format(big.mark = ",")` persons have been reached by EiE activities in 2023, of which `r sum_stats %>% pull(boys) %>% format(big.mark = ",")` were boys, `r sum_stats %>% pull(girls) %>% format(big.mark = ",")` were girls, `r sum_stats %>% pull(men) %>% format(big.mark = ",")` were men and `r sum_stats %>% pull(women) %>% format(big.mark = ",")` were women. Below is a summary by indicator. 
 
-
+There has been a correction to indicator 1, as the previous calculation took into account adults, when only children reached count towards this indicator. 
 
 <br>
 
