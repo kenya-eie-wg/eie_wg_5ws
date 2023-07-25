@@ -1271,14 +1271,14 @@ read_csv("./data/eie_5ws_20230724.csv") %>%
   select_all(~ str_to_title(.)) %>% 
   flextable() %>% 
   theme_zebra() %>% 
-  set_caption("There is more than one sub-county per row") %>% 
+  set_caption("For several entries, there is more than one sub-county per row") %>% 
   set_table_properties(layout = "autofit", width = .7)
 
 ```
 
 <br>
 
-Analysis and reporting is possible on the 86% of beneficiaries reached who were reported with a sub-county. However, it will remain that any sub-county-level maps or products will not be able to include a sizeable portion of the beneficiaries. 
+With reference to the extract from the 5Ws above, analysis and reporting is at the sub-county level for the 86% of beneficiaries who were reported without this type of error. However, until this issue is resolved, making any sub-county-level maps or products will necessarily exclude a sizeable portion of the beneficiaries reached. 
 
 
 <br> 
@@ -1324,7 +1324,7 @@ read_csv("./data/eie_5ws_20230724.csv") %>%
   select(Schools_text = names_numbers_schools, Schools_number = schools) %>% 
   flextable() %>% 
   theme_zebra() %>% 
-  set_table_properties(layout = "autofit", width = .9) %>% 
+  set_table_properties(layout = "autofit", width = .7) %>% 
   set_caption("Schools column is a mix of text and numbers")
   
 
@@ -1335,9 +1335,33 @@ read_csv("./data/eie_5ws_20230724.csv") %>%
 
 It is still valuable to collect school names and match them to the list of school codes and geocoordinates, especially for site-level monitoring, but that is a step to be taken once the format of school names being collected has been standardised. 
 
+<br><br>
+
+### 5.3.3 Education level
+
+As reported in an earlier section of the document, it is currently not possible to have a clean breakdown of beneficiaries reached by education level: 
+
+<br>
+
+```{r}
+eie %>% 
+  mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+  filter(!is.na(education_level)) %>% 
+  mutate(children = boys + girls) %>% 
+  group_by(education_level) %>% 
+  summarise(children = sum(children)) %>% 
+  arrange(desc(children)) %>% 
+  mutate(`%_of_total` = round(children / sum(children) * 100, digits = 2)) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_caption("Children reached by education level") %>% 
+  set_table_properties(layout = "autofit", width = .6)
+```
 
 
+<br>
 
+In the updated template, the options  `All Basic Education` and `Primary/ECE` have been removed and partners are requested to only select one education level per row. 
 
 
 
