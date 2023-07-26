@@ -233,6 +233,7 @@ summary_table %>%
 eie %>% 
   mutate(indicator_short = fct_rev(indicator_short)) %>%
   mutate_at(vars(boys, girls, men, women), ~ replace_na(., 0)) %>% 
+  mutate_at(vars(men, women), ~ ifelse(str_detect(indicator, "1"), 0, .)) %>% 
   group_by(indicator_short) %>% 
   summarise_at(vars(boys, girls, men, women), ~ sum(., na.rm = TRUE)) %>% 
   mutate(total_reached = boys + girls + men + women, 
@@ -264,6 +265,7 @@ Only Indicator 6, Children benefiting from resilience-enhancing programming, see
 
 ```{r fig.height=6}
 eie %>% 
+  filter(activity_status == "Completed") %>% 
   mutate_at(vars(boys, girls, men, women), ~ replace_na(., 0)) %>%
   group_by(indicator_short) %>% 
   summarise_at(vars(men, women, boys, girls), ~ sum(.)) %>% 
@@ -279,6 +281,8 @@ eie %>%
     str_detect(indicator_short, "5") & type == "Girls" ~ 0, 
     str_detect(indicator_short, "6") & type == "Men" ~ 0, 
     str_detect(indicator_short, "6") & type == "Women" ~ 0, 
+    str_detect(indicator_short, "1") & type == "Men" ~ 0, 
+    str_detect(indicator_short, "1") & type == "Women" ~ 0,
     TRUE ~ reached
   )) %>% 
   ggplot(aes(y = type, x = reached, fill = type)) + 
