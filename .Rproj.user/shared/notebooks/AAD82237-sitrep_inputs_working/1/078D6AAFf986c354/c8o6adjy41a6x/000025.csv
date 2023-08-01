@@ -1,0 +1,4 @@
+"0","bottom %>% write_csv(paste0(""./data/bottom_table_"", format(Sys.Date(), ""%Y%m%d""), "".csv""))
+"
+"2","Error in is.data.frame(x) : object 'bottom' not found
+"
