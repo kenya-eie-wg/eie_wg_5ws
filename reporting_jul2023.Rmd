@@ -138,6 +138,8 @@ eie <- read_csv("./data/eie_5ws.csv") %>%
 ```
 
 
+
+
 [Last month's report](reporting_jun2023.html) 
 
 <br><br><br>

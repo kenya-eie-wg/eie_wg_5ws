@@ -1,0 +1,10 @@
+"0","combined %>% 
+  filter(month %in% report_month & str_detect(unicef_indicator, ""6"") & 
+           str_detect(sub_indicator, ""all"") & str_detect(sex_modifier,""total"")) %>% 
+  summarise(value = sum(value, na.rm = TRUE)) %>% 
+  pull(value)
+"
+"1","[1]"
+"1"," 5"
+"1","
+"
