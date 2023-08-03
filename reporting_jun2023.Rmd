@@ -1,6 +1,6 @@
 ---
-title: "Kenya Education in Emergencies Working Group -- Drought 5Ws Report"
-date:  "`r format(Sys.time(), '%d %B, %Y')`"
+title: "Kenya Education in Emergencies Working Group -- Drought June 5Ws Report"
+date:  "15 July, 2023"
 output:
   html_document:
     code_download: yes
