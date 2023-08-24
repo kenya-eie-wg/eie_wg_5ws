@@ -1,0 +1,20 @@
+"0","combined %>% 
+  select(month, county, sex_modifier, beneficiary_group, unicef_indicator, value) %>% 
+  pivot_wider(names_from = sex_modifier, 
+              values_from = value) %>% 
+  unnest() %>% 
+  select(-`NA`) %>% 
+  replace_na(list(total = 0, male = 0, female = 0)) %>% 
+  mutate(check = ifelse(total != male + female, FALSE, TRUE)) %>% 
+  filter(check == FALSE)
+"
+"2","Warning: [38;5;238mValues from `value` are not uniquely identified; output will contain list-cols.
+[36m*[38;5;238m Use `values_fn = list` to suppress this warning.
+[36m*[38;5;238m Use `values_fn = {summary_fun}` to summarise duplicates.
+[36m*[38;5;238m Use the following dplyr code to identify duplicates.
+  {data} %>%
+  dplyr::group_by(month, county, beneficiary_group, unicef_indicator, sex_modifier) %>%
+  dplyr::summarise(n = dplyr::n(), .groups = ""drop"") %>%
+  dplyr::filter(n > 1L)[39m"
+"2","Warning: [38;5;238m`cols` is now required when using `unnest()`.
+[36mi[38;5;238m Please use `cols = c(total, male, female, `NA`)`.[39m"

@@ -333,3 +333,97 @@ eie %>%
   arrange(month) %>% 
   adorn_totals("row") %>% 
   write_csv("./data/indicator1_check_only_children.csv")
+
+check_sex <- combined %>% 
+  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
+  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
+         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
+                                                         "indicator2_new_latrines", 
+                                                         "indicator2_rehabilitated_classrooms", 
+                                                         "indicator2_rehabiltated_latrines"), 
+                                    sub_indicator, sub_indicator_alt)) %>%
+  group_by(month, county, sub_indicator_alt, sex_modifier) %>% 
+  summarise(value = sum(value, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = sex_modifier, values_from = value) %>% 
+  select(-`NA`) %>% 
+  mutate(total = ifelse(female + male != total, female + male, total)) %>% 
+  pivot_longer(cols = c(female, male, total),
+               names_to = "sex_modifier", 
+               values_to = "check_value") %>% 
+  mutate(key = paste0(month, county, sub_indicator_alt, sex_modifier)) %>% 
+  ungroup()
+
+# Write over the old dataset 
+
+combined <- combined %>% 
+  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
+  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
+         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
+                                                         "indicator2_new_latrines", 
+                                                         "indicator2_rehabilitated_classrooms", 
+                                                         "indicator2_rehabiltated_latrines"), 
+                                    sub_indicator, sub_indicator_alt)) %>%
+  mutate(key = paste0(month, county, sub_indicator_alt, sex_modifier)) %>% 
+  left_join(check_sex %>% select(key, check_value), 
+            by = "key") %>% 
+  mutate(value = case_when(str_detect(sub_indicator, "narrative") ~ value, 
+                           value != check_value ~ check_value, 
+                           TRUE ~ value)) %>% 
+  select(-key, -sub_indicator_alt, -check_value)
+
+check_beneficiary_group <- combined %>% 
+  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
+  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
+         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
+                                                         "indicator2_new_latrines", 
+                                                         "indicator2_rehabilitated_classrooms", 
+                                                         "indicator2_rehabiltated_latrines"), 
+                                    sub_indicator, sub_indicator_alt)) %>%
+  filter(!is.na(beneficiary_group)) %>% 
+  group_by(month, county, sub_indicator_alt, beneficiary_group) %>% 
+  summarise(value = sum(value, na.rm = TRUE)) %>% 
+  filter(!is.na(beneficiary_group) & beneficiary_group != "cwd") %>% 
+  pivot_wider(names_from = beneficiary_group, values_from = value, 
+              values_fill = 0) %>% 
+  mutate(all = ifelse(host_community + idps + refugees != all, 
+                      host_community + idps + refugees, 
+                      all)) %>% 
+  pivot_longer(cols = c(all, host_community, idps, refugees), 
+               names_to = "beneficiary_group", 
+               values_to = "check_value") %>%
+  mutate(key = paste0(month, county, sub_indicator_alt, beneficiary_group)) %>%
+  ungroup()
+
+
+combined <- combined %>% 
+  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
+  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
+         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
+         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
+                                                         "indicator2_new_latrines", 
+                                                         "indicator2_rehabilitated_classrooms", 
+                                                         "indicator2_rehabiltated_latrines"), 
+                                    sub_indicator, sub_indicator_alt)) %>%
+  mutate(key = paste0(month, county, sub_indicator_alt, beneficiary_group)) %>% 
+  left_join(check_beneficiary_group %>% select(key, check_value), 
+            by = "key") %>% 
+  filter(value != check_value) %>% 
+  mutate(value = case_when(str_detect(sub_indicator, "narrative") ~ value, 
+                           value != check_value ~ check_value, 
+                           TRUE ~ value)) %>% 
+  select(-key, -check_value)

@@ -22,6 +22,7 @@ library(flextable)
 library(ggrepel)
 library(anytime)
 library(tidytext)
+library(xlsx)
 
 theme_set(theme_light())
 
@@ -233,6 +234,141 @@ clean_messy_table <- function(tbl) {
 # Alternate version because the template is slightly altered 
 
 ```{r}
+read_excel("./data/unicef_internal/Copy of Monthly Education SitRep_Jul23_lzo.xlsx") %>%
+setNames(messy) %>% 
+    slice(10:248) %>% 
+    mutate(county = word(month, 1)) %>%
+    naniar::replace_with_na(list(county = "July", 
+                                 county = "NA", 
+                                 month = "NA")) %>% 
+    fill(county) %>% 
+    mutate(county = case_when(str_detect(county, "West") ~ "West Pokot", 
+                              str_detect(county, "Homa") ~ "Homa Bay", 
+                              str_detect(county, "Taita") ~ "Taita Taveta",
+                              str_detect(county, "Tana") ~ "Tana River", 
+                              str_detect(county, "Tharaka") ~ "Tharaka Nithi", 
+                              TRUE ~ county)) %>% 
+    mutate(month = stri_extract_last_words(month)) %>%
+    filter(!is.na(month)) %>% 
+    select(-contains("x")) %>%
+  mutate_at(vars(-matches("narrative|month")), ~as.numeric(.)) %>% 
+  mutate_at(vars(-matches("narrative|month")), ~ ifelse(is.na(.), 0, .)) %>% 
+  mutate(indicator1_all_girls = indicator1_host_community_girls + indicator1_idps_girls + indicator1_refugees_girls, 
+         indicator1_all_boys = indicator1_host_community_boys + indicator1_idps_boys + indicator1_refugees_boys, 
+         indicator1_all_total_children = indicator1_all_boys + indicator1_all_girls, 
+         indicator2_all_boys = indicator2_host_community_boys + indicator2_idps_boys + indicator2_refugees_boys, 
+         indicator2_all_girls = indicator2_host_community_girls + indicator2_idps_girls + indicator2_refugees_girls,
+         indicator2_all_total_children = indicator2_all_boys + indicator2_all_girls, 
+         indicator3_all_boys = indicator3_host_community_boys + indicator3_idps_boys + indicator3_refugees_boys,
+         indicator3_all_girls = indicator3_host_community_boys + indicator3_idps_girls + indicator3_refugees_girls, 
+         indicator3_all_total_children = indicator3_all_boys + indicator3_all_girls, 
+         indicator4_all_female = indicator4_host_community_female + indicator4_idps_female + indicator4_refugees_female, 
+         indicator4_all_male = indicator4_host_community_male + indicator4_idps_male + indicator4_refugees_male, 
+         indicator4_all_total_adults = indicator4_all_female + indicator4_all_male, 
+         indicator5_all_female = indicator5_host_community_female + indicator5_idps_female + indicator5_refugees_female, 
+         indicator5_all_male = indicator5_host_community_male + indicator5_idps_male + indicator5_refugees_male, 
+         indicator5_all_total_adults = indicator5_all_female + indicator5_all_male,
+         indicator7_all_girls = indicator7_host_community_girls + indicator7_idps_girls + indicator1_refugees_girls, 
+         indicator7_all_boys = indicator7_host_community_boys + indicator7_idps_boys + indicator7_refugees_boys, 
+         indicator7_all_total_children = indicator7_all_boys + indicator7_all_girls) %>% 
+  mutate_at(vars(everything()), ~ as.character(.)) %>% 
+       pivot_longer(cols = indicator1_all_total_children:indicator7_narrative, 
+                   names_to = "indicator", 
+                   values_to = "value") %>%
+    mutate(month = fct_relevel(month, c("January", "February", "March", 
+                                             "April", "May", "June", "July")),
+           char_value = as.character(value),
+           value = as.numeric(value))
+```
+
+
+```{r}
+trial <- read_excel("./data/unicef_internal/Copy of Monthly Education SitRep_Jul23_lzo.xlsx") %>% 
+  setNames(messy) %>% 
+    slice(10:248) %>% 
+    mutate(county = word(month, 1)) %>%
+    naniar::replace_with_na(list(county = "July", 
+                                 county = "NA", 
+                                 month = "NA")) %>% 
+    fill(county) %>% 
+    mutate(county = case_when(str_detect(county, "West") ~ "West Pokot", 
+                              str_detect(county, "Homa") ~ "Homa Bay", 
+                              str_detect(county, "Taita") ~ "Taita Taveta",
+                              str_detect(county, "Tana") ~ "Tana River", 
+                              str_detect(county, "Tharaka") ~ "Tharaka Nithi", 
+                              TRUE ~ county)) %>% 
+    mutate(month = stri_extract_last_words(month)) %>% 
+  filter(!is.na(month)) %>% 
+  mutate_at(vars(-matches("narrative|month|county")), ~as.numeric(.)) %>% 
+  mutate_at(vars(-matches("narrative|month|county")), ~ ifelse(is.na(.), 0, .)) 
+  
+trial %>% 
+  mutate(indicator3_all_boys = ifelse(indicator3_host_community_boys > indicator3_all_boys, 
+                                      indicator3_host_community_boys, 
+                                      indicator3_all_girls), 
+         indicator3_all_girls = ifelse(indicator3_host_community_girls > indicator3_all_girls, 
+                                       indicator3_host_community_girls, 
+                                       indicator3_all_girls)) %>% 
+  mutate(indicator1_all_girls = indicator1_host_community_girls + indicator1_idps_girls + indicator1_refugees_girls, 
+         indicator1_all_boys = indicator1_host_community_boys + indicator1_idps_boys + indicator1_refugees_boys, 
+         indicator1_all_total_children = indicator1_all_boys + indicator1_all_girls, 
+         indicator2_all_boys = indicator2_host_community_boys + indicator2_idps_boys + indicator2_refugees_boys, 
+         indicator2_all_girls = indicator2_host_community_girls + indicator2_idps_girls + indicator2_refugees_girls,
+         indicator2_all_total_children = indicator2_all_boys + indicator2_all_girls, 
+         indicator3_all_boys = indicator3_host_community_boys + indicator3_idps_boys + indicator3_refugees_boys,
+         indicator3_all_girls = indicator3_host_community_boys + indicator3_idps_girls + indicator3_refugees_girls, 
+         indicator3_all_total_children = indicator3_all_boys + indicator3_all_girls, 
+         indicator4_all_female = indicator4_host_community_female + indicator4_idps_female + indicator4_refugees_female, 
+         indicator4_all_male = indicator4_host_community_male + indicator4_idps_male + indicator4_refugees_male, 
+         indicator4_all_total_adults = indicator4_all_female + indicator4_all_male, 
+         indicator5_all_female = indicator5_host_community_female + indicator5_idps_female + indicator5_refugees_female, 
+         indicator5_all_male = indicator5_host_community_male + indicator5_idps_male + indicator5_refugees_male, 
+         indicator5_all_total_adults = indicator5_all_female + indicator5_all_male,
+         indicator7_all_girls = indicator7_host_community_girls + indicator7_idps_girls + indicator1_refugees_girls, 
+         indicator7_all_boys = indicator7_host_community_boys + indicator7_idps_boys + indicator7_refugees_boys, 
+         indicator7_all_total_children = indicator7_all_boys + indicator7_all_girls) %>% 
+  filter(month != "Total")  %>% 
+  group_by(county) %>%
+  group_modify(~bind_rows(., 
+                          summarise(., across(where(is.numeric), sum)))) %>% 
+  ungroup() %>% 
+  mutate(month = ifelse(is.na(month), "Total", month)) %>% 
+  mutate(indicator1_host_community_total_children = indicator1_host_community_boys +
+           indicator1_host_community_girls, 
+         indicator1_idps_total_children = indicator1_idps_boys + indicator1_idps_girls, 
+         indicator1_refugees_total_children = indicator1_refugees_boys + indicator1_refugees_girls, 
+         indicator1_cwd_total_children = indicator1_cwd_boys + indicator1_cwd_girls, 
+         indicator2_host_community_total_children = indicator2_host_community_boys +
+           indicator2_host_community_girls, 
+         indicator2_idps_total_children = indicator2_idps_boys + indicator2_idps_girls, 
+         indicator2_refugees_total_children = indicator2_refugees_boys + indicator2_refugees_girls, 
+         indicator2_cwd_total_children = indicator2_cwd_boys + indicator2_cwd_girls, 
+         indicator1_host_community_total_children = indicator1_host_community_boys +
+           indicator1_host_community_girls, 
+         indicator3_idps_total_children = indicator3_idps_boys + indicator3_idps_girls, 
+         indicator3_refugees_total_children = indicator3_refugees_boys + indicator3_refugees_girls, 
+         indicator3_cwd_total_children = indicator3_cwd_boys + indicator3_cwd_girls, 
+         indicator4_host_community_total_adults = indicator4_host_community_female + 
+           indicator4_host_community_male, 
+         indicator4_idps_total_adults = indicator4_idps_female + indicator4_idps_male, 
+         indicator4_refugees_total_adults = indicator4_refugees_male + indicator4_refugees_female, 
+         indicator5_host_community_total_adults = indicator5_host_community_female + 
+           indicator5_host_community_male, 
+         indicator5_idps_total_adults = indicator5_idps_female + indicator5_idps_male, 
+         indicator5_refugees_total_adults = indicator5_refugees_male + indicator5_refugees_female,
+         indicator7_host_community_total_children = indicator7_host_community_boys +
+           indicator7_host_community_girls, 
+         indicator7_idps_total_children = indicator7_idps_boys + indicator7_idps_girls, 
+         indicator7_refugees_total_children = indicator7_refugees_boys + indicator7_refugees_girls, 
+         indicator7_cwd_total_children = indicator7_cwd_boys + indicator7_cwd_girls, 
+         indicator6_all_total_adults = indicator6_all_female + indicator6_all_male)
+  
+  
+```
+
+
+
+```{r}
 
 clean_messy_table_alt <- function(tbl) {
   tbl %>% 
@@ -252,6 +388,81 @@ clean_messy_table_alt <- function(tbl) {
     mutate(month = stri_extract_last_words(month)) %>%
     filter(!is.na(month)) %>% 
     select(-contains("x")) %>%
+  mutate_at(vars(-matches("narrative|month|county")), ~as.numeric(.)) %>% 
+  mutate_at(vars(-matches("narrative|month|county")), ~ ifelse(is.na(.), 0, .)) %>%
+    mutate(indicator3_all_boys = ifelse(indicator3_host_community_boys > indicator3_all_boys, 
+                                      indicator3_host_community_boys, 
+                                      indicator3_all_girls), 
+         indicator3_all_girls = ifelse(indicator3_host_community_girls > indicator3_all_girls, 
+                                       indicator3_host_community_girls, 
+                                       indicator3_all_girls)) %>% 
+      mutate(indicator1_host_community_total_children = indicator1_host_community_boys +
+           indicator1_host_community_girls, 
+         indicator1_idps_total_children = indicator1_idps_boys + indicator1_idps_girls, 
+         indicator1_refugees_total_children = indicator1_refugees_boys + indicator1_refugees_girls, 
+         indicator1_cwd_total_children = indicator1_cwd_boys + indicator1_cwd_girls, 
+         indicator2_host_community_total_children = indicator2_host_community_boys +
+           indicator2_host_community_girls, 
+         indicator2_idps_total_children = indicator2_idps_boys + indicator2_idps_girls, 
+         indicator2_refugees_total_children = indicator2_refugees_boys + indicator2_refugees_girls, 
+         indicator2_cwd_total_children = indicator2_cwd_boys + indicator2_cwd_girls, 
+         indicator3_host_community_total_children = indicator3_host_community_boys +
+           indicator3_host_community_girls, 
+         indicator3_idps_total_children = indicator3_idps_boys + indicator3_idps_girls, 
+         indicator3_refugees_total_children = indicator3_refugees_boys + indicator3_refugees_girls, 
+         indicator3_cwd_total_children = indicator3_cwd_boys + indicator3_cwd_girls, 
+         indicator4_host_community_total_adults = indicator4_host_community_female + 
+           indicator4_host_community_male, 
+         indicator4_idps_total_adults = indicator4_idps_female + indicator4_idps_male, 
+         indicator4_refugees_total_adults = indicator4_refugees_male + indicator4_refugees_female, 
+         indicator5_host_community_total_adults = indicator5_host_community_female + 
+           indicator5_host_community_male, 
+         indicator5_idps_total_adults = indicator5_idps_female + indicator5_idps_male, 
+         indicator5_refugees_total_adults = indicator5_refugees_male + indicator5_refugees_female,
+         indicator7_host_community_total_children = indicator7_host_community_boys +
+           indicator7_host_community_girls, 
+         indicator7_idps_total_children = indicator7_idps_boys + indicator7_idps_girls, 
+         indicator7_refugees_total_children = indicator7_refugees_boys + indicator7_refugees_girls, 
+         indicator7_cwd_total_children = indicator7_cwd_boys + indicator7_cwd_girls) %>% 
+    
+  mutate(indicator1_all_girls = indicator1_host_community_girls + indicator1_idps_girls +
+           indicator1_refugees_girls, 
+         indicator1_all_boys = indicator1_host_community_boys + indicator1_idps_boys + 
+           indicator1_refugees_boys, 
+         indicator1_all_total_children = indicator1_all_boys + indicator1_all_girls, 
+         indicator2_all_boys = indicator2_host_community_boys + indicator2_idps_boys + 
+           indicator2_refugees_boys, 
+         indicator2_all_girls = indicator2_host_community_girls + indicator2_idps_girls +
+           indicator2_refugees_girls,
+         indicator2_all_total_children = indicator2_all_boys + indicator2_all_girls, 
+         indicator3_all_boys = indicator3_host_community_boys + indicator3_idps_boys + 
+           indicator3_refugees_boys,
+         indicator3_all_girls = indicator3_host_community_girls + indicator3_idps_girls +
+           indicator3_refugees_girls, 
+         indicator3_all_total_children = indicator3_all_boys + indicator3_all_girls, 
+         indicator4_all_female = indicator4_host_community_female + indicator4_idps_female +
+           indicator4_refugees_female, 
+         indicator4_all_male = indicator4_host_community_male + indicator4_idps_male + 
+           indicator4_refugees_male, 
+         indicator4_all_total_adults = indicator4_all_female + indicator4_all_male, 
+         indicator5_all_female = indicator5_host_community_female + indicator5_idps_female +
+           indicator5_refugees_female, 
+         indicator5_all_male = indicator5_host_community_male + indicator5_idps_male + 
+           indicator5_refugees_male, 
+         indicator5_all_total_adults = indicator5_all_female + indicator5_all_male,
+         indicator7_all_girls = indicator7_host_community_girls + indicator7_idps_girls +
+           indicator7_refugees_girls, 
+         indicator7_all_boys = indicator7_host_community_boys + indicator7_idps_boys + 
+           indicator7_refugees_boys, 
+         indicator7_all_total_children = indicator7_all_boys + indicator7_all_girls, 
+         indicator6_all_total_adults = indicator6_all_female + indicator6_all_male) %>% 
+    filter(month != "Total")  %>%
+    group_by(county) %>%
+    group_modify(~bind_rows(., 
+                            summarise(., across(where(is.numeric), sum)))) %>% 
+    ungroup() %>% 
+    mutate(month = ifelse(is.na(month), "Total", month)) %>% 
+     mutate_at(vars(everything()), ~ as.character(.)) %>% 
        pivot_longer(cols = indicator1_all_total_children:indicator7_narrative, 
                    names_to = "indicator", 
                    values_to = "value") %>%
@@ -352,51 +563,27 @@ combined %>% write_csv(paste0("./data/combined_sitrep_", format(Sys.Date(), "%Y%
 
 ## Checks 
 
-```{r}
-check <- combined %>% 
-  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
-  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
-         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
-                                                         "indicator2_new_latrines", 
-                                                         "indicator2_rehabilitated_classrooms", 
-                                                         "indicator2_rehabiltated_latrines"), 
-                                    sub_indicator, sub_indicator_alt)) %>%
-  group_by(month, county, sub_indicator_alt, sex_modifier) %>% 
-  summarise(value = sum(value, na.rm = TRUE)) %>% 
-  pivot_wider(names_from = sex_modifier, values_from = value) %>% 
-  select(-`NA`) %>% 
-  mutate(total = ifelse(female + male > total, female + male, total)) %>% 
-  pivot_longer(cols = c(female, male, total),
-               names_to = "sex_modifier", 
-               values_to = "check_value") %>% 
-  mutate(key = paste0(month, county, sub_indicator_alt, sex_modifier)) %>% 
-  ungroup()
-  
-# Write over the old dataset 
 
-combined <- combined %>% 
-  mutate(sub_indicator_alt = str_sub(sub_indicator, start = 1L, end = 15L)) %>%
-  mutate(sub_indicator_alt = str_replace_all(sub_indicator_alt, "all_", "all"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "cwd_", "cwd"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "host", "host_community"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "refu", "refugees"),
-         sub_indicator_alt = str_replace_all(sub_indicator_alt, "narr", "narrative"), 
-         sub_indicator_alt = ifelse(sub_indicator %in% c("new_classrooms",
-                                                         "indicator2_new_latrines", 
-                                                         "indicator2_rehabilitated_classrooms", 
-                                                         "indicator2_rehabiltated_latrines"), 
-                                    sub_indicator, sub_indicator_alt)) %>%
-  mutate(key = paste0(month, county, sub_indicator_alt, sex_modifier)) %>% 
-  left_join(check %>% select(key, check_value), 
-            by = "key") %>% 
-  mutate(value = case_when(str_detect(sub_indicator, "narrative") ~ value, 
-                           value != check_value ~ check_value, 
-                           TRUE ~ value)) %>% 
-  select(-key, -sub_indicator_alt, -key)
+```{r}
+combined %>% 
+  select(month, county, sex_modifier, beneficiary_group, unicef_indicator, value) %>% 
+  pivot_wider(names_from = beneficiary_group, 
+              values_from = value) %>% 
+  unnest() %>% 
+  select(-`NA`, -cwd) %>% 
+  replace_na(list(all = 0, host_community = 0, idps = 0, refugees = 0)) %>% 
+  mutate(check = ifelse(all != host_community + idps + refugees, FALSE, TRUE)) %>% 
+  filter(check == FALSE & !str_detect(unicef_indicator, "6"))
+  
+combined %>% 
+  select(month, county, sex_modifier, beneficiary_group, unicef_indicator, value) %>% 
+  pivot_wider(names_from = sex_modifier, 
+              values_from = value) %>% 
+  unnest() %>% 
+  select(-`NA`) %>% 
+  replace_na(list(total = 0, male = 0, female = 0)) %>% 
+  mutate(check = ifelse(total != male + female, FALSE, TRUE)) %>% 
+  filter(check == FALSE)
 ```
 
 # Output 
@@ -685,6 +872,9 @@ data_entry_wide <- crossing(combined %>% distinct(county),
 data_entry_wide %>% 
   write_csv("./data/data_entry_wide.csv")
   
+data_entry_wide %>% 
+  write_xlsx("./data/data_entry.xlsx", 
+             sheeName = "data_entry")
 
 ```
 
@@ -786,6 +976,27 @@ combined %>%
   select(result_statement, indicator, sub_indicator)
 
 ```
+
+# Lean
+
+```{r}
+glimpse(data_entry_wide)
+
+data_entry_wide %>% 
+  rename(indicator6_female = indicator6_all_female, 
+         indicator6_male = indicator6_all_male) %>% 
+  select(-matches("total")) %>% 
+  select(-matches("all")) %>%
+  write_csv("./data/data_entry_lean.csv")
+
+```
+
+```{r}
+combined %>% count(unicef_indicator)
+```
+
+
+
 
 # Plots 
 

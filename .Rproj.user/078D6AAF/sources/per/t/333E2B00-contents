@@ -1,6 +1,6 @@
 ---
-title: "Kenya EIE Working Group -- UNICEF June sitrep inputs"
-date:  "`r format(Sys.time(), '%d %B, %Y')`"
+title: "Kenya EIE Working Group -- UNICEF July sitrep inputs"
+date:  "28 July 2023"
 output: 
   word_document:
     toc: no
@@ -146,6 +146,8 @@ combined <- read_csv("./data/combined_sitrep_20230802.csv")
 
 
 
+
+
 # Sitrep 
 
 
@@ -159,7 +161,13 @@ indicator1 <- eie %>%
                                 total_reached)) %>% 
   filter(month %in% report_month & str_detect(indicator, "1") & 
                  lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
-  summarise_indicator()
+  summarise(girls = sum(girls, na.rm = TRUE), 
+          boys = sum(boys, na.rm = TRUE), 
+          men = sum(men, na.rm = TRUE), 
+          women = sum(women, na.rm = TRUE), 
+          counties = n_distinct(adm1_pcode)) %>%
+  mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+  mutate(total = girls + boys)
 
 indicator1_counties <- eie %>% filter(month %in% report_month & str_detect(indicator, "1") & 
                  lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
@@ -173,9 +181,20 @@ A total of `r indicator1 %>% pull(total) %>% format(big.mark = ",")` children (`
 
 ```{r}
 indicator3 <- eie %>% 
+  replace_na(list(boys = 0, girls = 0, men = 0, women = 0)) %>% 
+  # Total reached of indicator 1 is only boys and girls 
+  mutate(total_reached = ifelse(str_detect(indicator, "3"), 
+                                boys + girls, 
+                                total_reached)) %>% 
   filter(month %in% report_month & str_detect(indicator, "3") & 
            lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
-  summarise_indicator()
+  summarise(girls = sum(girls, na.rm = TRUE), 
+          boys = sum(boys, na.rm = TRUE), 
+          men = sum(men, na.rm = TRUE), 
+          women = sum(women, na.rm = TRUE), 
+          counties = n_distinct(adm1_pcode)) %>%
+  mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+  mutate(total = girls + boys)
 
 
 indicator3_counties <- eie %>% 
@@ -191,9 +210,20 @@ Furthermore, `r indicator3 %>% pull(total) %>% format(big.mark = ",")` students 
 
 ```{r}
 indicator5 <- eie %>% 
+  replace_na(list(boys = 0, girls = 0, men = 0, women = 0)) %>% 
+  # Total reached of indicator 1 is only boys and girls 
+  mutate(total_reached = ifelse(str_detect(indicator, "5"), 
+                                men + women, 
+                                total_reached)) %>% 
   filter(month %in% report_month & str_detect(indicator, "5") & 
            lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
-  summarise_indicator()
+  summarise(girls = sum(girls, na.rm = TRUE), 
+          boys = sum(boys, na.rm = TRUE), 
+          men = sum(men, na.rm = TRUE), 
+          women = sum(women, na.rm = TRUE), 
+          counties = n_distinct(adm1_pcode)) %>%
+  mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+  mutate(total = men + women)
 
 ```
  
@@ -211,7 +241,8 @@ bom_indicator <- combined %>%
            str_detect(sub_indicator, "all")) %>% 
   replace_na(list(value = 0)) %>% 
   group_by(sex_modifier) %>% 
-  summarise(value = sum(value))
+  summarise(value = sum(value)) %>% 
+  mutate(value = ifelse(sex_modifier == "total", sum(value)[sex_modifier %in% c("male", "female")], value))
 
 bom_indicator_counties <- combined %>% 
   filter(month %in% report_month & str_detect(unicef_indicator, "6") & 
@@ -225,13 +256,24 @@ bom_indicator_counties <- combined %>%
 
 
 
-UNICEF also supported the training of `r combined %>% filter(month %in% report_month & str_detect(unicef_indicator, "6") & str_detect(sub_indicator, "all") & str_detect(sex_modifier,"total")) %>% summarise(value = sum(value, na.rm = TRUE)) %>% pull(value)` (`r bom_indicator %>% filter(sex_modifier == "male") %>% pull(value)` men and `r bom_indicator %>% filter(sex_modifier == "female") %>% pull(value)` women) members of the Enrolment Drive Committees (EDCs) and school Board of Management (BoM) in `r bom_indicator_counties` county on life skills, child safeguarding and their roles/responsibilities, child protection and referral mechanisms. 
+UNICEF also supported the training of `r bom_indicator %>% filter(sex_modifier == "total") %>% pull(value)` (`r bom_indicator %>% filter(sex_modifier == "male") %>% pull(value)` men and `r bom_indicator %>% filter(sex_modifier == "female") %>% pull(value)` women) members of the Enrolment Drive Committees (EDCs) and school Board of Management (BoM) in `r bom_indicator_counties` county on life skills, child safeguarding and their roles/responsibilities, child protection and referral mechanisms. 
 
 ```{r}
 indicator6 <- eie %>% 
+  replace_na(list(boys = 0, girls = 0, men = 0, women = 0)) %>% 
+  # Total reached of indicator 1 is only boys and girls 
+  mutate(total_reached = ifelse(str_detect(indicator, "6"), 
+                                boys + girls, 
+                                total_reached)) %>% 
   filter(month %in% report_month & str_detect(indicator, "6") & 
            lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
-  summarise_indicator()
+  summarise(girls = sum(girls, na.rm = TRUE), 
+          boys = sum(boys, na.rm = TRUE), 
+          men = sum(men, na.rm = TRUE), 
+          women = sum(women, na.rm = TRUE), 
+          counties = n_distinct(adm1_pcode)) %>%
+  mutate_at(vars(girls, boys, men, women), ~ replace_na(., 0)) %>% 
+  mutate(total = girls + boys)
 
 indicator6_counties <- eie %>% 
   filter(month %in% report_month & str_detect(indicator, "6") & 
@@ -240,7 +282,7 @@ indicator6_counties <- eie %>%
 ```
  
 
-Furthermore, `r indicator3 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator3 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator3 %>% pull(boys) %>% format(big.mark = ",")` boys) in `r indicator3_counties` were supported to access mentorship and life skills sessions in `r indicator6_counties` counties, strengthening their resilience and their coping mechanisms to the impact of drought.
+Furthermore, `r indicator6 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator6 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator6 %>% pull(boys) %>% format(big.mark = ",")` boys) in `r indicator6_counties` were supported to access mentorship and life skills sessions in `r indicator6_counties` counties, strengthening their resilience and their coping mechanisms to the impact of drought.
 
 \newpage 
 

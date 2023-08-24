@@ -230,7 +230,6 @@ summary_table %>%
 
 ## 1.2 By sex and age
 
-
 ```{r}
 eie %>% 
   mutate(indicator_short = fct_rev(indicator_short)) %>%
