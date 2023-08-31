@@ -1,0 +1,69 @@
+"0","partners_raw  <- read_csv(""./data/partner_names_raw.csv"") %>% 
+  clean_names() %>% 
+  distinct(partner_type, agency_name, acronym) %>% 
+  mutate_at(vars(agency_name, acronym), ~ str_trim(str_squish(.))) %>% 
+  filter(agency_name %out% c(""National Council for Nomadic Education Kenya"", 
+                             ""National Council of Nomadic Education in Kenya"", 
+                             ""MINISTRY OF EDUCATION"", 
+                             ""ChildFund"",
+                             ""Childfund"", 
+                             ""CISP Kenya"", 
+                             ""Comitato Internazionale per lo Sviluppo dei Popoli (International Committee for the Development of Peoples) - CISP Kenya."", 
+                             ""Jesuits Refugee Service"", 
+                             ""Save the Children International"", 
+                             ""AVSI FAOUNDATION"", 
+                             ""ChildFund kenya"", 
+                             ""Kenya RedCross Society"", 
+                             ""FINN CHURCH AID"", 
+                             ""Concern worldwide"", 
+                             ""Dignitas Limited"", 
+                             ""AVSI FOUDNATION"")) %>% 
+  mutate(agency_name = recode(agency_name, 
+                              ""Action for sustainable change"" = ""Action for Sustainable Change"", 
+                              ""AVSI FOUNDATION"" = ""AVSI Foundation"", 
+                              ""QATAR CHARITY"" = ""Qatar Charity"", 
+                              ""Life Skills Promoters"" = ""Lifeskills Promoters"",
+                              ""Girl Child Network"" = ""The Girl Child Network"",
+                              ""WE WORLD"" = ""We World"", 
+                              ""KENYA NATIONAL COMMISSION FOR UNESCO"" = ""UNESCO"", 
+                              ""Kenya National Commission for UNESCO"" = ""UNESCO"")) %>% 
+  mutate(acronym = case_when(agency_name == ""Christian Blind Mission""~ ""CBM"",
+                             agency_name == ""Concern Worldwide"" ~ ""CW"", 
+                             agency_name == ""Finn Church Aid"" ~ ""FCA"", 
+                             agency_name == ""Mondo"" ~ ""Mondo"", 
+                             agency_name == ""Plan International Kenya"" ~ ""PLAN"", 
+                             agency_name == ""Rotary International"" ~ ""RI"", 
+                             agency_name == ""World Vision Kenya"" ~ ""WVK"", 
+                             agency_name == ""FilmAid Kenya"" ~ ""FA"", 
+                             agency_name == ""ResQ247"" ~ ""ResQ"", 
+                             agency_name == ""LEGO Foundation"" ~ ""LEGO"", 
+                             agency_name == ""St Paul's university"" ~ ""SPU"", 
+                             agency_name == ""Dignitas"" ~ ""DIGN"",
+                             agency_name == ""EducAid"" ~ ""EducAid"", 
+                             agency_name == ""Humanity & Inclusion"" ~ ""H&I"", 
+                             agency_name == ""Build Africa Kenya"" ~ ""BAK"", 
+                             agency_name == ""Edukans Kenya"" ~ ""Edukans"", 
+                             agency_name == ""Action for Sustainable Change"" ~ ""AFOSC"", 
+                             agency_name == ""Elimu Yetu Coalition"" ~ ""EYC"", 
+                             agency_name == ""CRESNET CBO"" ~ ""CRES"", 
+                             agency_name == ""MOE Wajir"" ~ ""MOE Wajir"", 
+                             agency_name == ""Qatar Charity"" ~ ""QATAR"", 
+                             agency_name == ""Education Management & Leadership"" ~ ""EML"", 
+                             agency_name == ""International Aid Services Kenya"" ~ ""IASK"", 
+                             agency_name == ""Worldreader"" ~ ""WR"",
+                             agency_name == ""ChildFund Kenya"" ~ ""CF"", 
+                             agency_name == ""The Girl Child Network"" ~ ""GCN"", 
+                             agency_name == ""KENYA NATIONAL COMMISSION FOR UNESCO"" ~ ""UNESCO"", 
+                             agency_name == ""Kenya National Commission for UNESCO"" ~ ""UNESCO"", 
+                             agency_name == ""UNESCO"" ~ ""UNESCO"", 
+                             TRUE ~ acronym)) %>% 
+  distinct(partner_type, partner = agency_name, acronym) %>% 
+  arrange(partner) 
+"
+"2","[1mRows: [22m[34m141[39m [1mColumns: [22m[34m3[39m"
+"2","[36m--[39m [1mColumn specification[22m [36m--------------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (3): partner type, agency name, acronym"
+"2","
+[36mi[39m Use `spec()` to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

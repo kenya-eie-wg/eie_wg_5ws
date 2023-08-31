@@ -1,0 +1,52 @@
+---
+title: "Kenya Education in Emergencies 5Ws Report Index"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_download: yes
+    theme: readable
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+---
+
+```{css, echo=FALSE}
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 50px;
+  margin: 2em 20px 40px 20px;
+  background-image: url("https://raw.githubusercontent.com/kenya-eie-wg/eie_wg_5ws/main/eie_wg_logo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+```
+
+```{=html}
+<style>
+    body .main-container {
+        max-width: 1280px;
+    }
+</style>
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+<br><br>
+
+# [June 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_jun2023.html)
+
+<br>
+
+# [July 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_jul2023.html)
+
+<br>
+
+# [August 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_aug2023.html)
+
