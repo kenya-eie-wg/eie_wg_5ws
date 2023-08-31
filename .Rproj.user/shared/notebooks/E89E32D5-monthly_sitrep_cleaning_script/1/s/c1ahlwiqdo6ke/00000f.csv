@@ -1,25 +1,54 @@
-"0","combined <- read_excel(""./data/data_entry_monthly_sitrep.xlsx"", 
-           sheet = ""data_entry"") %>% 
-  clean_monthly_sitrep() %>% 
-  glimpse()
+"0","list.files(""./data/unicef_internal"")
 "
-"1","Rows: 31,668"
-"1",""
+"1"," [1]"
+"1"," ""Copy of data_entry_monthly_sitrep August LZO.xlsx""                       "
 "1","
 "
-"1","Columns: 9"
-"1",""
+"1"," [2]"
+"1"," ""Copy of Monthly Education SitRep_Jul23_lzo.xlsx""                         "
 "1","
 "
-"1","$ county                  [3m[38;5;246m<chr>[39m[23m ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"",~
-$ month                   [3m[38;5;246m<fct>[39m[23m January, January, January, January, January, January, January, January, January, January, January,~
-$ sub_indicator           [3m[38;5;246m<chr>[39m[23m ""indicator1_host_community_boys"", ""indicator1_host_community_girls"", ""indicator1_idps_boys"", ""indi~
-$ value                   [3m[38;5;246m<dbl>[39m[23m 97, 66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-$ unicef_indicator_number [3m[38;5;246m<fct>[39m[23m 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,~
-$ unicef_indicator        [3m[38;5;246m<chr>[39m[23m ""1. OOSC accessing formal education"", ""1. OOSC accessing formal education"", ""1. OOSC accessing for~
-$ sex_modifier            [3m[38;5;246m<chr>[39m[23m ""male"", ""female"", ""male"", ""female"", ""male"", ""female"", ""male"", ""female"", ""male"", ""female"", ""male"", ~
-$ beneficiary_group       [3m[38;5;246m<chr>[39m[23m ""host_community"", ""host_community"", ""idps"", ""idps"", ""refugees"", ""refugees"", ""cwd"", ""cwd"", ""host_co~
-$ age_modifier            [3m[38;5;246m<chr>[39m[23m ""children"", ""children"", ""children"", ""children"", ""children"", ""children"", ""children"", ""children"", ""c~"
-"1",""
+"1"," [3]"
+"1"," ""Copy of Monthly Education SitRep_July 2023 GZO input.xlsx""               "
+"1","
+"
+"1"," [4]"
+"1"," ""Data_entry_monthly_sitrepAugust sitrep_gzo.xlsx""                         "
+"1","
+"
+"1"," [5]"
+"1"," ""June  Monthly Education SitRep_Jun23 Kwale Kilifi Kajiado and Narok.xlsx"""
+"1","
+"
+"1"," [6]"
+"1"," ""Kajiado Kwale Kilifi Monthly Education SitRep_Jul23.xlsx""                "
+"1","
+"
+"1"," [7]"
+"1"," ""Monthly Education SitRep_Jul23 20230802.xlsx""                            "
+"1","
+"
+"1"," [8]"
+"1"," ""Monthly Education SitRep_Jul23 corrected.xlsx""                           "
+"1","
+"
+"1"," [9]"
+"1"," ""Monthly Education SitRep_Jun23_consolidated_20230717 - Copy.xlsx""        "
+"1","
+"
+"1","[10]"
+"1"," ""Monthly Education SitRep_Jun23_consolidated_20230717.xlsx""               "
+"1","
+"
+"1","[11]"
+"1"," ""Monthly Education SitRep_Jun23_mohamed - Copy.xlsx""                      "
+"1","
+"
+"1","[12]"
+"1"," ""Monthly Education SitRep_Jun23_mohamed.xlsx""                             "
+"1","
+"
+"1","[13]"
+"1"," ""Monthly Education SitRep_Jun2326062023_osman.xlsx""                       "
 "1","
 "
