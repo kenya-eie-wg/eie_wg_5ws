@@ -74,9 +74,9 @@ Marsabit,KE010,lead_organisation,ChildFund Kenya,CF
 Marsabit,KE010,implementing_partner,Nawiri Children Development Program,NCDP
 Homa Bay,KE043,lead_organisation,Population Council,PC
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
-Nairobi,KE047,lead_organisation,KENYA NATIONAL COMMISSION FOR UNESCO,KNATCOM
+Nairobi,KE047,lead_organisation,KENYA NATIONAL COMMISSION FOR UNESCO,UNESCO
 Nairobi,KE047,implementing_partner,Lifeskills Promoters,LISP
-Nairobi,KE047,lead_organisation,KENYA NATIONAL COMMISSION FOR UNESCO,KNATCOM
+Nairobi,KE047,lead_organisation,KENYA NATIONAL COMMISSION FOR UNESCO,UNESCO
 Nairobi,KE047,implementing_partner,Lifeskills Promoters,LISP
 Homa Bay,KE043,lead_organisation,Population Council,PC
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
@@ -353,9 +353,9 @@ Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
 Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,Windle International Kenya,WIK
+Turkana,KE023,implementing_partner,Windle International,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,Windle International Kenya,WIK
+Turkana,KE023,implementing_partner,Windle International,NA
 West Pokot,KE024,lead_organisation,UNICEF,UNICEF
 West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
 West Pokot,KE024,lead_organisation,UNICEF,UNICEF
@@ -618,6 +618,42 @@ Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Narok,KE033,implementing_partner,World Vision Kenya,WVK
 Homa Bay,KE043,lead_organisation,Population Council,PC
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Baringo,KE030,lead_organisation,UNICEF,UNICEF
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Baringo,KE030,lead_organisation,UNICEF,UNICEF
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Baringo,KE030,lead_organisation,UNICEF,UNICEF
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Samburu,KE025,lead_organisation,UNICEF,UNICEF
+Samburu,KE025,implementing_partner,Special Olympics Kenya,SOK
+Samburu,KE025,lead_organisation,UNICEF,UNICEF
+Samburu,KE025,implementing_partner,Special Olympics Kenya,SOK
+West Pokot,KE024,lead_organisation,UNICEF,UNICEF
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,lead_organisation,UNICEF,UNICEF
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,lead_organisation,UNICEF,UNICEF
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,lead_organisation,UNICEF,UNICEF
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,lead_organisation,UNICEF,UNICEF
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Lifeskills Promoters,LISP
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Homa Bay,KE043,lead_organisation,Population Council,PC
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Kajiado,KE034,lead_organisation,ChildFund Kenya,CF
 Kajiado,KE034,implementing_partner,Emali Dedicated Children Agency,NA
 Kajiado,KE034,lead_organisation,ChildFund Kenya,CF
@@ -663,6 +699,10 @@ Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Homa Bay,KE043,lead_organisation,Population Council,PC
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Kwale,KE002,lead_organisation,UNICEF,UNICEF
+Kwale,KE002,implementing_partner,Women Educational Researchers of Kenya,WERK
 Homa Bay,KE043,lead_organisation,Population Council,PC
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Kajiado,KE034,lead_organisation,UNESCO,UNESCO

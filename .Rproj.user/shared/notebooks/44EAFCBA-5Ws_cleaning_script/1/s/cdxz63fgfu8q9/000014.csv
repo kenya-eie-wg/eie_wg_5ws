@@ -1,4 +1,0 @@
-"0","eie <- rbind(eie_a %>% "
-"0","               select(-names_numbers_schools), eie_b) "
-"0",""
-"0",""

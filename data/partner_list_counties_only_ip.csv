@@ -220,8 +220,8 @@ Kilifi,KE003,implementing_partner,World Vision Kenya,WVK
 Mandera,KE009,implementing_partner,County Director of Education Mandera,CDE Mandera
 Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
 Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Windle International Kenya,WIK
-Turkana,KE023,implementing_partner,Windle International Kenya,WIK
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Windle International,NA
 West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
 West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
 Samburu,KE025,implementing_partner,Finn Church Aid,FCA
@@ -410,6 +410,24 @@ Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Narok,KE033,implementing_partner,World Vision Kenya,WVK
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Samburu,KE025,implementing_partner,Special Olympics Kenya,SOK
+Samburu,KE025,implementing_partner,Special Olympics Kenya,SOK
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Lifeskills Promoters,LISP
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Kajiado,KE034,implementing_partner,Emali Dedicated Children Agency,NA
 Kajiado,KE034,implementing_partner,Emali Dedicated Children Agency,NA
 Kajiado,KE034,implementing_partner,Emali Dedicated Children Agency,NA
@@ -446,6 +464,8 @@ Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Kwale,KE002,implementing_partner,Women Educational Researchers of Kenya,WERK
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Kajiado,KE034,implementing_partner,"MoE, KNATCOM, STEM Impact Centre",NA
 Kwale,KE002,implementing_partner,"MoE, KNATCOM, STEM Impact Centre",NA
