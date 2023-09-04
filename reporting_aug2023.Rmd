@@ -1,5 +1,5 @@
 ---
-title: "Kenya Education in Emergencies Working Group -- Drought July 5Ws Report"
+title: "Kenya Education in Emergencies Working Group -- Drought 5Ws Report"
 date:  "28 August 2023"
 output:
   html_document:
