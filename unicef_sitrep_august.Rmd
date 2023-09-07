@@ -172,7 +172,7 @@ indicator1_counties <- eie %>% filter(month %in% report_month & str_detect(indic
                  lead_organisation == "UNICEF" & activity_status == "Completed") %>% 
   list_counties() 
 
-
+5034 - 4681
 ```
 
 A total of `r indicator1 %>% pull(total) %>% format(big.mark = ",")` children (`r indicator1 %>% pull(girls) %>% format(big.mark = ",")` girls and `r indicator1 %>% pull(boys) %>% format(big.mark = ",")` boys) have accessed basic education with UNICEF support during `r report_month` 2023 in the counties of `r indicator1_counties`. 
