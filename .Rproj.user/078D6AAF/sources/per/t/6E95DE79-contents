@@ -392,7 +392,7 @@ eie %>% count(implementing_partner)
 # Check for missing implementing partners
 eie %>% filter(is.na(implementing_partner))
 
-
+eie %>% filter(str_detect(indicator, "1") & men > 0)
 
 ```
 
@@ -535,6 +535,7 @@ partner_list_counties %>%
   write_csv("./data/partner_list_counties_only_ip.csv")
   
 
+partner_list_counties %>% distinct(partner) %>% arrange(partner) %>% write_csv("./data/partner_list_5ws.csv")
 ```
 
 

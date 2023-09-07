@@ -233,6 +233,14 @@ summary_table %>%
 
 <br><br><br>
 
+```{r}
+eie %>% 
+  filter(str_detect(indicator, "5") & boys > 0) %>% 
+  slice(10) %>% 
+  pull(activity)
+```
+
+
 ## 1.2 By sex and age
 
 ```{r}
