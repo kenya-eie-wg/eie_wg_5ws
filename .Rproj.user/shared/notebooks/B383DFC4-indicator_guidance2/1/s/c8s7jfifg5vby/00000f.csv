@@ -1,0 +1,6 @@
+"0","eie %>% filter(str_detect(indicator, ""1"")) %>% slice(1) %>% pull(indicator)
+"
+"1","[1]"
+"1"," ""indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas"""
+"1","
+"
