@@ -1,0 +1,10 @@
+indicator,sex_modifier,needs,unicef_target,unicef_total_results,unicef_previous_results,unicef_progress_rate,sector_target,sector_total_results,sector_previous_results,sector_progress_rate
+Access to education,Total,3083702,866711,88863,83698,10.25,1201151,276672,269966,23.03
+Access to education,Girls,1541851,433356,41750,39269,9.63,600576,124583,121363,20.74
+Access to education,Boys,1541851,433355,47113,44429,10.87,600575,152089,148603,25.32
+Learning materials,Total,1541850,433356,108726,108726,25.09,600578,176526,176526,29.39
+Learning materials,Girls,770925,216678,47388,47388,21.87,300289,85470,85470,28.46
+Learning materials,Boys,770925,216678,61338,61338,28.31,300289,96259,96259,32.06
+NA,Total,NA,NA,0,0,NA,NA,0,0,NA
+NA,Girls,NA,NA,0,0,NA,NA,0,0,NA
+NA,Boys,NA,NA,0,0,NA,NA,0,0,NA

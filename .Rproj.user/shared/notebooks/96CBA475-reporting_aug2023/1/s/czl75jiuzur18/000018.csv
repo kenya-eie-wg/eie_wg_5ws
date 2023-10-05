@@ -1,7 +1,0 @@
-"0","eie %>% 
-  filter(str_detect(indicator, ""5"") & boys > 0) %>% 
-  slice(10) %>% 
-  pull(activity)
-"
-"1","character(0)
-"

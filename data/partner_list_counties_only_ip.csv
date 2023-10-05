@@ -410,6 +410,14 @@ Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Narok,KE033,implementing_partner,World Vision Kenya,WVK
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Kilifi,KE003,implementing_partner,Women Educational Researchers of Kenya,WERK
+Narok,KE033,implementing_partner,Women Educational Researchers of Kenya,WERK
+Kajiado,KE034,implementing_partner,Women Educational Researchers of Kenya,WERK
+Kajiado,KE034,implementing_partner,Women Educational Researchers of Kenya,WERK
+Kilifi,KE003,implementing_partner,Women Educational Researchers of Kenya,WERK
+Kwale,KE002,implementing_partner,Women Educational Researchers of Kenya,WERK
+Kajiado,KE034,implementing_partner,Women Educational Researchers of Kenya,WERK
+Narok,KE033,implementing_partner,Women Educational Researchers of Kenya,WERK
 Baringo,KE030,implementing_partner,Save the Children,SCI
 Baringo,KE030,implementing_partner,Save the Children,SCI
 Baringo,KE030,implementing_partner,Save the Children,SCI
@@ -437,6 +445,69 @@ Makueni,KE017,implementing_partner,Emali Dedicated Children Agency,NA
 Samburu,KE025,implementing_partner,Samburu Children Program,NA
 Turkana,KE023,implementing_partner,Frontiers Community Development Organization,NA
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
+Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
+Wajir,KE008,implementing_partner,County Director of Education Wajir,CDE Wajir
+Tana River,KE004,implementing_partner,Tana North and Tana Delta,NA
+Tana River,KE004,implementing_partner,Tana North and Tana Delta,NA
+Wajir,KE008,implementing_partner,Save the Children,SCI
+Wajir,KE008,implementing_partner,Save the Children,SCI
+Wajir,KE008,implementing_partner,Save the Children,SCI
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Garissa,KE007,implementing_partner,Save the Children,SCI
+Garissa,KE007,implementing_partner,Save the Children,SCI
+Garissa,KE007,implementing_partner,Save the Children,SCI
+Wajir,KE008,implementing_partner,Save the Children,SCI
+Wajir,KE008,implementing_partner,Save the Children,SCI
+Wajir,KE008,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS
+Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS
+Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS
+Samburu,KE025,implementing_partner,Finn Church Aid,FCA
+Samburu,KE025,implementing_partner,Special Olympics Kenya,SOK
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Save the Children,SCI
+Turkana,KE023,implementing_partner,Lifeskills Promoters,LISP
+Turkana,KE023,implementing_partner,Lifeskills Promoters,LISP
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+West Pokot,KE024,implementing_partner,Special Olympics Kenya,SOK
+Turkana,KE023,implementing_partner,Save the Children,SCI
+West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
+Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
+Wajir,KE008,implementing_partner,County Director of Education Wajir County,NA
+Tana River,KE004,implementing_partner,Tana North and Tana Delta,NA
+Tana River,KE004,implementing_partner,Tana North and Tana Delta,NA
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Meru,KE012,implementing_partner,Food for the Hungry,FHK
+Meru,KE012,implementing_partner,Food for the Hungry,FHK
+Meru,KE012,implementing_partner,Food for the Hungry,FHK
+Meru,KE012,implementing_partner,Food for the Hungry,FHK
+Meru,KE012,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
@@ -475,4 +546,25 @@ Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
 Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
 Mandera,KE009,implementing_partner,County Director of Education Mandera,CDE Mandera
 Isiolo,KE011,implementing_partner,Lifeskills Promoters,LISP
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Turkana,KE023,implementing_partner,Lifeskills Promoters,LISP
+Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC

@@ -38,6 +38,7 @@
 "0","      number_schools = ifelse(!is.na(names_numbers_schools) & is.na(number_schools), 1, number_schools)"
 "0","      ) %>%"
 "0","    replace_with_na(replace = list(names_numbers_schools = ""N/A"")) %>% "
+"0","    # Standard_cleaning() goes here"
 "0","    standard_cleaning() %>% "
 "0","    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% "
 "0","    mutate(source = str_remove(source, "

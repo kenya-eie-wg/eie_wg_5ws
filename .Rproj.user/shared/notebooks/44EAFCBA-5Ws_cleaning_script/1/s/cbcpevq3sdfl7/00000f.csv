@@ -15,6 +15,7 @@
 "0","    mutate(source = file_list_v2[i]) %>%"
 "0","    replace_with_na(replace = list(names_numbers_schools = ""N/A"")) %>% "
 "0","    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% "
+"0","    # Standard_cleaning() goes here"
 "0","    standard_cleaning() %>% "
 "0","    mutate(source = str_remove(source, "
 "0","                             ""C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/"")) %>% "

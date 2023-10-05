@@ -1,0 +1,244 @@
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
+
+library(shiny)
+library(tidyverse)
+library(shinyscreenshot)
+library(gridExtra)
+library(ggpubr)
+library(viridis)
+library(sf)
+library(scales)
+library(patchwork)
+library(grid)
+library(png)
+library(cowplot)
+library(ggtext)
+
+
+`%out%` <- Negate(`%in%`)
+theme_set(theme_light())
+
+
+pie_chart <- function(tbl){
+  
+  tbl %>% 
+    ggplot(aes(x ="", y = prop, fill = sex_modifier)) + 
+    geom_col(width = 1, colour = "white") + 
+    coord_polar("y", start = 0) + 
+    theme_void() + 
+    geom_label(aes(y = prop, 
+                   label = paste0(label, "\n", 
+                                  comma(value), 
+                                  "\n", 
+                                  percent(prop, accuracy = .1))), 
+               colour = "white", 
+               position = position_stack(vjust = .5), 
+               size = 5) + 
+    scale_fill_manual(values = c( "#4d6bbd", "#ed6b24")) +
+    theme(legend.position = "none", 
+          plot.title = element_text(size = 15), 
+          plot.subtitle = element_text(size = 30,
+                                       colour = "#5370BF")) 
+  
+}
+
+make_dodged_plot <- function(tbl) {
+  
+  tbl %>% 
+    mutate(age_modifier = str_to_title(age_modifier),
+           age_modifier = str_replace_all(age_modifier, "Preprimary_ece", "Pre-primary\n/ECE"),
+           county = fct_relevel(county, c("national", params$county_selection))) %>%
+    mutate(age_modifier = fct_relevel(age_modifier, c("Secondary",
+                                                      "Primary",
+                                                      "Pre-primary\n/ECE"))) %>% 
+    arrange(age_modifier, county) %>% 
+    ggplot(aes(x = value, y = age_modifier, fill = fct_rev(county))) +
+    geom_col(position = position_dodge()) + 
+    geom_text(aes(label = value), position = position_dodge(width = .9), 
+              hjust = 1, colour = "white", size = 5) + 
+    scale_fill_manual(values = c("#2b54ad", "#5d90d3"), 
+                      breaks = c(params$county_selection, "National")) + 
+    theme(legend.position = "top",  
+          panel.background = element_rect("#f4f4f4"), 
+          legend.text = element_text(size = 8), 
+          plot.title = element_text(size = 15), 
+          plot.subtitle = element_text(size = 15), 
+          axis.text.y = element_text(size = 10)) + 
+    guides(fill = guide_legend(override.aes = list(size = 0.3)))
+}
+
+
+### datasets
+
+locations <- read_xlsx("C:/Users/seanywng/Documents/R/kenya_county_profiles_app/data/ken_adminboundaries_tabulardata.xlsx", 
+                       sheet = "ADM1") %>% 
+  clean_names()
+
+pcode1_shape <- 
+  sf::st_read("C:/Users/seanywng/Documents/R/kenya_county_profiles_app/data/ken_adm_iebc_20191031_shp/ken_admbnda_adm1_iebc_20191031.shp", 
+              quiet = TRUE) %>% 
+  clean_names() 
+
+asal_county_list <- read_csv("C:/Users/seanywng/Documents/R/kenya_county_profiles_app/data/counties.csv") %>%  
+  mutate(county = recode(county, 
+                         "national" = "National",
+                         "Tharaka Nithi" = "Tharaka-Nithi")) %>% 
+  distinct(county) %>% 
+  dplyr::filter(county != "National") %>% 
+  pull()
+
+counties <- read_csv("C:/Users/seanywng/Documents/R/kenya_county_profiles_app/data/counties.csv") %>% 
+  mutate(sex_modifier = fct_relevel(sex_modifier, c("male", "female", "total"))) %>% 
+  # Important -- the old values were wrong
+  rbind(read_csv("C:/Users/seanywng/Documents/R/kenya_county_profiles_app/data/learner_toilet_ratio_recalculated.csv") %>%
+          dplyr::filter(county %in% c(asal_county_list)) %>% 
+          mutate(indicator = "learner_toilet_ratio_recalculated") %>%
+          select(indicator, county, age_modifier, sex_modifier, value = learner_toilet_ratio)) %>% 
+  mutate(age_modifier = ifelse(age_modifier == "preprimary", 
+                               "preprimary_ece", 
+                               age_modifier), 
+         county = recode(county, 
+                         "national" = "National",
+                         "Tharaka Nithi" = "Tharaka-Nithi"))
+
+
+# Define UI for application 
+ui <- fluidPage(
+  
+  fluidRow(
+    column(6, 
+           selectInput(
+             "county", 
+             label = "Select County:", 
+             choices = counties %>% 
+               select(county) %>% 
+               distinct() %>% 
+               filter(county != "National") %>% 
+               arrange(county) %>% 
+               as.list())), 
+    column(3, 
+           downloadButton(outputId = "export", 
+                          label = "Download PDF")), 
+    column(3, 
+           actionButton(inputId = "screenshot", 
+                        label = "Screenshot Dashboard"))), 
+  
+  
+  fluidRow(
+    column(12, 
+           plotOutput("key_figures_for_the_county"))
+  )
+
+)
+
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  
+  counties <- reactive({counties %>% 
+      subset(county %in% c(input$county))})
+
+      output$key_figures_for_the_county <- renderPlot({
+        
+        
+        county_population <- counties %>% 
+          filter(indicator == "county_population" & sex_modifier != "total") %>% 
+          mutate(prop = value / sum(value)) %>%
+          mutate(label = str_to_title(sex_modifier)) %>% 
+          pie_chart() +
+          labs(title = expression(paste("County populatio", n^1)),
+               subtitle = paste0(counties %>%
+                                   filter(county == input$county) %>% 
+                                   filter(indicator == "county_population" &
+                                            sex_modifier == "total" &
+                                            age_modifier == "total") %>%
+                                   pull(value) %>%
+                                   format(big.mark = ",")))
+        
+        school_aged_children <- counties %>% 
+          filter(county == input$county) %>% 
+          filter(str_detect(indicator, "school_age_children") & 
+                   sex_modifier != "total") %>% 
+          mutate(prop = value / sum(value)) %>%
+          mutate(label = str_to_title(sex_modifier)) %>% 
+          pie_chart() +
+          labs(title = expression(paste("School-aged children (4-17 years", ")"^1)),
+               subtitle = paste0(counties %>%
+                                   filter(county == input$county) %>% 
+                                   filter(indicator == "school_age_children" &
+                                            sex_modifier == "total" &
+                                            age_modifier == "total") %>%
+                                   pull(value) %>%
+                                   format(big.mark = ",")))
+        
+        oos_preprimary <- counties %>% 
+          filter(county == input$county) %>% 
+          filter(str_detect(indicator, "out_of_school_children") & 
+                   age_modifier == "preprimary_ece" & 
+                   sex_modifier != "total") %>% 
+          mutate(prop = value / sum(value)) %>%
+          mutate(label = str_to_title(sex_modifier)) %>% 
+          pie_chart() + 
+          labs(title = expression(paste("Out-of-school \nPreprimary/ECE (4-5 years", ")"^2)), 
+               subtitle = paste0(counties %>%
+                                   filter(county == input$county) %>% 
+                                   filter(str_detect(indicator, "out_of_school_children") &
+                                            sex_modifier == "total" &
+                                            age_modifier == "preprimary_ece") %>%
+                                   pull(value) %>%
+                                   format(big.mark = ","))) + 
+          theme(plot.title = element_text(hjust = .25), 
+                plot.subtitle = element_text(hjust = 0))
+        
+        oos_primary <- counties %>% 
+          filter(county == input$county) %>% 
+          filter(str_detect(indicator, "out_of_school_children") & 
+                   age_modifier == "primary" & 
+                   sex_modifier != "total") %>% 
+          mutate(prop = value / sum(value)) %>%
+          mutate(label = str_to_title(sex_modifier)) %>% 
+          pie_chart() + 
+          labs(title = expression(paste("Out-of-school \nPrimary (6-13 years", ")"^2)),
+               subtitle = paste0(counties %>%
+                                   filter(county == input$county) %>% 
+                                   filter(str_detect(indicator, "out_of_school_children") &
+                                            sex_modifier == "total" &
+                                            age_modifier == "primary") %>%
+                                   pull(value) %>%
+                                   format(big.mark = ","))) + 
+          theme(plot.title = element_text(hjust = .25), 
+                plot.subtitle = element_text(hjust = .1))
+        
+        oos_secondary <- counties %>% 
+          filter(county == input$county) %>% 
+          filter(str_detect(indicator, "out_of_school_children") & 
+                   age_modifier == "secondary" & 
+                   sex_modifier != "total") %>% 
+          mutate(prop = value / sum(value)) %>%
+          mutate(label = str_to_title(sex_modifier)) %>% 
+          pie_chart() + 
+          labs(title = expression(paste("Out-of-school \nSecondary (14-17 years", ")"^2)),
+               subtitle = paste0(counties %>%
+                                   filter(county == input$county) %>% 
+                                   filter(str_detect(indicator, "out_of_school_children") &
+                                            sex_modifier == "total" &
+                                            age_modifier == "secondary") %>%
+                                   pull(value) %>%
+                                   format(big.mark = ","))) + 
+          theme(plot.title = element_text(hjust = .25), 
+                plot.subtitle = element_text(hjust = 0)) 
+        
+        
+        county_population + school_aged_children + oos_preprimary + oos_primary + oos_secondary
+    })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
