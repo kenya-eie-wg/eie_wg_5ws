@@ -1,0 +1,30 @@
+{
+    "id": "92AABB6E",
+    "path": "~/R/eie_wg_5ws/sitrep_inputs_working.Rmd",
+    "project_path": "sitrep_inputs_working.Rmd",
+    "type": "r_markdown",
+    "hash": "2989604168",
+    "contents": "",
+    "dirty": false,
+    "created": 1696821140394.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "478,3",
+        "scrollLine": "445",
+        "last_setup_crc32": "",
+        "docOutlineSize": "89",
+        "docOutlineVisible": "1"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1696844821,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1696844821051,
+    "read_only": false,
+    "read_only_alternatives": []
+}

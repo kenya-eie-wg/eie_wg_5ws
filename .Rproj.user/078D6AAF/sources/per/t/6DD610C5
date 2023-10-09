@@ -1,0 +1,30 @@
+{
+    "id": "6DD610C5",
+    "path": "~/R/eie_wg_5ws/monthly_sitrep_cleaning_script.Rmd",
+    "project_path": "monthly_sitrep_cleaning_script.Rmd",
+    "type": "r_markdown",
+    "hash": "2674815339",
+    "contents": "",
+    "dirty": false,
+    "created": 1696821214702.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "496,0",
+        "scrollLine": "481",
+        "docOutlineSize": "54",
+        "docOutlineVisible": "1",
+        "last_setup_crc32": "f74ddf03f6b774a1"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1696844821,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1696844821193,
+    "read_only": false,
+    "read_only_alternatives": []
+}

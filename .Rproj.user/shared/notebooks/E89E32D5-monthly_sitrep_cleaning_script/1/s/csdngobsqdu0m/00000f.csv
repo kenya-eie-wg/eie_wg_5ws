@@ -1,4 +1,4 @@
-"0","combined <- read_excel(""./data/unicef_internal/Copy of data_entry_monthly_sitrep August LZO.xlsx"", "
+"0","combined_august <- read_excel(""./data/unicef_internal/Copy of data_entry_monthly_sitrep August LZO.xlsx"", "
 "0","           sheet = ""data_entry"") %>% "
 "0","  clean_monthly_sitrep() %>% "
 "0","  rename(lzo_value = value) %>% "
@@ -17,5 +17,5 @@
 "0","  mutate(value = pmax(gzo_value, lzo_value, kzo_value)) %>% "
 "0","  select(-gzo_value, -lzo_value, -kzo_value)"
 "0",""
-"0","combined %>% write_csv(paste0(""./data/combined"",  format(Sys.time(), '%Y%m%d'), "".csv""))"
+"0","combined_august %>% write_csv(paste0(""./data/combined_august"",  format(Sys.time(), '%Y%m%d'), "".csv""))"
 "0",""

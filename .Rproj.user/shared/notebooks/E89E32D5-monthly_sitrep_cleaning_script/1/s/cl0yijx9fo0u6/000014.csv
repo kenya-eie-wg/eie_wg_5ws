@@ -1,0 +1,22 @@
+"0","combined %>% glimpse()
+"
+"1","Rows: 54,404"
+"1",""
+"1","
+"
+"1","Columns: 9"
+"1",""
+"1","
+"
+"1","$ county                  [3m[38;5;246m<chr>[39m[23m ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""Baringo"", ""B~
+$ month                   [3m[38;5;246m<fct>[39m[23m January, January, January, January, January, January, January, January, January~
+$ sub_indicator           [3m[38;5;246m<chr>[39m[23m ""indicator1_host_community_boys"", ""indicator1_host_community_girls"", ""indicator~
+$ unicef_indicator_number [3m[38;5;246m<fct>[39m[23m 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3~
+$ unicef_indicator        [3m[38;5;246m<chr>[39m[23m ""1. OOSC accessing formal education"", ""1. OOSC accessing formal education"", ""1.~
+$ sex_modifier            [3m[38;5;246m<chr>[39m[23m ""male"", ""female"", ""male"", ""female"", ""male"", ""female"", ""male"", ""female"", ""male"",~
+$ beneficiary_type        [3m[38;5;246m<chr>[39m[23m ""Vulnerable Residents"", ""Vulnerable Residents"", ""IDPs"", ""IDPs"", ""Refugees"", ""Re~
+$ age_modifier            [3m[38;5;246m<chr>[39m[23m ""children"", ""children"", ""children"", ""children"", ""children"", ""children"", ""childr~
+$ value                   [3m[38;5;246m<dbl>[39m[23m 97, 66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~"
+"1",""
+"1","
+"
