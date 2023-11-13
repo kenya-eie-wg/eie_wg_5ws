@@ -370,6 +370,9 @@ for (i in 1:length(file_list_v2)) {
 }
 ```
 
+
+### Run all chunks above 
+
 ```{r}
 eie <- rbind(eie_a %>% 
                select(-names_numbers_schools), eie_b) %>% 
@@ -398,6 +401,12 @@ eie %>% count(implementing_partner)
 
 # Check for missing implementing partners
 eie %>% filter(is.na(implementing_partner))
+
+eie %>% count(month) %>% 
+  # Converts month names into integers that are properly levelled
+  # Not doing this results in April starting the list, followed by August
+  mutate(month = match(month, month.name)) %>% 
+  arrange(month)
 
 # Misreported 
 eie %>% filter(str_detect(indicator, "1") & men > 0)
@@ -483,6 +492,7 @@ partners_raw  <- read_csv("./data/partner_names_raw.csv") %>%
 ```
 
 
+
 ```{r}
 # eie <- read_csv("./data/eie_5ws.csv") 
 
@@ -549,25 +559,30 @@ partner_list_counties %>% distinct(partner) %>% arrange(partner) %>% write_csv("
 
 # Export for OCHA
 
+Some columns removed prior to export to OCHA. Alter the code with filters as necessary. 
+
 ```{r}
 eie %>% 
   rename(monitoring_indicator = indicator, 
-         main_activity = activity) %>% 
-  select(month:comments) %>% 
-  write_csv(past0("./data/eie_5ws_ocha", 
+         main_activity = activity) %>%
+  filter(month %in% c("July", "August", "September")) %>% 
+  write_csv(paste0("./data/eie_5ws_ocha_jul_aug_sep", 
                   format(Sys.time(), '%Y%m%d'), 
                   ".csv"))
 
 eie %>% 
+  filter(month %in% c("July", "August", "September")) %>% 
   group_by(month, indicator, county, adm1_pcode) %>% 
-  summarise(reached = sum(total_reached, na.rm = TRUE)) %>%
-  write_csv("./data/reached_by_indicator_all_months.csv")
+  summarise(reached = sum(total_reached, na.rm = TRUE), 
+            sector_reached = sum(sector_reached, na.rm = TRUE), 
+            .groups = "drop") %>%
+  write_csv("./data/ocha_reached_by_indicator_jul_aug_sep.csv")
 
 ```
 
 # Targets and reached by indicator
 
-You should only have to run this once. 
+You should only have to run this once. This cleans the excel sheet with county targets on them and prepares them for use. 
 
 ```{r}
 targets <- read_excel("./data/5Ws_2023/Consolidated 5W_ Education_Mar 2023 Report.xlsx", 
@@ -649,19 +664,19 @@ eie %>%
 
 # IPC
 
-You really only needed to run this once, hence the `eval = FALSE`. 
+You really only needed to run if the IPC data is updated. 
 
-```{r eval = FALSE}
+```{r}
 
 
-ipc_names <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-February-2023--SRA-.xlsx", 
+ipc_names <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-July-2023--LRA-.xlsx", 
            skip = 10) %>% 
   slice(1) %>% 
   clean_names() %>% 
   transpose_df() %>% 
   rename(a = `1`, 
          rowname_a = rowname) %>% 
-  cbind(read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-February-2023--SRA-.xlsx", 
+  cbind(read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-July-2023--LRA-.xlsx", 
            skip = 9) %>% 
           clean_names() %>%
           slice(1) %>%
@@ -673,7 +688,7 @@ ipc_names <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-February-2
   mutate(colnames = paste0(a, " ", b)) %>% 
   pull(colnames)
 
-ipc <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-February-2023--SRA-.xlsx", 
+ipc <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-July-2023--LRA-.xlsx", 
            skip = 11) %>%
   setNames(ipc_names)  %>%
   clean_names() %>% 
