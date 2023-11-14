@@ -1,0 +1,9 @@
+"0","summary_table %>% 
+  filter(str_detect(Indicator, ""1"")) %>% 
+  flextable() %>% 
+  set_caption(paste0(""EiE Indicator 1, as of "", params$report_date)) %>% 
+  set_table_properties(layout = ""autofit"", width = .99)
+"
+"2","Error in filter(., str_detect(Indicator, ""1"")) : 
+  object 'summary_table' not found
+"

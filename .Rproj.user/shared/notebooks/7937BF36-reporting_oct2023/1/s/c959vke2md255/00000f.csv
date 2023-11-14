@@ -1,0 +1,29 @@
+"0","  tbl %>% 
+    group_by(indicator_short, county) %>% 
+    summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>% 
+    full_join(targets %>% 
+                filter(target_unit %in% c(""people"")) %>% 
+                select(county, indicator_short, county_target), 
+              by = c(""county"", ""indicator_short"")) %>% 
+    replace_na(list(county_target = 0, 
+                    beneficiaries = 0)) %>% 
+    filter(beneficiaries > 0) %>% 
+    mutate(pc = ifelse(county_target > 0, beneficiaries / county_target, 0), 
+           county = fct_reorder(county, beneficiaries)) %>%  
+    ggplot(aes(x = pc, y = county)) + 
+    geom_col(aes(fill = pc)) + 
+    geom_text(aes(label = percent(pc, accuracy = .1), hjust = ""inward""), 
+              colour = ""grey45"") + 
+    scale_x_continuous(labels = percent) +
+    scale_fill_viridis(direction = -1, option = ""mako"", 
+                       labels = percent, begin = .2) + 
+    labs(title = ""% of target reached"", 
+         x = ""% reached"", 
+         y = """", 
+         fill = ""% reached"") +
+    
+    theme(legend.position = ""none"")
+"
+"2","Error in UseMethod(""group_by"") : 
+  no applicable method for 'group_by' applied to an object of class ""function""
+"

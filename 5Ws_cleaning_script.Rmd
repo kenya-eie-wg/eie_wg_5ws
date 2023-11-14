@@ -408,7 +408,7 @@ eie %>% count(month) %>%
   mutate(month = match(month, month.name)) %>% 
   arrange(month)
 
-# Misreported 
+# Misreported beneficiaries
 eie %>% filter(str_detect(indicator, "1") & men > 0)
 
 ```

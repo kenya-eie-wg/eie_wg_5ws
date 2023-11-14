@@ -1,0 +1,9 @@
+"0","targets_range <- targets %>% 
+  filter(target_unit == ""people"") %>% 
+  group_by(indicator_short, county) %>% 
+  summarise(target = sum(county_target, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = indicator_short, values_from = target) %>% 
+  setNames(c(""county"", ""indicator1"", ""indicator2"", ""indicator3"", ""indicator4"", 
+             ""indicator5"", ""indicator6""))
+"
+"2","`summarise()` has grouped output by 'indicator_short'. You can override using the `.groups` argument."

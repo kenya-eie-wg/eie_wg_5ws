@@ -1,0 +1,5 @@
+indicator,is_unicef,men,women,boys,girls
+indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,UNICEF,12962,6873,80858,66480
+indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,non-UNICEF,138071,35460,140411,112057
+indicator 3 # of learners and teachers reached with learning and  teaching materials,UNICEF,3001,1065,73791,55622
+indicator 3 # of learners and teachers reached with learning and  teaching materials,non-UNICEF,17628,8411,37361,40559
