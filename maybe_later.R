@@ -688,3 +688,25 @@ eie %>% filter(str_detect(indicator, "1|3")) %>%
             boys = sum(boys), 
             girls = sum(girls)) %>% 
   write_csv("./data/indicator1_3_231113.csv")
+
+
+eie %>% 
+  filter(lead_organisation == "UNICEF") %>%
+  group_by(indicator_short) %>% 
+  summarise(boys = sum(boys, na.rm = TRUE), 
+            girls = sum(girls, na.rm = TRUE), 
+            men = sum(men, na.rm = TRUE), 
+            women = sum(women, na.rm = TRUE)) %>% 
+  mutate(men = ifelse(indicator_short == "1. Access ECD spaces/schools", 0, men), 
+         women = ifelse(indicator_short == "1. Access ECD spaces/schools", 0, women)) %>% 
+  adorn_totals(c("row", "col"))  
+
+
+mutate(counties = ifelse(indicator_short == "Total", "14", counties))
+
+eie %>% 
+  filter(lead_organisation == "UNICEF") %>%
+  summarise(
+    
+    reached = sum(total_reached, na.rm = TRUE), 
+    counties = n_distinct(adm1_pcode))
