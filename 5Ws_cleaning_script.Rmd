@@ -415,9 +415,16 @@ eie %>% filter(str_detect(indicator, "1") & men > 0)
 
 ## Write 
 
+
+
 ```{r}
 # Write 
 eie %>% 
+  # Correcting activity_status for completed projects 
+  mutate(activity_status = ifelse(activity_status == "Ongoing" & 
+                                    end_date <= "2023-11-01",
+                                  "Completed", 
+                                  activity_status)) %>% 
   write_csv("./data/eie_5ws.csv")
 ```
 

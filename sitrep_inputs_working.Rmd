@@ -195,6 +195,7 @@ messy <- c(
 
 
 
+
 # Read messy table
 
 ```{r}
@@ -565,6 +566,47 @@ combined_july %>% write_csv(paste0("./data/combined_sitrep_", format(Sys.Date(),
 
 ```
 
+```{r}
+combined <- read_csv("./data/combined20230904.csv")
+
+eie <- read_csv("./data/eie_5ws.csv")
+
+eie %>% count(indicator)
+```
+
+## Changes to combined, to ready for archiving
+
+As the old sitrep template was deprecated, this whole section is being readied for archival. 
+
+```{r}
+combined <- combined %>%
+  mutate(eie_indicator = case_when(str_detect(unicef_indicator, "1") ~ "indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas", 
+                                   str_detect(unicef_indicator, "2") ~ "indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation)", 
+                                   str_detect(unicef_indicator, "3") ~ "indicator 3 # of learners and teachers reached with learning and teaching materials", 
+                                   str_detect(unicef_indicator, "4") ~ "indicator 5.1 # of teachers trained on any programme, including resilience", 
+                                   str_detect(unicef_indicator, "5") ~ "indicator 5.2 # of BoM trained on any programme, including resilience", 
+                                   str_detect(unicef_indicator, "6") ~ "indicator 5.3 # of government officials trained on any programme, including resilience", 
+                                   str_detect(unicef_indicator, "7") ~ "indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)")) 
+
+combined %>% 
+write_csv("./data/old_table_combined.csv")
+
+old_table_eie_match <- combined %>% 
+  filter(beneficiary_group != "all") %>% 
+  filter(sex_modifier != "total") %>% 
+  group_by(month, county, unicef_indicator, eie_indicator, beneficiary_group, sex_modifier, age_modifier) %>% 
+  summarise(value = sum(value, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = c(sex_modifier, age_modifier), 
+              values_from = value) %>% 
+  replace_na(list(female_children = 0, male_children = 0, female_adults = 0, male_adults = 0)) %>% 
+  mutate(beneficiaries = female_children + male_children + female_adults + male_adults) %>% 
+  filter(beneficiaries > 0)
+
+old_table_eie_match %>% 
+  write_csv("./data/old_table_eie_match.csv")
+    
+
+```
 
 
 ## Checks 

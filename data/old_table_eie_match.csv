@@ -1,0 +1,154 @@
+month,county,unicef_indicator,eie_indicator,beneficiary_group,female_children,male_children,female_adults,male_adults,beneficiaries
+April,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,97,157,0,0,254
+April,Baringo,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,143,161,304
+April,Baringo,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,24,23,47
+April,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,110,141,0,0,251
+April,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,401,520,0,0,921
+April,Samburu,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,7,12,19
+April,Samburu,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,402,351,0,0,753
+April,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,280,220,0,0,500
+April,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,2810,2940,0,0,5750
+April,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,refugees,9,15,0,0,24
+April,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,36,10,46
+April,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",refugees,0,0,174,45,219
+April,Turkana,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,3,44,47
+April,Turkana,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,736,734,0,0,1470
+April,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,140,110,0,0,250
+April,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,1405,1470,0,0,2875
+April,West Pokot,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,19,10,29
+August,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,0,1,0,0,1
+August,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,391,373,0,0,764
+August,Baringo,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,44,6,50
+August,Isiolo,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,17,74,91
+August,Kajiado,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,489,623,0,0,1112
+August,Kilifi,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,451,480,0,0,931
+August,Kilifi,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,994,992,0,0,1986
+August,Kilifi,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,1273,988,0,0,2261
+August,Kwale,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,121,394,0,0,515
+August,Kwale,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,1047,1063,0,0,2110
+August,Mandera,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,8,77,85
+August,Marsabit,2. Children benefiting from child-friendly environment,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),host_community,90,0,0,0,90
+August,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,4,3,0,0,7
+August,Samburu,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,18,10,28
+August,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,2360,1929,0,0,4289
+August,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,refugees,6234,12453,0,0,18687
+August,Turkana,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",refugees,0,0,82,53,135
+August,Turkana,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,200,184,0,0,384
+August,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,2588,2774,0,0,5362
+August,West Pokot,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,33,35,68
+February,Garissa,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,667,575,0,0,1242
+February,Isiolo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,57,101,0,0,158
+February,Marsabit,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,354,646,0,0,1000
+February,Marsabit,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,10,83,93
+February,Tana River,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,2555,1620,0,0,4175
+February,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,60,35,0,0,95
+February,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,76,103,0,0,179
+February,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,refugees,630,781,0,0,1411
+February,Turkana,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,cwd,313,457,0,0,770
+February,Turkana,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,181,209,0,0,390
+February,Turkana,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,refugees,9028,11078,0,0,20106
+February,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,10,18,28
+February,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",refugees,0,0,21,101,122
+February,Turkana,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,5,3,8
+February,Turkana,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",refugees,0,0,66,229,295
+February,Turkana,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",refugees,105,0,0,0,105
+January,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,66,97,0,0,163
+January,Baringo,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,28,105,133
+January,Garissa,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,82,106,188
+January,Isiolo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,746,784,0,0,1530
+January,Isiolo,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,81,94,175
+January,Isiolo,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,369,313,0,0,682
+January,Marsabit,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,229,271,0,0,500
+January,Marsabit,2. Children benefiting from child-friendly environment,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),host_community,1245,1303,0,0,2548
+January,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,36,51,0,0,87
+January,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,978,1364,0,0,2342
+January,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,131,149,0,0,280
+January,West Pokot,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,19,10,29
+July,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,324,288,0,0,612
+July,Kajiado,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,954,227,0,0,1181
+July,Kajiado,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,368,426,794
+July,Kilifi,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,340,226,0,0,566
+July,Kilifi,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,19,21,40
+July,Kwale,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,22,22,44
+July,Kwale,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,14,39,53
+July,Laikipia,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,22,22,44
+July,Marsabit,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,50,73,0,0,123
+July,Marsabit,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,24,162,186
+July,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,380,526,0,0,906
+July,Samburu,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,3,28,31
+July,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,210,241,0,0,451
+July,Turkana,2. Children benefiting from child-friendly environment,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),refugees,7580,10224,0,0,17804
+July,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",refugees,0,0,0,22,22
+July,Turkana,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",refugees,0,0,47,33,80
+July,Wajir,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,3,22,25
+July,Wajir,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,1152,1377,0,0,2529
+July,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,2695,2592,0,0,5287
+July,West Pokot,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,8,24,32
+June,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,47,36,0,0,83
+June,Garissa,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,739,802,0,0,1541
+June,Garissa,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,12,44,56
+June,Isiolo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,278,283,0,0,561
+June,Kajiado,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,1112,1254,0,0,2366
+June,Kilifi,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,2233,2324,0,0,4557
+June,Kilifi,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,207,92,0,0,299
+June,Kwale,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,1864,1913,0,0,3777
+June,Kwale,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,65,166,0,0,231
+June,Marsabit,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,231,210,0,0,441
+June,Marsabit,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,154,134,0,0,288
+June,Narok,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,1093,1311,0,0,2404
+June,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,646,708,0,0,1354
+June,Tana River,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,161,229,0,0,390
+June,Turkana,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,320,400,0,0,720
+June,Wajir,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,141,181,0,0,322
+June,Wajir,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,128,293,0,0,421
+June,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,664,559,0,0,1223
+March,Baringo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,181,136,0,0,317
+March,Baringo,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,9,11,20
+March,Baringo,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,665,714,1379
+March,Kajiado,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,534,560,0,0,1094
+March,Kajiado,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,56,27,83
+March,Kajiado,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,985,1112,0,0,2097
+March,Kilifi,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,357,400,0,0,757
+March,Kilifi,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,32,32,64
+March,Kilifi,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,628,160,0,0,788
+March,Kwale,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,242,200,0,0,442
+March,Kwale,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,800,1200,0,0,2000
+March,Mandera,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,240,360,0,0,600
+March,Mandera,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,11,139,150
+March,Marsabit,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,597,1003,0,0,1600
+March,Marsabit,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,15,40,55
+March,Narok,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,326,487,0,0,813
+March,Narok,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,32,83,115
+March,Narok,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,278,100,0,0,378
+March,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,10,14,0,0,24
+March,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,477,582,0,0,1059
+March,Samburu,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,229,0,0,0,229
+March,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,cwd,0,1,0,0,1
+March,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,1899,2337,0,0,4236
+March,Turkana,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,1615,1983,0,0,3598
+March,Turkana,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,refugees,17997,27686,0,0,45683
+March,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,219,299,518
+March,Turkana,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",refugees,0,0,6,46,52
+March,Turkana,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,1335,1492,0,0,2827
+March,Turkana,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",refugees,8596,16230,0,0,24826
+March,Wajir,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,153,208,0,0,361
+March,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,868,901,0,0,1769
+March,West Pokot,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,8,37,45
+May,Isiolo,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,419,414,0,0,833
+May,Isiolo,4. Teachers trained resilience programmes,"indicator 5.1 # of teachers trained on any programme, including resilience",host_community,0,0,43,28,71
+May,Kajiado,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,939,987,0,0,1926
+May,Kajiado,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,2378,910,0,0,3288
+May,Kilifi,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,37,52,0,0,89
+May,Kilifi,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,37,52,0,0,89
+May,Kwale,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,159,200,0,0,359
+May,Marsabit,2. Children benefiting from child-friendly environment,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),host_community,6979,7311,0,0,14290
+May,Marsabit,3. Children who receive assistance to continue learning,indicator 3 # of learners and teachers reached with learning and teaching materials,host_community,10289,9431,0,0,19720
+May,Narok,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,98,102,0,0,200
+May,Samburu,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,127,167,0,0,294
+May,Tana River,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,332,225,0,0,557
+May,Tana River,5. BoM trained resilience programmes,"indicator 5.2 # of BoM trained on any programme, including resilience",host_community,0,0,835,483,1318
+May,Tana River,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,2449,1320,0,0,3769
+May,Turkana,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,407,450,0,0,857
+May,Wajir,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,116,210,0,0,326
+May,Wajir,7. Children life skills mentorship,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",host_community,76,114,0,0,190
+May,West Pokot,1. OOSC accessing formal education,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,host_community,16,28,0,0,44
