@@ -1,0 +1,6 @@
+"0",""
+"0","eie %>% count(month) %>% "
+"0","  # Converts month names into integers that are properly levelled"
+"0","  # Not doing this results in April starting the list, followed by August"
+"0","  mutate(month = match(month, month.name)) %>% "
+"0","  arrange(month)"
