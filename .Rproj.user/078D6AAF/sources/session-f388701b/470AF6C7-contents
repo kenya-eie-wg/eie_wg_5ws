@@ -1,0 +1,95 @@
+---
+title: "Education in Emergencies Reports and Key Datasets"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_download: yes
+    theme: readable
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+---
+
+```{css, echo=FALSE}
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 50px;
+  margin: 2em 20px 40px 20px;
+  background-image: url("https://raw.githubusercontent.com/kenya-eie-wg/eie_wg_5ws/main/eie_wg_logo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+```
+
+```{=html}
+<style>
+    body .main-container {
+        max-width: 1280px;
+    }
+</style>
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+<br><br>
+
+# 5Ws reports 
+
+## [June 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_jun2023.html)
+
+<br>
+
+## [July 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_jul2023.html)
+
+<br>
+
+## [August 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_aug2023.html)
+
+<br>
+
+## [September 2023 5Ws report](https://kenya-eie-wg.github.io/eie_wg_5ws/reporting_sep2023.html)
+
+<br><br><br>
+
+# Key Datasets
+
+## [Locations and Pcodes](https://github.com/kenya-eie-wg/eie_wg_5ws/raw/main/data/ken_adminboundaries_tabulardata_v2.xlsx)
+Counties and constituencies and corresponding Pcodes from the National Gazette. 
+
+## [Shapefiles](https://data.humdata.org/m/dataset/cod-ab-ken?)
+Kenyan Subnational boundaries, from OCHA. 
+
+## [All towns Shapefile data](https://geodata.arin-africa.org/layers/my_geonode_data:geonode:kenya_all_towns)
+From the Africa Research and Impact Network. Select "Original Dataset" when downloading layer. 
+
+<br>
+
+## [5Ws CSV](https://github.com/kenya-eie-wg/eie_wg_5ws/blob/main/data/eie_5ws.csv) 
+[Raw version](https://raw.githubusercontent.com/kenya-eie-wg/eie_wg_5ws/main/data/eie_5ws.csv)
+
+## [5Ws Template](https://github.com/kenya-eie-wg/eie_wg_5ws/raw/main/data/eie_5ws_template_v3_20230828.xlsx)
+
+
+<br>
+
+## [County-level Education Indicators -- Table version](https://github.com/kenya-eie-wg/kenya_education_county_profiles/blob/main/data/counties_spreadsheet.csv)
+[Table version raw](https://raw.githubusercontent.com/kenya-eie-wg/kenya_education_county_profiles/main/data/counties_spreadsheet.csv)
+
+<br>
+
+## [County-level Education Indicators](https://github.com/kenya-eie-wg/kenya_county_profiles_dashboard/blob/main/data/counties.csv)
+[Raw version](https://raw.githubusercontent.com/kenya-eie-wg/kenya_county_profiles_dashboard/main/data/counties.csv)
+
+<br>
+
+## [Integrated Food Security Phase Classification data](https://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1156541/?iso3=KEN)
+
+
+
