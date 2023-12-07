@@ -8,39 +8,9 @@
 "0","library(viridis)"
 "0","library(patchwork)"
 "0","library(DT)"
-"2","Registered S3 method overwritten by 'htmlwidgets':
-  method           from         
-  print.htmlwidget tools:rstudio
-"
 "0","library(here)"
 "0","library(sf)"
-"2","Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 7.2.1; sf_use_s2() is TRUE
-"
 "0","library(plotly)"
-"2","
-Attaching package: ‘plotly’
-
-"
-"2","The following objects are masked from ‘package:flextable’:
-
-    highlight, style
-
-"
-"2","The following object is masked from ‘package:ggplot2’:
-
-    last_plot
-
-"
-"2","The following object is masked from ‘package:stats’:
-
-    filter
-
-"
-"2","The following object is masked from ‘package:graphics’:
-
-    layout
-
-"
 "0","library(flextable)"
 "0","library(ggrepel)"
 "0","library(anytime)"

@@ -1,29 +1,53 @@
-"0","  tbl %>% 
-    group_by(indicator_short, county) %>% 
-    summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>% 
-    full_join(targets %>% 
-                filter(target_unit %in% c(""people"")) %>% 
-                select(county, indicator_short, county_target), 
-              by = c(""county"", ""indicator_short"")) %>% 
-    replace_na(list(county_target = 0, 
-                    beneficiaries = 0)) %>% 
-    filter(beneficiaries > 0) %>% 
-    mutate(pc = ifelse(county_target > 0, beneficiaries / county_target, 0), 
-           county = fct_reorder(county, beneficiaries)) %>%  
-    ggplot(aes(x = pc, y = county)) + 
-    geom_col(aes(fill = pc)) + 
-    geom_text(aes(label = percent(pc, accuracy = .1), hjust = ""inward""), 
-              colour = ""grey45"") + 
-    scale_x_continuous(labels = percent) +
-    scale_fill_viridis(direction = -1, option = ""mako"", 
-                       labels = percent, begin = .2) + 
-    labs(title = ""% of target reached"", 
-         x = ""% reached"", 
-         y = """", 
-         fill = ""% reached"") +
-    
-    theme(legend.position = ""none"")
-"
-"2","Error in UseMethod(""group_by"") : 
-  no applicable method for 'group_by' applied to an object of class ""function""
-"
+"0","ben_plot <- function(tbl) {"
+"0","  tbl %>% "
+"0","    group_by(indicator_short, county) %>% "
+"0","    summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>% "
+"0","    full_join(targets %>% "
+"0","                filter(target_unit %in% c(""people"")) %>% "
+"0","                select(county, indicator_short, county_target), "
+"0","              by = c(""county"", ""indicator_short"")) %>% "
+"0","    replace_na(list(county_target = 0, "
+"0","                    beneficiaries = 0)) %>% "
+"0","    filter(beneficiaries > 0) %>% "
+"0","    mutate(pc = ifelse(county_target > 0, beneficiaries / county_target, 0), "
+"0","           county = fct_reorder(county, beneficiaries)) %>%  "
+"0","    ggplot(aes(x = beneficiaries, y = county)) + "
+"0","    geom_col(aes(fill = pc)) +"
+"0","    geom_text(aes(label = comma(beneficiaries), hjust = ""inward""), "
+"0","              colour = ""grey45"") + "
+"0","    scale_x_continuous(labels = comma) +"
+"0","    scale_fill_viridis(direction = -1, option = ""mako"", "
+"0","                       labels = percent, begin = .2) + "
+"0","    labs(title = ""Beneficiaries reached"", "
+"0","         x = ""Beneficiaries"", "
+"0","         y = """", "
+"0","         fill = ""% reached"") "
+"0","}"
+"0",""
+"0","pc_plot <- function(tbl) {"
+"0","  tbl %>% "
+"0","    group_by(indicator_short, county) %>% "
+"0","    summarise(beneficiaries = sum(total_reached, na.rm = TRUE)) %>% "
+"0","    full_join(targets %>% "
+"0","                filter(target_unit %in% c(""people"")) %>% "
+"0","                select(county, indicator_short, county_target), "
+"0","              by = c(""county"", ""indicator_short"")) %>% "
+"0","    replace_na(list(county_target = 0, "
+"0","                    beneficiaries = 0)) %>% "
+"0","    filter(beneficiaries > 0) %>% "
+"0","    mutate(pc = ifelse(county_target > 0, beneficiaries / county_target, 0), "
+"0","           county = fct_reorder(county, beneficiaries)) %>%  "
+"0","    ggplot(aes(x = pc, y = county)) + "
+"0","    geom_col(aes(fill = pc)) + "
+"0","    geom_text(aes(label = percent(pc, accuracy = .1), hjust = ""inward""), "
+"0","              colour = ""grey45"") + "
+"0","    scale_x_continuous(labels = percent) +"
+"0","    scale_fill_viridis(direction = -1, option = ""mako"", "
+"0","                       labels = percent, begin = .2) + "
+"0","    labs(title = ""% of target reached"", "
+"0","         x = ""% reached"", "
+"0","         y = """", "
+"0","         fill = ""% reached"") +"
+"0","    "
+"0","    theme(legend.position = ""none"")"
+"0","}"

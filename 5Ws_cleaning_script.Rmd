@@ -436,9 +436,6 @@ eie %>%
 ```
 
 
-```{r}
-eie %>% filter(is.na(indicator_short))
-```
 
 
 
@@ -584,17 +581,18 @@ Some columns removed prior to export to OCHA. Alter the code with filters as nec
 eie %>% 
   rename(monitoring_indicator = indicator, 
          main_activity = activity) %>%
-  filter(month %in% c("July", "August", "September")) %>% 
+  # filter(month %in% c("July", "August", "September")) %>% 
   write_csv(paste0("./data/eie_5ws_ocha_jul_aug_sep", 
                   format(Sys.time(), '%Y%m%d'), 
                   ".csv"))
 
 eie %>% 
-  filter(month %in% c("July", "August", "September")) %>% 
+  # filter(month %in% c("July", "August", "September")) %>% 
   group_by(month, indicator, county, adm1_pcode) %>% 
   summarise(reached = sum(total_reached, na.rm = TRUE), 
             sector_reached = sum(sector_reached, na.rm = TRUE), 
             .groups = "drop") %>%
+  view()
   write_csv("./data/ocha_reached_by_indicator_jul_aug_sep.csv")
 
 ```
