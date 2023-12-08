@@ -139,7 +139,7 @@ eie <- read_csv("./data/eie_5ws.csv") %>%
     str_detect(indicator, "5 #|5.1|5.2|5.3") ~ men + women,
     str_detect(indicator, "children and youth benefiting from resilience enhancing programmes") ~ boys + girls, 
                                    TRUE ~ total_reached)) %>% 
-  filter(month %out% c("November"))
+  filter(month %out% c("December"))
 ```
 
 
@@ -472,6 +472,7 @@ eie %>%
 <br>
 
 ## 2.1.1 Overall progress
+
 
 
 

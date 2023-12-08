@@ -3,8 +3,10 @@ Baringo,Bartabwa,World Vision Kenya,849,1,KE030
 Baringo,IWS,AVSI Foundation,10,2,KE030
 Baringo,Save the Children,Save the Children,2009,3,KE030
 Baringo,Save the Children,UNICEF,2669,3,KE030
+Baringo,World Vision Kenya,Bartabwa,0,1,KE030
 Baringo,World Vision Kenya,World Vision Kenya,7013,4,KE030
 Garissa,AVSI Foundation,AVSI Foundation,1299,2,KE007
+Garissa,Finn Church Aid,Finn Church Aid,16,1,KE007
 Garissa,Finn Church Aid,UNICEF,1242,1,KE007
 Garissa,Norwegian Refugee Council,Save the Children,2019,2,KE007
 Garissa,Qatar Charity,Qatar Charity,1541,1,KE007
@@ -26,9 +28,9 @@ Kajiado,SMB,AVSI Foundation,135,1,KE034
 Kajiado,SMB,SMB,135,1,KE034
 Kajiado,Servants of the Poor,AVSI Foundation,202,1,KE034
 Kajiado,The Girl Child Network,UNESCO,700,1,KE034
-Kajiado,Women Educational Researchers of Kenya,UNICEF,18546,2,KE034
+Kajiado,Women Educational Researchers of Kenya,UNICEF,21955,2,KE034
 Kilifi,Futebol da Forcaa,UNESCO,20,1,KE003
-Kilifi,Women Educational Researchers of Kenya,UNICEF,13072,3,KE003
+Kilifi,Women Educational Researchers of Kenya,UNICEF,14152,3,KE003
 Kilifi,World Vision Kenya,World Vision Kenya,9299,3,KE003
 Kwale,"MoE, KNATCOM, STEM Impact Centre",UNESCO,130,1,KE002
 Kwale,The Girl Child Network,UNESCO,350,1,KE002
@@ -37,20 +39,20 @@ Lamu,World Vision Kenya,World Vision Kenya,5520,2,KE005
 Makueni,Emali Dedicated Children Agency,ChildFund Kenya,0,1,KE017
 Mandera,County Director of Education Mandera,UNICEF,600,2,KE009
 Marsabit,County Director of Education Marsabit,UNICEF,0,1,KE010
-Marsabit,Finn Church Aid,UNICEF,40433,6,KE010
+Marsabit,Finn Church Aid,UNICEF,40544,6,KE010
 Marsabit,Food for the Hungry,Food for the Hungry,31094,6,KE010
 Marsabit,Nawiri Children Development Program,ChildFund Kenya,3933,2,KE010
 Marsabit,UNICEF,UNICEF,16928,1,KE010
 Marsabit,World Vision Kenya,World Vision Kenya,2077,3,KE010
 Meru,AVSI Foundation,AVSI Foundation,8469,1,KE012
-Meru,Food for the Hungry,Food for the Hungry,26635,5,KE012
+Meru,Food for the Hungry,Food for the Hungry,27873,7,KE012
 Nairobi,Lifeskills Promoters,KENYA NATIONAL COMMISSION FOR UNESCO,115,2,KE047
 Narok,MOE/TSC,World Vision Kenya,60,1,KE033
 Narok,Ministry of Education,World Vision Kenya,8241,2,KE033
 Narok,Missionary Sisters of the Catechism,AVSI Foundation,85,1,KE033
 Narok,Missionary Sisters of the Catechism,Missionary Sisters of the Catechism,500,1,KE033
 Narok,We World,We World,11296,1,KE033
-Narok,Women Educational Researchers of Kenya,UNICEF,16026,3,KE033
+Narok,Women Educational Researchers of Kenya,UNICEF,16750,3,KE033
 Narok,World Vision Kenya,World Vision Kenya,11630,1,KE033
 Samburu,Edukans,Edukans,4734,1,KE025
 Samburu,Feed the Children,Feed the Children,7052,1,KE025
@@ -62,20 +64,21 @@ Samburu,Special Olympics Kenya,Special Olympics Kenya,14,1,KE025
 Samburu,Special Olympics Kenya,UNICEF,289,3,KE025
 Taita Taveta,World Vision Kenya,World Vision Kenya,45,1,KE006
 Tana River,Tana North and Tana Delta,UNICEF,882,1,KE004
-Tana River,Women Educational Researchers of Kenya,UNICEF,18260,2,KE004
+Tana River,Women Educational Researchers of Kenya,UNICEF,21260,3,KE004
 Turkana,Feed the Children,Feed the Children,10190,1,KE023
-Turkana,Finn Church Aid,Finn Church Aid,299951,5,KE023
-Turkana,Finn Church Aid,UNICEF,103006,4,KE023
+Turkana,Finn Church Aid,Finn Church Aid,326634,6,KE023
+Turkana,Finn Church Aid,UNICEF,107854,4,KE023
 Turkana,Frontiers Community Development Organization,ChildFund Kenya,1044,1,KE023
-Turkana,Jesuit Refugee Service,Jesuit Refugee Service,33605,3,KE023
+Turkana,Jesuit Refugee Service,Jesuit Refugee Service,33610,3,KE023
+Turkana,Jesuit Refugee Service,UNICEF,43894,3,KE023
 Turkana,Lifeskills Promoters,Life Skills Promoters,111,2,KE023
 Turkana,Lifeskills Promoters,Lifeskills Promoters,13553,3,KE023
-Turkana,Lifeskills Promoters,UNICEF,8698,3,KE023
+Turkana,Lifeskills Promoters,UNICEF,11846,3,KE023
 Turkana,Mondi,World Vision Kenya,2197,1,KE023
 Turkana,Nawiri Children Development Program,ChildFund Kenya,414,1,KE023
 Turkana,Norwegian Refugee Council,UNICEF,50895,2,KE023
 Turkana,Save the Children,Save the Children,13420,3,KE023
-Turkana,Save the Children,UNICEF,5044,2,KE023
+Turkana,Save the Children,UNICEF,5089,2,KE023
 Turkana,Special Olympics Kenya,UNICEF,202,1,KE023
 Turkana,UNICEF,UNICEF,17804,1,KE023
 Turkana,Voluntary Service Overseas,Voluntary Service Overseas,42,1,KE023
@@ -84,7 +87,7 @@ Turkana,Windle International,Windle International,18687,1,KE023
 Wajir,Action for Sustainable Change,Action for Sustainable Change,4160,3,KE008
 Wajir,County Director of Education Wajir,UNICEF,409,2,KE008
 Wajir,Save the Children,Save the Children,10719,3,KE008
-Wajir,Save the Children,UNICEF,3788,3,KE008
+Wajir,Save the Children,UNICEF,3827,3,KE008
 West Pokot,Finn Church Aid,Finn Church Aid,5624,3,KE024
 West Pokot,Finn Church Aid,UNICEF,19588,3,KE024
 West Pokot,Ministry of Education,UNICEF,53,1,KE024
