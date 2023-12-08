@@ -418,10 +418,11 @@ for (i in 1:length(file_list_v2)) {
 ```{r}
 eie <- rbind(eie_a %>% 
                select(-names_numbers_schools), eie_b) %>% 
-  mutate(number_schools = as.numeric(number_schools))
+  mutate(number_schools = as.numeric(number_schools)) 
 
 
 ```
+
 
 
 
@@ -456,6 +457,7 @@ eie %>% filter(str_detect(indicator, "1") & men > 0)
 ```
 
 ## Write 
+
 
 
 
@@ -617,7 +619,7 @@ eie %>%
   rename(monitoring_indicator = indicator, 
          main_activity = activity) %>%
   # filter(month %in% c("July", "August", "September")) %>% 
-  write_csv(paste0("./data/eie_5ws_ocha_jul_aug_sep", 
+  write_csv(paste0("./data/eie_5ws_ocha", 
                   format(Sys.time(), '%Y%m%d'), 
                   ".csv"))
 
@@ -627,8 +629,10 @@ eie %>%
   summarise(reached = sum(total_reached, na.rm = TRUE), 
             sector_reached = sum(sector_reached, na.rm = TRUE), 
             .groups = "drop") %>%
-  view()
-  write_csv("./data/ocha_reached_by_indicator_jul_aug_sep.csv")
+  write_csv(paste0("./data/ocha_reached_by_indicator", 
+                  format(Sys.time(), '%Y%m%d'), 
+                  ".csv"))
+
 
 ```
 

@@ -314,6 +314,41 @@ read_excel(file,
 
 
 
+```{r}
+read_excel("./data/5Ws_2023_v2/Copy of eie_5ws_template_v2_childfund.xlsx", 
+           sheet = 2, skip = 2) %>% 
+  setNames(v2_names_5ws) %>% 
+  
+  filter(!is.na(implementing_partner))
+```
+
+
+```{r}
+read_excel("./data/Copy of eie_5ws_template_v2_childfund.xlsx", 
+             sheet = "5W_Data_Entry", 
+             skip = 2, 
+             col_types = c(
+               "text", "text", "text", "text", "text", "text", 
+               "text", "text", "text", "text", "text", "text", 
+               "date", "date", 
+               "text", 
+               "numeric", "numeric", "numeric", "numeric", 
+               "text", "numeric", "text"
+             )) %>% 
+    setNames(v2_names_5ws) %>% 
+    mutate(source = file_list_v2[i]) %>%
+    replace_with_na(replace = list(names_numbers_schools = "N/A")) %>% 
+    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
+    # Standard_cleaning() goes here
+    standard_cleaning() %>% 
+    mutate(source = str_remove(source, 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/")) %>% 
+    filter(!is.na(indicator)) %>% 
+    mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
+```
+
+
+
 What you can do next is to use tidytext to separate out a list of schools 
 
 ## Output
@@ -383,10 +418,11 @@ for (i in 1:length(file_list_v2)) {
 ```{r}
 eie <- rbind(eie_a %>% 
                select(-names_numbers_schools), eie_b) %>% 
-  mutate(number_schools = as.numeric(number_schools))
+  mutate(number_schools = as.numeric(number_schools)) 
 
 
 ```
+
 
 
 
@@ -421,6 +457,7 @@ eie %>% filter(str_detect(indicator, "1") & men > 0)
 ```
 
 ## Write 
+
 
 
 
@@ -582,7 +619,7 @@ eie %>%
   rename(monitoring_indicator = indicator, 
          main_activity = activity) %>%
   # filter(month %in% c("July", "August", "September")) %>% 
-  write_csv(paste0("./data/eie_5ws_ocha_jul_aug_sep", 
+  write_csv(paste0("./data/eie_5ws_ocha", 
                   format(Sys.time(), '%Y%m%d'), 
                   ".csv"))
 
@@ -592,8 +629,10 @@ eie %>%
   summarise(reached = sum(total_reached, na.rm = TRUE), 
             sector_reached = sum(sector_reached, na.rm = TRUE), 
             .groups = "drop") %>%
-  view()
-  write_csv("./data/ocha_reached_by_indicator_jul_aug_sep.csv")
+  write_csv(paste0("./data/ocha_reached_by_indicator", 
+                  format(Sys.time(), '%Y%m%d'), 
+                  ".csv"))
+
 
 ```
 
