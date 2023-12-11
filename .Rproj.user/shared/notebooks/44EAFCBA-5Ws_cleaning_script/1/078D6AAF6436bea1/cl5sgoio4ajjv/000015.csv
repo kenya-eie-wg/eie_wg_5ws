@@ -1,0 +1,7 @@
+"0","for (i in 1:length(file_list_v3)) {
+  eie_c_i <- read_5ws_v3(file_list_v3[i])
+  eie_c <- rbind(eie_c, eie_c_i)
+}
+"
+"2","Error: `path` does not exist: ‘NA’
+"

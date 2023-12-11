@@ -1,0 +1,24 @@
+"0","read_excel(""./data/Copy of eie_5ws_template_v2_childfund.xlsx"", 
+             sheet = ""5W_Data_Entry"", 
+             skip = 2, 
+             col_types = c(
+               ""text"", ""text"", ""text"", ""text"", ""text"", ""text"", 
+               ""text"", ""text"", ""text"", ""text"", ""text"", ""text"", 
+               ""date"", ""date"", 
+               ""text"", 
+               ""numeric"", ""numeric"", ""numeric"", ""numeric"", 
+               ""text"", ""numeric"", ""text""
+             )) %>% 
+    setNames(v2_names_5ws) %>% 
+    mutate(source = file_list_v2[i]) %>%
+    replace_with_na(replace = list(names_numbers_schools = ""N/A"")) %>% 
+    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
+    # Standard_cleaning() goes here
+    standard_cleaning() %>% 
+    mutate(source = str_remove(source, 
+                             ""C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/"")) %>% 
+    filter(!is.na(indicator)) %>% 
+    mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
+"
+"2","Error: `path` does not exist: ‘./data/Copy of eie_5ws_template_v2_childfund.xlsx’
+"

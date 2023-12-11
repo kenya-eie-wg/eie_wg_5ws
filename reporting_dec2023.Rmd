@@ -1,6 +1,6 @@
 ---
 title: "Kenya Education in Emergencies Working Group -- Drought 5Ws Report"
-date:  "30 November 2023"
+date:  "31 December 2023"
 output:
   html_document:
     code_download: yes
@@ -12,8 +12,8 @@ output:
     collapsed: no
 always_allow_html: yes
 params: 
-  report_date: "30 November 2023"
-  report_month: "November"
+  report_date: "31 December 2023"
+  report_month: "December"
 ---
 
 ```{css, echo=FALSE}
@@ -37,6 +37,8 @@ params:
     }
 </style>
 ```
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, fig.width=9, message = FALSE, warning=FALSE)
 
@@ -133,9 +135,7 @@ eie <- read_csv("./data/eie_5ws.csv") %>%
       boys + girls,
     str_detect(indicator, "5 #|5.1|5.2|5.3") ~ men + women,
     str_detect(indicator, "children and youth benefiting from resilience enhancing programmes") ~ boys + girls, 
-                                   TRUE ~ total_reached)) %>% 
-  # Remove for December report 
-  filter(month %out% c("December"))
+                                   TRUE ~ total_reached)) 
 
 ```
 
@@ -502,6 +502,7 @@ The rate of increase in the number of beneficiaries reached has yet to plateau, 
 <br><br><br>
 
 ## 2.1.2 Reached by indicator
+
 
 ```{r}
 eie %>% 
