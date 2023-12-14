@@ -30,4 +30,6 @@
 "0","    str_detect(indicator, ""5 #|5.1|5.2|5.3"") ~ men + women,"
 "0","    str_detect(indicator, ""children and youth benefiting from resilience enhancing programmes"") ~ boys + girls, "
 "0","                                   TRUE ~ total_reached)) %>% "
+"0","  # Remove for December report "
 "0","  filter(month %out% c(""December""))"
+"0",""

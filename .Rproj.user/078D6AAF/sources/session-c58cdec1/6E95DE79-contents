@@ -532,6 +532,10 @@ eie %>%
                                     end_date <= "2023-11-01",
                                   "Completed", 
                                   activity_status)) %>% 
+  # Changing the lead organisation for rows which listed UNICEF as the donor
+  mutate(lead_organisation = ifelse(str_detect(donor, "UNCIEF|unicef"), 
+                                    "UNICEF", 
+                                    lead_organisation)) %>% 
   write_csv("./data/eie_5ws.csv")
 ```
 

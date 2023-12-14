@@ -59,5 +59,10 @@
 "0","                             TRUE ~ acronym)) %>% "
 "0","  distinct(partner_type, partner = agency_name, acronym) %>% "
 "0","  arrange(partner) "
-"0",""
-"0",""
+"2","[1mRows: [22m[34m141[39m [1mColumns: [22m[34m3[39m"
+"2","[36m--[39m [1mColumn specification[22m [36m----------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (3): partner type, agency name, acronym"
+"2","
+[36mi[39m Use `spec()` to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

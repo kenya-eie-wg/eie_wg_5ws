@@ -1,8 +1,0 @@
-"0","# Write "
-"0","eie %>% "
-"0","  # Correcting activity_status for completed projects "
-"0","  mutate(activity_status = ifelse(activity_status == ""Ongoing"" & "
-"0","                                    end_date <= ""2023-11-01"","
-"0","                                  ""Completed"", "
-"0","                                  activity_status)) %>% "
-"0","  write_csv(""./data/eie_5ws.csv"")"
