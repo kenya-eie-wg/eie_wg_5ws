@@ -1,0 +1,30 @@
+{
+    "id": "6E95DE79",
+    "path": "~/R/eie_wg_5ws/5Ws_cleaning_script.Rmd",
+    "project_path": "5Ws_cleaning_script.Rmd",
+    "type": "r_markdown",
+    "hash": "1854215457",
+    "contents": "",
+    "dirty": false,
+    "created": 1687500584929.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "538,31",
+        "scrollLine": "522",
+        "last_setup_crc32": "358e389ebc3aa05f",
+        "docOutlineSize": "138",
+        "docOutlineVisible": "1"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1704694355,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1704694355920,
+    "read_only": false,
+    "read_only_alternatives": []
+}

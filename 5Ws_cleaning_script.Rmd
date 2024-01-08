@@ -443,7 +443,7 @@ for (i in 1:length(file_list_v2)) {
 
 Only run when new format is ready 
 
-```{r}
+```{r eval=FALSE}
 path_5ws_v3 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3"
 
 # Last argument filters out any open or temp excel files
