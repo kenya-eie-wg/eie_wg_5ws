@@ -225,7 +225,7 @@ summary_table %>%
   fontsize(size = 9, part = "header") %>% 
   footnote(i = 1, j = 2, part = "header", ref_symbols = "1", 
            as_paragraph("Only implementing partners")) %>% 
-  footnote(i = 8, j = 5:6, ref_symbols = "2", 
+  footnote(i = 8, j = 4:5, ref_symbols = "2", 
            as_paragraph("Only the sum of indicators 1, 2, 5 and 6"))
 
   
