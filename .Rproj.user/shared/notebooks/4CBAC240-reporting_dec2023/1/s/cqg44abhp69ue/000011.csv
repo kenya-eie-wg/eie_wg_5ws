@@ -1,0 +1,5 @@
+"0","summary_table %>% "
+"0","  filter(str_detect(Indicator, ""1"")) %>% "
+"0","  flextable() %>% "
+"0","  set_caption(paste0(""EiE Indicator 1, as of "", params$report_date)) %>% "
+"0","  set_table_properties(layout = ""autofit"", width = .99)"

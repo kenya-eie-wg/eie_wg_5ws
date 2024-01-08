@@ -135,7 +135,10 @@ eie <- read_csv("./data/eie_5ws.csv") %>%
       boys + girls,
     str_detect(indicator, "5 #|5.1|5.2|5.3") ~ men + women,
     str_detect(indicator, "children and youth benefiting from resilience enhancing programmes") ~ boys + girls, 
-                                   TRUE ~ total_reached)) 
+                                   TRUE ~ total_reached)) %>% 
+  mutate(lead_organisation = ifelse(is.na(lead_organisation), 
+                                    implementing_partner, 
+                                    lead_organisation))
 
 ```
 
@@ -990,6 +993,11 @@ This activity has no targets.
 
 <br>
 
+```{r}
+eie %>% filter(is.na(lead_organisation)) %>% distinct(implementing_partner)
+```
+
+
 ```{r warning=FALSE, fig.height=7}
 
 partner_map <- eie %>% 
@@ -1322,7 +1330,7 @@ eie %>%
   flextable() %>% 
   theme_zebra() %>% 
   set_table_properties(width = .85, layout = "autofit") %>% 
-  fontsize(i = 1:7, j = 1, size = 9) 
+  fontsize(i = 1:9, j = 1, size = 9) 
 
 ```
 
