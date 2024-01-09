@@ -495,6 +495,7 @@ v3_names_5ws &lt;- c(
                   str_detect(., &quot;Futebol da Forcaa&quot;) ~ &quot;Futebol da Forcaa&quot;, 
                   str_detect(., &quot;Edukans and SHERP Samburu&quot;) ~ &quot;Edukans&quot;, 
                   str_detect(., &quot;Feed The Children&quot;) ~ &quot;Feed the Children&quot;, 
+                  . == &quot;LWF&quot; ~ &quot;Lutheran World Federation&quot;, 
                   . == &quot;MOE&quot; ~ &quot;Ministry of Education&quot;, 
                   . == &quot;County Director of Education Wajir County&quot; ~ &quot;County Director of Education Wajir&quot;, 
                   . == &quot;CDE Wajir&quot; ~ &quot;County Director of Education Wajir&quot;,
@@ -588,8 +589,9 @@ v3_names_5ws &lt;- c(
     # Standard_cleaning() goes here
     standard_cleaning() %&gt;% 
     filter(!is.na(month) &amp; !is.na(lead_organisation) &amp; !is.na(indicator)) %&gt;% 
+    # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
-                             &quot;C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023/&quot;)) %&gt;% 
+                             &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023/&quot;)) %&gt;% 
     filter(!is.na(indicator)) %&gt;% 
     mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
     
@@ -616,8 +618,9 @@ read_excel(file,
     filter(!is.na(month) &amp; !is.na(lead_organisation) &amp; !is.na(indicator)) %&gt;% 
     # Standard_cleaning() goes here
     standard_cleaning() %&gt;% 
+    # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
-                             &quot;C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/&quot;)) %&gt;% 
+                             &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2/&quot;)) %&gt;% 
     filter(!is.na(indicator)) %&gt;% 
     mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
     
@@ -644,8 +647,9 @@ read_excel(file,
     filter(!is.na(month) &amp; !is.na(lead_organisation) &amp; !is.na(indicator)) %&gt;% 
     # Standard_cleaning() goes here
     standard_cleaning() %&gt;% 
+    # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
-                             &quot;C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3/&quot;)) %&gt;% 
+                             &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3/&quot;)) %&gt;% 
     filter(!is.na(indicator)) %&gt;% 
     mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
     
@@ -665,7 +669,11 @@ and checked at any time.</p>
 <pre class="r"><code>## Path to 4Ws
 # This is the folder where the 4Ws from the current round are stored
 
+# path_5ws &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023&quot;
+
 path_5ws &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023&quot;
+
+
 
 
 # Change the folder to the correct one
@@ -692,7 +700,9 @@ for (i in 1:length(file_list_v1)) {
 </div>
 <div id="output-new-format" class="section level3">
 <h3>Output new format</h3>
-<pre class="r"><code>path_5ws_v2 &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2&quot;
+<pre class="r"><code># path_5ws_v2 &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2&quot;
+
+path_5ws_v2 &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2&quot;
 
 # Last argument filters out any open or temp excel files
 file_list_v2 &lt;- list.files(path = path_5ws_v2, 
@@ -713,7 +723,9 @@ for (i in 1:length(file_list_v2)) {
 <div id="output-future-format" class="section level3">
 <h3>Output future format</h3>
 <p>Only run when new format is ready</p>
-<pre class="r"><code>path_5ws_v3 &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3&quot;
+<pre class="r"><code># path_5ws_v3 &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3&quot;
+
+path_5ws_v3 &lt;- &quot;C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3&quot;
 
 # Last argument filters out any open or temp excel files
 file_list_v3 &lt;- list.files(path = path_5ws_v3, 
@@ -730,9 +742,6 @@ for (i in 1:length(file_list_v3)) {
   eie_c_i &lt;- read_5ws_v3(file_list_v3[i])
   eie_c &lt;- rbind(eie_c, eie_c_i)
 }</code></pre>
-</div>
-<div id="run-all-chunks-above" class="section level3">
-<h3>Run all chunks above</h3>
 <pre class="r"><code>eie &lt;- rbind(eie_a %&gt;% 
                select(-names_numbers_schools), eie_b) %&gt;% 
   mutate(number_schools = as.numeric(number_schools)) </code></pre>
@@ -744,8 +753,10 @@ for (i in 1:length(file_list_v3)) {
 #   rbind(eie_c)</code></pre>
 </div>
 </div>
-<div id="checks" class="section level2">
-<h2>Checks</h2>
+<div id="run-all-chunks-above" class="section level2">
+<h2>Run all chunks above</h2>
+<div id="checks" class="section level3">
+<h3>Checks</h3>
 <pre class="r"><code>eie %&gt;% 
   # This checks the sum of boys, girls, men and women with the total reached
   mutate(total_reached_check = rowSums(.[15:18], na.rm = TRUE)) %&gt;% 
@@ -809,7 +820,7 @@ eie %&gt;% count(implementing_partner)</code></pre>
 ##  9     9    86
 ## 10    10    50
 ## 11    11    41
-## 12    12    42</code></pre>
+## 12    12    45</code></pre>
 <pre class="r"><code># Misreported beneficiaries
 eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code></pre>
 <pre><code>## # A tibble: 57 × 26
@@ -833,13 +844,16 @@ eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code><
 ## #   total_reached &lt;dbl&gt;, comments &lt;chr&gt;, source &lt;chr&gt;, number_schools &lt;dbl&gt;,
 ## #   adm1_pcode &lt;chr&gt;, indicator_short &lt;chr&gt;, sector_reached &lt;dbl&gt;</code></pre>
 <pre class="r"><code>eie %&gt;%
-filter(month == &quot;December&quot;) %&gt;% count(lead_organisation, month, sort = TRUE)</code></pre>
-<pre><code>## # A tibble: 3 × 3
-##   lead_organisation      month        n
-##   &lt;chr&gt;                  &lt;fct&gt;    &lt;int&gt;
-## 1 UNICEF                 December    28
-## 2 Finn Church Aid        December    13
-## 3 Jesuit Refugee Service December     1</code></pre>
+filter(month == &quot;December&quot;) %&gt;% count(implementing_partner, month, sort = TRUE)</code></pre>
+<pre><code>## # A tibble: 5 × 3
+##   implementing_partner      month        n
+##   &lt;chr&gt;                     &lt;fct&gt;    &lt;int&gt;
+## 1 Finn Church Aid           December    22
+## 2 Norwegian Refugee Council December    11
+## 3 Lutheran World Federation December     9
+## 4 Jesuit Refugee Service    December     2
+## 5 Windle International      December     1</code></pre>
+</div>
 </div>
 <div id="write" class="section level2">
 <h2>Write</h2>
@@ -916,6 +930,7 @@ eie %&gt;%
                              agency_name == &quot;KENYA NATIONAL COMMISSION FOR UNESCO&quot; ~ &quot;UNESCO&quot;, 
                              agency_name == &quot;Kenya National Commission for UNESCO&quot; ~ &quot;UNESCO&quot;, 
                              agency_name == &quot;UNESCO&quot; ~ &quot;UNESCO&quot;, 
+                             agency_name == &quot;Lutheran World Federation&quot; ~ &quot;LWF&quot;, 
                              TRUE ~ acronym)) %&gt;% 
   distinct(partner_type, partner = agency_name, acronym) %&gt;% 
   arrange(partner) </code></pre>
