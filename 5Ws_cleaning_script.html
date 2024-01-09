@@ -820,7 +820,7 @@ eie %&gt;% count(implementing_partner)</code></pre>
 ##  9     9    86
 ## 10    10    50
 ## 11    11    41
-## 12    12    92</code></pre>
+## 12    12    98</code></pre>
 <pre class="r"><code># Misreported beneficiaries
 eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code></pre>
 <pre><code>## # A tibble: 57 × 26
@@ -845,7 +845,7 @@ eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code><
 ## #   adm1_pcode &lt;chr&gt;, indicator_short &lt;chr&gt;, sector_reached &lt;dbl&gt;</code></pre>
 <pre class="r"><code>eie %&gt;%
 filter(month == &quot;December&quot;) %&gt;% count(implementing_partner, month, sort = TRUE)</code></pre>
-<pre><code>## # A tibble: 13 × 3
+<pre><code>## # A tibble: 14 × 3
 ##    implementing_partner                   month        n
 ##    &lt;chr&gt;                                  &lt;fct&gt;    &lt;int&gt;
 ##  1 Finn Church Aid                        December    27
@@ -853,14 +853,15 @@ filter(month == &quot;December&quot;) %&gt;% count(implementing_partner, month, 
 ##  3 Norwegian Refugee Council              December    13
 ##  4 Special Olympics Kenya                 December    11
 ##  5 Lutheran World Federation              December     9
-##  6 Women Educational Researchers of Kenya December     5
-##  7 Save the Children                      December     4
-##  8 Lifeskills Promoters                   December     3
-##  9 Jesuit Refugee Service                 December     2
-## 10 County Director of Education Marsabit  December     1
-## 11 HABIBA International                   December     1
-## 12 Qatar Charity                          December     1
-## 13 Windle International                   December     1</code></pre>
+##  6 World Vision Kenya                     December     6
+##  7 Women Educational Researchers of Kenya December     5
+##  8 Save the Children                      December     4
+##  9 Lifeskills Promoters                   December     3
+## 10 Jesuit Refugee Service                 December     2
+## 11 County Director of Education Marsabit  December     1
+## 12 HABIBA International                   December     1
+## 13 Qatar Charity                          December     1
+## 14 Windle International                   December     1</code></pre>
 </div>
 </div>
 <div id="write" class="section level2">
