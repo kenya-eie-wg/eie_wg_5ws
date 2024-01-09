@@ -1,7 +1,0 @@
-"0","knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)"
-"0",""
-"0","library(tidyverse)"
-"0","library(readxl)"
-"0","library(flextable)"
-"0","library(pander)"
-"0","library(tinytex)"

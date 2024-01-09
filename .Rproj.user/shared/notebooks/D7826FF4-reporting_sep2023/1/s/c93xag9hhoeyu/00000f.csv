@@ -1,8 +1,0 @@
-"0","eie %>% "
-"0","  filter(str_detect(indicator, ""5"") & boys > 0) %>% "
-"0","  slice(10) %>% "
-"0","  pull(activity)"
-"1","[1]"
-"1"," ""School BOM trained on implmentation of sustaibility plans"""
-"1","
-"

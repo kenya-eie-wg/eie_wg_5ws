@@ -947,7 +947,8 @@ Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
-Turkana,KE023,implementing_partner,UNICEF,UNICEF
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Finn Church Aid,FCA
@@ -997,25 +998,31 @@ Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
 Garissa,KE007,lead_organisation,UNICEF,UNICEF
 Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
-Turkana,KE023,implementing_partner,LWF,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,lead_organisation,UNICEF,UNICEF
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
 Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS
 Turkana,KE023,lead_organisation,UNICEF,UNICEF
 Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS

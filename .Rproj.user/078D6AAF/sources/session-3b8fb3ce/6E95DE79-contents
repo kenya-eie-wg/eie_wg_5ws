@@ -1,0 +1,830 @@
+---
+title: "Cleaning script"
+output: html_document
+date: '2023-08-23'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width=9, message = FALSE, warning=FALSE)
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(stringi)
+library(janitor)
+library(scales)
+library(magrittr)
+library(viridis)
+library(here)
+library(flextable)
+library(writexl)
+library(naniar)
+library(anytime)
+library(widyr)
+library(tidytext)
+
+theme_set(theme_light())
+
+# Disabling scientific notation
+options(scipen = 100)
+
+# This should just be a standard R function
+`%out%` <- Negate(`%in%`)
+
+# Function for transposing df
+transpose_df <- function(df) {
+  t_df <- data.table::transpose(df)
+  colnames(t_df) <- rownames(df)
+  rownames(t_df) <- colnames(df)
+  t_df <- t_df %>%
+    tibble::rownames_to_column(.data = .) %>%
+    tibble::as_tibble(.)
+  return(t_df)
+}
+
+# Scaling functions 
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+# Mode function 
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
+                      sheet = "ADM2") %>% 
+  clean_names()
+
+```
+
+# Names and standard cleaning
+
+## Column names
+
+```{r}
+v1_names_5ws <- c(
+  "month", 
+  "lead_organisation", 
+  "organisation_type", 
+  "donor",
+  "sector", 
+  "education_level", 
+  "indicator", 
+  "activity", 
+  "implementing_partner", 
+  "county", 
+  "sub_county", 
+  "names_numbers_schools", 
+  "start_date", 
+  "end_date", 
+  "activity_status", 
+  "boys", 
+  "girls", 
+  "men", 
+  "women", 
+  "beneficiary_type", 
+  "total_reached", 
+  "comments"
+)
+
+v2_names_5ws <- c(
+  "month", 
+  "lead_organisation", 
+  "organisation_type", 
+  "donor",
+  "sector", 
+  "education_level", 
+  "indicator", 
+  "activity", 
+  "implementing_partner", 
+  "county", 
+  "sub_county", 
+  "number_schools", 
+  "start_date", 
+  "end_date", 
+  "activity_status", 
+  "boys", 
+  "girls", 
+  "men", 
+  "women", 
+  "beneficiary_type", 
+  "total_reached", 
+  "comments"
+)
+
+v3_names_5ws <- c(
+  "month", 
+  "lead_organisation", 
+  "organisation_type", 
+  "donor",
+  "sector", 
+  "education_level", 
+  "indicator", 
+  "activity", 
+  "implementing_partner", 
+  "response_type", 
+  "county", 
+  "sub_county", 
+  "number_schools", 
+  "start_date", 
+  "end_date", 
+  "activity_status", 
+  "boys", 
+  "girls", 
+  "men", 
+  "women", 
+  "beneficiary_type", 
+  "total_reached", 
+  "comments"
+)
+```
+
+## Standard cleaning
+
+```{r}
+standard_cleaning <- function(tbl) {
+  
+  tbl %>% 
+   mutate(county = recode(county, 
+                            "Tana_River" = "Tana River", 
+                            "Homa_Bay" = "Homa Bay", 
+                            "Home Bay" = "Homa Bay", 
+                            "West_Pokot" = "West Pokot", 
+                            "Taita_Taveta" = "Taita Taveta")) %>% 
+    left_join(locations %>% 
+                distinct(adm1_en, adm1_pcode),
+               by = c("county" = "adm1_en")) %>% 
+  mutate(indicator = case_when(
+    str_detect(indicator, "youth accessing ECD spaces/schools") ~ paste0("indicator 1 ", indicator), 
+    str_detect(indicator, "feeding programmes") ~ paste0("indicator 2 ", indicator), 
+    str_detect(indicator, "teaching materials") ~ paste0("indicator 3 ", indicator), 
+    str_detect(indicator, "hygiene") ~ paste0("indicator 4 ", indicator), 
+    str_detect(indicator, "educators trained on resilience") ~ paste0("indicator 5 ", indicator), 
+    str_detect(indicator, "youth benefiting from resilience") ~ paste0("indicator 6 ", indicator), 
+    str_detect(indicator, "teachers trained on any programme") ~ paste0("indicator 5.1 ", indicator), 
+    str_detect(indicator, "BoM trained on any programme") ~ paste0("indicator 5.2 ", indicator), 
+    str_detect(indicator, "government officials trained on any programme") ~ paste0("indicator 5.3 ", indicator), 
+    str_detect(indicator, "benefitting from child-friendly environment") ~ paste0("indicator 7 ", indicator), 
+    TRUE ~ indicator
+  )) %>% 
+    mutate(month = fct_relevel(month, c("January", "February", "March", "April", 
+                                        "May", "June", "July", "August", 
+                                        "September", "October", "November", "December"))) %>%
+    mutate_at(vars(implementing_partner, lead_organisation), ~ str_trim(str_squish(.))) %>% 
+    mutate_at(vars(implementing_partner, lead_organisation), ~
+                case_when(
+                  str_detect(., "AVSI") ~ "AVSI Foundation",
+                  str_detect(., "Action for sustainable change|Action for Sustainable change") ~ 
+                    "Action for Sustainable Change",
+                  str_detect(., "FCA|FINN|Finn") ~ "Finn Church Aid",
+                  # May be a problem if LISP is paired with another implementing partner
+                  str_detect(
+                    ., "LIFESKILL|Life skills|Lifeskills|LifeSkills|LISP|LISFESKILLS PROMOTERS|LIFESKIILS PROMOTERS") ~
+                    "Lifeskills Promoters",
+                  str_detect(., "ChildFund|Childfund") ~ "ChildFund Kenya", 
+                  str_detect(., "Missionary Sistrs of the catechism|Missionary sisters of the catechism") 
+                  ~ "Missionary Sisters of the Catechism",
+                  str_detect(., "NRC|NORWEGIAN") ~ "Norwegian Refugee Council",
+                  str_detect(., "SCI|Save the Children") ~ "Save the Children",
+                  str_detect(., "World Vision|World vision|WVK BAMBA AP") ~ "World Vision Kenya",
+                  str_detect(., "Nawiri Children Program") ~ "Nawiri Children Development Program",
+                  str_detect(., "ERIKs development Partner") ~ "ERIKs Development Partner",
+                  str_detect(., "Servants of the poor") ~ "Servants of the Poor",
+                  str_detect(., "Evangelizing sisters of mary|ESM") ~ "Evangelizing Sisters of Mary",
+                  str_detect(., "Voluntary Service Overseas|VSO") ~ "Voluntary Service Overseas", 
+                  str_detect(., "Homa Bay Counties") ~ "Homa Bay County", 
+                  str_detect(., "WERK") ~ "Women Educational Researchers of Kenya",
+                  str_detect(., "Women Educational Researchers of Kenya,") ~ "Women Educational Researchers of Kenya",
+                  str_detect(., "The Girl Child Network \\(GCN\\)") ~ "The Girl Child Network", 
+                  str_detect(., "FHK|FH Kenya") ~ "Food for the Hungry",
+                  str_detect(., "Futebol da Forcaa") ~ "Futebol da Forcaa", 
+                  str_detect(., "Edukans and SHERP Samburu") ~ "Edukans", 
+                  str_detect(., "Feed The Children") ~ "Feed the Children", 
+                  . == "LWF" ~ "Lutheran World Federation", 
+                  . == "MOE" ~ "Ministry of Education", 
+                  . == "County Director of Education Wajir County" ~ "County Director of Education Wajir", 
+                  . == "CDE Wajir" ~ "County Director of Education Wajir",
+                  . == "CDE Mandera" ~ "County Director of Education Mandera", 
+                  . == "CDE Marsabit"  ~ "County Director of Education Marsabit", 
+                  . == "Girl Child Network" ~ "The Girl Child Network", 
+                  . == "SC" ~ "Save the Children",
+                  . == "County Director Education" & county == "Mandera" ~ "County Director of Education Mandera", 
+                  . == "Frontiers Community Development Program" ~ "Frontiers Community Development Organization", 
+                  . == "Frontied Community Development Organization" ~ 
+                    "Frontiers Community Development Organization", 
+                  . == "Women Education Researchers of Kenya" ~ "Women Educational Researchers of Kenya", 
+                  . == "KENYA NATIONAL COMMISSION FOR UNESCO|Kenya National Commission for UNESCO" ~ "UNESCO",
+                  . == "Windle International Kenya" ~ "Windle International", 
+                  TRUE ~ .
+                ))%>% 
+    # Think about how you want to resolve the disaggregation issues 
+    mutate(indicator = str_replace_all(indicator, "quantites", "quantities")) %>% 
+    mutate(indicator = ifelse(
+      !is.na(boys) & str_detect(activity, "Training of children"),
+        "indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)", indicator)) %>%
+     mutate(indicator_short = case_when(
+    indicator == "indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas" ~ 
+      "1. Access ECD spaces/schools", 
+    indicator == "indicator 2 # of schools/ECD spaces with feeding programmes" ~ 
+      "2. Feeding programmes", 
+    # Not sure what's wrong with the text of this indicator
+    str_detect(indicator, "indicator 3") ~ "3. Teaching materials", 
+    indicator == 
+    "indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene" ~ 
+      "4. Safe water, personal hygiene", 
+    indicator == "indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)" ~ 
+      "5. Educators resilience enhancing", 
+    str_detect(indicator, "5.1|5.2|5.3") ~ "5. Educators resilience enhancing", 
+    indicator == "indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)" ~ 
+      "6. Children resilience enhancing",
+    indicator == "indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation)" ~ 
+      "7. Construction and rehabilitation",
+    str_detect(indicator, "4") ~ "4. Safe water, personal hygiene", 
+    TRUE ~ NA_character_
+  )) %>% 
+    filter(!is.na(county) & total_reached > 0) %>% 
+    mutate(sector_reached = ifelse(str_detect(indicator_short, "1|2|5|6"), 
+                                 total_reached, 
+                                 0)) 
+}
+```
+
+# 5Ws
+
+## Read_5Ws_v1()
+
+```{r}
+
+
+read_5ws_v1 <- function(file) {
+  
+  read_excel(file, 
+             sheet = "5W_Data_Entry", 
+             skip = 2, 
+             col_types = c(
+               "text", "text", "text", "text", "text", "text", 
+               "text", "text", "text", "text", "text", "text", 
+               "date", "date", 
+               "text", 
+               "numeric", "numeric", "numeric", "numeric", 
+               "text", "numeric", "text"
+             )) %>% 
+    setNames(v1_names_5ws) %>% 
+    mutate(source = file_list_v1[i]) %>%
+    # Doing this here, but you can always move this to the end
+    # But this is the assumption that these lists are correct
+    mutate( 
+      names_numbers_schools = case_when(
+        names_numbers_schools == "All the Juniour Secondary Schools (JSS) in Kalobeyei Settlement" ~
+        "Kalobeyei Settlement, Friends, Joy, Morningstar, Future and Bright Junior Secondary Secondary schools.",
+        names_numbers_schools == "All the main Secondary Schools in Kalobeyei Settlement" ~ 
+        "Kalobeyei Settlement, Friends, Joy, Morningstar, Future and Bright Junior Secondary Secondary schools.", 
+        TRUE ~ names_numbers_schools)) %>% 
+    mutate(
+      number_schools = case_when(
+      activity == "Provision of school meals to learners in the 8 primary schools and 7 pre-primary schools in Kalobeyei Settlement." ~ 15,
+      names_numbers_schools == "22 refugee schools and 11 host community schools" ~ 33,
+      comments == "37 schools supported with 115 handwashing kits" ~ 37,
+      str_detect(names_numbers_schools, "\n") ~ str_count(names_numbers_schools, "\n") + 1,
+      str_detect(names_numbers_schools, "\\,") ~ str_count(names_numbers_schools, "\\,|and|&") + 1, 
+      str_detect(names_numbers_schools, "and") ~ str_count(names_numbers_schools, "and") + 1,
+      str_detect(names_numbers_schools, "\\;") ~ str_count(names_numbers_schools, "\\;") + 1, 
+      !is.na(names_numbers_schools) ~ parse_number(names_numbers_schools), 
+      TRUE ~ NA_integer_), 
+      number_schools = ifelse(!is.na(names_numbers_schools) & is.na(number_schools), 1, number_schools)
+      ) %>%
+    replace_with_na(replace = list(names_numbers_schools = "N/A")) %>% 
+    # Standard_cleaning() goes here
+    standard_cleaning() %>% 
+    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
+    # Note the column here specifying the source, also with a filepath
+    mutate(source = str_remove(source, 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023/")) %>% 
+    filter(!is.na(indicator)) %>% 
+    mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
+    
+  } 
+
+```
+
+## Read_5Ws_v2()
+
+```{r}
+read_5ws_v2 <- function(file) {
+
+read_excel(file, 
+             sheet = "5W_Data_Entry", 
+             skip = 2, 
+             col_types = c(
+               "text", "text", "text", "text", "text", "text", 
+               "text", "text", "text", "text", "text", "text", 
+               "date", "date", 
+               "text", 
+               "numeric", "numeric", "numeric", "numeric", 
+               "text", "numeric", "text"
+             )) %>% 
+    setNames(v2_names_5ws) %>% 
+    mutate(source = file_list_v2[i]) %>%
+    replace_with_na(replace = list(names_numbers_schools = "N/A")) %>% 
+    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
+    # Standard_cleaning() goes here
+    standard_cleaning() %>% 
+    # Note the column here specifying the source, also with a filepath
+    mutate(source = str_remove(source, 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/")) %>% 
+    filter(!is.na(indicator)) %>% 
+    mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
+    
+  } 
+```
+
+## Read_5Ws_v3()
+
+```{r}
+
+read_5ws_v3 <- function(file) {
+
+read_excel(file, 
+             sheet = "5W_Data_Entry", 
+             skip = 2, 
+             col_types = c(
+               "text", "text", "text", "text", "text", "text", 
+               "text", "text", "text", "text", "text", "text", "text", 
+               "date", "date", 
+               "text", 
+               "numeric", "numeric", "numeric", "numeric", 
+               "text", "numeric", "text"
+             )) %>% 
+    setNames(v2_names_5ws) %>% 
+    mutate(source = file_list_v3[i]) %>%
+    replace_with_na(replace = list(names_numbers_schools = "N/A")) %>% 
+    filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
+    # Standard_cleaning() goes here
+    standard_cleaning() %>% 
+    # Note the column here specifying the source, also with a filepath
+    mutate(source = str_remove(source, 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3/")) %>% 
+    filter(!is.na(indicator)) %>% 
+    mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
+    
+  }
+```
+
+What you can do next is to use tidytext to separate out a list of schools
+
+## Output
+
+### Output - old format
+
+We will keep this for 1-2 more rounds, just in case someone submits the old template. After this, we will just write the old data into a .csv that matches the new format exactly. Though the benefit of this approach is that the original data is close at hand and can be reviewed and checked at any time.
+
+```{r warning = FALSE}
+
+## Path to 4Ws
+# This is the folder where the 4Ws from the current round are stored
+
+# path_5ws <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023"
+
+path_5ws <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023"
+
+
+
+
+# Change the folder to the correct one
+# The files will be read from here 
+file_list_v1 <- list.files(path = path_5ws, 
+                        recursive = TRUE, 
+                        pattern = "\\.xlsx$", 
+                        full.names = TRUE) 
+
+# Filtering out open? files? Not sure
+file_list_v1 <- file_list_v1[!str_detect(file_list_v1, "\\~")]
+
+# Ok, got the for loop to work
+# Initialise empty data frame
+# Apparently, to 
+eie_a <- data.frame()
+
+
+# Loop
+for (i in 1:length(file_list_v1)) {
+  eie_a_i <- read_5ws_v1(file_list_v1[i])
+  eie_a <- rbind(eie_a, eie_a_i)
+}
+
+```
+
+### Output new format
+
+```{r warning=FALSE}
+# path_5ws_v2 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2"
+
+path_5ws_v2 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2"
+
+# Last argument filters out any open or temp excel files
+file_list_v2 <- list.files(path = path_5ws_v2, 
+                           recursive = TRUE, 
+                           pattern = "\\.xlsx$",
+                           full.names = TRUE)
+
+file_list_v2 <- file_list_v2[!str_detect(file_list_v2, "\\~")]
+
+
+eie_b <- data.frame()
+
+for (i in 1:length(file_list_v2)) {
+  eie_b_i <- read_5ws_v2(file_list_v2[i])
+  eie_b <- rbind(eie_b, eie_b_i)
+}
+```
+
+### Output future format
+
+Only run when new format is ready
+
+```{r eval=FALSE}
+# path_5ws_v3 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3"
+
+path_5ws_v3 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3"
+
+# Last argument filters out any open or temp excel files
+file_list_v3 <- list.files(path = path_5ws_v3, 
+                           recursive = TRUE, 
+                           pattern = "\\.xlsx$",
+                           full.names = TRUE)
+
+file_list_v3 <- file_list_v3[!str_detect(file_list_v3, "\\~")]
+
+
+eie_c <- data.frame()
+
+for (i in 1:length(file_list_v3)) {
+  eie_c_i <- read_5ws_v3(file_list_v3[i])
+  eie_c <- rbind(eie_c, eie_c_i)
+}
+```
+
+
+```{r}
+eie <- rbind(eie_a %>% 
+               select(-names_numbers_schools), eie_b) %>% 
+  mutate(number_schools = as.numeric(number_schools)) 
+
+
+```
+
+Only run when the new template is ready:
+
+```{r}
+# eie <- rbind(eie_a %>% 
+#                select(-names_numbers_schools), eie_b) %>% 
+#   mutate(number_schools = as.numeric(number_schools)) %>% 
+#   mutate(response_type = "drought") %>% 
+#   rbind(eie_c)
+```
+
+## Run all chunks above
+
+### Checks
+
+```{r}
+eie %>% 
+  # This checks the sum of boys, girls, men and women with the total reached
+  mutate(total_reached_check = rowSums(.[15:18], na.rm = TRUE)) %>% 
+  filter(total_reached_check != total_reached)
+
+eie %>% 
+  # This checks that all counties have matched pcodes
+  filter(is.na(adm1_pcode)) %>% 
+  distinct(county)
+
+# Check for missing implementing partners
+eie %>% filter(is.na(implementing_partner))
+
+
+
+# Check for duplicated or mispelled implementing partners
+eie %>% count(implementing_partner)
+
+
+eie %>% count(month) %>% 
+  # Converts month names into integers that are properly levelled
+  # Not doing this results in April starting the list, followed by August
+  mutate(month = match(month, month.name)) %>% 
+  arrange(month)
+
+# Misreported beneficiaries
+eie %>% filter(str_detect(indicator, "1") & men > 0)
+
+eie %>%
+filter(month == "December") %>% count(implementing_partner, month, sort = TRUE)
+
+
+
+
+
+```
+
+## Write
+
+```{r}
+# Write 
+eie %>% 
+  # Correcting activity_status for completed projects 
+  mutate(activity_status = ifelse(activity_status == "Ongoing" & 
+                                    end_date <= "2023-12-01",
+                                  "Completed", 
+                                  activity_status)) %>% 
+  # Changing the lead organisation for rows which listed UNICEF as the donor
+  mutate(lead_organisation = ifelse(str_detect(donor, "UNCIEF|unicef"), 
+                                    "UNICEF", 
+                                    lead_organisation)) %>% 
+  write_csv("./data/eie_5ws.csv")
+```
+
+## Write: Partners
+
+```{r}
+partners_raw  <- read_csv("./data/partner_names_raw.csv") %>% 
+  clean_names() %>% 
+  distinct(partner_type, agency_name, acronym) %>% 
+  mutate_at(vars(agency_name, acronym), ~ str_trim(str_squish(.))) %>% 
+  filter(agency_name %out% c("National Council for Nomadic Education Kenya", 
+                             "National Council of Nomadic Education in Kenya", 
+                             "MINISTRY OF EDUCATION", 
+                             "ChildFund",
+                             "Childfund", 
+                             "CISP Kenya", 
+                             "Comitato Internazionale per lo Sviluppo dei Popoli (International Committee for the Development of Peoples) - CISP Kenya.", 
+                             "Jesuits Refugee Service", 
+                             "Save the Children International", 
+                             "AVSI FAOUNDATION", 
+                             "ChildFund kenya", 
+                             "Kenya RedCross Society", 
+                             "FINN CHURCH AID", 
+                             "Concern worldwide", 
+                             "Dignitas Limited", 
+                             "AVSI FOUDNATION")) %>% 
+  mutate(agency_name = recode(agency_name, 
+                              "Action for sustainable change" = "Action for Sustainable Change", 
+                              "AVSI FOUNDATION" = "AVSI Foundation", 
+                              "QATAR CHARITY" = "Qatar Charity", 
+                              "Life Skills Promoters" = "Lifeskills Promoters",
+                              "Girl Child Network" = "The Girl Child Network",
+                              "WE WORLD" = "We World", 
+                              "KENYA NATIONAL COMMISSION FOR UNESCO" = "UNESCO", 
+                              "Kenya National Commission for UNESCO" = "UNESCO")) %>% 
+  mutate(acronym = case_when(agency_name == "Christian Blind Mission"~ "CBM",
+                             agency_name == "Concern Worldwide" ~ "CW", 
+                             agency_name == "Finn Church Aid" ~ "FCA", 
+                             agency_name == "Mondo" ~ "Mondo", 
+                             agency_name == "Plan International Kenya" ~ "PLAN", 
+                             agency_name == "Rotary International" ~ "RI", 
+                             agency_name == "World Vision Kenya" ~ "WVK", 
+                             agency_name == "FilmAid Kenya" ~ "FA", 
+                             agency_name == "ResQ247" ~ "ResQ", 
+                             agency_name == "LEGO Foundation" ~ "LEGO", 
+                             agency_name == "St Paul's university" ~ "SPU", 
+                             agency_name == "Dignitas" ~ "DIGN",
+                             agency_name == "EducAid" ~ "EducAid", 
+                             agency_name == "Humanity & Inclusion" ~ "H&I", 
+                             agency_name == "Build Africa Kenya" ~ "BAK", 
+                             agency_name == "Edukans Kenya" ~ "Edukans", 
+                             agency_name == "Action for Sustainable Change" ~ "AFOSC", 
+                             agency_name == "Elimu Yetu Coalition" ~ "EYC", 
+                             agency_name == "CRESNET CBO" ~ "CRES", 
+                             agency_name == "MOE Wajir" ~ "MOE Wajir", 
+                             agency_name == "Qatar Charity" ~ "QATAR", 
+                             agency_name == "Education Management & Leadership" ~ "EML", 
+                             agency_name == "International Aid Services Kenya" ~ "IASK", 
+                             agency_name == "Worldreader" ~ "WR",
+                             agency_name == "ChildFund Kenya" ~ "CF", 
+                             agency_name == "The Girl Child Network" ~ "GCN", 
+                             agency_name == "KENYA NATIONAL COMMISSION FOR UNESCO" ~ "UNESCO", 
+                             agency_name == "Kenya National Commission for UNESCO" ~ "UNESCO", 
+                             agency_name == "UNESCO" ~ "UNESCO", 
+                             agency_name == "Lutheran World Federation" ~ "LWF", 
+                             TRUE ~ acronym)) %>% 
+  distinct(partner_type, partner = agency_name, acronym) %>% 
+  arrange(partner) 
+
+
+```
+
+```{r}
+# eie <- read_csv("./data/eie_5ws.csv") 
+
+
+partner_list_counties <- eie %>% 
+  mutate_at(vars(lead_organisation, implementing_partner), ~ str_trim(str_squish(.))) %>% 
+  mutate(lead_organisation = ifelse(lead_organisation == implementing_partner, 
+                                    NA_character_, 
+                                    lead_organisation)) %>%
+  select(county, adm1_pcode, lead_organisation, implementing_partner) %>% 
+  pivot_longer(cols = c(lead_organisation, implementing_partner), 
+               names_to = "partner_type", 
+               values_to = "partner") %>% 
+  filter(!is.na(partner)) %>% 
+  left_join(partners_raw %>% 
+              select(partner, acronym), 
+            by = "partner") %>% 
+  mutate(acronym = case_when(partner == "Food for the Hungry" ~ "FHK", 
+                             partner == "Nawiri Children Development Program" ~ "NCDP",
+                             partner == "Frontiers Community Development Program" ~ "FCDP",
+                             partner == "Homa Bay County" ~ "HBC",
+                             partner == "Special Olympics Kenya" ~ "SOK",
+                             partner == "Servants of the Poor" ~ "SP",
+                             partner == "Evangelizing Sisters of Mary" ~ "ESM",
+                             partner == "IWS" ~ "IWS",
+                             partner == "CDE Wajir" ~ "CDE Wajir",
+                             partner == "Missionary Sisters of the Catechism" ~ "MCS",
+                             partner == "ERIKs Development Partner" ~ "ERIKs",
+                             partner == "SMB" ~ "SMB",
+                             partner == "Mondi" ~ "MON",
+                             partner == "Bartabwa" ~ "BART",
+                             partner == "CDE Mandera" ~ "CDE Mandera",
+                             partner == "Windle International Kenya" ~ "WIK",
+                             partner == "The Girl Child Network" ~ "GCN",
+                             partner == "Futebol da Forcaa" ~ "FUTE",
+                             partner == "Ministry of Education" ~ "MOE", 
+                             partner == "UNICEF" ~ "UNICEF", 
+                             partner == "ChildFund Kenya" ~ "CF", 
+                             partner == "County Director of Education Wajir" ~ "CDE Wajir", 
+                             partner == "County Director of Education Mandera" ~ "CDE Mandera", 
+                             partner == "County Director of Education Marsabit" ~ "CDE Marsabit",
+                             partner == "UNESCO" ~ "UNESCO", 
+                             partner == "MOE/TSC" ~ "MOE/TSC", 
+                             partner == "Women Education Researchers of Kenya" ~ "WERK", 
+                             partner == "Edukans" ~ "EDK", 
+                             partner == "KENYA NATIONAL COMMISSION FOR UNESCO" ~ "UNESCO", 
+                             TRUE ~ acronym)) %>% 
+  mutate(partner = str_replace_all(partner, "CDE", "County Director of Education"),
+         partner = str_replace_all(partner, "Girl Child Network|The Girl Child Network", 
+                          "The Girl Child Network"),
+         acronym = ifelse(partner == "The Girl Child Network", "GCN", acronym)) 
+
+partner_list_counties %>% 
+  write_csv("./data/partner_list_counties.csv")
+
+partner_list_counties %>% 
+  filter(partner_type == "implementing_partner") %>% 
+  write_csv("./data/partner_list_counties_only_ip.csv")
+  
+
+partner_list_counties %>% distinct(partner) %>% arrange(partner) %>% write_csv("./data/partner_list_5ws.csv")
+```
+
+# Export for OCHA
+
+Some columns removed prior to export to OCHA. Alter the code with filters as necessary.
+
+```{r}
+eie %>% 
+  rename(monitoring_indicator = indicator, 
+         main_activity = activity) %>%
+  # filter(month %in% c("July", "August", "September")) %>% 
+  write_csv(paste0("./data/eie_5ws_ocha_", 
+                  format(Sys.time(), '%Y%m%d'), 
+                  ".csv"))
+
+eie %>% 
+  # filter(month %in% c("July", "August", "September")) %>% 
+  group_by(month, indicator, county, adm1_pcode) %>% 
+  summarise(reached = sum(total_reached, na.rm = TRUE), 
+            sector_reached = sum(sector_reached, na.rm = TRUE), 
+            .groups = "drop") %>%
+  write_csv(paste0("./data/ocha_reached_by_indicator_", 
+                  format(Sys.time(), '%Y%m%d'), 
+                  ".csv"))
+
+
+```
+
+# Targets and reached by indicator
+
+You should only have to run this once. This cleans the excel sheet with county targets on them and prepares them for use.
+
+```{r}
+targets <- read_excel("./data/5Ws_2023/Consolidated 5W_ Education_Mar 2023 Report.xlsx", 
+           sheet = "Reach by Indicator", 
+           skip = 1) %>% 
+  clean_names() %>% 
+  select(x1, x2, 
+         contains("target")) %>% 
+  setNames(c("county", 
+           "county_overall_target", 
+           "indicator1_target_people", 
+           "indicator2_target", 
+           "indicator3_target_people", 
+           "indicator4_target", 
+           "indicator5_target_people", 
+           "indicator6_target_people")) %>% 
+  slice(0:23) %>% 
+  separate(indicator2_target, into = c("indicator2_target_schools", "indicator2_target_people"), sep = "\\(") %>%
+  separate(indicator4_target, into = c("indicator4_target_schools", "indicator4_target_people"), sep = "\\(") %>%
+  mutate_at(vars(indicator2_target_schools, 
+                 indicator2_target_people, 
+                 indicator4_target_schools, 
+                 indicator4_target_people), 
+            ~ parse_number(.)) %>% 
+  pivot_longer(cols = indicator1_target_people:indicator6_target_people, 
+               names_to = "type", 
+               values_to = "county_target") %>% 
+  replace_na(list(county_target = 0)) %>% 
+  mutate(indicator_number = parse_number(type), 
+         indicator = case_when(
+           str_detect(type, "1") ~ "number of children and youth accessing ECD spaces/schools in drought-affected areas", 
+           str_detect(type, "2") ~ "number of schools/ECD spaces with feeding programmes", 
+           str_detect(type, "3") ~ "number of learners and teachers with learning and teaching materials", 
+           str_detect(type, "4") ~ "number of schools with adequate quantities of safe water for drinking and personal hygiene", 
+           str_detect(type, "5") ~ "number of teachers/educaotrs trained on resilience-enhancing programmes", 
+           str_detect(type, "6") ~ "number of children and youth benefiting from resiliece-enhancing programmes")) %>% 
+  mutate(target_unit = str_sub(type, start = 19L)) %>% 
+  select(county, indicator_number, indicator, county_target, target_unit, county_overall_target) %>% 
+  mutate(indicator_short = case_when(
+    
+    indicator_number == 1 ~ 
+      "1. Access ECD spaces/schools", 
+    indicator_number == 2 ~ 
+      "2. Feeding programmes", 
+    # Not sure what's wrong with the text of this indicator
+    str_detect(indicator, "teaching materials") ~ "3. Teaching materials", 
+    indicator_number == 4 ~ 
+      "4. Safe water, personal hygiene", 
+    indicator_number == 5 ~ 
+      "5. Educators resilience enhancing", 
+    indicator_number == 6 ~ 
+      "6. Children resilience enhancing"
+  )) %>%    
+  mutate(county = recode(county, 
+                         "Tharaka Nithi" = "Tharaka-Nithi")) %>% 
+  left_join(locations %>% 
+                distinct(adm1_en, adm1_pcode),
+               by = c("county" = "adm1_en"))  
+
+
+
+targets %>% 
+  write_csv("./data/eie_targets.csv")
+```
+
+```{r}
+eie %>% 
+  filter(activity_status == "Completed") %>% 
+  group_by(county, month, indicator_short) %>% 
+  summarise(reach = sum(total_reached)) %>% 
+  pivot_wider(names_from = month, values_from = reach) %>% 
+  right_join(targets %>% 
+               filter(!is.na(indicator_short)) %>%
+               select(county, county_target, indicator_short), 
+             by = c("county", "indicator_short")) %>% 
+  write_csv("reached_by_indicator_flat.csv")
+```
+
+# IPC
+
+You really only needed to run if the IPC data is updated.
+
+```{r}
+
+
+ipc_names <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-July-2023--LRA-.xlsx", 
+           skip = 10) %>% 
+  slice(1) %>% 
+  clean_names() %>% 
+  transpose_df() %>% 
+  rename(a = `1`, 
+         rowname_a = rowname) %>% 
+  cbind(read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-July-2023--LRA-.xlsx", 
+           skip = 9) %>% 
+          clean_names() %>%
+          slice(1) %>%
+          transpose_df() %>%
+          fill(`1`) %>%
+          rename(b = `1`,
+                 rowname_b = rowname) %>% 
+          mutate(b = ifelse(is.na(b), "missing", b))) %>% 
+  mutate(colnames = paste0(a, " ", b)) %>% 
+  pull(colnames)
+
+ipc <- read_excel("./data/KE-IPC-Analysis-Acute-Food-Insecurity-July-2023--LRA-.xlsx", 
+           skip = 11) %>%
+  setNames(ipc_names)  %>%
+  clean_names() %>% 
+  select_all(~ gsub("_missing", "", .)) %>% 
+  rename(county = area) %>% 
+  filter(!is.na(county)) %>%
+  select(3, 10, 22:24) %>% 
+  mutate(county = str_to_title(county), 
+         county = recode(county, 
+                         "Lamu County" = "Lamu", 
+                         "Tharaka" = "Tharaka-Nithi", 
+                         "Taita" = "Taita Taveta")) %>% 
+  left_join(locations %>% 
+              distinct(county = adm1_en, adm1_pcode), 
+            by = "county") 
+
+ipc %>%  
+  write_csv("./data/ipc.csv")
+
+```

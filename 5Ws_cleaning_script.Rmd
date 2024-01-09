@@ -200,6 +200,7 @@ standard_cleaning <- function(tbl) {
                   str_detect(., "Futebol da Forcaa") ~ "Futebol da Forcaa", 
                   str_detect(., "Edukans and SHERP Samburu") ~ "Edukans", 
                   str_detect(., "Feed The Children") ~ "Feed the Children", 
+                  . == "LWF" ~ "Lutheran World Federation", 
                   . == "MOE" ~ "Ministry of Education", 
                   . == "County Director of Education Wajir County" ~ "County Director of Education Wajir", 
                   . == "CDE Wajir" ~ "County Director of Education Wajir",
@@ -296,6 +297,7 @@ read_5ws_v1 <- function(file) {
     # Standard_cleaning() goes here
     standard_cleaning() %>% 
     filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
+    # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
                              "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023/")) %>% 
     filter(!is.na(indicator)) %>% 
@@ -327,6 +329,7 @@ read_excel(file,
     filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
     # Standard_cleaning() goes here
     standard_cleaning() %>% 
+    # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
                              "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/")) %>% 
     filter(!is.na(indicator)) %>% 
@@ -358,6 +361,7 @@ read_excel(file,
     filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
     # Standard_cleaning() goes here
     standard_cleaning() %>% 
+    # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
                              "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3/")) %>% 
     filter(!is.na(indicator)) %>% 
@@ -379,7 +383,11 @@ We will keep this for 1-2 more rounds, just in case someone submits the old temp
 ## Path to 4Ws
 # This is the folder where the 4Ws from the current round are stored
 
-path_5ws <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023"
+# path_5ws <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023"
+
+path_5ws <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023"
+
+
 
 
 # Change the folder to the correct one
@@ -409,7 +417,9 @@ for (i in 1:length(file_list_v1)) {
 ### Output new format
 
 ```{r warning=FALSE}
-path_5ws_v2 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2"
+# path_5ws_v2 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2"
+
+path_5ws_v2 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2"
 
 # Last argument filters out any open or temp excel files
 file_list_v2 <- list.files(path = path_5ws_v2, 
@@ -433,7 +443,9 @@ for (i in 1:length(file_list_v2)) {
 Only run when new format is ready
 
 ```{r eval=FALSE}
-path_5ws_v3 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3"
+# path_5ws_v3 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3"
+
+path_5ws_v3 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3"
 
 # Last argument filters out any open or temp excel files
 file_list_v3 <- list.files(path = path_5ws_v3, 
@@ -452,7 +464,6 @@ for (i in 1:length(file_list_v3)) {
 }
 ```
 
-### Run all chunks above
 
 ```{r}
 eie <- rbind(eie_a %>% 
@@ -472,7 +483,9 @@ Only run when the new template is ready:
 #   rbind(eie_c)
 ```
 
-## Checks
+## Run all chunks above
+
+### Checks
 
 ```{r}
 eie %>% 
@@ -504,7 +517,7 @@ eie %>% count(month) %>%
 eie %>% filter(str_detect(indicator, "1") & men > 0)
 
 eie %>%
-filter(month == "December") %>% count(lead_organisation, month, sort = TRUE)
+filter(month == "December") %>% count(implementing_partner, month, sort = TRUE)
 
 
 
@@ -590,6 +603,7 @@ partners_raw  <- read_csv("./data/partner_names_raw.csv") %>%
                              agency_name == "KENYA NATIONAL COMMISSION FOR UNESCO" ~ "UNESCO", 
                              agency_name == "Kenya National Commission for UNESCO" ~ "UNESCO", 
                              agency_name == "UNESCO" ~ "UNESCO", 
+                             agency_name == "Lutheran World Federation" ~ "LWF", 
                              TRUE ~ acronym)) %>% 
   distinct(partner_type, partner = agency_name, acronym) %>% 
   arrange(partner) 

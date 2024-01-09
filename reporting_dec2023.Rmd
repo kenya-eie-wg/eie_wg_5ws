@@ -993,10 +993,6 @@ This activity has no targets.
 
 <br>
 
-```{r}
-eie %>% filter(is.na(lead_organisation)) %>% distinct(implementing_partner)
-```
-
 
 ```{r warning=FALSE, fig.height=7}
 
