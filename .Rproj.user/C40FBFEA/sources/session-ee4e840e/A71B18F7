@@ -1,0 +1,33 @@
+{
+    "id": "A71B18F7",
+    "path": "~/GitHub/eie_wg_5ws/5Ws_cleaning_script.Rmd",
+    "project_path": "5Ws_cleaning_script.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1704700146642.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "cursorPosition": "783,0",
+        "scrollLine": "714",
+        "docOutlineSize": "267",
+        "last_setup_crc32": "",
+        "rmdVisualMode": "false",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "31042:0",
+        "rmdVisualWrapConfigured": "true"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1704783201,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1704785446711,
+    "read_only": false,
+    "read_only_alternatives": []
+}
