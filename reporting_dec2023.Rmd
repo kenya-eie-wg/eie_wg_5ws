@@ -58,7 +58,7 @@ library(flextable)
 library(ggrepel)
 library(anytime)
 library(tidytext)
-library(ggsflabel)
+
 
 theme_set(theme_light())
 

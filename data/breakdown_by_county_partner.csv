@@ -6,8 +6,9 @@ Baringo,Save the Children,UNICEF,2669,3,KE030
 Baringo,World Vision Kenya,Bartabwa,0,1,KE030
 Baringo,World Vision Kenya,World Vision Kenya,7013,4,KE030
 Garissa,AVSI Foundation,AVSI Foundation,1299,2,KE007
-Garissa,Finn Church Aid,Finn Church Aid,16,1,KE007
+Garissa,Finn Church Aid,Finn Church Aid,32,1,KE007
 Garissa,Finn Church Aid,UNICEF,1242,1,KE007
+Garissa,Norwegian Refugee Council,Norwegian Refugee Council,1928,3,KE007
 Garissa,Norwegian Refugee Council,Save the Children,2019,2,KE007
 Garissa,Qatar Charity,Qatar Charity,1541,1,KE007
 Garissa,Save the Children,Save the Children,1156,2,KE007
@@ -19,7 +20,7 @@ Isiolo,Lifeskills Promoters,UNICEF,3082,2,KE011
 Isiolo,Nawiri Children Development Program,ChildFund Kenya,829,1,KE011
 Isiolo,We World,We World,9651,1,KE011
 Kajiado,Emali Dedicated Children Agency,ChildFund Kenya,0,1,KE034
-Kajiado,Evangelizing Sisters of Mary,AVSI Foundation,423,3,KE034
+Kajiado,Evangelizing Sisters of Mary,AVSI Foundation,702,3,KE034
 Kajiado,Evangelizing Sisters of Mary,Evangelizing Sisters of Mary,35,1,KE034
 Kajiado,Feed the Children,Feed the Children,11469,1,KE034
 Kajiado,"MoE, KNATCOM, STEM Impact Centre",UNESCO,130,1,KE034
@@ -40,12 +41,12 @@ Makueni,Emali Dedicated Children Agency,ChildFund Kenya,0,1,KE017
 Mandera,County Director of Education Mandera,UNICEF,600,2,KE009
 Marsabit,County Director of Education Marsabit,UNICEF,0,1,KE010
 Marsabit,Finn Church Aid,UNICEF,40544,6,KE010
-Marsabit,Food for the Hungry,Food for the Hungry,31094,6,KE010
+Marsabit,Food for the Hungry,Food for the Hungry,31115,6,KE010
 Marsabit,Nawiri Children Development Program,ChildFund Kenya,3933,2,KE010
 Marsabit,UNICEF,UNICEF,16928,1,KE010
 Marsabit,World Vision Kenya,World Vision Kenya,2077,3,KE010
 Meru,AVSI Foundation,AVSI Foundation,8469,1,KE012
-Meru,Food for the Hungry,Food for the Hungry,27873,7,KE012
+Meru,Food for the Hungry,Food for the Hungry,29417,7,KE012
 Nairobi,Lifeskills Promoters,KENYA NATIONAL COMMISSION FOR UNESCO,115,2,KE047
 Narok,MOE/TSC,MOE/TSC,60,1,KE033
 Narok,Ministry of Education,World Vision Kenya,8241,2,KE033
@@ -56,7 +57,7 @@ Narok,Women Educational Researchers of Kenya,UNICEF,16750,3,KE033
 Narok,World Vision Kenya,World Vision Kenya,11630,1,KE033
 Samburu,Edukans,Edukans,4734,1,KE025
 Samburu,Feed the Children,Feed the Children,7052,1,KE025
-Samburu,Finn Church Aid,Finn Church Aid,515,3,KE025
+Samburu,Finn Church Aid,Finn Church Aid,544,3,KE025
 Samburu,Finn Church Aid,UNICEF,16916,4,KE025
 Samburu,Nawiri Children Development Program,ChildFund Kenya,487,1,KE025
 Samburu,Samburu Children Program,ChildFund Kenya,0,1,KE025
@@ -66,21 +67,23 @@ Taita Taveta,World Vision Kenya,World Vision Kenya,45,1,KE006
 Tana River,Tana North and Tana Delta,UNICEF,882,1,KE004
 Tana River,Women Educational Researchers of Kenya,UNICEF,21260,3,KE004
 Turkana,Feed the Children,Feed the Children,10190,1,KE023
-Turkana,Finn Church Aid,Finn Church Aid,326634,6,KE023
+Turkana,Finn Church Aid,Finn Church Aid,382356,6,KE023
 Turkana,Finn Church Aid,UNICEF,107854,4,KE023
 Turkana,Frontiers Community Development Organization,ChildFund Kenya,1044,1,KE023
 Turkana,Jesuit Refugee Service,Jesuit Refugee Service,37430,4,KE023
-Turkana,Jesuit Refugee Service,UNICEF,50385,4,KE023
+Turkana,Jesuit Refugee Service,UNICEF,78352,4,KE023
+Turkana,LWF,LWF,41828,4,KE023
 Turkana,Lifeskills Promoters,Life Skills Promoters,111,2,KE023
 Turkana,Lifeskills Promoters,Lifeskills Promoters,13553,3,KE023
 Turkana,Lifeskills Promoters,UNICEF,11846,3,KE023
 Turkana,Mondi,World Vision Kenya,2197,1,KE023
 Turkana,Nawiri Children Development Program,ChildFund Kenya,414,1,KE023
+Turkana,Norwegian Refugee Council,Norwegian Refugee Council,3881,4,KE023
 Turkana,Norwegian Refugee Council,UNICEF,50895,2,KE023
 Turkana,Save the Children,Save the Children,13420,3,KE023
 Turkana,Save the Children,UNICEF,5089,2,KE023
 Turkana,Special Olympics Kenya,UNICEF,202,1,KE023
-Turkana,UNICEF,UNICEF,17804,1,KE023
+Turkana,UNICEF,UNICEF,28298,2,KE023
 Turkana,Voluntary Service Overseas,Voluntary Service Overseas,42,1,KE023
 Turkana,Windle International,UNICEF,57307,3,KE023
 Turkana,Windle International,Windle International,18687,1,KE023
