@@ -787,20 +787,20 @@ eie %&gt;% filter(is.na(implementing_partner))</code></pre>
 ## #   number_schools &lt;dbl&gt;, adm1_pcode &lt;chr&gt;, indicator_short &lt;chr&gt;, …</code></pre>
 <pre class="r"><code># Check for duplicated or mispelled implementing partners
 eie %&gt;% count(implementing_partner)</code></pre>
-<pre><code>## # A tibble: 42 × 2
+<pre><code>## # A tibble: 44 × 2
 ##    implementing_partner                      n
 ##    &lt;chr&gt;                                 &lt;int&gt;
 ##  1 AVSI Foundation                           6
 ##  2 Action for Sustainable Change             4
 ##  3 Bartabwa                                  1
-##  4 County Director of Education Mandera      2
-##  5 County Director of Education Marsabit     1
-##  6 County Director of Education Wajir        3
-##  7 Dignitas                                  1
-##  8 ERIKs Development Partner                 1
-##  9 Edukans                                   1
-## 10 Emali Dedicated Children Agency           6
-## # ℹ 32 more rows</code></pre>
+##  4 County Director of Education             14
+##  5 County Director of Education Mandera      2
+##  6 County Director of Education Marsabit     2
+##  7 County Director of Education Wajir        3
+##  8 Dignitas                                  1
+##  9 ERIKs Development Partner                 1
+## 10 Edukans                                   1
+## # ℹ 34 more rows</code></pre>
 <pre class="r"><code>eie %&gt;% count(month) %&gt;% 
   # Converts month names into integers that are properly levelled
   # Not doing this results in April starting the list, followed by August
@@ -820,7 +820,7 @@ eie %&gt;% count(implementing_partner)</code></pre>
 ##  9     9    86
 ## 10    10    50
 ## 11    11    41
-## 12    12    45</code></pre>
+## 12    12    92</code></pre>
 <pre class="r"><code># Misreported beneficiaries
 eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code></pre>
 <pre><code>## # A tibble: 57 × 26
@@ -845,14 +845,22 @@ eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code><
 ## #   adm1_pcode &lt;chr&gt;, indicator_short &lt;chr&gt;, sector_reached &lt;dbl&gt;</code></pre>
 <pre class="r"><code>eie %&gt;%
 filter(month == &quot;December&quot;) %&gt;% count(implementing_partner, month, sort = TRUE)</code></pre>
-<pre><code>## # A tibble: 5 × 3
-##   implementing_partner      month        n
-##   &lt;chr&gt;                     &lt;fct&gt;    &lt;int&gt;
-## 1 Finn Church Aid           December    22
-## 2 Norwegian Refugee Council December    11
-## 3 Lutheran World Federation December     9
-## 4 Jesuit Refugee Service    December     2
-## 5 Windle International      December     1</code></pre>
+<pre><code>## # A tibble: 13 × 3
+##    implementing_partner                   month        n
+##    &lt;chr&gt;                                  &lt;fct&gt;    &lt;int&gt;
+##  1 Finn Church Aid                        December    27
+##  2 County Director of Education           December    14
+##  3 Norwegian Refugee Council              December    13
+##  4 Special Olympics Kenya                 December    11
+##  5 Lutheran World Federation              December     9
+##  6 Women Educational Researchers of Kenya December     5
+##  7 Save the Children                      December     4
+##  8 Lifeskills Promoters                   December     3
+##  9 Jesuit Refugee Service                 December     2
+## 10 County Director of Education Marsabit  December     1
+## 11 HABIBA International                   December     1
+## 12 Qatar Charity                          December     1
+## 13 Windle International                   December     1</code></pre>
 </div>
 </div>
 <div id="write" class="section level2">
