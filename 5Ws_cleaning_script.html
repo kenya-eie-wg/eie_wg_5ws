@@ -761,25 +761,14 @@ for (i in 1:length(file_list_v3)) {
   # This checks the sum of boys, girls, men and women with the total reached
   mutate(total_reached_check = rowSums(.[15:18], na.rm = TRUE)) %&gt;% 
   filter(total_reached_check != total_reached)</code></pre>
-<pre><code>## # A tibble: 9 × 27
-##   month    lead_organisation organisation_type donor      sector education_level
-##   &lt;fct&gt;    &lt;chr&gt;             &lt;chr&gt;             &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;          
-## 1 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 2 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 3 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 4 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 5 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 6 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 7 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 8 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## 9 December UNICEF            United Nations    Latter Da… Educa… ECE            
-## # ℹ 21 more variables: indicator &lt;chr&gt;, activity &lt;chr&gt;,
-## #   implementing_partner &lt;chr&gt;, county &lt;chr&gt;, sub_county &lt;chr&gt;,
-## #   start_date &lt;dttm&gt;, end_date &lt;dttm&gt;, activity_status &lt;chr&gt;, boys &lt;dbl&gt;,
-## #   girls &lt;dbl&gt;, men &lt;dbl&gt;, women &lt;dbl&gt;, beneficiary_type &lt;chr&gt;,
-## #   total_reached &lt;dbl&gt;, comments &lt;chr&gt;, source &lt;chr&gt;, number_schools &lt;dbl&gt;,
-## #   adm1_pcode &lt;chr&gt;, indicator_short &lt;chr&gt;, sector_reached &lt;dbl&gt;,
-## #   total_reached_check &lt;dbl&gt;</code></pre>
+<pre><code>## # A tibble: 0 × 27
+## # ℹ 27 variables: month &lt;fct&gt;, lead_organisation &lt;chr&gt;,
+## #   organisation_type &lt;chr&gt;, donor &lt;chr&gt;, sector &lt;chr&gt;, education_level &lt;chr&gt;,
+## #   indicator &lt;chr&gt;, activity &lt;chr&gt;, implementing_partner &lt;chr&gt;, county &lt;chr&gt;,
+## #   sub_county &lt;chr&gt;, start_date &lt;dttm&gt;, end_date &lt;dttm&gt;,
+## #   activity_status &lt;chr&gt;, boys &lt;dbl&gt;, girls &lt;dbl&gt;, men &lt;dbl&gt;, women &lt;dbl&gt;,
+## #   beneficiary_type &lt;chr&gt;, total_reached &lt;dbl&gt;, comments &lt;chr&gt;, source &lt;chr&gt;,
+## #   number_schools &lt;dbl&gt;, adm1_pcode &lt;chr&gt;, indicator_short &lt;chr&gt;, …</code></pre>
 <pre class="r"><code>eie %&gt;% 
   # This checks that all counties have matched pcodes
   filter(is.na(adm1_pcode)) %&gt;% 
@@ -831,7 +820,7 @@ eie %&gt;% count(implementing_partner)</code></pre>
 ##  9     9    86
 ## 10    10    50
 ## 11    11    41
-## 12    12   131</code></pre>
+## 12    12   133</code></pre>
 <pre class="r"><code># Misreported beneficiaries
 eie %&gt;% filter(str_detect(indicator, &quot;1&quot;) &amp; men &gt; 0)</code></pre>
 <pre><code>## # A tibble: 70 × 26
@@ -859,7 +848,7 @@ filter(month == &quot;December&quot;) %&gt;% count(implementing_partner, month, 
 <pre><code>## # A tibble: 15 × 3
 ##    implementing_partner                   month        n
 ##    &lt;chr&gt;                                  &lt;fct&gt;    &lt;int&gt;
-##  1 Finn Church Aid                        December    40
+##  1 Finn Church Aid                        December    42
 ##  2 Norwegian Refugee Council              December    16
 ##  3 County Director of Education           December    14
 ##  4 Special Olympics Kenya                 December    11
