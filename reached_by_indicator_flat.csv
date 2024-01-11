@@ -7,10 +7,10 @@ Baringo,"4. Safe water, personal hygiene",769,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2
 Baringo,"4. Safe water, personal hygiene",769,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,46748
 Baringo,5. Educators resilience enhancing,351,NA,50,43,24,20,41,30,NA,NA,NA,NA,502
 Baringo,6. Children resilience enhancing,128,351,643,198,NA,NA,328,NA,NA,NA,NA,NA,7621
-Garissa,1. Access ECD spaces/schools,NA,1914,NA,NA,NA,NA,1595,48,15148,1541,NA,NA,231528
-Garissa,5. Educators resilience enhancing,NA,80,NA,NA,219,NA,NA,NA,16,NA,16,NA,202
-Garissa,6. Children resilience enhancing,NA,1461,NA,186,NA,NA,NA,213,651,NA,NA,NA,25153
-Garissa,3. Teaching materials,NA,NA,NA,NA,NA,NA,NA,NA,626,NA,NA,NA,115764
+Garissa,1. Access ECD spaces/schools,NA,1914,NA,NA,NA,NA,1595,48,19490,1541,NA,NA,231528
+Garissa,5. Educators resilience enhancing,NA,80,NA,NA,219,NA,NA,NA,217,NA,16,NA,202
+Garissa,6. Children resilience enhancing,NA,1461,NA,186,NA,NA,NA,213,6297,NA,NA,NA,25153
+Garissa,3. Teaching materials,NA,NA,NA,NA,NA,NA,NA,NA,8381,NA,NA,NA,115764
 Isiolo,1. Access ECD spaces/schools,977,833,NA,NA,1530,NA,158,NA,2786,561,NA,NA,20930
 Isiolo,5. Educators resilience enhancing,NA,NA,91,NA,NA,249,NA,NA,NA,NA,NA,NA,62
 Isiolo,6. Children resilience enhancing,NA,NA,NA,NA,9651,NA,NA,NA,NA,NA,NA,4937,6600
@@ -42,11 +42,11 @@ Mandera,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,NA,NA,13834,NA,NA,NA,2363
 Marsabit,2. Feeding programmes,NA,7763,556,NA,NA,NA,NA,3110,NA,1456,NA,NA,105
 Marsabit,2. Feeding programmes,NA,7763,556,NA,NA,NA,NA,3110,NA,1456,NA,NA,30635
 Marsabit,3. Teaching materials,NA,22871,777,NA,NA,NA,NA,618,NA,NA,NA,NA,26900
-Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,NA,NA,NA,NA,105
-Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,NA,NA,NA,NA,30635
+Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,162,NA,NA,NA,105
+Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,162,NA,NA,NA,30635
 Marsabit,5. Educators resilience enhancing,NA,30,102,186,41,55,NA,44,NA,NA,111,NA,210
 Marsabit,1. Access ECD spaces/schools,NA,NA,90,339,2141,1600,1000,184,7937,441,NA,NA,53800
-Marsabit,6. Children resilience enhancing,NA,NA,4459,NA,395,NA,NA,NA,NA,288,NA,737,7380
+Marsabit,6. Children resilience enhancing,NA,NA,4459,NA,395,NA,NA,NA,1378,288,NA,737,7380
 Meru,2. Feeding programmes,NA,6621,6279,NA,NA,NA,NA,1231,NA,NA,1204,NA,0
 Meru,2. Feeding programmes,NA,6621,6279,NA,NA,NA,NA,1231,NA,NA,1204,NA,0
 Meru,3. Teaching materials,NA,985,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
@@ -68,14 +68,14 @@ Taita Taveta,5. Educators resilience enhancing,NA,NA,NA,NA,45,NA,NA,NA,NA,NA,NA,
 Tana River,1. Access ECD spaces/schools,NA,557,NA,854,NA,NA,4175,882,5859,390,NA,395,24970
 Tana River,6. Children resilience enhancing,NA,3769,NA,5250,NA,NA,NA,NA,NA,NA,NA,2870,4583
 Tana River,3. Teaching materials,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3000,NA,12485
-Turkana,1. Access ECD spaces/schools,25316,28919,52785,30428,2342,24294,6052,43907,71038,2236,4848,43309,202912
-Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,14499,NA,4640,NA,165
-Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,14499,NA,4640,NA,56075
-Turkana,3. Teaching materials,735,19382,NA,43740,NA,52244,20496,14901,21485,NA,17604,18687,101456
-Turkana,5. Educators resilience enhancing,265,288,774,435,209,844,483,1672,3117,678,1294,654,330
-Turkana,6. Children resilience enhancing,2848,698,1503,642,792,282,6098,2596,3133,720,5454,6179,22691
-Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,18502,NA,44783,NA,165
-Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,18502,NA,44783,NA,56075
+Turkana,1. Access ECD spaces/schools,25316,28919,52785,30428,2342,22186,6052,43907,72447,2236,4848,43309,202912
+Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,4640,NA,4640,NA,165
+Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,4640,NA,4640,NA,56075
+Turkana,3. Teaching materials,735,19382,NA,43740,NA,52244,20496,14901,494709,NA,17604,18687,101456
+Turkana,5. Educators resilience enhancing,265,288,774,435,159,NA,423,1672,17372,678,1294,654,330
+Turkana,6. Children resilience enhancing,2848,698,1503,642,792,222,6098,2596,22001,720,5454,6179,22691
+Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,24115,NA,44783,NA,165
+Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,24115,NA,44783,NA,56075
 Wajir,5. Educators resilience enhancing,30,NA,NA,48,NA,NA,62,119,NA,NA,39,207,304
 Wajir,1. Access ECD spaces/schools,NA,403,NA,NA,NA,361,6561,1470,16145,322,NA,NA,213232
 Wajir,6. Children resilience enhancing,NA,190,NA,3032,NA,2050,2030,NA,NA,421,NA,NA,22823

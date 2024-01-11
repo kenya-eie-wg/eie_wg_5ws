@@ -611,6 +611,8 @@ Kwale,KE002,implementing_partner,"MoE, KNATCOM, STEM Impact Centre",NA
 Kajiado,KE034,implementing_partner,"MoE, KNATCOM, STEM Impact Centre",NA
 Kwale,KE002,implementing_partner,"MoE, KNATCOM, STEM Impact Centre",NA
 Homa Bay,KE043,implementing_partner,Homa Bay County,HBC
+Baringo,KE030,implementing_partner,Save the Children,SCI
+Wajir,KE008,implementing_partner,Save the Children,SCI
 Baringo,KE030,implementing_partner,County Director of Education,NA
 Baringo,KE030,implementing_partner,Save the Children,SCI
 Bungoma,KE039,implementing_partner,County Director of Education,NA
@@ -656,6 +658,8 @@ Wajir,KE008,implementing_partner,Save the Children,SCI
 West Pokot,KE024,implementing_partner,County Director of Education,NA
 West Pokot,KE024,implementing_partner,Finn Church Aid,FCA
 West Pokot,KE024,implementing_partner,Special Olympics Kenya,SOK
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
 Mandera,KE009,implementing_partner,County Director of Education Mandera,CDE Mandera
 Isiolo,KE011,implementing_partner,Lifeskills Promoters,LISP
@@ -670,6 +674,10 @@ Isiolo,KE011,implementing_partner,Lifeskills Promoters,LISP
 Isiolo,KE011,implementing_partner,Lifeskills Promoters,LISP
 Isiolo,KE011,implementing_partner,Lifeskills Promoters,LISP
 Isiolo,KE011,implementing_partner,Lifeskills Promoters,LISP
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
+Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
@@ -679,49 +687,66 @@ Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
 Marsabit,KE010,implementing_partner,Food for the Hungry,FHK
 Meru,KE012,implementing_partner,Food for the Hungry,FHK
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Finn Church Aid,FCA
 Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
-Turkana,KE023,implementing_partner,Finn Church Aid,FCA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Turkana,KE023,implementing_partner,Lutheran World Federation,NA
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
+Garissa,KE007,implementing_partner,Windle International,NA
+Garissa,KE007,implementing_partner,Windle International,NA
+Garissa,KE007,implementing_partner,Windle International,NA
+Garissa,KE007,implementing_partner,Windle International,NA
+Garissa,KE007,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Windle International,NA
+Turkana,KE023,implementing_partner,Windle International,NA
 Wajir,KE008,implementing_partner,Save the Children,SCI
 Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
 Marsabit,KE010,implementing_partner,Finn Church Aid,FCA
 Tana River,KE004,implementing_partner,Women Educational Researchers of Kenya,WERK
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
-Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
-Garissa,KE007,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Lutheran World Federation,NA
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
-Turkana,KE023,implementing_partner,Norwegian Refugee Council,NRC
 Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS
 Turkana,KE023,implementing_partner,Jesuit Refugee Service,JRS
 Turkana,KE023,implementing_partner,Windle International,NA

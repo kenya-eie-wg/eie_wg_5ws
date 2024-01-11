@@ -1,0 +1,337 @@
+month,indicator,county,adm1_pcode,reached,sector_reached
+April,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,254,254
+April,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Homa Bay,KE043,188166,188166
+April,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,977,977
+April,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,921,921
+April,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,25316,25316
+April,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,2875,2875
+April,indicator 2 # of schools/ECD spaces with feeding programmes,Baringo,KE030,1556,1556
+April,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,18538,18538
+April,indicator 3 # of learners and teachers reached with learning and  teaching materials,Baringo,KE030,2679,0
+April,indicator 3 # of learners and teachers reached with learning and  teaching materials,Kilifi,KE003,81,0
+April,indicator 3 # of learners and teachers reached with learning and  teaching materials,Narok,KE033,2429,0
+April,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,735,0
+April,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Baringo,KE030,769,0
+April,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,351,351
+April,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kilifi,KE003,40,40
+April,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,41,41
+April,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,265,265
+April,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,30,30
+April,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",West Pokot,KE024,29,29
+April,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,128,128
+April,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,350,350
+April,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kwale,KE002,350,350
+April,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,753,753
+April,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,2882,2882
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,169,169
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Garissa,KE007,1914,1914
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,833,833
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kajiado,KE034,1926,1926
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kilifi,KE003,89,89
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kwale,KE002,359,359
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Narok,KE033,200,200
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,1580,1580
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,557,557
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,28919,28919
+May,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Wajir,KE008,403,403
+May,indicator 2 # of schools/ECD spaces with feeding programmes,Marsabit,KE010,7763,7763
+May,indicator 2 # of schools/ECD spaces with feeding programmes,Meru,KE012,6621,6621
+May,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,491,491
+May,indicator 3 # of learners and teachers reached with learning and  teaching materials,Marsabit,KE010,22871,0
+May,indicator 3 # of learners and teachers reached with learning and  teaching materials,Meru,KE012,985,0
+May,indicator 3 # of learners and teachers reached with learning and  teaching materials,Narok,KE033,3259,0
+May,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,19382,0
+May,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Marsabit,KE010,15095,0
+May,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Meru,KE012,650,0
+May,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Garissa,KE007,80,80
+May,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,30,30
+May,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,176,176
+May,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,288,288
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,351,351
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Garissa,KE007,1461,1461
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,3288,3288
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,8447,8447
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Tana River,KE004,3769,3769
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,698,698
+May,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,190,190
+May,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Marsabit,KE010,14290,0
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,320,320
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kwale,KE002,515,515
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,90,90
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Meru,KE012,242,242
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,7,7
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,52785,52785
+August,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,5362,5362
+August,indicator 2 # of schools/ECD spaces with feeding programmes,Kajiado,KE034,3560,3560
+August,indicator 2 # of schools/ECD spaces with feeding programmes,Makueni,KE017,688,688
+August,indicator 2 # of schools/ECD spaces with feeding programmes,Marsabit,KE010,1229,1229
+August,indicator 2 # of schools/ECD spaces with feeding programmes,Meru,KE012,7638,7638
+August,indicator 2 # of schools/ECD spaces with feeding programmes,Samburu,KE025,636,636
+August,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,553,553
+August,indicator 3 # of learners and teachers reached with learning and  teaching materials,Kajiado,KE034,130,0
+August,indicator 3 # of learners and teachers reached with learning and  teaching materials,Kwale,KE002,130,0
+August,indicator 3 # of learners and teachers reached with learning and  teaching materials,Marsabit,KE010,777,0
+August,indicator 3 # of learners and teachers reached with learning and  teaching materials,Meru,KE012,909,0
+August,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Marsabit,KE010,6004,0
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,50,50
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Isiolo,KE011,91,91
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Mandera,KE009,85,85
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,102,102
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Nairobi,KE047,36,36
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,774,774
+August,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",West Pokot,KE024,68,68
+August,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,643,643
+August,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,4459,4459
+August,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Meru,KE012,111,111
+August,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Nairobi,KE047,79,79
+August,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,28,28
+August,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,1887,1887
+August,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Marsabit,KE010,90,0
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Garissa,KE007,1541,1541
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,561,561
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kajiado,KE034,2366,2366
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kilifi,KE003,4557,4557
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kwale,KE002,3777,3777
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,441,441
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,130,130
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,390,390
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,4536,4536
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Wajir,KE008,322,322
+June,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,1617,1617
+June,indicator 2 # of schools/ECD spaces with feeding programmes,Marsabit,KE010,1456,1456
+June,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,678,678
+June,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",West Pokot,KE024,51,51
+June,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,288,288
+June,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,1163,1163
+June,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,720,720
+June,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,421,421
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,612,612
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kajiado,KE034,1284,1284
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kilifi,KE003,566,566
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,339,339
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Meru,KE012,242,242
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,926,926
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,854,854
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,30428,30428
+July,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,6465,6465
+July,indicator 2 # of schools/ECD spaces with feeding programmes,Isiolo,KE011,829,829
+July,indicator 2 # of schools/ECD spaces with feeding programmes,Kajiado,KE034,12593,12593
+July,indicator 2 # of schools/ECD spaces with feeding programmes,Marsabit,KE010,446,446
+July,indicator 2 # of schools/ECD spaces with feeding programmes,Meru,KE012,821,821
+July,indicator 2 # of schools/ECD spaces with feeding programmes,Samburu,KE025,7539,7539
+July,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,35499,35499
+July,indicator 3 # of learners and teachers reached with learning and  teaching materials,Kajiado,KE034,305,0
+July,indicator 3 # of learners and teachers reached with learning and  teaching materials,Meru,KE012,909,0
+July,indicator 3 # of learners and teachers reached with learning and  teaching materials,Samburu,KE025,4734,0
+July,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,43740,0
+July,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Narok,KE033,500,0
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,43,43
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,35,35
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kilifi,KE003,40,40
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kwale,KE002,44,44
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,186,186
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,73,73
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,435,435
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,48,48
+July,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",West Pokot,KE024,5191,5191
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,198,198
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Garissa,KE007,186,186
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,294,294
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Meru,KE012,111,111
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Tana River,KE004,5250,5250
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,642,642
+July,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,3032,3032
+July,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Turkana,KE023,17804,0
+January,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,166,166
+January,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,1530,1530
+January,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,2141,2141
+January,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,87,87
+January,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,2342,2342
+January,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,280,280
+January,indicator 2 # of schools/ECD spaces with feeding programmes,Kajiado,KE034,202,202
+January,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,24,24
+January,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Garissa,KE007,219,219
+January,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,41,41
+January,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,50,50
+January,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Taita Taveta,KE006,45,45
+January,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,159,159
+January,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Isiolo,KE011,9651,9651
+January,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,23,23
+January,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,395,395
+January,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,792,792
+January,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Marsabit,KE010,2548,0
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,317,317
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,654,654
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kajiado,KE034,1094,1094
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kilifi,KE003,757,757
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kwale,KE002,442,442
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,1600,1600
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Narok,KE033,813,813
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,1059,1059
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,22896,22896
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Wajir,KE008,361,361
+March,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,1769,1769
+March,indicator 2 # of schools/ECD spaces with feeding programmes,Baringo,KE030,2729,2729
+March,indicator 2 # of schools/ECD spaces with feeding programmes,Kajiado,KE034,135,135
+March,indicator 2 # of schools/ECD spaces with feeding programmes,Kilifi,KE003,6246,6246
+March,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,2197,2197
+March,indicator 3 # of learners and teachers reached with learning and  teaching materials,Baringo,KE030,29,0
+March,indicator 3 # of learners and teachers reached with learning and  teaching materials,Isiolo,KE011,3015,0
+March,indicator 3 # of learners and teachers reached with learning and  teaching materials,Kilifi,KE003,2417,0
+March,indicator 3 # of learners and teachers reached with learning and  teaching materials,Mandera,KE009,600,0
+March,indicator 3 # of learners and teachers reached with learning and  teaching materials,Narok,KE033,5942,0
+March,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,52244,0
+March,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Meru,KE012,8469,0
+March,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Narok,KE033,85,0
+March,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,20,20
+March,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Homa Bay,KE043,135,135
+March,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Isiolo,KE011,249,249
+March,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,55,55
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,2447,2447
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kilifi,KE003,1343,1343
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kwale,KE002,2000,2000
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Narok,KE033,11674,11674
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Samburu,KE025,229,229
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,222,222
+March,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,2050,2050
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,371,371
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Garissa,KE007,1595,1595
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,2090,2090
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,1000,1000
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,4175,4175
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,26851,26851
+February,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Wajir,KE008,6561,6561
+February,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,315,315
+February,indicator 3 # of learners and teachers reached with learning and  teaching materials,Lamu,KE005,3360,0
+February,indicator 3 # of learners and teachers reached with learning and  teaching materials,Narok,KE033,7024,0
+February,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,20496,0
+February,indicator 3 # of learners and teachers reached with learning and  teaching materials,Wajir,KE008,2050,0
+February,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Lamu,KE005,2160,0
+February,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,41,41
+February,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Narok,KE033,1277,1277
+February,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,423,423
+February,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,62,62
+February,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,328,328
+February,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,6098,6098
+February,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,2030,2030
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,400,400
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Garissa,KE007,48,48
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kilifi,KE003,709,709
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,184,184
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Meru,KE012,561,561
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Narok,KE033,395,395
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,68,68
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,882,882
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,80588,80588
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Wajir,KE008,1470,1470
+September,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,5774,5774
+September,indicator 2 # of schools/ECD spaces with feeding programmes,Marsabit,KE010,3603,3603
+September,indicator 2 # of schools/ECD spaces with feeding programmes,Meru,KE012,6949,6949
+September,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,22445,22445
+September,indicator 3 # of learners and teachers reached with learning and  teaching materials,Marsabit,KE010,618,0
+September,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,14901,0
+September,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Marsabit,KE010,4671,0
+September,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Turkana,KE023,3820,0
+September,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Baringo,KE030,30,30
+September,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,22,22
+September,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,1532,1532
+September,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,71,71
+September,"indicator 5.1 # of teachers trained on any programme, including resilience",Marsabit,KE010,22,22
+September,"indicator 5.1 # of teachers trained on any programme, including resilience",Turkana,KE023,59,59
+September,"indicator 5.2 # of BoM trained on any programme, including resilience",Turkana,KE023,66,66
+September,"indicator 5.2 # of BoM trained on any programme, including resilience",Wajir,KE008,48,48
+September,"indicator 5.3 # of government officials trained on any programme, including resilience",Turkana,KE023,15,15
+September,"indicator 5.3 # of government officials trained on any programme, including resilience",West Pokot,KE024,97,97
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Garissa,KE007,213,213
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,3827,3827
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kilifi,KE003,2200,2200
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kwale,KE002,495,495
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Narok,KE033,3290,3290
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,2701,2701
+September,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",West Pokot,KE024,130,130
+October,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Narok,KE033,705,705
+October,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,395,395
+October,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,98379,98379
+October,indicator 3 # of learners and teachers reached with learning and  teaching materials,Samburu,KE025,2000,0
+October,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,18687,0
+October,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Isiolo,KE011,1342,0
+October,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,654,654
+October,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,99,99
+October,"indicator 5.2 # of BoM trained on any programme, including resilience",Kilifi,KE003,19,19
+October,"indicator 5.2 # of BoM trained on any programme, including resilience",Kwale,KE002,25,25
+October,"indicator 5.2 # of BoM trained on any programme, including resilience",Narok,KE033,33,33
+October,"indicator 5.2 # of BoM trained on any programme, including resilience",Samburu,KE025,26,26
+October,"indicator 5.2 # of BoM trained on any programme, including resilience",Wajir,KE008,108,108
+October,"indicator 5.3 # of government officials trained on any programme, including resilience",Samburu,KE025,107,107
+October,"indicator 5.3 # of government officials trained on any programme, including resilience",West Pokot,KE024,53,53
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Isiolo,KE011,4937,4937
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,2767,2767
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kilifi,KE003,3387,3387
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kwale,KE002,1403,1403
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,737,737
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Narok,KE033,10212,10212
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Tana River,KE004,2870,2870
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,6179,6179
+October,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",West Pokot,KE024,2728,2728
+October,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Marsabit,KE010,1167,0
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Baringo,KE030,4515,4515
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Bungoma,KE039,6264,6264
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Garissa,KE007,19490,19490
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Isiolo,KE011,2786,2786
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kajiado,KE034,6649,6649
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kilifi,KE003,6460,6460
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Kwale,KE002,6590,6590
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Mandera,KE009,13834,13834
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Marsabit,KE010,7937,7937
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Nairobi,KE047,11228,11228
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Narok,KE033,5614,5614
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Samburu,KE025,3748,3748
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Tana River,KE004,5859,5859
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,72447,72447
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Wajir,KE008,16145,16145
+December,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,West Pokot,KE024,6892,6892
+December,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,4640,4640
+December,indicator 3 # of learners and teachers reached with learning and  teaching materials,Garissa,KE007,8381,0
+December,indicator 3 # of learners and teachers reached with learning and  teaching materials,Mombasa,KE001,115,0
+December,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,494709,0
+December,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Marsabit,KE010,162,0
+December,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Migori,KE044,2083,0
+December,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Turkana,KE023,24115,0
+December,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Migori,KE044,4380,4380
+December,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Mombasa,KE001,99,99
+December,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,3366,3366
+December,"indicator 5.1 # of teachers trained on any programme, including resilience",Garissa,KE007,217,217
+December,"indicator 5.1 # of teachers trained on any programme, including resilience",Turkana,KE023,863,863
+December,"indicator 5.2 # of BoM trained on any programme, including resilience",Samburu,KE025,29,29
+December,"indicator 5.2 # of BoM trained on any programme, including resilience",Turkana,KE023,13143,13143
+December,"indicator 5.3 # of government officials trained on any programme, including resilience",Baringo,KE030,20,20
+December,"indicator 5.3 # of government officials trained on any programme, including resilience",Migori,KE044,93,93
+December,"indicator 5.3 # of government officials trained on any programme, including resilience",Wajir,KE008,29,29
+December,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Garissa,KE007,6297,6297
+December,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,1378,1378
+December,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,22001,22001
+December,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Garissa,KE007,3520,0
+December,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Marsabit,KE010,1727,0
+December,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Turkana,KE023,16107,0
+November,indicator 1 # of children and youth accessing ECD spaces/schools in drought affected areas,Turkana,KE023,4848,4848
+November,indicator 2 # of schools/ECD spaces with feeding programmes,Marsabit,KE010,21,21
+November,indicator 2 # of schools/ECD spaces with feeding programmes,Meru,KE012,2746,2746
+November,indicator 2 # of schools/ECD spaces with feeding programmes,Turkana,KE023,4640,4640
+November,indicator 3 # of learners and teachers reached with learning and  teaching materials,Baringo,KE030,30,0
+November,indicator 3 # of learners and teachers reached with learning and  teaching materials,Tana River,KE004,3000,0
+November,indicator 3 # of learners and teachers reached with learning and  teaching materials,Turkana,KE023,2703,0
+November,indicator 3 #of learners reaached and teachers reached with learning and teaching materials,Turkana,KE023,14901,0
+November,indicator 4 # of school with adequate quantity  of safe water for drinking and personal hygiene,Turkana,KE023,3820,0
+November,indicator 4 # of schools with adequate quantities of safe water for drinking and personal hygiene,Turkana,KE023,68930,0
+November,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Marsabit,KE010,71,71
+November,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Meru,KE012,62,62
+November,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,1249,1249
+November,"indicator 5 # of teachers / educators trained on resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Wajir,KE008,39,39
+November,"indicator 5.1 # of teachers trained on any programme, including resilience",Garissa,KE007,16,16
+November,"indicator 5.1 # of teachers trained on any programme, including resilience",Marsabit,KE010,40,40
+November,"indicator 5.3 # of government officials trained on any programme, including resilience",Turkana,KE023,45,45
+November,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kajiado,KE034,3409,3409
+November,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Kilifi,KE003,1080,1080
+November,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Narok,KE033,724,724
+November,"indicator 6 # of children and youth benefiting from resilience enhancing programmes (MHPSS, DRR & Life Skills, etc)",Turkana,KE023,5454,5454
+November,indicator 7 # of children benefitting from child-friendly environment (any construction or rehabilitation),Meru,KE012,34,0
