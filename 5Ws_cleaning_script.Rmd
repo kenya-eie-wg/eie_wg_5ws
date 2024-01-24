@@ -299,7 +299,7 @@ read_5ws_v1 <- function(file) {
     filter(!is.na(month) & !is.na(lead_organisation) & !is.na(indicator)) %>% 
     # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
-                             "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023/")) %>% 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023/")) %>% 
     filter(!is.na(indicator)) %>% 
     mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
     
@@ -331,7 +331,7 @@ read_excel(file,
     standard_cleaning() %>% 
     # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
-                             "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2/")) %>% 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2/")) %>% 
     filter(!is.na(indicator)) %>% 
     mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
     
@@ -363,7 +363,7 @@ read_excel(file,
     standard_cleaning() %>% 
     # Note the column here specifying the source, also with a filepath
     mutate(source = str_remove(source, 
-                             "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3/")) %>% 
+                             "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3/")) %>% 
     filter(!is.na(indicator)) %>% 
     mutate(implementing_partner = ifelse(is.na(implementing_partner), lead_organisation, implementing_partner))
     
@@ -385,7 +385,7 @@ We will keep this for 1-2 more rounds, just in case someone submits the old temp
 
 # path_5ws <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023"
 
-path_5ws <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023"
+path_5ws <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023"
 
 
 
@@ -419,7 +419,7 @@ for (i in 1:length(file_list_v1)) {
 ```{r warning=FALSE}
 # path_5ws_v2 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2"
 
-path_5ws_v2 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v2"
+path_5ws_v2 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v2"
 
 # Last argument filters out any open or temp excel files
 file_list_v2 <- list.files(path = path_5ws_v2, 
@@ -445,7 +445,7 @@ Only run when new format is ready
 ```{r eval=FALSE}
 # path_5ws_v3 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3"
 
-path_5ws_v3 <- "C:/Users/LEGION/Documents/GitHub/eie_wg_5ws/data/5Ws_2023_v3"
+path_5ws_v3 <- "C:/Users/seanywng/Documents/R/eie_wg_5ws/data/5Ws_2023_v3"
 
 # Last argument filters out any open or temp excel files
 file_list_v3 <- list.files(path = path_5ws_v3, 

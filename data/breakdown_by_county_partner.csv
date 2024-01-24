@@ -1,34 +1,24 @@
 county,implementing_partner,lead_organisation,reached,#activities,adm1_pcode
 Baringo,Bartabwa,World Vision Kenya,849,1,KE030
-Baringo,County Director of Education,County Director of Education,2491,1,KE030
 Baringo,IWS,AVSI Foundation,10,2,KE030
-Baringo,Save the Children,Save the Children,4033,3,KE030
+Baringo,Save the Children,Save the Children,2009,3,KE030
 Baringo,Save the Children,UNICEF,2669,3,KE030
 Baringo,World Vision Kenya,Bartabwa,0,1,KE030
 Baringo,World Vision Kenya,World Vision Kenya,7013,4,KE030
-Bungoma,County Director of Education,County Director of Education,4008,1,KE039
-Bungoma,Save the Children,Save the Children,2008,1,KE039
-Bungoma,Special Olympics Kenya,Special Olympics Kenya,248,1,KE039
 Garissa,AVSI Foundation,AVSI Foundation,1299,2,KE007
-Garissa,County Director of Education,County Director of Education,373,1,KE007
-Garissa,Finn Church Aid,Finn Church Aid,10110,2,KE007
+Garissa,Finn Church Aid,Finn Church Aid,32,1,KE007
 Garissa,Finn Church Aid,UNICEF,1242,1,KE007
+Garissa,Norwegian Refugee Council,Norwegian Refugee Council,1928,3,KE007
 Garissa,Norwegian Refugee Council,Save the Children,2019,2,KE007
-Garissa,Norwegian Refugee Council,UNICEF,7633,4,KE007
-Garissa,Qatar Charity,Qatar Charity,4757,1,KE007
+Garissa,Qatar Charity,Qatar Charity,1541,1,KE007
 Garissa,Save the Children,Save the Children,1156,2,KE007
-Garissa,Special Olympics Kenya,Special Olympics Kenya,830,1,KE007
-Garissa,Windle International,UNICEF,15607,4,KE007
 Homa Bay,Dignitas,Dignitas,135,1,KE043
 Homa Bay,Homa Bay County,Population Council,23166,1,KE043
-Isiolo,County Director of Education,County Director of Education,747,1,KE011
 Isiolo,ERIKs Development Partner,Voluntary Service Overseas,249,1,KE011
-Isiolo,Lifeskills Promoters,Lifeskills Promoters,14649,4,KE011
+Isiolo,Lifeskills Promoters,Lifeskills Promoters,12857,4,KE011
 Isiolo,Lifeskills Promoters,UNICEF,3082,2,KE011
 Isiolo,Nawiri Children Development Program,ChildFund Kenya,829,1,KE011
-Isiolo,Special Olympics Kenya,Special Olympics Kenya,247,1,KE011
 Isiolo,We World,We World,9651,1,KE011
-Kajiado,County Director of Education,County Director of Education,3753,1,KE034
 Kajiado,Emali Dedicated Children Agency,ChildFund Kenya,0,1,KE034
 Kajiado,Evangelizing Sisters of Mary,AVSI Foundation,702,3,KE034
 Kajiado,Evangelizing Sisters of Mary,Evangelizing Sisters of Mary,35,1,KE034
@@ -38,96 +28,71 @@ Kajiado,Nawiri Children Development Program,ChildFund Kenya,989,1,KE034
 Kajiado,SMB,AVSI Foundation,135,1,KE034
 Kajiado,SMB,SMB,135,1,KE034
 Kajiado,Servants of the Poor,AVSI Foundation,202,1,KE034
-Kajiado,Special Olympics Kenya,Special Olympics Kenya,217,1,KE034
 Kajiado,The Girl Child Network,UNESCO,700,1,KE034
 Kajiado,Women Educational Researchers of Kenya,UNICEF,21955,2,KE034
-Kajiado,Women Educational Researchers of Kenya,Women Educational Researchers of Kenya,2679,1,KE034
-Kilifi,County Director of Education,County Director of Education,1816,1,KE003
 Kilifi,Futebol da Forcaa,UNESCO,20,1,KE003
-Kilifi,Special Olympics Kenya,Special Olympics Kenya,239,1,KE003
 Kilifi,Women Educational Researchers of Kenya,UNICEF,14152,3,KE003
-Kilifi,Women Educational Researchers of Kenya,Women Educational Researchers of Kenya,4405,1,KE003
 Kilifi,World Vision Kenya,World Vision Kenya,9299,3,KE003
-Kwale,County Director of Education,County Director of Education,2871,1,KE002
 Kwale,"MoE, KNATCOM, STEM Impact Centre",UNESCO,130,1,KE002
 Kwale,The Girl Child Network,UNESCO,350,1,KE002
 Kwale,Women Educational Researchers of Kenya,UNICEF,9016,3,KE002
-Kwale,Women Educational Researchers of Kenya,Women Educational Researchers of Kenya,3719,1,KE002
 Lamu,World Vision Kenya,World Vision Kenya,5520,2,KE005
 Makueni,Emali Dedicated Children Agency,ChildFund Kenya,0,1,KE017
-Mandera,County Director of Education,County Director of Education,10856,1,KE009
 Mandera,County Director of Education Mandera,UNICEF,600,2,KE009
-Mandera,HABIBA International,HABIBA International,2978,1,KE009
-Marsabit,County Director of Education Marsabit,County Director of Education,2659,1,KE010
 Marsabit,County Director of Education Marsabit,UNICEF,0,1,KE010
-Marsabit,Finn Church Aid,Finn Church Aid,4905,1,KE010
 Marsabit,Finn Church Aid,UNICEF,40544,6,KE010
-Marsabit,Food for the Hungry,Food for the Hungry,34374,7,KE010
+Marsabit,Food for the Hungry,Food for the Hungry,31115,6,KE010
 Marsabit,Nawiri Children Development Program,ChildFund Kenya,3933,2,KE010
-Marsabit,Special Olympics Kenya,Special Olympics Kenya,373,1,KE010
 Marsabit,UNICEF,UNICEF,16928,1,KE010
 Marsabit,World Vision Kenya,World Vision Kenya,2077,3,KE010
 Meru,AVSI Foundation,AVSI Foundation,8469,1,KE012
 Meru,Food for the Hungry,Food for the Hungry,29417,7,KE012
-Migori,World Vision Kenya,World Vision Kenya,6556,2,KE044
-Mombasa,World Vision Kenya,World Vision Kenya,173,2,KE001
 Nairobi,Lifeskills Promoters,KENYA NATIONAL COMMISSION FOR UNESCO,115,2,KE047
-Nairobi,Lifeskills Promoters,Lifeskills Promoters,11038,1,KE047
-Nairobi,Special Olympics Kenya,Special Olympics Kenya,190,1,KE047
-Narok,County Director of Education,County Director of Education,1007,1,KE033
 Narok,MOE/TSC,MOE/TSC,60,1,KE033
 Narok,Ministry of Education,World Vision Kenya,8241,2,KE033
 Narok,Missionary Sisters of the Catechism,AVSI Foundation,85,1,KE033
 Narok,Missionary Sisters of the Catechism,Missionary Sisters of the Catechism,500,1,KE033
-Narok,Special Olympics Kenya,Special Olympics Kenya,284,1,KE033
 Narok,We World,We World,11296,1,KE033
 Narok,Women Educational Researchers of Kenya,UNICEF,16750,3,KE033
-Narok,Women Educational Researchers of Kenya,Women Educational Researchers of Kenya,4323,1,KE033
 Narok,World Vision Kenya,World Vision Kenya,11630,1,KE033
-Samburu,County Director of Education,County Director of Education,714,1,KE025
 Samburu,Edukans,Edukans,4734,1,KE025
 Samburu,Feed the Children,Feed the Children,7052,1,KE025
-Samburu,Finn Church Aid,Finn Church Aid,3279,3,KE025
+Samburu,Finn Church Aid,Finn Church Aid,544,3,KE025
 Samburu,Finn Church Aid,UNICEF,16916,4,KE025
 Samburu,Nawiri Children Development Program,ChildFund Kenya,487,1,KE025
 Samburu,Samburu Children Program,ChildFund Kenya,0,1,KE025
-Samburu,Special Olympics Kenya,Special Olympics Kenya,313,1,KE025
+Samburu,Special Olympics Kenya,Special Olympics Kenya,14,1,KE025
 Samburu,Special Olympics Kenya,UNICEF,289,3,KE025
 Taita Taveta,World Vision Kenya,World Vision Kenya,45,1,KE006
-Tana River,County Director of Education,County Director of Education,238,1,KE004
 Tana River,Tana North and Tana Delta,UNICEF,882,1,KE004
 Tana River,Women Educational Researchers of Kenya,UNICEF,21260,3,KE004
-Tana River,Women Educational Researchers of Kenya,Women Educational Researchers of Kenya,5621,1,KE004
-Turkana,County Director of Education,County Director of Education,4398,1,KE023
 Turkana,Feed the Children,Feed the Children,10190,1,KE023
-Turkana,Finn Church Aid,Finn Church Aid,851348,6,KE023
-Turkana,Finn Church Aid,UNICEF,165906,5,KE023
+Turkana,Finn Church Aid,Finn Church Aid,383611,6,KE023
+Turkana,Finn Church Aid,UNICEF,107854,4,KE023
 Turkana,Frontiers Community Development Organization,ChildFund Kenya,1044,1,KE023
 Turkana,Jesuit Refugee Service,Jesuit Refugee Service,37430,4,KE023
 Turkana,Jesuit Refugee Service,UNICEF,78352,4,KE023
 Turkana,Lifeskills Promoters,Life Skills Promoters,111,2,KE023
-Turkana,Lifeskills Promoters,Lifeskills Promoters,21470,3,KE023
+Turkana,Lifeskills Promoters,Lifeskills Promoters,13553,3,KE023
 Turkana,Lifeskills Promoters,UNICEF,11846,3,KE023
-Turkana,Lutheran World Federation,UNICEF,30794,3,KE023
+Turkana,Lutheran World Federation,Lutheran World Federation,52322,4,KE023
 Turkana,Mondi,World Vision Kenya,2197,1,KE023
 Turkana,Nawiri Children Development Program,ChildFund Kenya,414,1,KE023
-Turkana,Norwegian Refugee Council,UNICEF,62438,4,KE023
-Turkana,Save the Children,Save the Children,22411,3,KE023
+Turkana,Norwegian Refugee Council,Norwegian Refugee Council,4270,4,KE023
+Turkana,Norwegian Refugee Council,UNICEF,50895,2,KE023
+Turkana,Save the Children,Save the Children,13420,3,KE023
 Turkana,Save the Children,UNICEF,5089,2,KE023
-Turkana,Special Olympics Kenya,Special Olympics Kenya,1044,1,KE023
 Turkana,Special Olympics Kenya,UNICEF,202,1,KE023
 Turkana,UNICEF,UNICEF,17804,1,KE023
 Turkana,Voluntary Service Overseas,Voluntary Service Overseas,42,1,KE023
-Turkana,Windle International,UNICEF,102603,5,KE023
+Turkana,Windle International,UNICEF,57307,3,KE023
 Turkana,Windle International,Windle International,18687,1,KE023
 Wajir,Action for Sustainable Change,Action for Sustainable Change,4160,3,KE008
-Wajir,County Director of Education,County Director of Education,3620,1,KE008
 Wajir,County Director of Education Wajir,UNICEF,409,2,KE008
-Wajir,Save the Children,Save the Children,23244,3,KE008
+Wajir,Save the Children,Save the Children,10719,3,KE008
 Wajir,Save the Children,UNICEF,3827,3,KE008
-West Pokot,County Director of Education,County Director of Education,2394,1,KE024
-West Pokot,Finn Church Aid,Finn Church Aid,9624,3,KE024
+West Pokot,Finn Church Aid,Finn Church Aid,5624,3,KE024
 West Pokot,Finn Church Aid,UNICEF,19588,3,KE024
 West Pokot,Ministry of Education,UNICEF,53,1,KE024
-West Pokot,Special Olympics Kenya,Special Olympics Kenya,907,1,KE024
+West Pokot,Special Olympics Kenya,Special Olympics Kenya,409,1,KE024
 West Pokot,Special Olympics Kenya,UNICEF,1370,1,KE024
