@@ -1,6 +1,6 @@
 ---
 title: "Kenya EIE Working Group -- UNICEF sitrep inputs"
-date:  "31 December 2023"
+date:  "30 November 2023"
 output: 
   word_document:
     toc: no
@@ -116,14 +116,15 @@ locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx",
                       sheet = "ADM2") %>% 
   clean_names()
 
-eie <- read_csv("./data/eie_5ws.csv")
+eie <- read_csv("./data/eie_5ws.csv") %>% 
+  filter(month %out% c("December"))
 
-report_date <- "31 December 2023"
+report_date <- "30 November 2023"
 
-previous_months <- c("January", "February", "March", "April", "May", 
-                     "July", "August", "September", "October", "November")
+previous_months <- c("January", "February", "March", "April", "May", "June", 
+                     "July", "August", "September", "October")
 
-report_month <- "December"
+report_month <- "November"
 
 sitrep_table <- read_xlsx("./data/sitrep_results_table.xlsx") %>% 
   setNames(c(
@@ -290,7 +291,6 @@ Furthermore, `r indicator6 %>% pull(total) %>% format(big.mark = ",")` children 
 \newpage 
 
 # Sitrep table 
-
 
 
 ```{r}
