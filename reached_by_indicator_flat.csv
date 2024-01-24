@@ -1,5 +1,5 @@
-county,indicator_short,April,May,August,July,January,March,February,September,June,December,November,October,county_target
-Baringo,1. Access ECD spaces/schools,254,169,320,612,166,317,371,400,NA,NA,NA,NA,32205
+county,indicator_short,April,May,August,July,January,March,February,September,December,June,November,October,county_target
+Baringo,1. Access ECD spaces/schools,254,169,320,612,166,317,371,400,4515,NA,NA,NA,32205
 Baringo,2. Feeding programmes,1556,NA,NA,NA,NA,2729,NA,NA,NA,NA,NA,NA,251
 Baringo,2. Feeding programmes,1556,NA,NA,NA,NA,2729,NA,NA,NA,NA,NA,NA,46748
 Baringo,3. Teaching materials,2679,NA,NA,NA,NA,29,NA,NA,NA,NA,NA,NA,16103
@@ -7,30 +7,30 @@ Baringo,"4. Safe water, personal hygiene",769,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2
 Baringo,"4. Safe water, personal hygiene",769,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,46748
 Baringo,5. Educators resilience enhancing,351,NA,50,43,24,20,41,30,NA,NA,NA,NA,502
 Baringo,6. Children resilience enhancing,128,351,643,198,NA,NA,328,NA,NA,NA,NA,NA,7621
-Garissa,1. Access ECD spaces/schools,NA,1914,NA,NA,NA,NA,1595,48,1541,651,NA,NA,231528
-Garissa,5. Educators resilience enhancing,NA,80,NA,NA,219,NA,NA,NA,NA,16,16,NA,202
-Garissa,6. Children resilience enhancing,NA,1461,NA,186,NA,NA,NA,213,NA,651,NA,NA,25153
-Garissa,3. Teaching materials,NA,NA,NA,NA,NA,NA,NA,NA,NA,626,NA,NA,115764
-Isiolo,1. Access ECD spaces/schools,977,833,NA,NA,1530,NA,158,NA,561,NA,NA,NA,20930
+Garissa,1. Access ECD spaces/schools,NA,1914,NA,NA,NA,NA,1595,48,19490,1541,NA,NA,231528
+Garissa,5. Educators resilience enhancing,NA,80,NA,NA,219,NA,NA,NA,217,NA,16,NA,202
+Garissa,6. Children resilience enhancing,NA,1461,NA,186,NA,NA,NA,213,6297,NA,NA,NA,25153
+Garissa,3. Teaching materials,NA,NA,NA,NA,NA,NA,NA,NA,8381,NA,NA,NA,115764
+Isiolo,1. Access ECD spaces/schools,977,833,NA,NA,1530,NA,158,NA,2786,561,NA,NA,20930
 Isiolo,5. Educators resilience enhancing,NA,NA,91,NA,NA,249,NA,NA,NA,NA,NA,NA,62
 Isiolo,6. Children resilience enhancing,NA,NA,NA,NA,9651,NA,NA,NA,NA,NA,NA,4937,6600
 Isiolo,3. Teaching materials,NA,NA,NA,NA,NA,3015,NA,NA,NA,NA,NA,NA,10465
 Isiolo,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1342,31
 Isiolo,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1342,6983
 Kajiado,6. Children resilience enhancing,350,3288,NA,NA,23,2447,NA,NA,NA,NA,3409,2767,0
-Kajiado,1. Access ECD spaces/schools,NA,1926,NA,103,NA,1094,NA,NA,NA,NA,NA,NA,0
+Kajiado,1. Access ECD spaces/schools,NA,1926,NA,103,NA,1094,NA,NA,6649,NA,NA,NA,0
 Kajiado,3. Teaching materials,NA,NA,130,305,NA,NA,NA,NA,NA,NA,NA,NA,0
 Kajiado,5. Educators resilience enhancing,NA,NA,NA,35,NA,NA,NA,NA,NA,NA,NA,NA,0
 Kajiado,2. Feeding programmes,NA,NA,NA,NA,202,135,NA,NA,NA,NA,NA,NA,0
 Kajiado,2. Feeding programmes,NA,NA,NA,NA,202,135,NA,NA,NA,NA,NA,NA,0
 Kilifi,3. Teaching materials,81,NA,NA,NA,NA,2417,NA,NA,NA,NA,NA,NA,0
 Kilifi,5. Educators resilience enhancing,40,NA,NA,40,NA,NA,NA,NA,NA,NA,NA,19,0
-Kilifi,1. Access ECD spaces/schools,NA,89,NA,NA,NA,757,NA,NA,NA,NA,NA,NA,0
+Kilifi,1. Access ECD spaces/schools,NA,89,NA,NA,NA,757,NA,NA,6460,NA,NA,NA,0
 Kilifi,2. Feeding programmes,NA,NA,NA,NA,NA,6246,NA,NA,NA,NA,NA,NA,0
 Kilifi,2. Feeding programmes,NA,NA,NA,NA,NA,6246,NA,NA,NA,NA,NA,NA,0
 Kilifi,6. Children resilience enhancing,NA,NA,NA,NA,NA,1343,NA,NA,NA,NA,1080,3387,0
 Kwale,6. Children resilience enhancing,350,NA,NA,NA,NA,2000,NA,NA,NA,NA,NA,1403,5000
-Kwale,1. Access ECD spaces/schools,NA,359,NA,NA,NA,442,NA,NA,NA,NA,NA,NA,26885
+Kwale,1. Access ECD spaces/schools,NA,359,NA,NA,NA,442,NA,NA,6590,NA,NA,NA,26885
 Kwale,3. Teaching materials,NA,NA,130,NA,NA,NA,NA,NA,NA,NA,NA,NA,13443
 Kwale,5. Educators resilience enhancing,NA,NA,NA,44,NA,NA,NA,NA,NA,NA,NA,25,264
 Lamu,3. Teaching materials,NA,NA,NA,NA,NA,NA,3360,NA,NA,NA,NA,NA,0
@@ -38,14 +38,15 @@ Lamu,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,2160,NA,NA,NA,NA,NA,0
 Lamu,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,2160,NA,NA,NA,NA,NA,0
 Mandera,5. Educators resilience enhancing,NA,NA,85,NA,NA,NA,NA,NA,NA,NA,NA,NA,430
 Mandera,3. Teaching materials,NA,NA,NA,NA,NA,600,NA,NA,NA,NA,NA,NA,118188
-Marsabit,2. Feeding programmes,NA,7763,556,NA,NA,NA,NA,3110,1456,NA,NA,NA,105
-Marsabit,2. Feeding programmes,NA,7763,556,NA,NA,NA,NA,3110,1456,NA,NA,NA,30635
+Mandera,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,NA,NA,13834,NA,NA,NA,236376
+Marsabit,2. Feeding programmes,NA,7763,556,NA,NA,NA,NA,3110,NA,1456,NA,NA,105
+Marsabit,2. Feeding programmes,NA,7763,556,NA,NA,NA,NA,3110,NA,1456,NA,NA,30635
 Marsabit,3. Teaching materials,NA,22871,777,NA,NA,NA,NA,618,NA,NA,NA,NA,26900
-Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,NA,NA,NA,NA,105
-Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,NA,NA,NA,NA,30635
+Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,162,NA,NA,NA,105
+Marsabit,"4. Safe water, personal hygiene",NA,15095,6004,NA,NA,NA,NA,4671,162,NA,NA,NA,30635
 Marsabit,5. Educators resilience enhancing,NA,30,102,186,41,55,NA,44,NA,NA,111,NA,210
-Marsabit,1. Access ECD spaces/schools,NA,NA,90,339,2141,1600,1000,184,441,NA,NA,NA,53800
-Marsabit,6. Children resilience enhancing,NA,NA,4459,NA,395,NA,NA,NA,288,NA,NA,737,7380
+Marsabit,1. Access ECD spaces/schools,NA,NA,90,339,2141,1600,1000,184,7937,441,NA,NA,53800
+Marsabit,6. Children resilience enhancing,NA,NA,4459,NA,395,NA,NA,NA,1378,288,NA,737,7380
 Meru,2. Feeding programmes,NA,6621,6279,NA,NA,NA,NA,1231,NA,NA,1204,NA,0
 Meru,2. Feeding programmes,NA,6621,6279,NA,NA,NA,NA,1231,NA,NA,1204,NA,0
 Meru,3. Teaching materials,NA,985,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
@@ -54,35 +55,34 @@ Meru,"4. Safe water, personal hygiene",NA,650,NA,NA,NA,8469,NA,NA,NA,NA,NA,NA,0
 Meru,6. Children resilience enhancing,NA,NA,111,111,NA,NA,NA,NA,NA,NA,NA,NA,0
 Meru,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,NA,561,NA,NA,NA,NA,0
 Narok,3. Teaching materials,2429,NA,NA,NA,NA,5942,7024,NA,NA,NA,NA,NA,20755
-Narok,1. Access ECD spaces/schools,NA,200,NA,NA,NA,813,NA,NA,NA,NA,NA,705,41510
+Narok,1. Access ECD spaces/schools,NA,200,NA,NA,NA,813,NA,NA,5614,NA,NA,705,41510
 Narok,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,85,NA,NA,NA,NA,NA,NA,328
 Narok,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,85,NA,NA,NA,NA,NA,NA,113680
 Narok,6. Children resilience enhancing,NA,NA,NA,NA,NA,11674,NA,NA,NA,NA,724,10212,5651
 Narok,5. Educators resilience enhancing,NA,NA,NA,NA,NA,NA,1277,NA,NA,NA,NA,33,656
-Samburu,1. Access ECD spaces/schools,921,1580,7,926,87,1059,NA,68,130,NA,NA,NA,51848
-Samburu,5. Educators resilience enhancing,41,176,NA,73,50,NA,NA,NA,NA,29,NA,133,216
-Samburu,6. Children resilience enhancing,753,8447,28,NA,NA,229,NA,NA,1163,NA,NA,NA,4585
+Samburu,1. Access ECD spaces/schools,921,1580,7,926,87,1059,NA,68,3748,130,NA,NA,51848
+Samburu,5. Educators resilience enhancing,41,176,NA,73,50,NA,NA,NA,29,NA,NA,133,216
+Samburu,6. Children resilience enhancing,753,8447,28,NA,NA,229,NA,NA,NA,1163,NA,NA,4585
 Samburu,3. Teaching materials,NA,NA,NA,4734,NA,NA,NA,NA,NA,NA,NA,2000,25924
 Taita Taveta,5. Educators resilience enhancing,NA,NA,NA,NA,45,NA,NA,NA,NA,NA,NA,NA,0
-Tana River,1. Access ECD spaces/schools,NA,557,NA,854,NA,NA,4175,882,390,NA,NA,395,24970
+Tana River,1. Access ECD spaces/schools,NA,557,NA,854,NA,NA,4175,882,5859,390,NA,395,24970
 Tana River,6. Children resilience enhancing,NA,3769,NA,5250,NA,NA,NA,NA,NA,NA,NA,2870,4583
 Tana River,3. Teaching materials,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3000,NA,12485
-Turkana,1. Access ECD spaces/schools,25316,28919,52785,30428,2342,24294,6052,43907,2236,41728,4848,43309,202912
-Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,NA,14499,4640,NA,165
-Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,NA,14499,4640,NA,56075
-Turkana,3. Teaching materials,735,19382,NA,43740,NA,52244,20496,14901,NA,21485,17604,18687,101456
-Turkana,5. Educators resilience enhancing,265,288,774,435,209,844,483,1672,678,3082,1294,654,330
-Turkana,6. Children resilience enhancing,2848,698,1503,642,792,282,6098,2596,720,3133,5454,6179,22691
-Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,NA,18502,44783,NA,165
-Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,NA,18502,44783,NA,56075
+Turkana,1. Access ECD spaces/schools,25316,28919,52785,30428,2342,22186,6052,43907,100689,2236,4848,43309,202912
+Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,4640,NA,4640,NA,165
+Turkana,2. Feeding programmes,18538,491,553,24895,NA,2197,315,NA,4640,NA,4640,NA,56075
+Turkana,3. Teaching materials,735,19382,NA,43740,NA,52244,20496,14901,522314,NA,17604,18687,101456
+Turkana,5. Educators resilience enhancing,265,288,774,435,159,NA,423,1672,4400,678,1294,654,330
+Turkana,6. Children resilience enhancing,2848,698,1503,642,792,222,6098,2596,22001,720,5454,6179,22691
+Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,24115,NA,44783,NA,165
+Turkana,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,3820,24115,NA,44783,NA,56075
 Wajir,5. Educators resilience enhancing,30,NA,NA,48,NA,NA,62,119,NA,NA,39,207,304
-Wajir,1. Access ECD spaces/schools,NA,403,NA,NA,NA,361,6561,1470,322,NA,NA,NA,213232
-Wajir,6. Children resilience enhancing,NA,190,NA,3032,NA,2050,2030,NA,421,NA,NA,NA,22823
+Wajir,1. Access ECD spaces/schools,NA,403,NA,NA,NA,361,6561,1470,16145,322,NA,NA,213232
+Wajir,6. Children resilience enhancing,NA,190,NA,3032,NA,2050,2030,NA,NA,421,NA,NA,22823
 Wajir,3. Teaching materials,NA,NA,NA,NA,NA,NA,2050,NA,NA,NA,NA,NA,106616
-West Pokot,1. Access ECD spaces/schools,2875,NA,5362,6465,280,1769,NA,409,1617,NA,NA,NA,40035
-West Pokot,5. Educators resilience enhancing,29,NA,68,5191,NA,NA,NA,97,51,NA,NA,53,402
+West Pokot,1. Access ECD spaces/schools,2875,NA,5362,6465,280,1769,NA,409,6892,1617,NA,NA,40035
+West Pokot,5. Educators resilience enhancing,29,NA,68,5191,NA,NA,NA,97,NA,51,NA,53,402
 West Pokot,6. Children resilience enhancing,NA,NA,NA,NA,NA,NA,NA,130,NA,NA,NA,2728,6004
-Mandera,1. Access ECD spaces/schools,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,236376
 Mandera,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,215
 Mandera,2. Feeding programmes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,74125
 Mandera,"4. Safe water, personal hygiene",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,215
